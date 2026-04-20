@@ -1,0 +1,246 @@
+{
+  "chapter": "🌍 English — Grade 11 Literary — الفصل الثاني",
+  "description": "20 سؤالاً — الحادي عشر أدبي",
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "Present Continuous يستخدم لـ:",
+      "opts": [
+        "الماضي",
+        "حدث الآن",
+        "المستقبل",
+        "العادة"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: حدث الآن"
+    },
+    {
+      "type": "mcq",
+      "q": "\"I am ___ now\"",
+      "opts": [
+        "eat",
+        "eats",
+        "eating",
+        "ate"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: \"eating\""
+    },
+    {
+      "type": "mcq",
+      "q": "past continuous:",
+      "opts": [
+        "حدث مستمر في الماضي",
+        "المستقبل",
+        "الحاضر",
+        "الأمر"
+      ],
+      "ans": 0,
+      "exp": "Correct answer: حدث مستمر في الماضي"
+    },
+    {
+      "type": "mcq",
+      "q": "\"I was ___\"",
+      "opts": [
+        "eat",
+        "eating",
+        "ate",
+        "eats"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"eating\""
+    },
+    {
+      "type": "mcq",
+      "q": "modal verbs:",
+      "opts": [
+        "can",
+        "eat",
+        "run",
+        "big"
+      ],
+      "ans": 0,
+      "exp": "Correct answer: can"
+    },
+    {
+      "type": "mcq",
+      "q": "\"can\" تعني:",
+      "opts": [
+        "يجب",
+        "يستطيع",
+        "ذهب",
+        "أكل"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"يستطيع\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"must\" تعني:",
+      "opts": [
+        "يمكن",
+        "يجب",
+        "كان",
+        "ذهب"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"يجب\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"should\" تعني:",
+      "opts": [
+        "يجب",
+        "نصيحة",
+        "كان",
+        "ذهب"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"نصيحة\""
+    },
+    {
+      "type": "mcq",
+      "q": "comparative:",
+      "opts": [
+        "مقارنة",
+        "جمع",
+        "طرح",
+        "حذف"
+      ],
+      "ans": 0,
+      "exp": "Correct answer: مقارنة"
+    },
+    {
+      "type": "mcq",
+      "q": "superlative:",
+      "opts": [
+        "مقارنة",
+        "أعلى درجة",
+        "جمع",
+        "طرح"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: أعلى درجة"
+    },
+    {
+      "type": "mcq",
+      "q": "\"bigger\" هو:",
+      "opts": [
+        "comparative",
+        "superlative",
+        "noun",
+        "verb"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: \"comparative\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"biggest\" هو:",
+      "opts": [
+        "comparative",
+        "superlative",
+        "noun",
+        "verb"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"superlative\""
+    },
+    {
+      "type": "mcq",
+      "q": "prepositions:",
+      "opts": [
+        "in",
+        "run",
+        "eat",
+        "big"
+      ],
+      "ans": 0,
+      "exp": "Correct answer: in"
+    },
+    {
+      "type": "mcq",
+      "q": "\"on the table\" تعني:",
+      "opts": [
+        "فوق",
+        "تحت",
+        "داخل",
+        "خارج"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: \"فوق\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"in the room\":",
+      "opts": [
+        "داخل",
+        "فوق",
+        "تحت",
+        "خارج"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: \"داخل\""
+    },
+    {
+      "type": "mcq",
+      "q": "conjunction:",
+      "opts": [
+        "ربط",
+        "حذف",
+        "جمع",
+        "طرح"
+      ],
+      "ans": 0,
+      "exp": "Correct answer: ربط"
+    },
+    {
+      "type": "mcq",
+      "q": "\"and\" هو:",
+      "opts": [
+        "فعل",
+        "حرف عطف",
+        "اسم",
+        "صفة"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"حرف عطف\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"but\" تعني:",
+      "opts": [
+        "و",
+        "لكن",
+        "أو",
+        "لأن"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"لكن\""
+    },
+    {
+      "type": "mcq",
+      "q": "reading:",
+      "opts": [
+        "كتابة",
+        "قراءة",
+        "حساب",
+        "رسم"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: قراءة"
+    },
+    {
+      "type": "mcq",
+      "q": "writing:",
+      "opts": [
+        "قراءة",
+        "كتابة",
+        "حساب",
+        "رسم"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: كتابة"
+    }
+  ]
+}

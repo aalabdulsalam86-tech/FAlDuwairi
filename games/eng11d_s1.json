@@ -1,0 +1,246 @@
+{
+  "chapter": "🌍 English — Grade 11 Literary — الفصل الأول",
+  "description": "20 سؤالاً — الحادي عشر أدبي",
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "Present Simple يستخدم لـ:",
+      "opts": [
+        "الماضي",
+        "العادات",
+        "المستقبل",
+        "الأمر"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: العادات"
+    },
+    {
+      "type": "mcq",
+      "q": "Past Simple يستخدم لـ:",
+      "opts": [
+        "الحاضر",
+        "الماضي",
+        "المستقبل",
+        "الأمر"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: الماضي"
+    },
+    {
+      "type": "mcq",
+      "q": "Future (will) يستخدم لـ:",
+      "opts": [
+        "الماضي",
+        "الحاضر",
+        "المستقبل",
+        "العادة"
+      ],
+      "ans": 2,
+      "exp": "Correct answer: المستقبل"
+    },
+    {
+      "type": "mcq",
+      "q": "\"He ___ football yesterday\"",
+      "opts": [
+        "play",
+        "plays",
+        "played",
+        "playing"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: \"played\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"She ___ every day\"",
+      "opts": [
+        "play",
+        "plays",
+        "played",
+        "playing"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"plays\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"I ___ go tomorrow\"",
+      "opts": [
+        "will",
+        "did",
+        "does",
+        "was"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: \"will\""
+    },
+    {
+      "type": "mcq",
+      "q": "verb to be (am, is, are) يستخدم لـ:",
+      "opts": [
+        "الماضي فقط",
+        "الوصف",
+        "الجمع",
+        "الضرب"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: الوصف"
+    },
+    {
+      "type": "mcq",
+      "q": "\"They ___ happy\"",
+      "opts": [
+        "is",
+        "are",
+        "am",
+        "be"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"are\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"I ___ a student\"",
+      "opts": [
+        "is",
+        "are",
+        "am",
+        "be"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: \"am\""
+    },
+    {
+      "type": "mcq",
+      "q": "plural يعني:",
+      "opts": [
+        "مفرد",
+        "جمع",
+        "فعل",
+        "حرف"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: جمع"
+    },
+    {
+      "type": "mcq",
+      "q": "noun هو:",
+      "opts": [
+        "فعل",
+        "اسم",
+        "حرف",
+        "ظرف"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: اسم"
+    },
+    {
+      "type": "mcq",
+      "q": "verb هو:",
+      "opts": [
+        "اسم",
+        "فعل",
+        "حرف",
+        "ظرف"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: فعل"
+    },
+    {
+      "type": "mcq",
+      "q": "adjective هو:",
+      "opts": [
+        "اسم",
+        "صفة",
+        "فعل",
+        "حرف"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: صفة"
+    },
+    {
+      "type": "mcq",
+      "q": "adverb هو:",
+      "opts": [
+        "صفة",
+        "حال",
+        "اسم",
+        "فعل"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: حال"
+    },
+    {
+      "type": "mcq",
+      "q": "\"quickly\" هو:",
+      "opts": [
+        "adjective",
+        "adverb",
+        "noun",
+        "verb"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"adverb\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"big\" هو:",
+      "opts": [
+        "noun",
+        "adjective",
+        "verb",
+        "adverb"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"adjective\""
+    },
+    {
+      "type": "mcq",
+      "q": "sentence تتكون من:",
+      "opts": [
+        "كلمة",
+        "جملة",
+        "فعل وفاعل",
+        "حرف"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: جملة"
+    },
+    {
+      "type": "mcq",
+      "q": "subject هو:",
+      "opts": [
+        "الفعل",
+        "الفاعل",
+        "المفعول",
+        "الحرف"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: الفاعل"
+    },
+    {
+      "type": "mcq",
+      "q": "object هو:",
+      "opts": [
+        "الفاعل",
+        "المفعول",
+        "الفعل",
+        "الحرف"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: المفعول"
+    },
+    {
+      "type": "mcq",
+      "q": "punctuation تعني:",
+      "opts": [
+        "قواعد",
+        "علامات الترقيم",
+        "أفعال",
+        "أسماء"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: علامات الترقيم"
+    }
+  ]
+}
