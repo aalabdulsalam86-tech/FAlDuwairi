@@ -1,0 +1,126 @@
+{
+  "chapter": "💻 الحاسوب — الثاني عشر علمي — الفصل الثاني",
+  "description": "10 سؤالاً — الثاني عشر علمي",
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "ما هو Tree؟",
+      "opts": [
+        "قائمة",
+        "صف",
+        "هيكل بيانات هرمي",
+        "ملف"
+      ],
+      "ans": 2,
+      "exp": "Correct answer: هيكل بيانات هرمي"
+    },
+    {
+      "type": "mcq",
+      "q": "الجذر في الشجرة يسمى",
+      "opts": [
+        "Root",
+        "Leaf",
+        "Node",
+        "Edge"
+      ],
+      "ans": 0,
+      "exp": "Root."
+    },
+    {
+      "type": "mcq",
+      "q": "العقدة التي لا تحتوي أبناء",
+      "opts": [
+        "Root",
+        "Leaf",
+        "Parent",
+        "Child"
+      ],
+      "ans": 1,
+      "exp": "الإجابة الصحيحة: Leaf."
+    },
+    {
+      "type": "mcq",
+      "q": "Graph يتكون من",
+      "opts": [
+        "Arrays",
+        "Stacks",
+        "Nodes و Edges",
+        "Queues"
+      ],
+      "ans": 2,
+      "exp": "Correct answer: Nodes و Edges"
+    },
+    {
+      "type": "mcq",
+      "q": "DFS تعني",
+      "opts": [
+        "Data File System",
+        "Depth First Search",
+        "Direct File Search",
+        "Dynamic Function Search"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: Depth First Search"
+    },
+    {
+      "type": "mcq",
+      "q": "BFS تعني",
+      "opts": [
+        "Binary Function System",
+        "Breadth First Search",
+        "Basic File Search",
+        "Boolean Function Search"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: Breadth First Search"
+    },
+    {
+      "type": "mcq",
+      "q": "Recursion هو",
+      "opts": [
+        "Loop فقط",
+        "شرط",
+        "دالة تستدعي نفسها",
+        "متغير"
+      ],
+      "ans": 2,
+      "exp": "Correct answer: دالة تستدعي نفسها"
+    },
+    {
+      "type": "mcq",
+      "q": "شرط إنهاء Recursion يسمى",
+      "opts": [
+        "Loop",
+        "Condition",
+        "Base Case",
+        "Return"
+      ],
+      "ans": 2,
+      "exp": "Correct answer: Base Case"
+    },
+    {
+      "type": "mcq",
+      "q": "Sorting يعني",
+      "opts": [
+        "حذف البيانات",
+        "إضافة البيانات",
+        "ترتيب البيانات",
+        "نسخ البيانات"
+      ],
+      "ans": 2,
+      "exp": "Correct answer: ترتيب البيانات"
+    },
+    {
+      "type": "mcq",
+      "q": "مثال على خوارزمية ترتيب",
+      "opts": [
+        "Search",
+        "Insert",
+        "Bubble Sort",
+        "Delete"
+      ],
+      "ans": 2,
+      "exp": "الإجابة الصحيحة: Bubble Sort."
+    }
+  ]
+}
