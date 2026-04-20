@@ -1,0 +1,2346 @@
+{
+  "chapter": "🌍 English — Grade 12 Scientific — الفصل الأول",
+  "description": "198 سؤالاً — الثاني عشر علمي",
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "The main idea of a text is",
+      "opts": [
+        "A small detail",
+        "A character",
+        "The central message",
+        "A question"
+      ],
+      "ans": 2,
+      "exp": "Correct answer: The central message"
+    },
+    {
+      "type": "mcq",
+      "q": "A synonym means",
+      "opts": [
+        "Opposite meaning",
+        "Same meaning",
+        "Different language",
+        "Grammar rule"
+      ],
+      "ans": 1,
+      "exp": "Meaning: \"Same meaning\""
+    },
+    {
+      "type": "mcq",
+      "q": "Antonym means",
+      "opts": [
+        "Opposite meaning",
+        "Same meaning",
+        "Similar word",
+        "Sentence"
+      ],
+      "ans": 0,
+      "exp": "Meaning: \"Opposite meaning\""
+    },
+    {
+      "type": "mcq",
+      "q": "“Quick” is a synonym of",
+      "opts": [
+        "Slow",
+        "Fast",
+        "Late",
+        "Weak"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: Fast"
+    },
+    {
+      "type": "mcq",
+      "q": "Past tense of “go”",
+      "opts": [
+        "gone",
+        "went",
+        "goes",
+        "going"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: went"
+    },
+    {
+      "type": "mcq",
+      "q": "“She ___ playing now”",
+      "opts": [
+        "is",
+        "are",
+        "be"
+      ],
+      "ans": 0,
+      "exp": "Correct answer: is"
+    },
+    {
+      "type": "mcq",
+      "q": "A paragraph should have",
+      "opts": [
+        "one word",
+        "many topics",
+        "one main idea",
+        "no idea"
+      ],
+      "ans": 2,
+      "exp": "Definition: one main idea"
+    },
+    {
+      "type": "mcq",
+      "q": "A verb is",
+      "opts": [
+        "a person",
+        "a place",
+        "an action",
+        "a thing"
+      ],
+      "ans": 2,
+      "exp": "Definition: an action"
+    },
+    {
+      "type": "mcq",
+      "q": "“Beautiful” is",
+      "opts": [
+        "noun",
+        "verb",
+        "adjective",
+        "adverb"
+      ],
+      "ans": 2,
+      "exp": "Correct answer: adjective"
+    },
+    {
+      "type": "mcq",
+      "q": "Reading skill helps in",
+      "opts": [
+        "writing only",
+        "speaking only",
+        "understanding texts",
+        "drawing"
+      ],
+      "ans": 2,
+      "exp": "Correct answer: understanding texts"
+    },
+    {
+      "type": "mcq",
+      "q": "There are strict regulations concerning the ………………… of children.",
+      "opts": [
+        "consultation",
+        "adoption",
+        "litigation",
+        "persuasion"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: consultation"
+    },
+    {
+      "type": "mcq",
+      "q": "………………… wars can only cause poverty and starvation all over the world.",
+      "opts": [
+        "Civil",
+        "Legal",
+        "Guilty",
+        "Tolerant"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: Civil"
+    },
+    {
+      "type": "mcq",
+      "q": "The student chose to join the course after ………………… with his parents and teachers.",
+      "opts": [
+        "welfare",
+        "principle",
+        "consultation",
+        "jury"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: consultation"
+    },
+    {
+      "type": "mcq",
+      "q": "My friend was terribly sick and went to see a famous physician for a/an …………………",
+      "opts": [
+        "persuasion",
+        "adoption",
+        "violence",
+        "consultation"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: adoption"
+    },
+    {
+      "type": "mcq",
+      "q": "Dictionaries ………………… words clearly so that everyone can understand them.",
+      "opts": [
+        "define",
+        "impose",
+        "contend",
+        "govern"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: define"
+    },
+    {
+      "type": "mcq",
+      "q": "Laws against littering should be ………………… strictly by authorities to save the environment.",
+      "opts": [
+        "contended",
+        "enforced",
+        "proved",
+        "governed"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: enforced"
+    },
+    {
+      "type": "mcq",
+      "q": "Our society is ………………… by values related to Islam, such as honesty and respect.",
+      "opts": [
+        "governed",
+        "prosecuted",
+        "intended",
+        "contended"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: governed"
+    },
+    {
+      "type": "mcq",
+      "q": "The man was proved to be ………………… of the crime; therefore, he was sent to prison.",
+      "opts": [
+        "brief",
+        "petty",
+        "legal",
+        "guilty"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: guilty"
+    },
+    {
+      "type": "mcq",
+      "q": "Beware of ………………… your own taste on your children. Let them have their own choices.",
+      "opts": [
+        "imposing",
+        "proving",
+        "contending",
+        "suing"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: imposing"
+    },
+    {
+      "type": "mcq",
+      "q": "The judge took the new evidence into consideration and released the ………………… man.",
+      "opts": [
+        "legal",
+        "innocent",
+        "petty",
+        "brief"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: innocent"
+    },
+    {
+      "type": "mcq",
+      "q": "The ………………… stops people from breaking the law and helps solve problems.",
+      "opts": [
+        "judiciary",
+        "adoption",
+        "violence",
+        "bench"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: judiciary"
+    },
+    {
+      "type": "mcq",
+      "q": "The student ………………… her English skills since January.",
+      "opts": [
+        "improves",
+        "has improved",
+        "will improve",
+        "improved"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: has improved"
+    },
+    {
+      "type": "mcq",
+      "q": "My friend ………………… several phone calls so far today.",
+      "opts": [
+        "receives",
+        "will receive",
+        "is receiving",
+        "has received"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: has received"
+    },
+    {
+      "type": "mcq",
+      "q": "The nurse ………………… at the hospital for several years.",
+      "opts": [
+        "works",
+        "will work",
+        "has worked",
+        "is working"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: has worked"
+    },
+    {
+      "type": "mcq",
+      "q": "My father’s flight ………………… yet, and we are still waiting at the airport.",
+      "opts": [
+        "has arrived",
+        "arrived",
+        "hasn’t arrived",
+        "hasn’t been arrived"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: hasn’t been arrived"
+    },
+    {
+      "type": "mcq",
+      "q": "I ………………… just ………………… my ankle; it is painful.",
+      "opts": [
+        "do … twist",
+        "had … been twisted",
+        "was … twisting",
+        "have … twisted"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: had … been twisted"
+    },
+    {
+      "type": "mcq",
+      "q": "The tourist ………………… never ………………… to Italy.",
+      "opts": [
+        "had … being",
+        "has … been",
+        "is … being",
+        "was … being"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: has … been"
+    },
+    {
+      "type": "mcq",
+      "q": "The explorer ………………… already ………………… a hidden cave in the mountains.",
+      "opts": [
+        "is … discovered",
+        "was … discovered",
+        "has … discovered",
+        "will … discover"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: has … discovered"
+    },
+    {
+      "type": "mcq",
+      "q": "The maths teacher ………………… in this school for five years.",
+      "opts": [
+        "teaches",
+        "has been teaching",
+        "am teaching",
+        "will teach"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: has been teaching"
+    },
+    {
+      "type": "mcq",
+      "q": "We ………………… in this city since 2018.",
+      "opts": [
+        "are living",
+        "have been living",
+        "will live",
+        "live"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: have been living"
+    },
+    {
+      "type": "mcq",
+      "q": "My sister ………………… for the Olympics since last year.",
+      "opts": [
+        "will train",
+        "is training",
+        "was training",
+        "has been training"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: has been training"
+    },
+    {
+      "type": "mcq",
+      "q": "My sister’s phone ………………… for two minutes. It is quite annoying.",
+      "opts": [
+        "rings",
+        "ringing",
+        "has been ringing",
+        "is ringing"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: has been ringing"
+    },
+    {
+      "type": "mcq",
+      "q": "My friend went to the gym. He did not rest at home.   (Join using: instead of…)",
+      "opts": [
+        "My friend instead of resting at home, he went to the gym.",
+        "Instead of my friend resting at home, he went to the gym.",
+        "My friend went to the gym instead of resting at home."
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: My friend instead of resting at home, he went to the gym."
+    },
+    {
+      "type": "mcq",
+      "q": "The accountant just (send) the email to the company office.  (Correct the verb)",
+      "opts": [
+        "The accountant has just sent the email to the company office.",
+        "The accountant was just sending the email to the company office.",
+        "The accountant will just send the email to the company office."
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: The accountant has just sent the email to the company office."
+    },
+    {
+      "type": "mcq",
+      "q": "The young man has written an exciting story for the magazine. (Change into passive)",
+      "opts": [
+        "An exciting story was written for the magazine.",
+        "An exciting story is written for the magazine.",
+        "An exciting story has been written for the magazine."
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: An exciting story has been written for the magazine."
+    },
+    {
+      "type": "mcq",
+      "q": "The young artist has created stunning paintings.    (Change into passive)",
+      "opts": [
+        "Stunning paintings were created by the young artist.",
+        "Stunning paintings have been created by the young artist.",
+        "Stunning paintings are created by the young artist."
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: Stunning paintings were created by the young artist."
+    },
+    {
+      "type": "mcq",
+      "q": "The boy has trained hard for the race, …………………?   (Add a tag question)",
+      "opts": [
+        "The boy has trained hard for the race, hadn’t he?",
+        "The boy has trained hard for the race, doesn’t he?",
+        "The boy has trained hard for the race, hasn’t he?"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: The boy has trained hard for the race, hasn’t he?"
+    },
+    {
+      "type": "mcq",
+      "q": "If you follow the map carefully, you (find) a hidden shortcut. (Correct the verb)",
+      "opts": [
+        "If you follow the map carefully, you will find a hidden shortcut.",
+        "If you follow the map carefully, you would find a hidden shortcut.",
+        "If you follow the map carefully, you would have found a hidden shortcut."
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: If you follow the map carefully, you will find a hidden shortcut."
+    },
+    {
+      "type": "mcq",
+      "q": "If the weather improves, ………………………………..   (Complete the sentence)",
+      "opts": [
+        "If the weather improves, we will go for a walk.",
+        "If the weather improves, we would go for a walk.",
+        "If the weather improves, we would have gone for a walk."
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: If the weather improves, we will go for a walk."
+    },
+    {
+      "type": "mcq",
+      "q": "The best title for the text would be:",
+      "opts": [
+        "Fever Forever",
+        "The Bright Sky",
+        "Acute Congestion of Brain",
+        "A Symbol of Patience and Courage"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: A Symbol of Patience and Courage"
+    },
+    {
+      "type": "mcq",
+      "q": "The underlined word “acute” in the 1st paragraph means:",
+      "opts": [
+        "fine",
+        "simple",
+        "serious",
+        "attractive"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: serious"
+    },
+    {
+      "type": "mcq",
+      "q": "The underlined word “who” in the 2nd paragraph refers to:",
+      "opts": [
+        "Helen",
+        "Miss Sarah Fuller",
+        "the doctor",
+        "Miss Anne Mansfield Sullivan"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: Miss Sarah Fuller"
+    },
+    {
+      "type": "mcq",
+      "q": "What did Helen admire through the first nineteen months of her life?",
+      "opts": [
+        "She admired her parents.",
+        "She admired clever children.",
+        "She admired her Northern Alabama.",
+        "She admired the natural scenes."
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: She admired the natural scenes."
+    },
+    {
+      "type": "mcq",
+      "q": "The boy couldn’t ………………… to buy a new car because he earned little money.",
+      "opts": [
+        "obliterate",
+        "afford",
+        "reside",
+        "decimate"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: afford"
+    },
+    {
+      "type": "mcq",
+      "q": "Online shopping has recently witnessed a ………………… due to the impact of COVID-19.",
+      "opts": [
+        "famine",
+        "rift",
+        "migrant",
+        "boom"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: famine"
+    },
+    {
+      "type": "mcq",
+      "q": "A period of economic growth occurred in Kuwait and created an economic …………………",
+      "opts": [
+        "boom",
+        "famine",
+        "rift",
+        "migrant"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: boom"
+    },
+    {
+      "type": "mcq",
+      "q": "Overfishing has ………………… the shrimp’s population in the Arabian Gulf.",
+      "opts": [
+        "resided",
+        "rented",
+        "decimated",
+        "emigrated"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: decimated"
+    },
+    {
+      "type": "mcq",
+      "q": "The destructive fires that swept across Australia ………………… thousands of houses.",
+      "opts": [
+        "afforded",
+        "resided",
+        "decimated",
+        "rented"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: decimated"
+    },
+    {
+      "type": "mcq",
+      "q": "As we age, our ability to remember changes and our memory starts to …………………",
+      "opts": [
+        "rent",
+        "Afford",
+        "Reside",
+        "deteriorate"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: Afford"
+    },
+    {
+      "type": "mcq",
+      "q": "Millions of people ………………… every year because of wars and civil conflicts.",
+      "opts": [
+        "emigrate",
+        "decimate",
+        "seek",
+        "necessitate"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: emigrate"
+    },
+    {
+      "type": "mcq",
+      "q": "The UN World Food Programme is working on preventing ………………… in poor countries.",
+      "opts": [
+        "resort",
+        "famine",
+        "rift",
+        "boom"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: famine"
+    },
+    {
+      "type": "mcq",
+      "q": "Crop failure due to drought or flooding could result in ………………… and starvation.",
+      "opts": [
+        "famine",
+        "resort",
+        "rift",
+        "boom"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: famine"
+    },
+    {
+      "type": "mcq",
+      "q": "Nowadays, most colleges are equipped with ………………… systems and computers.",
+      "opts": [
+        "strenuous",
+        "hard-pressed",
+        "high- tech",
+        "disgruntled"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: high- tech"
+    },
+    {
+      "type": "mcq",
+      "q": "My friend ………………… an online course before she started working on her project.",
+      "opts": [
+        "has joined",
+        "is joining",
+        "had joined",
+        "joins"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: had joined"
+    },
+    {
+      "type": "mcq",
+      "q": "Before the boy ………………… to the zoo, he had read a lot about animals.",
+      "opts": [
+        "goes",
+        "went",
+        "has gone",
+        "had gone"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: went"
+    },
+    {
+      "type": "mcq",
+      "q": "The government had vacated the area ………………… the volcano erupted.",
+      "opts": [
+        "by",
+        "yet",
+        "before",
+        "after"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: before"
+    },
+    {
+      "type": "mcq",
+      "q": "Before he arrived in Switzerland, the boy ………………… snow in his life.",
+      "opts": [
+        "can never see",
+        "will never see",
+        "had never seen",
+        "doesn’t see"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: had never seen"
+    },
+    {
+      "type": "mcq",
+      "q": "Before I went to the university, I ………………… as a carpenter for 2 years.",
+      "opts": [
+        "had worked",
+        "work",
+        "will work",
+        "am working"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: had worked"
+    },
+    {
+      "type": "mcq",
+      "q": "I felt nervous because I ………………… a high mountain before.",
+      "opts": [
+        "can’t climb",
+        "won’t climb",
+        "hadn’t climbed",
+        "don’t climb"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: hadn’t climbed"
+    },
+    {
+      "type": "mcq",
+      "q": "Salim did not want to see the film because he ………………… the book yet.",
+      "opts": [
+        "doesn’t read",
+        "hadn’t read",
+        "isn’t reading",
+        "won’t read"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: hadn’t read"
+    },
+    {
+      "type": "mcq",
+      "q": "………………… Ali had graduated, he got a job and bought his dream car.",
+      "opts": [
+        "By the time",
+        "After",
+        "Before",
+        "So"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: After"
+    },
+    {
+      "type": "mcq",
+      "q": "After Fatma ………………… her work, she had lunch.",
+      "opts": [
+        "finishes",
+        "has finished",
+        "had finished",
+        "will finish"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: had finished"
+    },
+    {
+      "type": "mcq",
+      "q": "The organisation ………………… on the new vaccine after the disease had spread.",
+      "opts": [
+        "works",
+        "has worked",
+        "worked",
+        "had worked"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: had worked"
+    },
+    {
+      "type": "mcq",
+      "q": "The game had already started by the time the boys ………………… at the stadium.",
+      "opts": [
+        "arrived",
+        "arrive",
+        "had arrived",
+        "will arrive"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: had arrived"
+    },
+    {
+      "type": "mcq",
+      "q": "I washed the floor. The painter left.    (Join using: after)",
+      "opts": [
+        "I had washed the floor after the painter had left.",
+        "I washed the floor after the painter had left.",
+        "I had washed the floor after the painter left."
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: I had washed the floor after the painter had left."
+    },
+    {
+      "type": "mcq",
+      "q": "I saved my document. The computer crashed.   (Begin with: Before)",
+      "opts": [
+        "Before I saved my document, the computer had crashed.",
+        "Before I had saved my document, the computer had crashed.",
+        "Before I had saved my document, the computer crashed."
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: Before I saved my document, the computer had crashed."
+    },
+    {
+      "type": "mcq",
+      "q": "The best title for the text could be:",
+      "opts": [
+        "All twins live identical lives.",
+        "Some women give birth to identical twins.",
+        "Genetics plays a major role in shaping personality.",
+        "Personality is largely determined by physical appearance."
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: Genetics plays a major role in shaping personality."
+    },
+    {
+      "type": "mcq",
+      "q": "The underlined word “diverged” in the 4th paragraph means:",
+      "opts": [
+        "returned",
+        "increased",
+        "completed",
+        "separated"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: separated"
+    },
+    {
+      "type": "mcq",
+      "q": "What does the underlined word “they” in the 2nd paragraph refer to?",
+      "opts": [
+        "tiny differences",
+        "physical appearances",
+        "two identical twins",
+        "close friends"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: two identical twins"
+    },
+    {
+      "type": "mcq",
+      "q": "As adults, the Jim twins:",
+      "opts": [
+        "served as part-time officers.",
+        "had pets with different names.",
+        "suffered from fatal diseases.",
+        "drove different types of cars."
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: served as part-time officers."
+    },
+    {
+      "type": "mcq",
+      "q": "According to the passage, which of the following is NOT TRUE about identical twins?",
+      "opts": [
+        "They are unique but similar to each other.",
+        "They share habits and personality traits.",
+        "They have totally different DNA.",
+        "They are less common than non-identical twins."
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: They share habits and personality traits."
+    },
+    {
+      "type": "mcq",
+      "q": "The more students know the ………………… of time, the more they use it efficiently.",
+      "opts": [
+        "impulse",
+        "value",
+        "overview",
+        "commitment"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: value"
+    },
+    {
+      "type": "mcq",
+      "q": "The decision of the UN has been made to ………………… extra troops for the sake of peace.",
+      "opts": [
+        "deploy",
+        "alleviate",
+        "donate",
+        "avert"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: avert"
+    },
+    {
+      "type": "mcq",
+      "q": "His Highness the late Sheikh Sabah was named the leader of ………………… work by the United Nations.",
+      "opts": [
+        "incapable",
+        "universal",
+        "humanitarian",
+        "frail"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: universal"
+    },
+    {
+      "type": "mcq",
+      "q": "People should be encouraged to join ………………… campaigns to help others.",
+      "opts": [
+        "inevitable",
+        "aggressive",
+        "extravagant",
+        "charitable"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: charitable"
+    },
+    {
+      "type": "mcq",
+      "q": "Islam teaches us to appreciate our differences and the ………………… of our world.",
+      "opts": [
+        "abuse",
+        "diversity",
+        "discrimination",
+        "appeal"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: diversity"
+    },
+    {
+      "type": "mcq",
+      "q": "………………… study and describe the customs of different people and cultures.",
+      "opts": [
+        "Ethnographers",
+        "Campaigns",
+        "Minorities",
+        "Attributes"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: Ethnographers"
+    },
+    {
+      "type": "mcq",
+      "q": "Efforts are being made to ………………… war and find a diplomatic solution to the crisis.",
+      "opts": [
+        "value",
+        "alleviate",
+        "deploy",
+        "avert"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: value"
+    },
+    {
+      "type": "mcq",
+      "q": "Unemployment among the youth has become a/an ………………… problem.",
+      "opts": [
+        "incapable",
+        "extravagant",
+        "universal",
+        "frail"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: universal"
+    },
+    {
+      "type": "mcq",
+      "q": "British women first gained ………………… in the early 20th century, specifically in 1918.",
+      "opts": [
+        "empathy",
+        "suffrage",
+        "impulse",
+        "overview"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: suffrage"
+    },
+    {
+      "type": "mcq",
+      "q": "It is normal to like or dislike someone for no ………………… reason.",
+      "opts": [
+        "frail",
+        "incapable",
+        "apparent",
+        "charitable"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: apparent"
+    },
+    {
+      "type": "mcq",
+      "q": "The play was very sad. The final scene ended …………………",
+      "opts": [
+        "tragedy",
+        "tragically",
+        "tragedies",
+        "tragic"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: tragically"
+    },
+    {
+      "type": "mcq",
+      "q": "If it hadn’t been for your sincere effort, you ………………… your job.",
+      "opts": [
+        "lost",
+        "will lose",
+        "lose",
+        "would have lost"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: would have lost"
+    },
+    {
+      "type": "mcq",
+      "q": "You will probably become ill ………………… you continue eating fatty meals.",
+      "opts": [
+        "unless",
+        "if",
+        "in order to",
+        "unlike"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: if"
+    },
+    {
+      "type": "mcq",
+      "q": "A newborn baby should be held …………………",
+      "opts": [
+        "care",
+        "careful",
+        "caring",
+        "carefully"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: carefully"
+    },
+    {
+      "type": "mcq",
+      "q": "If you hadn’t wasted your time, you ………………… high marks.",
+      "opts": [
+        "get",
+        "would have got",
+        "will get",
+        "are getting"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: would have got"
+    },
+    {
+      "type": "mcq",
+      "q": "You can hear what I’m saying ………………… you keep quiet.",
+      "opts": [
+        "if",
+        "unless",
+        "although",
+        "despite"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: if"
+    },
+    {
+      "type": "mcq",
+      "q": "The man was ………………… injured in the accident. It took him long to recover.",
+      "opts": [
+        "serious",
+        "more serious",
+        "seriously",
+        "as seriously as"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: seriously"
+    },
+    {
+      "type": "mcq",
+      "q": "If people follow traffic rules, car accidents ………………… a thing of the past.",
+      "opts": [
+        "would become",
+        "will become",
+        "became",
+        "would have become"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: would have become"
+    },
+    {
+      "type": "mcq",
+      "q": "If I were a scientist, I (do) my best to invent a vaccine for COVID-19. (Correct the verb)",
+      "opts": [
+        "If I were a scientist, I will do my best to invent a vaccine for COVID-19.",
+        "If I were a scientist, I would do my best to invent a vaccine for COVID-19.",
+        "If I were a scientist, I would have done my best to invent a vaccine for COVID-19."
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: If I were a scientist, I would have done my best to invent a vaccine for COVID-19."
+    },
+    {
+      "type": "mcq",
+      "q": "This boy behaves (nice) to every person he meets.   (Correct the word)",
+      "opts": [
+        "This boy behaves in a nicely way to every person he meets.",
+        "This boy behaves in a nicely to every person he meets.",
+        "This boy behaves nicely to every person he meets."
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: This boy behaves in a nicely way to every person he meets."
+    },
+    {
+      "type": "mcq",
+      "q": "You need a passport if …………………………………………………  (Complete)",
+      "opts": [
+        "You need a passport if you want to travel abroad.",
+        "You need a passport if you wanted to travel abroad.",
+        "You need a passport if you had wanted to travel abroad."
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: You need a passport if you want to travel abroad."
+    },
+    {
+      "type": "mcq",
+      "q": "We should treat the needy with compassion.   (Use: compassionately)",
+      "opts": [
+        "We should treat the needy compassionately.",
+        "We should treat the needy with compassionately.",
+        "We should treat the needy in compassionately."
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: We should treat the needy compassionately."
+    },
+    {
+      "type": "mcq",
+      "q": "My brother didn’t watch the film because he had slept early. (Use: If)",
+      "opts": [
+        "My brother will watch the film, if he doesn’t sleep early.",
+        "My brother would watch the film, if he didn’t sleep early.",
+        "My brother would have watched the film, if he hadn’t slept early."
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: My brother would have watched the film, if he hadn’t slept early."
+    },
+    {
+      "type": "mcq",
+      "q": "He had not trained well, so he lost the match.    (Use: If)",
+      "opts": [
+        "If he had trained well, he would not lose the match.",
+        "If he had trained well, he would not have to lose the match.",
+        "If he had trained well, he would not have lost the match."
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: If he had trained well, he would not have to lose the match."
+    },
+    {
+      "type": "mcq",
+      "q": "If he hadn’t been under a lot of stress, ………………………………………………… (Complete)",
+      "opts": [
+        "If he hadn’t been under a lot of stress, he would have passed his driving test.",
+        "If he hadn’t been under a lot of stress, he would pass his driving test.",
+        "If he hadn’t been under a lot of stress, he will pass his driving test."
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: If he hadn’t been under a lot of stress, he would have passed his driving test."
+    },
+    {
+      "type": "mcq",
+      "q": "The best title for the text could be:",
+      "opts": [
+        "Saving Planet Earth",
+        "Waste Management",
+        "Waste Recycling",
+        "Future Miracles"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: Saving Planet Earth"
+    },
+    {
+      "type": "mcq",
+      "q": "The  ………………… was so badly eroded that it could no longer stand crop production.",
+      "opts": [
+        "soil",
+        "hurdle",
+        "equator",
+        "climate"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: soil"
+    },
+    {
+      "type": "mcq",
+      "q": "We thought the punishment was rather ………………… for such a minor mistake.",
+      "opts": [
+        "humid",
+        "intrinsic",
+        "frigid",
+        "harsh"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: harsh"
+    },
+    {
+      "type": "mcq",
+      "q": "To turn deserts into ………………… land, the soil needs to be watered regularly.",
+      "opts": [
+        "treacherous",
+        "productive",
+        "intrinsic",
+        "arid"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: productive"
+    },
+    {
+      "type": "mcq",
+      "q": "In the forests of Northern California, a ………………… has spread over 200 miles.",
+      "opts": [
+        "wildfire",
+        "paucity",
+        "proportion",
+        "spearhead"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: wildfire"
+    },
+    {
+      "type": "mcq",
+      "q": "Smoke and gases emitted by factories contribute to the pollution of the …………………",
+      "opts": [
+        "atmosphere",
+        "spearhead",
+        "hurdle",
+        "proportion"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: atmosphere"
+    },
+    {
+      "type": "mcq",
+      "q": "If ………………… continues to spread, dust storms will increase in the future.",
+      "opts": [
+        "forecasting",
+        "paucity",
+        "desertification",
+        "soil"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: paucity"
+    },
+    {
+      "type": "mcq",
+      "q": "Water makes up a large ………………… of the Earth’s surface while the rest is land.",
+      "opts": [
+        "proportion",
+        "preservation",
+        "spearhead",
+        "atmosphere"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: proportion"
+    },
+    {
+      "type": "mcq",
+      "q": "When a child …………………, it is important for parents to show them right from wrong.",
+      "opts": [
+        "prevails",
+        "erodes",
+        "reclaims",
+        "misbehaves"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: misbehaves"
+    },
+    {
+      "type": "mcq",
+      "q": "It is crucial to ………………… the amount of cholesterol in our blood to be healthy.",
+      "opts": [
+        "precipitate",
+        "graze",
+        "misbehave",
+        "curtail"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: curtail"
+    },
+    {
+      "type": "mcq",
+      "q": "One of the challenges that threatens human existence is the ………………… of fresh water.",
+      "opts": [
+        "hurdle",
+        "atmosphere",
+        "paucity",
+        "wildfire"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: atmosphere"
+    },
+    {
+      "type": "mcq",
+      "q": "If students ………………… teachers’ instructions, they will get high marks.",
+      "opts": [
+        "reclaim",
+        "erode",
+        "implement",
+        "overcultivate"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: implement"
+    },
+    {
+      "type": "mcq",
+      "q": "A diver needs safety tools ………………… protect himself from dangerous sea creatures.",
+      "opts": [
+        "to",
+        "so that",
+        "because",
+        "with the result that"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: with the result that"
+    },
+    {
+      "type": "mcq",
+      "q": "The manager could not attend the meeting ………………… his father was sick.",
+      "opts": [
+        "because",
+        "so that",
+        "in order to",
+        "to"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: in order to"
+    },
+    {
+      "type": "mcq",
+      "q": "Bad weather caused several delays, ………………… the work was not completed on time.",
+      "opts": [
+        "with the result that",
+        "in order to",
+        "to",
+        "because"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: with the result that"
+    },
+    {
+      "type": "mcq",
+      "q": "Lack of vitamins and minerals may be ………………… the child’s illness.",
+      "opts": [
+        "the cause of",
+        "with the result that",
+        "lead to",
+        "because"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: with the result that"
+    },
+    {
+      "type": "mcq",
+      "q": "My brother went to bed early yesterday ………………… he could get up early this morning.",
+      "opts": [
+        "so that",
+        "because",
+        "to",
+        "in order to"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: in order to"
+    },
+    {
+      "type": "mcq",
+      "q": "Following a poor diet is ………………… obesity and heart problems.",
+      "opts": [
+        "so that",
+        "because",
+        "the cause of",
+        "in order to"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: the cause of"
+    },
+    {
+      "type": "mcq",
+      "q": "………………… obtain valuable wood, many people cut down trees and destroy forests.",
+      "opts": [
+        "So that",
+        "In order to",
+        "Because",
+        "With the result that"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: With the result that"
+    },
+    {
+      "type": "mcq",
+      "q": "Some students do not read questions carefully, ………………… they lose marks.",
+      "opts": [
+        "because",
+        "to",
+        "lead to",
+        "with the result that"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: with the result that"
+    },
+    {
+      "type": "mcq",
+      "q": "Large areas have turned into deserts ………………… farmers always overcultivate them.",
+      "opts": [
+        "to",
+        "so that",
+        "in order to",
+        "because"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: in order to"
+    },
+    {
+      "type": "mcq",
+      "q": "I had to take a taxi ………………… I wouldn’t be late for my meeting with the manager.",
+      "opts": [
+        "in order to",
+        "so that",
+        "leading to",
+        "to be the cause of"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: to be the cause of"
+    },
+    {
+      "type": "mcq",
+      "q": "Speeding and careless driving ………………… an increase in road accidents.",
+      "opts": [
+        "to",
+        "in order to",
+        "lead to",
+        "with the result that"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: with the result that"
+    },
+    {
+      "type": "mcq",
+      "q": "He joined the sports centre. He wanted to be fit and healthy.  (Join using: so that)",
+      "opts": [
+        "He joined the sports centre so that he is fit and healthy.",
+        "He joined the sports centre so that he can be fit and healthy.",
+        "He joined the sports centre so that he could be fit and healthy."
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: He joined the sports centre so that he could be fit and healthy."
+    },
+    {
+      "type": "mcq",
+      "q": "He felt very tired. He couldn’t go out for a walk.    (Join using: because)",
+      "opts": [
+        "He couldn’t go out for a walk because he felt tired.",
+        "Because his tiredness, he couldn’t go out for a walk.",
+        "He felt very tired because he couldn’t go out for a walk."
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: He felt very tired because he couldn’t go out for a walk."
+    },
+    {
+      "type": "mcq",
+      "q": "We arrived late to work. The streets were very crowded. (Join: with the result that)",
+      "opts": [
+        "We arrived late to work, with the result that crowded streets.",
+        "We arrived late to work, with the result that the streets were very crowded.",
+        "The streets were very crowded, with the result that we arrived late to work."
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: The streets were very crowded, with the result that we arrived late to work."
+    },
+    {
+      "type": "mcq",
+      "q": "Air and land pollution is the result of smoke from factories. (Rewrite using: lead to)",
+      "opts": [
+        "Air and land pollution lead to smoke from factories.",
+        "Smoke from factories leads to air and land pollution.",
+        "The result of air and land pollution leads to smoke from factories."
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: The result of air and land pollution leads to smoke from factories."
+    },
+    {
+      "type": "mcq",
+      "q": "Storms and heavy rain destroyed many old buildings. (Rewrite using: the cause of)",
+      "opts": [
+        "Storms and heavy rain were the destroyed cause of many old buildings.",
+        "Storms and heavy rain were the cause of destroyed many old buildings.",
+        "Storms and heavy rain were the cause of destroying many old buildings."
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: Storms and heavy rain were the cause of destroying many old buildings."
+    },
+    {
+      "type": "mcq",
+      "q": "The explorers couldn’t cross the river. The tide was too strong.  (Use: because)",
+      "opts": [
+        "The explorers couldn’t cross the river because the tide was too strong.",
+        "The explorers couldn’t cross the river because being too strong.",
+        "The tide was too strong because the explorers couldn’t cross the river."
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: The tide was too strong because the explorers couldn’t cross the river."
+    },
+    {
+      "type": "mcq",
+      "q": "We need to hurry up. We want to attend the meeting on time. (Join using: in order to)",
+      "opts": [
+        "We need to hurry up in order to attend the meeting on time.",
+        "We need to hurry up in order to want to attend the meeting on time.",
+        "We need to hurry up in order to we want to attend the meeting on time."
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: We need to hurry up in order to attend the meeting on time."
+    },
+    {
+      "type": "mcq",
+      "q": "The best title for the text could be:",
+      "opts": [
+        "The Charity Movement",
+        "The Wardrobe Budget",
+        "The Buy Nothing Movement",
+        "The Rates of Overconsumption"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: The Buy Nothing Movement"
+    },
+    {
+      "type": "mcq",
+      "q": "The underlined word “protests” in the 3rd paragraph means:",
+      "opts": [
+        "local legislations",
+        "walkout movements",
+        "natural preservations",
+        "legal consultations"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: walkout movements"
+    },
+    {
+      "type": "mcq",
+      "q": "The underlined word \"they\" in the 4th paragraph refers to:",
+      "opts": [
+        "services",
+        "haircuts",
+        "restaurants",
+        "two friends"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: two friends"
+    },
+    {
+      "type": "mcq",
+      "q": "The two friends contributed to the reduction of buying products by:",
+      "opts": [
+        "encouraging people to eat out at restaurants.",
+        "spending a year working towards buying only food.",
+        "encouraging people to buy their unwanted clothes.",
+        "spending $55,000 to buy electrical appliances for the house."
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: spending a year working towards buying only food."
+    },
+    {
+      "type": "mcq",
+      "q": "According to the 3rd paragraph, all the following statements are TRUE EXCEPT:",
+      "opts": [
+        "The “Buy Nothing” trend started in the US in the early 1990s.",
+        "The “Buy Nothing” trend became a trend due to consumerism.",
+        "Throwing away unwanted clothes causes many environmental problems.",
+        "“Buy Nothing” groups organise the exchange and repair of items they already own."
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: The “Buy Nothing” trend became a trend due to consumerism."
+    },
+    {
+      "type": "mcq",
+      "q": "In Kuwait and most countries, over speeding is a serious traffic …………………",
+      "opts": [
+        "offence",
+        "irritation",
+        "annoyance",
+        "criticism"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: offence"
+    },
+    {
+      "type": "mcq",
+      "q": "Factories depend mainly on highly powerful ………………… for their production.",
+      "opts": [
+        "criticism",
+        "offence",
+        "annoyance",
+        "machinery"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: criticism"
+    },
+    {
+      "type": "mcq",
+      "q": "The doctors ………………… that the patient needed urgent surgery soon.",
+      "opts": [
+        "composted",
+        "reprocessed",
+        "concurred",
+        "reclaimed"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: concurred"
+    },
+    {
+      "type": "mcq",
+      "q": "I did not like the …………………, but the gift inside made me extremely happy.",
+      "opts": [
+        "annoyance",
+        "criticism",
+        "irritation",
+        "packaging"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: criticism"
+    },
+    {
+      "type": "mcq",
+      "q": "We were driving along the seaside, suddenly, we ………………… petrol and the car stopped.",
+      "opts": [
+        "got rid of",
+        "ran out of",
+        "put up with",
+        "came up against"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: got rid of"
+    },
+    {
+      "type": "mcq",
+      "q": "The ………………… of the university decided to build a bigger library for the students.",
+      "opts": [
+        "incinerator",
+        "duration",
+        "annoyance",
+        "administration"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: duration"
+    },
+    {
+      "type": "mcq",
+      "q": "It is healthier to ………………… the amount of time you spend on social media.",
+      "opts": [
+        "put up with",
+        "keep up with",
+        "cut down on",
+        "come up against"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: cut down on"
+    },
+    {
+      "type": "mcq",
+      "q": "All the ………………… that my friend received had left her feeling totally upset.",
+      "opts": [
+        "paperwork",
+        "incineration",
+        "criticism",
+        "machinery"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: incineration"
+    },
+    {
+      "type": "mcq",
+      "q": "Some countries rely on ………………… to dispose their waste instead of burying it.",
+      "opts": [
+        "incineration",
+        "material",
+        "quantity",
+        "upsurge"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: incineration"
+    },
+    {
+      "type": "mcq",
+      "q": "Healthy eating has become more than just a ………………… as people care about health.",
+      "opts": [
+        "duration",
+        "trend",
+        "administration",
+        "crisis"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: duration"
+    },
+    {
+      "type": "mcq",
+      "q": "We took four trains, so the overall ………………… of the journey was about 72 hours.",
+      "opts": [
+        "crisis",
+        "trend",
+        "administration",
+        "duration"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: trend"
+    },
+    {
+      "type": "mcq",
+      "q": "I am sorry, I do not know where our friend lives. I wish I ………………… that.",
+      "opts": [
+        "will know",
+        "have known",
+        "know",
+        "knew"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: knew"
+    },
+    {
+      "type": "mcq",
+      "q": "I wish I ………………… my money so I could go shopping with my friends.",
+      "opts": [
+        "save",
+        "had saved",
+        "will save",
+        "have saved"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: had saved"
+    },
+    {
+      "type": "mcq",
+      "q": "Our neighbours are always noisy. I wish they ………………… the noise down.",
+      "opts": [
+        "keep",
+        "would keep",
+        "had kept",
+        "will keep"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: would keep"
+    },
+    {
+      "type": "mcq",
+      "q": "I wish I ………………… at home yesterday. The weather was too humid.",
+      "opts": [
+        "stay",
+        "had stayed",
+        "staying",
+        "will stay"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: had stayed"
+    },
+    {
+      "type": "mcq",
+      "q": "My friend cannot attend my birthday party. I wish his circumstances …………………",
+      "opts": [
+        "will change",
+        "change",
+        "are changing",
+        "would change"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: would change"
+    },
+    {
+      "type": "mcq",
+      "q": "My friend left my book at home. I wish she ………………… it.",
+      "opts": [
+        "won’t forget",
+        "wouldn’t forget",
+        "hadn’t forgotten",
+        "hasn’t forgotten"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: hadn’t forgotten"
+    },
+    {
+      "type": "mcq",
+      "q": "You waste too much paper. I wish you ………………… the iPad I gave you.",
+      "opts": [
+        "will use",
+        "would use",
+        "use",
+        "had used"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: would use"
+    },
+    {
+      "type": "mcq",
+      "q": "The magazine was heavy and full of pictures. I wish it ………………… more articles.",
+      "opts": [
+        "has",
+        "could have",
+        "had had",
+        "will have"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: could have"
+    },
+    {
+      "type": "mcq",
+      "q": "I wish I ………………… soon, I need to go mountain climbing.",
+      "opts": [
+        "could travel",
+        "travel",
+        "had travelled",
+        "travelling"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: could travel"
+    },
+    {
+      "type": "mcq",
+      "q": "My uncle didn’t win the marathon last week. He wished he ………………… faster.",
+      "opts": [
+        "ran",
+        "runs",
+        "had run",
+        "run"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: had run"
+    },
+    {
+      "type": "mcq",
+      "q": "I would really like to go on a picnic. I wish it ………………… raining.",
+      "opts": [
+        "will stop",
+        "would stop",
+        "stops",
+        "had stopped"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: would stop"
+    },
+    {
+      "type": "mcq",
+      "q": "She didn’t get a good grade. She wishes she (study) harder.  (Correct the verb)",
+      "opts": [
+        "She didn’t get a good grade. She wishes she had studied harder.",
+        "She didn’t get a good grade. She wishes she studies harder.",
+        "She didn’t get a good grade. She wishes she is studying harder."
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: She didn’t get a good grade. She wishes she had studied harder."
+    },
+    {
+      "type": "mcq",
+      "q": "People drive too fast on the inner roads, between the houses. (Use: Wish)",
+      "opts": [
+        "I wish people will drive carefully.",
+        "I wish people can drive carefully.",
+        "I wish people would drive carefully."
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: I wish people would drive carefully."
+    },
+    {
+      "type": "mcq",
+      "q": "I wish they (stop) littering everywhere. It is very annoying.  (Correct the verb)",
+      "opts": [
+        "I wish they can stop littering everywhere.",
+        "I wish they would stop littering everywhere.",
+        "I wish they will stop littering everywhere."
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: I wish they would stop littering everywhere."
+    },
+    {
+      "type": "mcq",
+      "q": "I spilled my coffee while driving. I wish I (be) more careful.  (Correct the verb)",
+      "opts": [
+        "I spilled my coffee while driving. I wish I am more careful.",
+        "I spilled my coffee while driving. I wish I have been more careful.",
+        "I spilled my coffee while driving. I wish I had been more careful."
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: I spilled my coffee while driving. I wish I had been more careful."
+    },
+    {
+      "type": "mcq",
+      "q": "I saw the perfect outfit at the store yesterday, but it was expensive. (Use: Wish)",
+      "opts": [
+        "I wish it is cheaper.",
+        "I wish it will be cheaper.",
+        "I wish it had been cheaper."
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: I wish it had been cheaper."
+    },
+    {
+      "type": "mcq",
+      "q": "What is the best title for the text?",
+      "opts": [
+        "Injuries Caused by Sports",
+        "Sports Played at Schools",
+        "The Positive Effects of Sports on Children",
+        "The Negative Effects of Sports on Children"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: The Negative Effects of Sports on Children"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following phrases best defines “poor self-esteem” in the 1st paragraph?",
+      "opts": [
+        "getting honoured",
+        "lacking confidence",
+        "being selfish",
+        "lacking loyalty"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: lacking confidence"
+    },
+    {
+      "type": "mcq",
+      "q": "What does the underlined word “They” in the 2nd paragraph refer to?",
+      "opts": [
+        "parents",
+        "adults",
+        "coaches",
+        "researchers"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: researchers"
+    },
+    {
+      "type": "mcq",
+      "q": "According to the 2nd paragraph, the number of children who had been shouted at is:",
+      "opts": [
+        "All children",
+        "None of the children",
+        "Eighteen million",
+        "Forty million"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: None of the children"
+    },
+    {
+      "type": "mcq",
+      "q": "According to the passage, which of the following sentences is NOT TRUE?",
+      "opts": [
+        "Children sometimes have a bad impression about sports.",
+        "Forcing an injured child into a game is an advantage.",
+        "Parents and teachers are role models for children.",
+        "Winning isn’t the only source of enjoyment."
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: Forcing an injured child into a game is an advantage."
+    },
+    {
+      "type": "mcq",
+      "q": "Unlike other sea creatures, whales have a/an ………………… sense of hearing.",
+      "opts": [
+        "reticent",
+        "damp",
+        "acute",
+        "expansive"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: damp"
+    },
+    {
+      "type": "mcq",
+      "q": "Following a vegetarian lifestyle helps you ………………… obesity and other health problems.",
+      "opts": [
+        "avoid",
+        "recompensate",
+        "pose",
+        "encroach"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: avoid"
+    },
+    {
+      "type": "mcq",
+      "q": "The ground was still ………………… from the overnight rain, leaving muddy footprints.",
+      "opts": [
+        "timid",
+        "solitary",
+        "acute",
+        "damp"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: acute"
+    },
+    {
+      "type": "mcq",
+      "q": "Al-Jahra Nature Reserve is ………………… enough for many different rare animal species.",
+      "opts": [
+        "unsanctioned",
+        "expansive",
+        "aware",
+        "reticent"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: expansive"
+    },
+    {
+      "type": "mcq",
+      "q": "Illegal hunting and deforestation lead to animal ………………… and ecological problems.",
+      "opts": [
+        "extinction",
+        "nourishment",
+        "wealth",
+        "consensus"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: extinction"
+    },
+    {
+      "type": "mcq",
+      "q": "Our grandparents used to tell us ………………… tales about how life was in Kuwait long ago.",
+      "opts": [
+        "illegitimate",
+        "unsanctioned",
+        "burgeoning",
+        "fascinating"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: fascinating"
+    },
+    {
+      "type": "mcq",
+      "q": "Unlike pandas, polar bears ………………… during severe winter in the North Pole.",
+      "opts": [
+        "pose",
+        "threaten",
+        "hibernate",
+        "cultivate"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: hibernate"
+    },
+    {
+      "type": "mcq",
+      "q": "My friend was given a ………………… free membership as a reward for his great efforts.",
+      "opts": [
+        "permanent",
+        "timid",
+        "knock-on",
+        "damp"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: permanent"
+    },
+    {
+      "type": "mcq",
+      "q": "Excessive and uncontrolled use of social media ………………… a real threat to children.",
+      "opts": [
+        "poses",
+        "hibernates",
+        "avoids",
+        "utilises"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: poses"
+    },
+    {
+      "type": "mcq",
+      "q": "The mountaineers had to take a cave as a ………………… from the snowstorm.",
+      "opts": [
+        "bounty",
+        "reward",
+        "wealth",
+        "refuge"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: refuge"
+    },
+    {
+      "type": "mcq",
+      "q": "Putting rare animals in a ………………… is one of the best solutions to protect them.",
+      "opts": [
+        "nourishment",
+        "reservation",
+        "wealth",
+        "consensus"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: reservation"
+    },
+    {
+      "type": "mcq",
+      "q": "My teacher was angry ………………… me, because I had forgotten to do my homework.",
+      "opts": [
+        "for",
+        "on",
+        "with",
+        "from"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: for"
+    },
+    {
+      "type": "mcq",
+      "q": "We arrived ………………… the airport at midnight last night.",
+      "opts": [
+        "of",
+        "at",
+        "on",
+        "for"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: at"
+    },
+    {
+      "type": "mcq",
+      "q": "The reason ………………… cutting forests is sometimes people's greedy interests.",
+      "opts": [
+        "from",
+        "at",
+        "for",
+        "with"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: at"
+    },
+    {
+      "type": "mcq",
+      "q": "The employee felt sick shortly after he got ………………… the bus.",
+      "opts": [
+        "off",
+        "at",
+        "for",
+        "with"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: off"
+    },
+    {
+      "type": "mcq",
+      "q": "Arabs are famous ………………… their hospitality.",
+      "opts": [
+        "for",
+        "from",
+        "with",
+        "of"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: for"
+    },
+    {
+      "type": "mcq",
+      "q": "Bees depend ………………… flowers and fruit to feed.",
+      "opts": [
+        "of",
+        "on",
+        "at",
+        "for"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: on"
+    },
+    {
+      "type": "mcq",
+      "q": "It ………………… be easy designing bridges; they are very complicated structures.",
+      "opts": [
+        "must",
+        "can't",
+        "might",
+        "wouldn't"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: can't"
+    },
+    {
+      "type": "mcq",
+      "q": "The boy looks stressed. He ………………… faced some troubles at work lately.",
+      "opts": [
+        "must",
+        "can't",
+        "might have",
+        "wouldn’t"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: might have"
+    },
+    {
+      "type": "mcq",
+      "q": "As most of the students failed the exam, it ………………… been an easy one.",
+      "opts": [
+        "must",
+        "must have",
+        "can't",
+        "can't have"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: can't have"
+    },
+    {
+      "type": "mcq",
+      "q": "The student was very lazy; he ………………… passed the exam with high marks.",
+      "opts": [
+        "must",
+        "must have",
+        "can't",
+        "can't have"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: can't have"
+    },
+    {
+      "type": "mcq",
+      "q": "The Australian aborigines look just like the Indians, they ………………… come from Asia.",
+      "opts": [
+        "can’t have",
+        "must have",
+        "can’t",
+        "might"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: can’t have"
+    },
+    {
+      "type": "mcq",
+      "q": "The explorers saw some wild animals in the desert.    (Make passive)",
+      "opts": [
+        "Some wild animals are seen in the desert by the explorers.",
+        "Some wild animals were seen in the desert by the explorers.",
+        "Some wild animals have been seen in the desert by the explorers."
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: Some wild animals have been seen in the desert by the explorers."
+    },
+    {
+      "type": "mcq",
+      "q": "Some engineers are building a very huge dam to keep the floods away. (Make passive)",
+      "opts": [
+        "A very huge dam will be built by some engineers to keep the floods away.",
+        "A very huge dam has been built by some engineers to keep the floods away.",
+        "A very huge dam is being built by some engineers to keep the floods away."
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: A very huge dam will be built by some engineers to keep the floods away."
+    },
+    {
+      "type": "mcq",
+      "q": "Some countries have cancelled all the flights because of the fog. (Make passive)",
+      "opts": [
+        "All the flights are cancelled because of the fog by some countries.",
+        "All the flights were cancelled because of the fog by some countries.",
+        "All the flights have been cancelled because of the fog by some countries."
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: All the flights have been cancelled because of the fog by some countries."
+    },
+    {
+      "type": "mcq",
+      "q": "The underlined word “takes place” in the 4th paragraph means:",
+      "opts": [
+        "reads",
+        "sleeps",
+        "happens",
+        "plays"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: happens"
+    },
+    {
+      "type": "mcq",
+      "q": "The underlined word “they” in the 3rd paragraph refers to:",
+      "opts": [
+        "hours",
+        "children",
+        "stories",
+        "books"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: children"
+    },
+    {
+      "type": "mcq",
+      "q": "By the time we ………………… to the stadium, the football match had already started.",
+      "opts": [
+        "would arrive",
+        "arrive",
+        "arrived",
+        "had arrived"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: would arrive"
+    },
+    {
+      "type": "mcq",
+      "q": "………………… wasting your time, you'd better do some serious work.",
+      "opts": [
+        "On the other hand",
+        "Instead of",
+        "Whereas",
+        "But"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: Instead of"
+    },
+    {
+      "type": "mcq",
+      "q": "I can’t remember the time ………………… I joined the sports club.",
+      "opts": [
+        "where",
+        "whose",
+        "when",
+        "which"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: when"
+    },
+    {
+      "type": "mcq",
+      "q": "I wish I ………………… the Eiffel Tower when I was in France last summer.",
+      "opts": [
+        "would visit",
+        "had visited",
+        "will visit",
+        "am visiting"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: had visited"
+    },
+    {
+      "type": "mcq",
+      "q": "You should have waited for me.     (Make negative)",
+      "opts": [
+        "You didn’t have to wait form me.",
+        "You shouldn’t wait for me.",
+        "You shouldn’t have waited for me."
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: You shouldn’t have waited for me."
+    },
+    {
+      "type": "mcq",
+      "q": "They closed all borders after the war.    (Make passive)",
+      "opts": [
+        "All borders are closed after the war.",
+        "All borders were closed after the war.",
+        "All borders have closed after the war."
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: All borders have closed after the war."
+    },
+    {
+      "type": "mcq",
+      "q": "We work long hours. We can finish soon.   (Join using: so that)",
+      "opts": [
+        "We work long hours so that we can finish soon.",
+        "We work long hours so that we finished soon.",
+        "We work long hours so that we have finished soon."
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: We work long hours so that we can finish soon."
+    },
+    {
+      "type": "mcq",
+      "q": "You have applied for the new job, …………………?  (Add a question tag)",
+      "opts": [
+        "You have applied for the new job, didn’t you?",
+        "You have applied for the new job, haven’t you?",
+        "You have applied for the new job, aren’t you?"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: You have applied for the new job, haven’t you?"
+    }
+  ]
+}

@@ -1,0 +1,565 @@
+{
+  "chapter": "🌍 English — Grade 11 Scientific — الفصل الأول",
+  "description": "47 سؤالاً — الحادي عشر علمي",
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "The Present Simple is used for:",
+      "opts": [
+        "The past",
+        "Habits",
+        "The future",
+        "Commands"
+      ],
+      "ans": 1,
+      "exp": "The correct use is: Habits"
+    },
+    {
+      "type": "mcq",
+      "q": "The Past Simple is used for:",
+      "opts": [
+        "The present",
+        "The past",
+        "The future",
+        "Commands"
+      ],
+      "ans": 1,
+      "exp": "The correct use is: The past"
+    },
+    {
+      "type": "mcq",
+      "q": "The Future tense (will) is used for:",
+      "opts": [
+        "The past",
+        "The present",
+        "The future",
+        "Habits"
+      ],
+      "ans": 2,
+      "exp": "The correct use is: The future"
+    },
+    {
+      "type": "mcq",
+      "q": "\"He ___ football yesterday.\"",
+      "opts": [
+        "play",
+        "plays",
+        "played",
+        "playing"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: \"played\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"She ___ every day.\"",
+      "opts": [
+        "play",
+        "plays",
+        "played",
+        "playing"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"plays\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"I ___ go tomorrow.\"",
+      "opts": [
+        "will",
+        "did",
+        "does",
+        "was"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: \"will\""
+    },
+    {
+      "type": "mcq",
+      "q": "The verb \"to be\" (am, is, are) is used for:",
+      "opts": [
+        "Only the past",
+        "Description",
+        "Plural only",
+        "Multiplication"
+      ],
+      "ans": 1,
+      "exp": "The correct use is: Description"
+    },
+    {
+      "type": "mcq",
+      "q": "\"They ___ happy.\"",
+      "opts": [
+        "is",
+        "are",
+        "am",
+        "be"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"are\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"I ___ a student.\"",
+      "opts": [
+        "is",
+        "are",
+        "am",
+        "be"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: \"am\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Plural\" means:",
+      "opts": [
+        "Singular",
+        "More than one",
+        "Verb",
+        "Letter"
+      ],
+      "ans": 1,
+      "exp": "Meaning: \"More than one\""
+    },
+    {
+      "type": "mcq",
+      "q": "A noun is:",
+      "opts": [
+        "A verb",
+        "A name (person, place, or thing)",
+        "A letter",
+        "An adverb"
+      ],
+      "ans": 1,
+      "exp": "Definition: A name (person, place, or thing)"
+    },
+    {
+      "type": "mcq",
+      "q": "A verb is:",
+      "opts": [
+        "A noun",
+        "An action word",
+        "A letter",
+        "An adverb"
+      ],
+      "ans": 1,
+      "exp": "Definition: An action word"
+    },
+    {
+      "type": "mcq",
+      "q": "An adjective is:",
+      "opts": [
+        "A noun",
+        "A describing word",
+        "A verb",
+        "A letter"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: A describing word"
+    },
+    {
+      "type": "mcq",
+      "q": "An adverb is:",
+      "opts": [
+        "An adjective",
+        "A word that describes a verb",
+        "A noun",
+        "A verb"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: A word that describes a verb"
+    },
+    {
+      "type": "mcq",
+      "q": "\"Quickly\" is:",
+      "opts": [
+        "An adjective",
+        "An adverb",
+        "A noun",
+        "A verb"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"An adverb\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Big\" is:",
+      "opts": [
+        "A noun",
+        "An adjective",
+        "A verb",
+        "An adverb"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"An adjective\""
+    },
+    {
+      "type": "mcq",
+      "q": "A sentence is:",
+      "opts": [
+        "A word",
+        "A complete group of words",
+        "A verb and subject only",
+        "A letter"
+      ],
+      "ans": 1,
+      "exp": "Definition: A complete group of words"
+    },
+    {
+      "type": "mcq",
+      "q": "The subject is:",
+      "opts": [
+        "The verb",
+        "The doer of the action",
+        "The object",
+        "A letter"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: The doer of the action"
+    },
+    {
+      "type": "mcq",
+      "q": "The object is:",
+      "opts": [
+        "The subject",
+        "The receiver of the action",
+        "The verb",
+        "A letter"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: The receiver of the action"
+    },
+    {
+      "type": "mcq",
+      "q": "Punctuation means:",
+      "opts": [
+        "Grammar rules",
+        "Punctuation marks",
+        "Verbs",
+        "Nouns"
+      ],
+      "ans": 1,
+      "exp": "Meaning: \"Punctuation marks\""
+    },
+    {
+      "type": "mcq",
+      "q": "We ……………. the new manager yesterday morning.",
+      "opts": [
+        "meet",
+        "met",
+        "will meet",
+        "are meeting"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: met"
+    },
+    {
+      "type": "mcq",
+      "q": "Some people think that life in the past ……………. happier and healthier than today.",
+      "opts": [
+        "was",
+        "were",
+        "will be",
+        "are"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: was"
+    },
+    {
+      "type": "mcq",
+      "q": "The athlete ……………. the gold medal last week.",
+      "opts": [
+        "won",
+        "win",
+        "is winning",
+        "wins"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: won"
+    },
+    {
+      "type": "mcq",
+      "q": "In 1995, my uncle ……………. to Canada on a business trip.",
+      "opts": [
+        "will leave",
+        "left",
+        "leaves",
+        "is leaving"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: left"
+    },
+    {
+      "type": "mcq",
+      "q": "As soon as the sun had set, the temperature ……..………………dramatically.",
+      "opts": [
+        "drops",
+        "had dropped",
+        "dropped",
+        "was dropping"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: had dropped"
+    },
+    {
+      "type": "mcq",
+      "q": "We ……………. most of our electronic devices from Japan.",
+      "opts": [
+        "import",
+        "socialise",
+        "refill",
+        "converse"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: import"
+    },
+    {
+      "type": "mcq",
+      "q": "Some friends of mine like to drink coffee with …………….",
+      "opts": [
+        "pill",
+        "cardamom",
+        "hospitality",
+        "autograph"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: cardamom"
+    },
+    {
+      "type": "mcq",
+      "q": "I am on a diet. I will have ……………. espresso with skimmed milk.",
+      "opts": [
+        "weary",
+        "irritated",
+        "lonesome",
+        "decaffeinated"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: decaffeinated"
+    },
+    {
+      "type": "mcq",
+      "q": "Apple Corporation has a / an ……………. logo that makes it well known.",
+      "opts": [
+        "irritated",
+        "distinctive",
+        "decaffeinated",
+        "weary"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: distinctive"
+    },
+    {
+      "type": "mcq",
+      "q": "Would you prefer a/an ……………. or a cappuccino?",
+      "opts": [
+        "stadium",
+        "autograph",
+        "espresso",
+        "hospitality"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: espresso"
+    },
+    {
+      "type": "mcq",
+      "q": "My mother has bought these beautiful flowers for their delicate …………….",
+      "opts": [
+        "fragrance",
+        "teapot",
+        "stadium",
+        "cardamom"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: fragrance"
+    },
+    {
+      "type": "mcq",
+      "q": "If they had trained hard enough before the match, ……………………….. (Complete the sentence)",
+      "opts": [
+        "If they had trained hard enough before the match, they would have won the match.",
+        "If they had trained hard enough before the match they win the match.",
+        "If they had trained hard enough before the match they will win the match."
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: If they had trained hard enough before the match, they would have won the match."
+    },
+    {
+      "type": "mcq",
+      "q": "He would have been on time for the interview if he (leave)………………… (Complete the sentence)",
+      "opts": [
+        "He would have been on time for the interview if he leaves the house at nine",
+        "He would have been on time for the interview if he has left the house at nine",
+        "He would have been on time for the interview if he had left the house at nine"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: He would have been on time for the interview if he leaves the house at nine"
+    },
+    {
+      "type": "mcq",
+      "q": "If my cousin (follow) …………….. a strict regime, she could have lost some weight. )Correct the verb)",
+      "opts": [
+        "If my cousin followed a strict regime, she has lost some weight.",
+        "If my cousin had followed a strict regime, she could have lost some weight.",
+        "If my cousin follows a strict regime, she could have lost some weight."
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: If my cousin followed a strict regime, she has lost some weight."
+    },
+    {
+      "type": "mcq",
+      "q": "If he hadn’t used the map and compass in the forest, …………………… (Complete the sentence)",
+      "opts": [
+        "If he hadn’t used the map and compass in the forest, he would have been lost.",
+        "If he hadn’t used the map and compass in the forest, he lost",
+        "If he hadn’t used the map and compass in the forest, he will be lost"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: If he hadn’t used the map and compass in the forest, he will be lost"
+    },
+    {
+      "type": "mcq",
+      "q": "If he had saved a large amount of money, he ………………………… (Complete the sentence)",
+      "opts": [
+        "If he had saved a large amount of money, he starts his own business",
+        "If he had saved a large amount of money, he would have started his own business",
+        "If he had saved a large amount of money, he will start his own business"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: If he had saved a large amount of money, he starts his own business"
+    },
+    {
+      "type": "mcq",
+      "q": "Jack has just……………. the window of the gym accidentally.",
+      "opts": [
+        "break",
+        "broke",
+        "broken",
+        "breaking"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: broken"
+    },
+    {
+      "type": "mcq",
+      "q": "My mother ………...… just baked a cake for the picnic.",
+      "opts": [
+        "has",
+        "have",
+        "have not",
+        "has not been"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: has"
+    },
+    {
+      "type": "mcq",
+      "q": "I have ………………..….… been to this lovely place before.",
+      "opts": [
+        "for",
+        "yet",
+        "since",
+        "never"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: never"
+    },
+    {
+      "type": "mcq",
+      "q": "They have already……………………..…….. a new house.",
+      "opts": [
+        "buy",
+        "buying",
+        "bought",
+        "would buy"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: bought"
+    },
+    {
+      "type": "mcq",
+      "q": "What does the underlined word \"incredible\" in the 1st paragraph mean?",
+      "opts": [
+        "unfortunate",
+        "unimportant",
+        "unbelievable",
+        "uncomfortable"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: unbelievable"
+    },
+    {
+      "type": "mcq",
+      "q": "What does the underlined pronoun \"them\" in the 1st paragraph refer to?",
+      "opts": [
+        "tricks",
+        "things",
+        "humans",
+        "octopuses"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: octopuses"
+    },
+    {
+      "type": "mcq",
+      "q": "According to the passage, all the following statements are TRUE EXCEPT:",
+      "opts": [
+        "Octopuses have sharp claws to defend themselves.",
+        "Octopuses are extremely intelligent sea animals.",
+        "Octopuses are threatened by predators under the sea.",
+        "Octopuses use some tricks when they are in trouble."
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: Octopuses have sharp claws to defend themselves."
+    },
+    {
+      "type": "mcq",
+      "q": "Improving trade between the two countries will be top of the ……………………. at the meeting.",
+      "opts": [
+        "agenda",
+        "security",
+        "complement",
+        "character"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: agenda"
+    },
+    {
+      "type": "mcq",
+      "q": "My brother stopped to ……………………. around a sporting equipment store.",
+      "opts": [
+        "customise",
+        "browse",
+        "hike",
+        "notify"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: browse"
+    },
+    {
+      "type": "mcq",
+      "q": "I can never do without my ……………………. to remind me of important events.",
+      "opts": [
+        "complement",
+        "security",
+        "calendar",
+        "phone book"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: complement"
+    },
+    {
+      "type": "mcq",
+      "q": "The tie will be a good ………………………. to this fine suit.",
+      "opts": [
+        "complement",
+        "weblog",
+        "agenda",
+        "theme"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: complement"
+    }
+  ]
+}

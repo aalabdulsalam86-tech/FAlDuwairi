@@ -1,0 +1,2037 @@
+{
+  "chapter": "English - Grade 10 - Semester 1",
+  "description": "171 سؤالاً",
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "Because my father is a football ………………., he hasn’t missed any games for ten years.",
+      "opts": [
+        "speciality",
+        "fanatic",
+        "metabolism",
+        "nutrition"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: fanatic"
+    },
+    {
+      "type": "mcq",
+      "q": "Vitamins C and E are both ………………. They help combat many diseases.",
+      "opts": [
+        "antioxidants",
+        "proteins",
+        "deficiencies",
+        "dieticians"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: antioxidants"
+    },
+    {
+      "type": "mcq",
+      "q": "While working in his garden, Harry’s ………………. caused his fingers to ache and become stiff.",
+      "opts": [
+        "protein",
+        "metabolism",
+        "arthritis",
+        "eatery"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: protein"
+    },
+    {
+      "type": "mcq",
+      "q": "Instead of folding his clothes, my brother had his clothes ………………. into a dresser drawer.",
+      "opts": [
+        "crammed",
+        "probiotic",
+        "grilled",
+        "digestive"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: crammed"
+    },
+    {
+      "type": "mcq",
+      "q": "Coffee has the highest ratio of ………………., while tea contains somewhat less.",
+      "opts": [
+        "metabolism",
+        "antioxidant",
+        "caffeine",
+        "protein"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: caffeine"
+    },
+    {
+      "type": "mcq",
+      "q": "You can get ………………. bacteria from many types of food such as yogurt.",
+      "opts": [
+        "crammed",
+        "probiotic",
+        "grilled",
+        "atmospheric"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: crammed"
+    },
+    {
+      "type": "mcq",
+      "q": "My sister needs to have more ………………. and less sugar in her diet if she wants to be fit.",
+      "opts": [
+        "sodium",
+        "protein",
+        "caffeine",
+        "speciality"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: protein"
+    },
+    {
+      "type": "mcq",
+      "q": "Tourism has acted as a ………………. to the country's economy.",
+      "opts": [
+        "stimulant",
+        "sodium",
+        "calcium",
+        "caffeine"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: stimulant"
+    },
+    {
+      "type": "mcq",
+      "q": "When eating large meals, your ………………. system will be overloaded.",
+      "opts": [
+        "crammed",
+        "atmospheric",
+        "grilled",
+        "digestive"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: crammed"
+    },
+    {
+      "type": "mcq",
+      "q": "Why ………………. you standing on the chair when I came into the room?",
+      "opts": [
+        "are",
+        "were",
+        "been",
+        "have been"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: were"
+    },
+    {
+      "type": "mcq",
+      "q": "We went to Rome last summer and  ………………. most of the holiday by the sea.",
+      "opts": [
+        "are spending",
+        "spend",
+        "spent",
+        "spending"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: spent"
+    },
+    {
+      "type": "mcq",
+      "q": "Tom lives in a/an ………………. house around the corner.",
+      "opts": [
+        "beautiful English old",
+        "English old beautiful",
+        "old beautiful English",
+        "beautiful old English"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: beautiful English old"
+    },
+    {
+      "type": "mcq",
+      "q": "I was walking along the road when I  ………………. an old friend.",
+      "opts": [
+        "met",
+        "meeting",
+        "meet",
+        "was meeting"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: met"
+    },
+    {
+      "type": "mcq",
+      "q": "I went to watch a basketball game. Most players were wearing ………………. shirts.",
+      "opts": [
+        "cotton large red",
+        "red large cotton",
+        "large cotton red",
+        "large red cotton"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: cotton large red"
+    },
+    {
+      "type": "mcq",
+      "q": "I ………………. Japan last summer. I had found that everything was different.",
+      "opts": [
+        "visit",
+        "am visiting",
+        "visited",
+        "have visited"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: visited"
+    },
+    {
+      "type": "mcq",
+      "q": "Peter has many ………………. books in the attic.",
+      "opts": [
+        "interesting old history",
+        "old interesting history",
+        "interesting history old",
+        "old history interesting"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: interesting old history"
+    },
+    {
+      "type": "mcq",
+      "q": "We ………………. on the project when the teacher came into the room.",
+      "opts": [
+        "work",
+        "were working",
+        "are working",
+        "worked"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: were working"
+    },
+    {
+      "type": "mcq",
+      "q": "My little sister was sleeping soundly when I ………………. the room.",
+      "opts": [
+        "am entering",
+        "entered",
+        "enter",
+        "has entered"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: entered"
+    },
+    {
+      "type": "mcq",
+      "q": "She dropped the (old/ green/beautiful) plate, and it smashed. (Reorder the adjectives)",
+      "opts": [
+        "She dropped the beautiful old green plate, and it smashed.",
+        "She dropped the green beautiful old plate, and it smashed",
+        "She dropped the old beautiful green plate, and it smashed"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: She dropped the beautiful old green plate, and it smashed."
+    },
+    {
+      "type": "mcq",
+      "q": "While Rosie (walk up) the Regent Street, she met an old friend from college. (Correct the verb)",
+      "opts": [
+        "While Rosie walked up the Regent Street, she met an old friend from college.",
+        "While Rosie was walking up the Regent Street, she met an old friend from college.",
+        "While Rosie is walking up the Regent Street, she met an old friend from college."
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: While Rosie was walking up the Regent Street, she met an old friend from college."
+    },
+    {
+      "type": "mcq",
+      "q": "My classmate bought a (red new plastic) lunchbox.            (Reorder the adjectives)",
+      "opts": [
+        "My classmate bought a red new plastic lunchbox.",
+        "My classmate bought a red plastic new lunchbox.",
+        "My classmate bought a new red plastic lunchbox."
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: My classmate bought a red new plastic lunchbox."
+    },
+    {
+      "type": "mcq",
+      "q": "While I was studying history, my friend (come) in.   (Correct the verb)",
+      "opts": [
+        "While I was studying history, my friend was coming in.",
+        "While I was studying history, my friend came in.",
+        "While I was studying history, my friend comes in."
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: While I was studying history, my friend came in."
+    },
+    {
+      "type": "mcq",
+      "q": "The students (have) a test when the storm started.   (Correct the verb)",
+      "opts": [
+        "The students had a test when the storm started.",
+        "The students were having a test when the storm started.",
+        "The students are having a test when the storm started."
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: The students were having a test when the storm started."
+    },
+    {
+      "type": "mcq",
+      "q": "We (see) a falling star while we were fishing by the lake.  (Correct the verb)",
+      "opts": [
+        "We were seeing a falling star while we were fishing by the lake.",
+        "We saw a falling star while we were fishing by the lake.",
+        "We are seeing a falling star while we were fishing by the lake."
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: We saw a falling star while we were fishing by the lake."
+    },
+    {
+      "type": "mcq",
+      "q": "She went home and sat on her (wooden old comfortable) chair. (Reorder the adjectives)",
+      "opts": [
+        "She went home and sat on her old wooden old comfortable chair.",
+        "She went home and sat on her wooden old comfortable chair.",
+        "She went home and sat on her comfortable old wooden chair."
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: She went home and sat on her old wooden old comfortable chair."
+    },
+    {
+      "type": "mcq",
+      "q": "The best title for this passage could be:",
+      "opts": [
+        "Parts of the Body",
+        "Parts of the Brain",
+        "Abstract Knowledge",
+        "The Pituitary Gland"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: Parts of the Brain"
+    },
+    {
+      "type": "mcq",
+      "q": "The underlined word “blink” in the 1st paragraph means:",
+      "opts": [
+        "close and open",
+        "succeed and fail",
+        "run and stop",
+        "start and finish"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: close and open"
+    },
+    {
+      "type": "mcq",
+      "q": "The underlined word “it” in the 2nd paragraph refers to:",
+      "opts": [
+        "the brain stem",
+        "the brain",
+        "the hypothalamus",
+        "the cerebrum"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: the brain stem"
+    },
+    {
+      "type": "mcq",
+      "q": "According to the 3rd paragraph, the pituitary gland:",
+      "opts": [
+        "controls everything.",
+        "keeps your body on low temperatures.",
+        "produces and releases hormones into your body.",
+        "helps you remember the way to your friend's house."
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: produces and releases hormones into your body."
+    },
+    {
+      "type": "mcq",
+      "q": "All of the following statements about are true EXCEPT:",
+      "opts": [
+        "We blink without thinking about it.",
+        "We need the cerebellum to solve problems or draw pictures.",
+        "We need cerebellum to stand and control our movement and stand straight.",
+        "We need the hypothalamus to allow our bodies to sweat whenever we feel hot."
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: We need the cerebellum to solve problems or draw pictures."
+    },
+    {
+      "type": "mcq",
+      "q": "A child’s dreams and ……………..... can lead him to success.",
+      "opts": [
+        "seminars",
+        "aspirations",
+        "figures",
+        "pilgrimages"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: aspirations"
+    },
+    {
+      "type": "mcq",
+      "q": "International Laws forbid discrimination based on race, colour or …………….....",
+      "opts": [
+        "initiative",
+        "calligraphy",
+        "creed",
+        "tolerance"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: initiative"
+    },
+    {
+      "type": "mcq",
+      "q": "All countries sent their ……………..... to attend the economic conference held in Geneva.",
+      "opts": [
+        "accounts",
+        "reviews",
+        "aspirations",
+        "delegates"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: aspirations"
+    },
+    {
+      "type": "mcq",
+      "q": "To live in peace, we must learn to accept in the society we are living in.",
+      "opts": [
+        "diversity",
+        "seminar",
+        "pilgrimage",
+        "calligraphy"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: diversity"
+    },
+    {
+      "type": "mcq",
+      "q": "Ambassadors always learn about different cultures through intellectual ..................... dialogue.",
+      "opts": [
+        "interfaith",
+        "high-ranking",
+        "relevant",
+        "probiotic"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: interfaith"
+    },
+    {
+      "type": "mcq",
+      "q": "Good employees are always ready to take ……………..... in order to complete the work.",
+      "opts": [
+        "delegate",
+        "creed",
+        "initiative",
+        "account"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: creed"
+    },
+    {
+      "type": "mcq",
+      "q": "I am going to give a/an ……………..... about the recent developments in e-learning.",
+      "opts": [
+        "tolerance",
+        "seminar",
+        "pilgrimage",
+        "creed"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: tolerance"
+    },
+    {
+      "type": "mcq",
+      "q": "Ahmed’s honesty, ……………....., and understanding made him a great leader to his team.",
+      "opts": [
+        "account",
+        "delegate",
+        "mentor",
+        "tolerance"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: tolerance"
+    },
+    {
+      "type": "mcq",
+      "q": "My friend told me that he will help me gather ……………..... information for my research.",
+      "opts": [
+        "digestive",
+        "relevant",
+        "inspirational",
+        "organic"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: relevant"
+    },
+    {
+      "type": "mcq",
+      "q": "Muslims perform ……………..... in the last month of the Islamic calendar.",
+      "opts": [
+        "pilgrimage",
+        "initiative",
+        "mentor",
+        "figure"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: pilgrimage"
+    },
+    {
+      "type": "mcq",
+      "q": "Some people are fond of collecting old paintings, ……………....., and antiques.",
+      "opts": [
+        "tolerance",
+        "calligraphy",
+        "delegate",
+        "diversity"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: tolerance"
+    },
+    {
+      "type": "mcq",
+      "q": "A/An ……………..... range of craft makers presented their work in the National Exhibition.",
+      "opts": [
+        "grilled",
+        "diverse",
+        "interfaith",
+        "organic"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: diverse"
+    },
+    {
+      "type": "mcq",
+      "q": "They were rewarded because they ……………..... for the same company for 20 years.",
+      "opts": [
+        "have worked",
+        "work",
+        "should work",
+        "are working"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: have worked"
+    },
+    {
+      "type": "mcq",
+      "q": "……………..... you ever seen a bear while exploring the forest?",
+      "opts": [
+        "Did",
+        "Have",
+        "Do",
+        "Are"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: Have"
+    },
+    {
+      "type": "mcq",
+      "q": "They ……………..... just ……………..... the “Beach Cleanup” campaign.",
+      "opts": [
+        "should … start",
+        "will … start",
+        "had … started",
+        "have … started"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: have … started"
+    },
+    {
+      "type": "mcq",
+      "q": "I have spoken English ……………..... I was three years old.",
+      "opts": [
+        "since",
+        "for",
+        "already",
+        "yet"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: since"
+    },
+    {
+      "type": "mcq",
+      "q": "Have you ……………..... consulted a dietitian before going on a diet?",
+      "opts": [
+        "yet",
+        "for",
+        "since",
+        "ever"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: for"
+    },
+    {
+      "type": "mcq",
+      "q": "Bader has lived in this town ……………..... 45 years.",
+      "opts": [
+        "by the time",
+        "for",
+        "just",
+        "since"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: by the time"
+    },
+    {
+      "type": "mcq",
+      "q": "No, I have ……………..... been sick since I took the vaccine.",
+      "opts": [
+        "never",
+        "ever",
+        "yet",
+        "already"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: never"
+    },
+    {
+      "type": "mcq",
+      "q": "She was angry ……………..... her sister as she had broken her mobile.",
+      "opts": [
+        "through",
+        "with",
+        "on",
+        "amongst"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: with"
+    },
+    {
+      "type": "mcq",
+      "q": "They must arrive ……………..... the airport two hours before the flight time.",
+      "opts": [
+        "by",
+        "with",
+        "at",
+        "of"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: with"
+    },
+    {
+      "type": "mcq",
+      "q": "……………..... all of the employees, Ahmed mastered using the new machine.",
+      "opts": [
+        "At",
+        "Amongst",
+        "On",
+        "By"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: At"
+    },
+    {
+      "type": "mcq",
+      "q": "No, I have never fixed my own car.      (Ask a question)",
+      "opts": [
+        "Did you fix your own car?",
+        "Had you fixed your own car?",
+        "Have you ever fixed your own car?"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: Have you ever fixed your own car?"
+    },
+    {
+      "type": "mcq",
+      "q": "Omar and Ahmed have decided to climb Mount Everest.  (Make negative)",
+      "opts": [
+        "Omar and Ahmed have not decided to climb Mount Everest.",
+        "Omar and Ahmed do not decide to climb Mount Everest.",
+        "Omar and Ahmed did not decide to climb Mount Everest."
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: Omar and Ahmed have not decided to climb Mount Everest."
+    },
+    {
+      "type": "mcq",
+      "q": "I (know) Anwar since we were five years old.     (Correct the verb)",
+      "opts": [
+        "I knew Anwar since we were five years old.",
+        "I will know Anwar since we were five years old.",
+        "I have known Anwar since we were five years old."
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: I have known Anwar since we were five years old."
+    },
+    {
+      "type": "mcq",
+      "q": "My sister (not master) knitting yet. She needs more practice.  (Correct the verb)",
+      "opts": [
+        "My sister didn’t master knitting yet. She needs more practice.",
+        "My sister hasn’t mastered knitting yet. She needs more practice.",
+        "My sister won’t master knitting yet. She needs more practice."
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: My sister didn’t master knitting yet. She needs more practice."
+    },
+    {
+      "type": "mcq",
+      "q": "Hisham has taken an online training course.    (Ask a question)",
+      "opts": [
+        "What has Hisham taken?",
+        "What does Hisham take?",
+        "What did Hisham take?"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: What has Hisham taken?"
+    },
+    {
+      "type": "mcq",
+      "q": "The ………………. of refugees from African countries is increasing.",
+      "opts": [
+        "influx",
+        "objective",
+        "studio",
+        "venue"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: influx"
+    },
+    {
+      "type": "mcq",
+      "q": "The main ………………. of this meeting is to give more information about the plans.",
+      "opts": [
+        "influx",
+        "objective",
+        "studio",
+        "venue"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: influx"
+    },
+    {
+      "type": "mcq",
+      "q": "The famous artist has changed the attic in his house into a photography ……………….",
+      "opts": [
+        "influx",
+        "objective",
+        "studio",
+        "venue"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: influx"
+    },
+    {
+      "type": "mcq",
+      "q": "The hotel is an ideal ………………. for conferences and business meetings.",
+      "opts": [
+        "influx",
+        "objective",
+        "studio",
+        "venue"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: influx"
+    },
+    {
+      "type": "mcq",
+      "q": "The witness paused ………………. before answering the lawyer’s question in court.",
+      "opts": [
+        "irresponsibly",
+        "richly",
+        "consistently",
+        "slightly"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: slightly"
+    },
+    {
+      "type": "mcq",
+      "q": "Sarah bought a/ an ………………. little hat during her last visit to Paris.",
+      "opts": [
+        "chic",
+        "apprehensive",
+        "sturdy",
+        "detrimental"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: chic"
+    },
+    {
+      "type": "mcq",
+      "q": "Cutting down trees must have ………………. effects on the environment.",
+      "opts": [
+        "chic",
+        "apprehensive",
+        "sturdy",
+        "detrimental"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: chic"
+    },
+    {
+      "type": "mcq",
+      "q": "The long delay in my flight had made me quite ……………….",
+      "opts": [
+        "chic",
+        "apprehensive",
+        "sturdy",
+        "detrimental"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: chic"
+    },
+    {
+      "type": "mcq",
+      "q": "The car is ………………. enough to withstand both rough and sandy lands.",
+      "opts": [
+        "chic",
+        "apprehensive",
+        "sturdy",
+        "detrimental"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: chic"
+    },
+    {
+      "type": "mcq",
+      "q": "I have spoken very often to ………………. officials to explain what we need.",
+      "opts": [
+        "geometric",
+        "governmental",
+        "profitable",
+        "modernistic"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: governmental"
+    },
+    {
+      "type": "mcq",
+      "q": "The artist’s ………………. ideas are obviously represented in his paintings.",
+      "opts": [
+        "geometric",
+        "governmental",
+        "sturdy",
+        "modernistic"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: governmental"
+    },
+    {
+      "type": "mcq",
+      "q": "I think English is one of  ………………. languages all over the world.",
+      "opts": [
+        "important",
+        "more important",
+        "most important",
+        "the most important"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: the most important"
+    },
+    {
+      "type": "mcq",
+      "q": "For me, German is ………………. than English.",
+      "opts": [
+        "much difficult",
+        "more difficult",
+        "so difficult",
+        "most difficult"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: most difficult"
+    },
+    {
+      "type": "mcq",
+      "q": "Your soup is so tasty. It's ………………. than the soup in the canteen.",
+      "opts": [
+        "tasty",
+        "tastier",
+        "tastiest",
+        "the tastiest"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: tastier"
+    },
+    {
+      "type": "mcq",
+      "q": "In Europe, August is ………………. than February.",
+      "opts": [
+        "sunny",
+        "sunnier",
+        "sunniest",
+        "the sunniest"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: sunnier"
+    },
+    {
+      "type": "mcq",
+      "q": "Air pollution in cities is ………………. than in the countryside.",
+      "opts": [
+        "bad",
+        "worse",
+        "worst",
+        "the worst"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: worse"
+    },
+    {
+      "type": "mcq",
+      "q": "What is ………………. mountain in the world?",
+      "opts": [
+        "high",
+        "higher",
+        "highest",
+        "the highest"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: the highest"
+    },
+    {
+      "type": "mcq",
+      "q": "Sometimes an email is than ………………. a telephone.",
+      "opts": [
+        "convenient",
+        "more convenient",
+        "most convenient",
+        "the most convenient"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: the most convenient"
+    },
+    {
+      "type": "mcq",
+      "q": "This is the ………………. meal on the menu.",
+      "opts": [
+        "nutritious",
+        "more nutritious",
+        "most nutritious",
+        "the most nutritious"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: the most nutritious"
+    },
+    {
+      "type": "mcq",
+      "q": "The blue car is ………………. fast as the red one.",
+      "opts": [
+        "as",
+        "that",
+        "to",
+        "both"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: as"
+    },
+    {
+      "type": "mcq",
+      "q": "She is both intelligent ………………. beautiful.",
+      "opts": [
+        "or",
+        "and",
+        "but",
+        "nor"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: and"
+    },
+    {
+      "type": "mcq",
+      "q": "My mother prepared a dinner with three courses. (Use the compound adjectives)",
+      "opts": [
+        "My mother prepared a three-courses dinner.",
+        "My mother prepared a three-course dinner.",
+        "My mother prepared a three-course dinners."
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: My mother prepared a three-courses dinner."
+    },
+    {
+      "type": "mcq",
+      "q": "He handed me a report of ten pages.   (Use the compound adjective)",
+      "opts": [
+        "He handed me a ten-page report.",
+        "He handed me a ten- pages report.",
+        "He handed me ten-page report."
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: He handed me a ten-page report."
+    },
+    {
+      "type": "mcq",
+      "q": "The main idea of the 1st paragraph is:",
+      "opts": [
+        "The risks of developing heart disease or diabetes.",
+        "The bad effects of obesity on the American people.",
+        "The solutions to the food deserts problem.",
+        "The reasons for having a poor diet in America."
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: The solutions to the food deserts problem."
+    },
+    {
+      "type": "mcq",
+      "q": "The underlined word \"affluent\" in the 3rd paragraph means:",
+      "opts": [
+        "low",
+        "updated",
+        "wealthy",
+        "distant"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: wealthy"
+    },
+    {
+      "type": "mcq",
+      "q": "The underlined word \"their\" in the 2nd paragraph refers to:",
+      "opts": [
+        "residents",
+        "products",
+        "distances",
+        "supermarkets"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: residents"
+    },
+    {
+      "type": "mcq",
+      "q": "According to the passage, if supermarkets opened locations in more low-income areas:",
+      "opts": [
+        "members of low-income households would not go there.",
+        "the supermarkets would be unable to compete with the fast-food chains.",
+        "the convenience stores in the area would stop their business.",
+        "the health of low-income residents would be more likely to improve."
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: the health of low-income residents would be more likely to improve."
+    },
+    {
+      "type": "mcq",
+      "q": "According to the passage, one of the following statements is NOT TRUE:",
+      "opts": [
+        "People who live in high-poverty areas often live miles away from fresh food.",
+        "Major supermarket chains refrain from building stores in low-income areas.",
+        "Convenience stores sell packaged and processed foods.",
+        "Fast food restaurants are concentrated in high-income areas."
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: People who live in high-poverty areas often live miles away from fresh food."
+    },
+    {
+      "type": "mcq",
+      "q": "The new hospital in our area will ………………. many doctors and nurses.",
+      "opts": [
+        "employ",
+        "simulate",
+        "compete",
+        "drill"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: compete"
+    },
+    {
+      "type": "mcq",
+      "q": "Soccer players should ………………. to win the cup; however, they have to stick to the basics of fair play.",
+      "opts": [
+        "employ",
+        "simulate",
+        "compete",
+        "evoke"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: compete"
+    },
+    {
+      "type": "mcq",
+      "q": "The zoo is a/an ………………. environment of rare animals similar to the original habitat.",
+      "opts": [
+        "naturalistic",
+        "anti-reflective",
+        "convoluted",
+        "rival"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: naturalistic"
+    },
+    {
+      "type": "mcq",
+      "q": "When you write an essay make sure you avoid long paragraphs and ………………. sentences.",
+      "opts": [
+        "naturalistic",
+        "anti-reflective",
+        "convoluted",
+        "rival"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: naturalistic"
+    },
+    {
+      "type": "mcq",
+      "q": "The new game characters are controlled by a/an……………………. for a better control of the movements.",
+      "opts": [
+        "helpline",
+        "joystick",
+        "perception",
+        "wizard"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: joystick"
+    },
+    {
+      "type": "mcq",
+      "q": "Artists draw their portraits in order to present their ideas and ………………….",
+      "opts": [
+        "helplines",
+        "joysticks",
+        "perceptions",
+        "sensors"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: perceptions"
+    },
+    {
+      "type": "mcq",
+      "q": "New iPads are provided with separable……………………. to help the users type easily.",
+      "opts": [
+        "helplines",
+        "keypads",
+        "perceptions",
+        "sensors"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: keypads"
+    },
+    {
+      "type": "mcq",
+      "q": "The more stories I read, the ………………. imagination I get.",
+      "opts": [
+        "good",
+        "better",
+        "best",
+        "better than"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: better"
+    },
+    {
+      "type": "mcq",
+      "q": "The more carbohydrates you take, the ………………. you get.",
+      "opts": [
+        "fatter",
+        "fat",
+        "fattest",
+        "fatter than"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: fatter"
+    },
+    {
+      "type": "mcq",
+      "q": "The more countries you visit, the ………………. information you learn about people’s customs and beliefs.",
+      "opts": [
+        "more",
+        "most",
+        "much",
+        "more than"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: more"
+    },
+    {
+      "type": "mcq",
+      "q": "The more sports you play, the ………………. muscles you build.",
+      "opts": [
+        "strong",
+        "stronger",
+        "strongest",
+        "stronger than"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: stronger"
+    },
+    {
+      "type": "mcq",
+      "q": "The higher you pursue your studies, the ………………. chances you have for a well-paid job.",
+      "opts": [
+        "wider",
+        "widest",
+        "wide",
+        "wider than"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: wider"
+    },
+    {
+      "type": "mcq",
+      "q": "The more options you ask to include in your computer, the ………………. it becomes.",
+      "opts": [
+        "expensive",
+        "more expensive",
+        "most expensive",
+        "more expensive than"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: more expensive"
+    },
+    {
+      "type": "mcq",
+      "q": "The more goods you export to other countries, the ………………. your products become.",
+      "opts": [
+        "famous",
+        "more famous than",
+        "most famous",
+        "more famous"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: more famous than"
+    },
+    {
+      "type": "mcq",
+      "q": "The more energy resources we save, the ………………. money we spend.",
+      "opts": [
+        "little",
+        "the least",
+        "least",
+        "less"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: the least"
+    },
+    {
+      "type": "mcq",
+      "q": "My father ………………. to start a new business next year.",
+      "opts": [
+        "is going",
+        "goes",
+        "has gone",
+        "went"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: is going"
+    },
+    {
+      "type": "mcq",
+      "q": "My mother believes that I ………………. a famous inventor in the future.",
+      "opts": [
+        "am",
+        "will be",
+        "was",
+        "have been"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: will be"
+    },
+    {
+      "type": "mcq",
+      "q": "The audience assume that the player will break the world record the next game. (Make negative)",
+      "opts": [
+        "The audience don't assume that the player will break the world record the next game.",
+        "The audience didn't assume that the player will break the world record the next game.",
+        "The audience haven’t assumed that the player will break the world record the next game."
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: The audience don't assume that the player will break the world record the next game."
+    },
+    {
+      "type": "mcq",
+      "q": "The more computer games you play, the ……………….……………….……………….………………. (Complete using: the more … the more)",
+      "opts": [
+        "The more computer games you play, you will have more experience.",
+        "The more computer games you play, the more experience you get.",
+        "The more computer games you play, the highest experience you get."
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: The more computer games you play, the more experience you get."
+    },
+    {
+      "type": "mcq",
+      "q": "The author is going to finish the novel by the end of the month. (Ask a question)",
+      "opts": [
+        "What does the author do?",
+        "Who has finished the novel?",
+        "When is the author going to finish the novel?"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: When is the author going to finish the novel?"
+    },
+    {
+      "type": "mcq",
+      "q": "The best title for this passage could be:",
+      "opts": [
+        "The Daily Routines",
+        "All About Physical Activities",
+        "The Nervous System",
+        "How to Deal with Stress"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: The Daily Routines"
+    },
+    {
+      "type": "mcq",
+      "q": "The underlined word “recognising” in the 4th paragraph means:",
+      "opts": [
+        "knowing",
+        "tackling",
+        "learning",
+        "including"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: knowing"
+    },
+    {
+      "type": "mcq",
+      "q": "The underlined word “they” in the 3rd paragraph refers to:",
+      "opts": [
+        "effects",
+        "changes",
+        "challenges",
+        "situations"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: effects"
+    },
+    {
+      "type": "mcq",
+      "q": "According to the 2nd paragraph, stress affects our bodies by:",
+      "opts": [
+        "decreasing cortisol in our bodies.",
+        "making our bodies release hormones.",
+        "helping us react slowly and effectively.",
+        "raising our heartbeat and lowering blood pressure."
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: making our bodies release hormones."
+    },
+    {
+      "type": "mcq",
+      "q": "According to the passage, all the following statements are TRUE except:",
+      "opts": [
+        "The nervous system is activated in stressful events.",
+        "Adrenaline lowers metabolism in stressful situations.",
+        "The heart is responsible for controlling the adrenal glands.",
+        "Stress activates the nervous system to release the necessary hormones."
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: The heart is responsible for controlling the adrenal glands."
+    },
+    {
+      "type": "mcq",
+      "q": "Violence on television can encourage ………………. in children.",
+      "opts": [
+        "feedback",
+        "physiotherapy",
+        "aggression",
+        "rehabilitation"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: feedback"
+    },
+    {
+      "type": "mcq",
+      "q": "Applicants must attach a recent photograph to a/an ………………. form.",
+      "opts": [
+        "stimulation",
+        "application",
+        "rehabilitation",
+        "determination"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: application"
+    },
+    {
+      "type": "mcq",
+      "q": "………………. can be played by two or four people with a racket and a shuttlecock.",
+      "opts": [
+        "Solarium",
+        "Sportsmanship",
+        "Stimulation",
+        "Badminton"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: Badminton"
+    },
+    {
+      "type": "mcq",
+      "q": "My father is a man of ……………….; he never quits or loses hope in what he is doing.",
+      "opts": [
+        "determination",
+        "neurologist",
+        "rehabilitation",
+        "member"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: member"
+    },
+    {
+      "type": "mcq",
+      "q": "My eldest brother is a/an ………………. while the youngest one is shy and quiet.",
+      "opts": [
+        "introvert",
+        "extrovert",
+        "member",
+        "neurologist"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: extrovert"
+    },
+    {
+      "type": "mcq",
+      "q": "We need more ………………. from consumers in order to improve our products.",
+      "opts": [
+        "adversity",
+        "aggression",
+        "feedback",
+        "application"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: aggression"
+    },
+    {
+      "type": "mcq",
+      "q": "They all showed extraordinary ………………. skills. They are so clever with all kinds of horses.",
+      "opts": [
+        "bonus",
+        "analogue",
+        "equestrian",
+        "wireless"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: equestrian"
+    },
+    {
+      "type": "mcq",
+      "q": "I have become a/an ………………. of the school’s elite football club after scoring three goals.",
+      "opts": [
+        "member",
+        "introvert",
+        "solarium",
+        "application"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: member"
+    },
+    {
+      "type": "mcq",
+      "q": "It is hard to understand the ………………. of the people who hurt weak and helpless animals.",
+      "opts": [
+        "rehabilitation",
+        "opponent",
+        "mentality",
+        "teammate"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: mentality"
+    },
+    {
+      "type": "mcq",
+      "q": "My cousin is an intelligent student, but he lacks the ………………. to work hard.",
+      "opts": [
+        "introvert",
+        "motivation",
+        "extrovert",
+        "rehabilitation"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: motivation"
+    },
+    {
+      "type": "mcq",
+      "q": "I always watch music lessons on YouTube to learn ……………. to play the guitar.",
+      "opts": [
+        "when",
+        "where",
+        "who",
+        "how"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: how"
+    },
+    {
+      "type": "mcq",
+      "q": "I have to go to the bank. ……………. does it open?",
+      "opts": [
+        "How much",
+        "How many",
+        "When",
+        "Where"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: How much"
+    },
+    {
+      "type": "mcq",
+      "q": "……………. are you wearing that heavy coat? Can’t you see or feel the burning sun?",
+      "opts": [
+        "Where",
+        "When",
+        "How",
+        "Why"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: How"
+    },
+    {
+      "type": "mcq",
+      "q": "……………. you like another cup of coffee? I think you loved the first one.",
+      "opts": [
+        "Should",
+        "Could",
+        "Would",
+        "Can"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: Should"
+    },
+    {
+      "type": "mcq",
+      "q": "If you go to Egypt, you ……………. visit the Pyramids; it’s awesome to stand beside them.",
+      "opts": [
+        "would",
+        "wouldn’t",
+        "should",
+        "shouldn’t"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: would"
+    },
+    {
+      "type": "mcq",
+      "q": "You ……………. talk loudly in the library, or you will be required to leave.",
+      "opts": [
+        "should",
+        "shouldn’t",
+        "would",
+        "wouldn’t"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: should"
+    },
+    {
+      "type": "mcq",
+      "q": "I ……………. speak English when I was 12, but now, I’m as good as a British person.",
+      "opts": [
+        "couldn’t",
+        "can’t",
+        "should",
+        "shouldn’t"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: couldn’t"
+    },
+    {
+      "type": "mcq",
+      "q": "My little sister ……………. ride a horse at the age of eight.",
+      "opts": [
+        "can",
+        "can’t",
+        "could",
+        "should"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: can’t"
+    },
+    {
+      "type": "mcq",
+      "q": "I’m afraid I ……………. come to your party. I will be too busy studying for my exams.",
+      "opts": [
+        "wouldn’t",
+        "couldn’t",
+        "can’t",
+        "shouldn’t"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: couldn’t"
+    },
+    {
+      "type": "mcq",
+      "q": "Please, ……………. seated until the seatbelt sign is off.",
+      "opts": [
+        "remaining",
+        "remained",
+        "remains",
+        "remain"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: remain"
+    },
+    {
+      "type": "mcq",
+      "q": "I arrived there at about 12 o’clock.      (Ask a question)",
+      "opts": [
+        "Where did you arrive there?",
+        "When did you arrive there?",
+        "How much did you arrive there?"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: When did you arrive there?"
+    },
+    {
+      "type": "mcq",
+      "q": "My brother does his homework with his friends.   (Ask a question)",
+      "opts": [
+        "Who did your brother do his homework with?",
+        "Who will your brother do his homework with?",
+        "Who does your brother do his homework with?"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: Who did your brother do his homework with?"
+    },
+    {
+      "type": "mcq",
+      "q": "First, (filling) in the form and wait till they call you inside.  (Correct the verb)",
+      "opts": [
+        "First, fills in the form and wait till they call you inside.",
+        "First, fill in the form and wait till they call you inside.",
+        "First, filled in the form and wait till they call you inside."
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: First, fill in the form and wait till they call you inside."
+    },
+    {
+      "type": "mcq",
+      "q": "My dad visits my grandparents once a week.    (Ask a question)",
+      "opts": [
+        "How often did your dad visit your grandparents?",
+        "How often does your dad visit your grandparents?",
+        "How far does your dad visit your grandparents?"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: How often did your dad visit your grandparents?"
+    },
+    {
+      "type": "mcq",
+      "q": "Nature reserves play an important role in the ……………. of birds and animals.",
+      "opts": [
+        "conservation",
+        "motivation",
+        "nest",
+        "extrovert"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: conservation"
+    },
+    {
+      "type": "mcq",
+      "q": "The doctor ……………. the award for his efforts in finding a cure for the virus.",
+      "opts": [
+        "competes",
+        "deserves",
+        "metabolises",
+        "embellishes"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: deserves"
+    },
+    {
+      "type": "mcq",
+      "q": "The factory has been accused of discharging ……………. into the river.",
+      "opts": [
+        "seminar",
+        "boutique",
+        "effluent",
+        "perception"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: effluent"
+    },
+    {
+      "type": "mcq",
+      "q": "The forest’s ……………. are safeguarded by local wildlife protection laws.",
+      "opts": [
+        "fauna",
+        "sensor",
+        "extrovert",
+        "teammate"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: fauna"
+    },
+    {
+      "type": "mcq",
+      "q": "……………. in the eastern region includes over 7000 types of plants.",
+      "opts": [
+        "Fauna",
+        "Flora",
+        "Solarium",
+        "Stamina"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: Fauna"
+    },
+    {
+      "type": "mcq",
+      "q": "The project is expected to use approximately 500 ……………. of land.",
+      "opts": [
+        "sustenance",
+        "mammals",
+        "hectares",
+        "toxins"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: hectares"
+    },
+    {
+      "type": "mcq",
+      "q": "The ……………. and other wetlands are protected by land conservation laws.",
+      "opts": [
+        "marshes",
+        "saunas",
+        "herbivores",
+        "adversities"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: marshes"
+    },
+    {
+      "type": "mcq",
+      "q": "……………. of immature fish has improved greatly by means of protection laws.",
+      "opts": [
+        "Hectare",
+        "Propagation",
+        "Sustenance",
+        "Introvert"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: Propagation"
+    },
+    {
+      "type": "mcq",
+      "q": "The refugees found a safe ……………. when they crossed the border.",
+      "opts": [
+        "stamina",
+        "toxin",
+        "sanctuary",
+        "herbivore"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: sanctuary"
+    },
+    {
+      "type": "mcq",
+      "q": "The desert lacks ……………. because it rarely receives rainfall.",
+      "opts": [
+        "vegetation",
+        "virtue",
+        "feedback",
+        "badminton"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: vegetation"
+    },
+    {
+      "type": "mcq",
+      "q": "The FIFA organisation has set some strict rules to stop ……………. games.",
+      "opts": [
+        "aggressive",
+        "gourmand",
+        "cursive",
+        "probiotic"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: aggressive"
+    },
+    {
+      "type": "mcq",
+      "q": "I'm thirsty, I need ……………… water, please.",
+      "opts": [
+        "few",
+        "some",
+        "any",
+        "many"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: some"
+    },
+    {
+      "type": "mcq",
+      "q": "I was able to save ……………… money lately.",
+      "opts": [
+        "few",
+        "many",
+        "any",
+        "much"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: many"
+    },
+    {
+      "type": "mcq",
+      "q": "How ……………… floors are there in this building?",
+      "opts": [
+        "few",
+        "many",
+        "any",
+        "some"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: many"
+    },
+    {
+      "type": "mcq",
+      "q": "Luckily, ……………… people were injured in the horrible accident.",
+      "opts": [
+        "any",
+        "little",
+        "few",
+        "many"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: any"
+    },
+    {
+      "type": "mcq",
+      "q": "How ……………… luggage do you have, sir?",
+      "opts": [
+        "much",
+        "some",
+        "any",
+        "many"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: much"
+    },
+    {
+      "type": "mcq",
+      "q": "There isn't ……………… sugar in my tea. Can you give me some?",
+      "opts": [
+        "few",
+        "some",
+        "any",
+        "many"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: some"
+    },
+    {
+      "type": "mcq",
+      "q": "I need only ……………… amount of money, I have some.",
+      "opts": [
+        "few",
+        "little",
+        "any",
+        "many"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: little"
+    },
+    {
+      "type": "mcq",
+      "q": "There aren't ……………… car parks in the centre of Oxford.",
+      "opts": [
+        "few",
+        "some",
+        "any",
+        "much"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: some"
+    },
+    {
+      "type": "mcq",
+      "q": "The best title for the passage could be:",
+      "opts": [
+        "City and Village Life",
+        "Old Village People",
+        "City Attractions",
+        "Young and Old People"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: City and Village Life"
+    },
+    {
+      "type": "mcq",
+      "q": "The underlined word \"they\" in the 2nd paragraph refers to:",
+      "opts": [
+        "young men and women",
+        "parents",
+        "villagers",
+        "people"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: young men and women"
+    },
+    {
+      "type": "mcq",
+      "q": "The underlined word \"competitive\" in the 4th paragraph means:",
+      "opts": [
+        "difficult",
+        "ambitious",
+        "interesting",
+        "easy"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: ambitious"
+    },
+    {
+      "type": "mcq",
+      "q": "According to the passage, the different attractions of the city are:",
+      "opts": [
+        "green vegetation around all houses.",
+        "cinemas and other entertainment.",
+        "narrow dark streets.",
+        "peace and quietness"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: cinemas and other entertainment."
+    },
+    {
+      "type": "mcq",
+      "q": "According to the passage, all the following statements are NOT TRUE except:",
+      "opts": [
+        "Young villagers leave because life in the village is not varied enough.",
+        "Because the conditions in the city are too limited.",
+        "Because the city seems almost unchanged.",
+        "All people prefer to stay in the city."
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: Young villagers leave because life in the village is not varied enough."
+    },
+    {
+      "type": "mcq",
+      "q": "The writer wrote the article to show:",
+      "opts": [
+        "the differences between generations.",
+        "the enlargement of modern cities.",
+        "the attractions or difficulties one faces in a city.",
+        "young people prefer to stay in the village."
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: the attractions or difficulties one faces in a city."
+    },
+    {
+      "type": "mcq",
+      "q": "My grandfather’s health has improved a lot since he started taking this vitamin …………",
+      "opts": [
+        "influx",
+        "supplement",
+        "discourse",
+        "virtue"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: supplement"
+    },
+    {
+      "type": "mcq",
+      "q": "Most people like to hear the word “Birthday”; it always ……………. happiness in them.",
+      "opts": [
+        "evokes",
+        "covers",
+        "observes",
+        "absorbs"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: evokes"
+    },
+    {
+      "type": "mcq",
+      "q": "The number of nerve cells in the brain makes it the most …………… organ of the body.",
+      "opts": [
+        "inspirational",
+        "atmospheric",
+        "spacious",
+        "convoluted"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: convoluted"
+    },
+    {
+      "type": "mcq",
+      "q": "My elder brother was……………….as a software engineer in a big computer company.",
+      "opts": [
+        "employed",
+        "combated",
+        "metabolised",
+        "drilled"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: employed"
+    },
+    {
+      "type": "mcq",
+      "q": "Earthquake victims were living in tents in the city's parks facing a lot of………………..",
+      "opts": [
+        "council",
+        "creed",
+        "adversity",
+        "arcade"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: adversity"
+    },
+    {
+      "type": "mcq",
+      "q": "In Britain, most people don’t work……………………. Sundays.",
+      "opts": [
+        "at",
+        "in",
+        "on",
+        "for"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: on"
+    },
+    {
+      "type": "mcq",
+      "q": "My uncle has been very busy …………….he came from holiday",
+      "opts": [
+        "yet",
+        "for",
+        "ago",
+        "since"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: since"
+    },
+    {
+      "type": "mcq",
+      "q": "The best title for the passage could be:",
+      "opts": [
+        "Teens and Free Time",
+        "Technology and Schools",
+        "Smartphones and Notifications",
+        "Smartphones or Depression"
+      ],
+      "ans": 3,
+      "exp": "The correct answer is: Smartphones or Depression"
+    },
+    {
+      "type": "mcq",
+      "q": "The opposite of the underlined word diminishing in the 2nd paragraph is:",
+      "opts": [
+        "spending",
+        "increasing",
+        "including",
+        "mixing"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: increasing"
+    },
+    {
+      "type": "mcq",
+      "q": "The underlined word them in the 4th paragraph refers to:",
+      "opts": [
+        "parents",
+        "teens",
+        "smartphones",
+        "friends"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: smartphones"
+    },
+    {
+      "type": "mcq",
+      "q": "A recent study shows that teens:",
+      "opts": [
+        "prefer eating to using smartphones.",
+        "can step away from social media.",
+        "touch their smartphones about 2500 times a day.",
+        "can go out with their friends during the day and night."
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: touch their smartphones about 2500 times a day."
+    },
+    {
+      "type": "mcq",
+      "q": "One of the following statements is NOT TRUE:",
+      "opts": [
+        "There are healthy ways to use smartphones.",
+        "Parents can do nothing about smartphones risks.",
+        "If you are feeling down your mobile might be the problem.",
+        "Jean Twenge released a study on young people and mental health."
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: Parents can do nothing about smartphones risks."
+    }
+  ]
+}
