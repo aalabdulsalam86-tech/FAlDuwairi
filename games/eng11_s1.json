@@ -1,0 +1,246 @@
+{
+  "chapter": "🌍 English — Grade 11 Scientific — الفصل الأول",
+  "description": "20 سؤالاً — الحادي عشر علمي",
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "The Present Simple is used for:",
+      "opts": [
+        "The past",
+        "Habits",
+        "The future",
+        "Commands"
+      ],
+      "ans": 1,
+      "exp": "The correct use is: Habits"
+    },
+    {
+      "type": "mcq",
+      "q": "The Past Simple is used for:",
+      "opts": [
+        "The present",
+        "The past",
+        "The future",
+        "Commands"
+      ],
+      "ans": 1,
+      "exp": "The correct use is: The past"
+    },
+    {
+      "type": "mcq",
+      "q": "The Future tense (will) is used for:",
+      "opts": [
+        "The past",
+        "The present",
+        "The future",
+        "Habits"
+      ],
+      "ans": 2,
+      "exp": "The correct use is: The future"
+    },
+    {
+      "type": "mcq",
+      "q": "\"He ___ football yesterday.\"",
+      "opts": [
+        "play",
+        "plays",
+        "played",
+        "playing"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: \"played\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"She ___ every day.\"",
+      "opts": [
+        "play",
+        "plays",
+        "played",
+        "playing"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"plays\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"I ___ go tomorrow.\"",
+      "opts": [
+        "will",
+        "did",
+        "does",
+        "was"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: \"will\""
+    },
+    {
+      "type": "mcq",
+      "q": "The verb \"to be\" (am, is, are) is used for:",
+      "opts": [
+        "Only the past",
+        "Description",
+        "Plural only",
+        "Multiplication"
+      ],
+      "ans": 1,
+      "exp": "The correct use is: Description"
+    },
+    {
+      "type": "mcq",
+      "q": "\"They ___ happy.\"",
+      "opts": [
+        "is",
+        "are",
+        "am",
+        "be"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"are\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"I ___ a student.\"",
+      "opts": [
+        "is",
+        "are",
+        "am",
+        "be"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: \"am\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Plural\" means:",
+      "opts": [
+        "Singular",
+        "More than one",
+        "Verb",
+        "Letter"
+      ],
+      "ans": 1,
+      "exp": "Meaning: \"More than one\""
+    },
+    {
+      "type": "mcq",
+      "q": "A noun is:",
+      "opts": [
+        "A verb",
+        "A name (person, place, or thing)",
+        "A letter",
+        "An adverb"
+      ],
+      "ans": 1,
+      "exp": "Definition: A name (person, place, or thing)"
+    },
+    {
+      "type": "mcq",
+      "q": "A verb is:",
+      "opts": [
+        "A noun",
+        "An action word",
+        "A letter",
+        "An adverb"
+      ],
+      "ans": 1,
+      "exp": "Definition: An action word"
+    },
+    {
+      "type": "mcq",
+      "q": "An adjective is:",
+      "opts": [
+        "A noun",
+        "A describing word",
+        "A verb",
+        "A letter"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: A describing word"
+    },
+    {
+      "type": "mcq",
+      "q": "An adverb is:",
+      "opts": [
+        "An adjective",
+        "A word that describes a verb",
+        "A noun",
+        "A verb"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: A word that describes a verb"
+    },
+    {
+      "type": "mcq",
+      "q": "\"Quickly\" is:",
+      "opts": [
+        "An adjective",
+        "An adverb",
+        "A noun",
+        "A verb"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"An adverb\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Big\" is:",
+      "opts": [
+        "A noun",
+        "An adjective",
+        "A verb",
+        "An adverb"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"An adjective\""
+    },
+    {
+      "type": "mcq",
+      "q": "A sentence is:",
+      "opts": [
+        "A word",
+        "A complete group of words",
+        "A verb and subject only",
+        "A letter"
+      ],
+      "ans": 1,
+      "exp": "Definition: A complete group of words"
+    },
+    {
+      "type": "mcq",
+      "q": "The subject is:",
+      "opts": [
+        "The verb",
+        "The doer of the action",
+        "The object",
+        "A letter"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: The doer of the action"
+    },
+    {
+      "type": "mcq",
+      "q": "The object is:",
+      "opts": [
+        "The subject",
+        "The receiver of the action",
+        "The verb",
+        "A letter"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: The receiver of the action"
+    },
+    {
+      "type": "mcq",
+      "q": "Punctuation means:",
+      "opts": [
+        "Grammar rules",
+        "Punctuation marks",
+        "Verbs",
+        "Nouns"
+      ],
+      "ans": 1,
+      "exp": "Meaning: \"Punctuation marks\""
+    }
+  ]
+}

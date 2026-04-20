@@ -1,0 +1,366 @@
+{
+  "chapter": "English — Semester 2",
+  "description": "30 سؤالاً — الصف العاشر",
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "Which sentence is a general conditional?",
+      "opts": [
+        "If you heat water, it boils.",
+        "If you heated water, it would boil yesterday.",
+        "If you had heated water, it boiled.",
+        "If you will heat water, it boils."
+      ],
+      "ans": 0,
+      "exp": "The correct sentence is: \"If you heat water, it boils\""
+    },
+    {
+      "type": "mcq",
+      "q": "Which sentence is a first conditional?",
+      "opts": [
+        "If it rains, we stayed home.",
+        "If it rains, we will stay home.",
+        "If it rained, we will stay home.",
+        "If it had rained, we would stay home."
+      ],
+      "ans": 1,
+      "exp": "The correct sentence is: \"If it rains, we will stay home\""
+    },
+    {
+      "type": "mcq",
+      "q": "Which sentence is a second conditional?",
+      "opts": [
+        "If I am rich, I will travel.",
+        "If I were rich, I would travel.",
+        "If I was rich, I will travel.",
+        "If I had been rich, I would travel."
+      ],
+      "ans": 1,
+      "exp": "The correct sentence is: \"If I were rich, I would travel\""
+    },
+    {
+      "type": "mcq",
+      "q": "Choose the correct sentence with wish:",
+      "opts": [
+        "I wish I have more time.",
+        "I wish I had more time.",
+        "I wish I will have more time.",
+        "I wish I having more time."
+      ],
+      "ans": 1,
+      "exp": "The correct sentence is: \"I wish I had more time\""
+    },
+    {
+      "type": "mcq",
+      "q": "Which modal expresses strong obligation?",
+      "opts": [
+        "might",
+        "must",
+        "could",
+        "may"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: must"
+    },
+    {
+      "type": "mcq",
+      "q": "Which sentence shows agreement?",
+      "opts": [
+        "I’m not sure about that.",
+        "I completely agree with you.",
+        "I don’t think so.",
+        "That’s impossible."
+      ],
+      "ans": 1,
+      "exp": "The correct sentence is: \"I completely agree with you\""
+    },
+    {
+      "type": "mcq",
+      "q": "Which sentence shows disagreement?",
+      "opts": [
+        "I see your point, but I disagree.",
+        "That’s exactly right.",
+        "I agree completely.",
+        "You are absolutely correct."
+      ],
+      "ans": 0,
+      "exp": "The correct sentence is: \"I see your point, but I disagree\""
+    },
+    {
+      "type": "mcq",
+      "q": "Which adjective has a negative meaning?",
+      "opts": [
+        "helpful",
+        "honest",
+        "careless",
+        "cheerful"
+      ],
+      "ans": 2,
+      "exp": "Correct answer: careless"
+    },
+    {
+      "type": "mcq",
+      "q": "Choose the correct sentence with reported speech:",
+      "opts": [
+        "He said that he was tired.",
+        "He said, “I was tired” yesterday now.",
+        "He says that he tired.",
+        "He told that he was tired."
+      ],
+      "ans": 0,
+      "exp": "The correct sentence is: \"He said that he was tired\""
+    },
+    {
+      "type": "mcq",
+      "q": "Which structure is correct?",
+      "opts": [
+        "It is easy for understand.",
+        "It is important to study.",
+        "It is useful to studying.",
+        "It is hard understand."
+      ],
+      "ans": 1,
+      "exp": "Correct answer: It is important to study"
+    },
+    {
+      "type": "mcq",
+      "q": "Which sentence uses an adverb of manner correctly?",
+      "opts": [
+        "She sings beautiful.",
+        "She sings beautifully.",
+        "She beautiful sings.",
+        "She is sings beautifully."
+      ],
+      "ans": 1,
+      "exp": "The correct sentence is: \"She sings beautifully\""
+    },
+    {
+      "type": "mcq",
+      "q": "Which sentence is correct with used to?",
+      "opts": [
+        "I used to play football when I was younger.",
+        "I use to played football when I was younger.",
+        "I used to playing football when I was younger.",
+        "I am used play football when I was younger."
+      ],
+      "ans": 0,
+      "exp": "The correct sentence is: \"I used to play football when I was younger\""
+    },
+    {
+      "type": "mcq",
+      "q": "Which phrasal verb is related to travel?",
+      "opts": [
+        "take off",
+        "break down",
+        "give up",
+        "turn on"
+      ],
+      "ans": 0,
+      "exp": "Correct answer: take off"
+    },
+    {
+      "type": "mcq",
+      "q": "Which expression is best for beginning an informal letter?",
+      "opts": [
+        "Yours faithfully,",
+        "Dear Ahmed,",
+        "To whom it may concern,",
+        "Sir/Madam,"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: Dear Ahmed,"
+    },
+    {
+      "type": "mcq",
+      "q": "Which expression is best for ending an informal letter?",
+      "opts": [
+        "Yours faithfully,",
+        "Best wishes,",
+        "I remain, Sir,",
+        "Respectfully submitted,"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: Best wishes,"
+    },
+    {
+      "type": "mcq",
+      "q": "Which sentence is in the passive voice?",
+      "opts": [
+        "The teacher explained the lesson.",
+        "The lesson was explained by the teacher.",
+        "The teacher was explain the lesson.",
+        "The lesson explained the teacher."
+      ],
+      "ans": 1,
+      "exp": "The correct sentence is: \"The lesson was explained by the teacher\""
+    },
+    {
+      "type": "mcq",
+      "q": "Which sentence correctly uses a relative pronoun?",
+      "opts": [
+        "The man which lives next door is a pilot.",
+        "The man who lives next door is a pilot.",
+        "The man whose lives next door is a pilot.",
+        "The man where lives next door is a pilot."
+      ],
+      "ans": 1,
+      "exp": "The correct sentence is: \"The man who lives next door is a pilot\""
+    },
+    {
+      "type": "mcq",
+      "q": "Which sentence is a third conditional?",
+      "opts": [
+        "If I study, I will pass.",
+        "If I studied, I would pass.",
+        "If I had studied, I would have passed.",
+        "If I study, I pass."
+      ],
+      "ans": 2,
+      "exp": "The correct sentence is: \"If I had studied, I would have passed\""
+    },
+    {
+      "type": "mcq",
+      "q": "Which phrasal verb with take is correct?",
+      "opts": [
+        "take after",
+        "takely",
+        "takening",
+        "take uply"
+      ],
+      "ans": 0,
+      "exp": "Correct answer: take after"
+    },
+    {
+      "type": "mcq",
+      "q": "A body idiom is an expression that includes:",
+      "opts": [
+        "a number",
+        "a place",
+        "a part of the body",
+        "a colour only"
+      ],
+      "ans": 2,
+      "exp": "Correct answer: a part of the body"
+    },
+    {
+      "type": "mcq",
+      "q": "Which sentence best sets the scene for a narrative?",
+      "opts": [
+        "Suddenly, the glass broke.",
+        "It was a dark, windy night, and the streets were empty.",
+        "In conclusion, I strongly believe this is true.",
+        "First, open the box carefully."
+      ],
+      "ans": 1,
+      "exp": "The correct sentence is: \"It was a dark, windy night, and the streets were empty\""
+    },
+    {
+      "type": "mcq",
+      "q": "Which linking word is best for sequencing information?",
+      "opts": [
+        "however",
+        "because",
+        "then",
+        "although"
+      ],
+      "ans": 2,
+      "exp": "Correct answer: then"
+    },
+    {
+      "type": "mcq",
+      "q": "Which sentence is best for asking an eyewitness for information?",
+      "opts": [
+        "You must not speak.",
+        "What exactly did you see?",
+        "I do not care what happened.",
+        "This is not important."
+      ],
+      "ans": 1,
+      "exp": "The correct sentence is: \"What exactly did you see?\""
+    },
+    {
+      "type": "mcq",
+      "q": "Which sentence is best for taking a message?",
+      "opts": [
+        "Hold on, I’ll write that down.",
+        "I can’t hear you because I don’t want to.",
+        "Don’t call again.",
+        "I will forget your name."
+      ],
+      "ans": 0,
+      "exp": "The correct sentence is: \"Hold on, I’ll write that down\""
+    },
+    {
+      "type": "mcq",
+      "q": "Which sentence is best for leaving a message?",
+      "opts": [
+        "Call me back when you can, please.",
+        "I already answered the phone.",
+        "You are speaking now.",
+        "I took your message yesterday."
+      ],
+      "ans": 0,
+      "exp": "The correct sentence is: \"Call me back when you can, please\""
+    },
+    {
+      "type": "mcq",
+      "q": "Which clause shows cause?",
+      "opts": [
+        "although he was tired",
+        "because he was tired",
+        "if he was tired",
+        "when he was tired"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: because he was tired"
+    },
+    {
+      "type": "mcq",
+      "q": "Which clause shows opposition?",
+      "opts": [
+        "because she studied hard",
+        "so she passed the test",
+        "although she was tired",
+        "when she arrived"
+      ],
+      "ans": 2,
+      "exp": "Correct answer: although she was tired"
+    },
+    {
+      "type": "mcq",
+      "q": "Which sentence uses inversion correctly?",
+      "opts": [
+        "Never I have seen such a place.",
+        "Never have I seen such a place.",
+        "Never I seen have such a place.",
+        "Have never I seen such a place."
+      ],
+      "ans": 1,
+      "exp": "The correct sentence is: \"Never have I seen such a place\""
+    },
+    {
+      "type": "mcq",
+      "q": "Which sentence is most suitable for persuasive writing?",
+      "opts": [
+        "In my opinion, schools should create more green spaces because they improve students’ wellbeing.",
+        "The boy was wearing a blue shirt.",
+        "Please open the window first.",
+        "Yesterday I visited my cousin."
+      ],
+      "ans": 0,
+      "exp": "The correct sentence is: \"In my opinion, schools should create more green spaces because they improve students’ wellbeing\""
+    },
+    {
+      "type": "mcq",
+      "q": "Which sentence is most suitable for expository writing?",
+      "opts": [
+        "I think this is the best choice ever!",
+        "Everyone should follow my idea.",
+        "Solar energy is produced by converting sunlight into usable power.",
+        "You must agree with me now."
+      ],
+      "ans": 2,
+      "exp": "The correct sentence is: \"Solar energy is produced by converting sunlight into usable power\""
+    }
+  ]
+}

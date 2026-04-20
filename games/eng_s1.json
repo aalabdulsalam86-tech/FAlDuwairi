@@ -1,0 +1,366 @@
+{
+  "chapter": "English — Semester 1",
+  "description": "30 سؤالاً — الصف العاشر",
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "Choose the correct sentence in the past continuous:",
+      "opts": [
+        "I watch TV at 8 p.m. yesterday.",
+        "I was watching TV at 8 p.m. yesterday.",
+        "I am watching TV at 8 p.m. yesterday.",
+        "I watched TV at 8 p.m. now."
+      ],
+      "ans": 1,
+      "exp": "The correct sentence is: \"I was watching TV at 8 p.m. yesterday\""
+    },
+    {
+      "type": "mcq",
+      "q": "Choose the correct sentence in the past simple:",
+      "opts": [
+        "She goes to school yesterday.",
+        "She is going to school yesterday.",
+        "She went to school yesterday.",
+        "She was go to school yesterday."
+      ],
+      "ans": 2,
+      "exp": "The correct sentence is: \"She went to school yesterday\""
+    },
+    {
+      "type": "mcq",
+      "q": "Which sentence uses the correct order of adjectives?",
+      "opts": [
+        "It is a cotton blue nice shirt.",
+        "It is a nice blue cotton shirt.",
+        "It is a blue cotton nice shirt.",
+        "It is a cotton nice blue shirt."
+      ],
+      "ans": 1,
+      "exp": "The correct sentence is: \"It is a nice blue cotton shirt\""
+    },
+    {
+      "type": "mcq",
+      "q": "Choose the correct sentence:",
+      "opts": [
+        "I prefer tea than coffee.",
+        "I prefer tea to coffee.",
+        "I prefer tea from coffee.",
+        "I prefer tea over than coffee."
+      ],
+      "ans": 1,
+      "exp": "The correct sentence is: \"I prefer tea to coffee\""
+    },
+    {
+      "type": "mcq",
+      "q": "Which sentence expresses a personal opinion?",
+      "opts": [
+        "Open the door, please.",
+        "I think healthy food is important.",
+        "Turn left at the corner.",
+        "What time is it?"
+      ],
+      "ans": 1,
+      "exp": "The correct sentence is: \"I think healthy food is important\""
+    },
+    {
+      "type": "mcq",
+      "q": "Choose the best recommendation:",
+      "opts": [
+        "You should try the grilled fish restaurant.",
+        "You must not eating there.",
+        "I am recommendation this place.",
+        "You should to go there."
+      ],
+      "ans": 0,
+      "exp": "Correct answer: You should try the grilled fish restaurant"
+    },
+    {
+      "type": "mcq",
+      "q": "Which word is related to healthy eating?",
+      "opts": [
+        "vitamin",
+        "airport",
+        "athlete",
+        "invention"
+      ],
+      "ans": 0,
+      "exp": "The correct word is: \"vitamin\""
+    },
+    {
+      "type": "mcq",
+      "q": "Choose the correct sentence:",
+      "opts": [
+        "While I studied, my brother was listening to music.",
+        "While I was studying, my brother was listening to music.",
+        "While I studying, my brother listened to music.",
+        "While I was study, my brother was listening."
+      ],
+      "ans": 1,
+      "exp": "The correct sentence is: \"While I was studying, my brother was listening to music\""
+    },
+    {
+      "type": "mcq",
+      "q": "Which sentence is correct?",
+      "opts": [
+        "We have visited the museum last week.",
+        "We visited the museum last week.",
+        "We have visit the museum last week.",
+        "We visiting the museum last week."
+      ],
+      "ans": 1,
+      "exp": "The correct sentence is: \"We visited the museum last week\""
+    },
+    {
+      "type": "mcq",
+      "q": "Choose the correct use of the present perfect:",
+      "opts": [
+        "She has finished her homework already.",
+        "She has finished her homework yesterday.",
+        "She finished already her homework now.",
+        "She has finish her homework already."
+      ],
+      "ans": 0,
+      "exp": "The correct sentence is: \"She has finished her homework already\""
+    },
+    {
+      "type": "mcq",
+      "q": "Which preposition is correct?",
+      "opts": [
+        "He is interested on history.",
+        "He is interested in history.",
+        "He is interested at history.",
+        "He is interested for history."
+      ],
+      "ans": 1,
+      "exp": "The correct preposition choice gives: \"He is interested in history\""
+    },
+    {
+      "type": "mcq",
+      "q": "Which sentence is correct?",
+      "opts": [
+        "I have lived here since five years.",
+        "I have lived here for five years.",
+        "I lived here for five years ago.",
+        "I am living here since five years."
+      ],
+      "ans": 1,
+      "exp": "The correct sentence is: \"I have lived here for five years\""
+    },
+    {
+      "type": "mcq",
+      "q": "Choose the word closest in meaning to peace:",
+      "opts": [
+        "conflict",
+        "calm",
+        "damage",
+        "fear"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: calm"
+    },
+    {
+      "type": "mcq",
+      "q": "Which sentence is best for starting a conversation politely?",
+      "opts": [
+        "Give me your name.",
+        "May I ask you a few questions?",
+        "You must answer me now.",
+        "Tell me quickly."
+      ],
+      "ans": 1,
+      "exp": "The correct sentence is: \"May I ask you a few questions?\""
+    },
+    {
+      "type": "mcq",
+      "q": "A book review usually includes:",
+      "opts": [
+        "only the price of the book",
+        "the reader’s opinion about the book",
+        "only the author’s name",
+        "only one sentence"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: the reader’s opinion about the book"
+    },
+    {
+      "type": "mcq",
+      "q": "Choose the correct comparative sentence:",
+      "opts": [
+        "This building is more tall than that one.",
+        "This building is taller than that one.",
+        "This building is tallest than that one.",
+        "This building is as taller as that one."
+      ],
+      "ans": 1,
+      "exp": "The correct sentence is: \"This building is taller than that one\""
+    },
+    {
+      "type": "mcq",
+      "q": "Choose the correct superlative sentence:",
+      "opts": [
+        "This is the most beautiful mosque in the city.",
+        "This is the beautifuller mosque in the city.",
+        "This is the more beautiful mosque in the city.",
+        "This is beautifulest mosque in the city."
+      ],
+      "ans": 0,
+      "exp": "The correct sentence is: \"This is the most beautiful mosque in the city\""
+    },
+    {
+      "type": "mcq",
+      "q": "Which is a compound adjective?",
+      "opts": [
+        "well-known",
+        "carefully",
+        "building",
+        "stronger"
+      ],
+      "ans": 0,
+      "exp": "Correct answer: well-known"
+    },
+    {
+      "type": "mcq",
+      "q": "Which sentence gives a reason?",
+      "opts": [
+        "I like this design because it is modern.",
+        "What do you think?",
+        "Let’s go now.",
+        "Please sit down."
+      ],
+      "ans": 0,
+      "exp": "The correct sentence is: \"I like this design because it is modern\""
+    },
+    {
+      "type": "mcq",
+      "q": "A formal report should usually be:",
+      "opts": [
+        "very emotional and informal",
+        "clear, organized, and objective",
+        "full of jokes",
+        "written like a text message"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: clear, organized, and objective"
+    },
+    {
+      "type": "mcq",
+      "q": "Choose the correct future sentence:",
+      "opts": [
+        "I am probably visit my cousin tomorrow.",
+        "I will probably visit my cousin tomorrow.",
+        "I probably visited my cousin tomorrow.",
+        "I was visiting my cousin tomorrow."
+      ],
+      "ans": 1,
+      "exp": "The correct sentence is: \"I will probably visit my cousin tomorrow\""
+    },
+    {
+      "type": "mcq",
+      "q": "Which sentence uses the present continuous for future meaning?",
+      "opts": [
+        "I am meeting my teacher tomorrow.",
+        "I meet my teacher yesterday.",
+        "I met my teacher tomorrow.",
+        "I have met my teacher tomorrow."
+      ],
+      "ans": 0,
+      "exp": "The correct sentence is: \"I am meeting my teacher tomorrow\""
+    },
+    {
+      "type": "mcq",
+      "q": "Choose the correct pattern:",
+      "opts": [
+        "The more you practise, the better you become.",
+        "The more you practise, the gooder you become.",
+        "The more you practise, the best you become.",
+        "The more you practise, the most good you become."
+      ],
+      "ans": 0,
+      "exp": "The correct sentence is: \"The more you practise, the better you become\""
+    },
+    {
+      "type": "mcq",
+      "q": "Which expression asks for advice?",
+      "opts": [
+        "What a wonderful idea!",
+        "What should I do?",
+        "I completely agree.",
+        "That’s impossible."
+      ],
+      "ans": 1,
+      "exp": "Correct answer: What should I do?"
+    },
+    {
+      "type": "mcq",
+      "q": "The purpose of instructions is to:",
+      "opts": [
+        "tell a story",
+        "explain steps clearly",
+        "express an opinion only",
+        "describe a person"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: explain steps clearly"
+    },
+    {
+      "type": "mcq",
+      "q": "Which sentence is an imperative?",
+      "opts": [
+        "Could you help me?",
+        "Please save the file first.",
+        "I saved the file first.",
+        "You are saving the file first."
+      ],
+      "ans": 1,
+      "exp": "The correct sentence is: \"Please save the file first\""
+    },
+    {
+      "type": "mcq",
+      "q": "Choose the correct modal sentence:",
+      "opts": [
+        "You should to take regular exercise.",
+        "You should take regular exercise.",
+        "You should taking regular exercise.",
+        "You should took regular exercise."
+      ],
+      "ans": 1,
+      "exp": "The correct sentence is: \"You should take regular exercise\""
+    },
+    {
+      "type": "mcq",
+      "q": "Which question is correct?",
+      "opts": [
+        "Can you swim?",
+        "You can swim?",
+        "Can swim you?",
+        "Do can you swim?"
+      ],
+      "ans": 0,
+      "exp": "Correct answer: Can you swim?"
+    },
+    {
+      "type": "mcq",
+      "q": "Which noun is uncountable?",
+      "opts": [
+        "apple",
+        "chair",
+        "information",
+        "student"
+      ],
+      "ans": 2,
+      "exp": "Correct answer: information"
+    },
+    {
+      "type": "mcq",
+      "q": "Choose the correct sentence:",
+      "opts": [
+        "I have been reading for two hours.",
+        "I have been read for two hours.",
+        "I am read for two hours.",
+        "I have reading for two hours."
+      ],
+      "ans": 0,
+      "exp": "The correct sentence is: \"I have been reading for two hours\""
+    }
+  ]
+}
