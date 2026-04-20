@@ -1,0 +1,246 @@
+{
+  "chapter": "💻 الحاسوب — الحادي عشر علمي — الفصل الثاني",
+  "description": "20 سؤالاً — الحادي عشر علمي",
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "ما هي SQL؟",
+      "opts": [
+        "لغة تصميم",
+        "لغة قواعد بيانات",
+        "لغة برمجة للألعاب",
+        "نظام تشغيل"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: لغة قواعد بيانات"
+    },
+    {
+      "type": "mcq",
+      "q": "SQL اختصار لـ:",
+      "opts": [
+        "Simple Query Language",
+        "Structured Query Language",
+        "System Query Language",
+        "Standard Quick Language"
+      ],
+      "ans": 1,
+      "exp": "الإجابة الصحيحة: Structured Query Language. (ضمن موضوع: 🔵 الفصل: الفصل الثاني (SQL – Structured Query Language))"
+    },
+    {
+      "type": "mcq",
+      "q": "أي أمر يستخدم لاستخراج البيانات؟",
+      "opts": [
+        "INSERT",
+        "DELETE",
+        "SELECT",
+        "UPDATE"
+      ],
+      "ans": 2,
+      "exp": "الاختيار الصحيح: SELECT."
+    },
+    {
+      "type": "mcq",
+      "q": "صيغة SELECT الأساسية هي:",
+      "opts": [
+        "SELECT FROM WHERE",
+        "SELECT FROM table",
+        "FROM SELECT",
+        "WHERE SELECT"
+      ],
+      "ans": 1,
+      "exp": "الإجابة الصحيحة: SELECT FROM table. (ضمن موضوع: 🔵 الفصل: الفصل الثاني (SQL – Structured Query Language))"
+    },
+    {
+      "type": "mcq",
+      "q": "الرمز في SELECT يعني:",
+      "opts": [
+        "حذف البيانات",
+        "كل الأعمدة",
+        "عمود واحد",
+        "شرط"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: كل الأعمدة"
+    },
+    {
+      "type": "mcq",
+      "q": "أي جملة تستخدم لتحديد شرط؟",
+      "opts": [
+        "WHERE",
+        "SELECT",
+        "FROM",
+        "INSERT"
+      ],
+      "ans": 0,
+      "exp": "الاختيار الصحيح: WHERE."
+    },
+    {
+      "type": "mcq",
+      "q": "ما وظيفة WHERE؟",
+      "opts": [
+        "ترتيب البيانات",
+        "تحديد شرط للبيانات",
+        "حذف الجدول",
+        "إنشاء قاعدة بيانات"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: تحديد شرط للبيانات"
+    },
+    {
+      "type": "mcq",
+      "q": "أي أمر يستخدم لإضافة بيانات؟",
+      "opts": [
+        "DELETE",
+        "INSERT",
+        "UPDATE",
+        "SELECT"
+      ],
+      "ans": 1,
+      "exp": "الاختيار الصحيح: INSERT."
+    },
+    {
+      "type": "mcq",
+      "q": "صيغة INSERT الصحيحة:",
+      "opts": [
+        "INSERT INTO table VALUES (...)",
+        "INSERT FROM table",
+        "INSERT WHERE",
+        "INSERT SELECT"
+      ],
+      "ans": 0,
+      "exp": "Correct answer: INSERT INTO table VALUES (...)"
+    },
+    {
+      "type": "mcq",
+      "q": "أي أمر يستخدم لتعديل البيانات؟",
+      "opts": [
+        "UPDATE",
+        "INSERT",
+        "DELETE",
+        "SELECT"
+      ],
+      "ans": 0,
+      "exp": "الاختيار الصحيح: UPDATE."
+    },
+    {
+      "type": "mcq",
+      "q": "UPDATE يحتاج إلى:",
+      "opts": [
+        "FROM فقط",
+        "WHERE فقط",
+        "SET لتحديد القيم",
+        "DELETE"
+      ],
+      "ans": 2,
+      "exp": "Correct answer: SET لتحديد القيم"
+    },
+    {
+      "type": "mcq",
+      "q": "أي أمر يستخدم لحذف البيانات؟",
+      "opts": [
+        "INSERT",
+        "UPDATE",
+        "DELETE",
+        "SELECT"
+      ],
+      "ans": 2,
+      "exp": "الاختيار الصحيح: DELETE."
+    },
+    {
+      "type": "mcq",
+      "q": "DELETE بدون WHERE يؤدي إلى:",
+      "opts": [
+        "حذف سجل واحد",
+        "حذف جميع السجلات",
+        "تعديل البيانات",
+        "لا يحدث شيء"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: حذف جميع السجلات"
+    },
+    {
+      "type": "mcq",
+      "q": "ORDER BY يستخدم لـ:",
+      "opts": [
+        "حذف البيانات",
+        "ترتيب البيانات",
+        "إضافة بيانات",
+        "ربط الجداول"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: ترتيب البيانات"
+    },
+    {
+      "type": "mcq",
+      "q": "ASC تعني:",
+      "opts": [
+        "ترتيب تنازلي",
+        "ترتيب تصاعدي",
+        "حذف",
+        "شرط"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: ترتيب تصاعدي"
+    },
+    {
+      "type": "mcq",
+      "q": "DESC تعني:",
+      "opts": [
+        "ترتيب تصاعدي",
+        "ترتيب تنازلي",
+        "حذف",
+        "شرط"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: ترتيب تنازلي"
+    },
+    {
+      "type": "mcq",
+      "q": "AND يستخدم في:",
+      "opts": [
+        "حذف البيانات",
+        "ربط شرطين",
+        "إضافة بيانات",
+        "ترتيب"
+      ],
+      "ans": 1,
+      "exp": "الإجابة الصحيحة: ربط شرطين. (ضمن موضوع: 🔵 الفصل: الفصل الثاني (SQL – Structured Query Language))"
+    },
+    {
+      "type": "mcq",
+      "q": "OR يستخدم في:",
+      "opts": [
+        "شرط واحد فقط",
+        "ربط شرطين أو أكثر",
+        "حذف",
+        "ترتيب"
+      ],
+      "ans": 1,
+      "exp": "الإجابة الصحيحة: ربط شرطين أو أكثر. (ضمن موضوع: 🔵 الفصل: الفصل الثاني (SQL – Structured Query Language))"
+    },
+    {
+      "type": "mcq",
+      "q": "أي مما يلي مثال صحيح؟",
+      "opts": [
+        "SELECT name FROM students",
+        "DELETE name",
+        "INSERT WHERE",
+        "UPDATE FROM"
+      ],
+      "ans": 0,
+      "exp": "الاختيار الصحيح: SELECT name FROM students."
+    },
+    {
+      "type": "mcq",
+      "q": "الهدف من SQL هو:",
+      "opts": [
+        "تصميم الألعاب",
+        "إدارة البيانات داخل قواعد البيانات",
+        "تشغيل الفيديو",
+        "الرسم"
+      ],
+      "ans": 1,
+      "exp": "الإجابة الصحيحة: إدارة البيانات داخل قواعد البيانات. (ضمن موضوع: 🔵 الفصل: الفصل الثاني (SQL – Structured Query Language))"
+    }
+  ]
+}

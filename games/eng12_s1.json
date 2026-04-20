@@ -1,0 +1,126 @@
+{
+  "chapter": "🌍 English — Grade 12 Scientific — الفصل الأول",
+  "description": "10 سؤالاً — الثاني عشر علمي",
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "The main idea of a text is",
+      "opts": [
+        "A small detail",
+        "A character",
+        "The central message",
+        "A question"
+      ],
+      "ans": 2,
+      "exp": "Correct answer: The central message"
+    },
+    {
+      "type": "mcq",
+      "q": "A synonym means",
+      "opts": [
+        "Opposite meaning",
+        "Same meaning",
+        "Different language",
+        "Grammar rule"
+      ],
+      "ans": 1,
+      "exp": "Meaning: \"Same meaning\""
+    },
+    {
+      "type": "mcq",
+      "q": "Antonym means",
+      "opts": [
+        "Opposite meaning",
+        "Same meaning",
+        "Similar word",
+        "Sentence"
+      ],
+      "ans": 0,
+      "exp": "Meaning: \"Opposite meaning\""
+    },
+    {
+      "type": "mcq",
+      "q": "“Quick” is a synonym of",
+      "opts": [
+        "Slow",
+        "Fast",
+        "Late",
+        "Weak"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: Fast"
+    },
+    {
+      "type": "mcq",
+      "q": "Past tense of “go”",
+      "opts": [
+        "gone",
+        "went",
+        "goes",
+        "going"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: went"
+    },
+    {
+      "type": "mcq",
+      "q": "“She ___ playing now”",
+      "opts": [
+        "is",
+        "are",
+        "is",
+        "be"
+      ],
+      "ans": 2,
+      "exp": "Correct answer: is"
+    },
+    {
+      "type": "mcq",
+      "q": "A paragraph should have",
+      "opts": [
+        "one word",
+        "many topics",
+        "one main idea",
+        "no idea"
+      ],
+      "ans": 2,
+      "exp": "Definition: one main idea"
+    },
+    {
+      "type": "mcq",
+      "q": "A verb is",
+      "opts": [
+        "a person",
+        "a place",
+        "an action",
+        "a thing"
+      ],
+      "ans": 2,
+      "exp": "Definition: an action"
+    },
+    {
+      "type": "mcq",
+      "q": "“Beautiful” is",
+      "opts": [
+        "noun",
+        "verb",
+        "adjective",
+        "adverb"
+      ],
+      "ans": 2,
+      "exp": "Correct answer: adjective"
+    },
+    {
+      "type": "mcq",
+      "q": "Reading skill helps in",
+      "opts": [
+        "writing only",
+        "speaking only",
+        "understanding texts",
+        "drawing"
+      ],
+      "ans": 2,
+      "exp": "Correct answer: understanding texts"
+    }
+  ]
+}

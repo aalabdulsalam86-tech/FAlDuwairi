@@ -1,0 +1,486 @@
+{
+  "chapter": "🇫🇷 اللغة الفرنسية — الحادي عشر أدبي — الفصل الأول",
+  "description": "40 سؤالاً — الحادي عشر أدبي",
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "معنى \"Bonjour\" هو:",
+      "opts": [
+        "مساء الخير",
+        "صباح الخير",
+        "وداعًا",
+        "شكرًا"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: صباح الخير"
+    },
+    {
+      "type": "mcq",
+      "q": "معنى \"Merci\" هو:",
+      "opts": [
+        "مرحبًا",
+        "شكرًا",
+        "آسف",
+        "نعم"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: شكرًا"
+    },
+    {
+      "type": "mcq",
+      "q": "معنى \"Au revoir\" هو:",
+      "opts": [
+        "صباح الخير",
+        "وداعًا",
+        "شكرًا",
+        "مساء الخير"
+      ],
+      "ans": 1,
+      "exp": "Correct answer: وداعًا"
+    },
+    {
+      "type": "mcq",
+      "q": "\"Comment ça va ?\" تعني:",
+      "opts": [
+        "ما اسمك؟",
+        "كيف حالك؟",
+        "أين تسكن؟",
+        "كم عمرك؟"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"كيف حالك\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Je m'appelle\" تعني:",
+      "opts": [
+        "أنا أسكن",
+        "اسمي",
+        "عمري",
+        "أدرس"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"اسمي\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Oui\" تعني:",
+      "opts": [
+        "لا",
+        "نعم",
+        "شكرًا",
+        "آسف"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"نعم\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Non\" تعني:",
+      "opts": [
+        "نعم",
+        "لا",
+        "شكرًا",
+        "مرحبًا"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"لا\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"S'il vous plaît\" تعني:",
+      "opts": [
+        "شكرًا",
+        "من فضلك",
+        "صباح الخير",
+        "وداعًا"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"من فضلك\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Pardon\" تعني:",
+      "opts": [
+        "شكرًا",
+        "عذرًا",
+        "نعم",
+        "لا"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"عذرًا\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Je suis\" تعني:",
+      "opts": [
+        "أنا أذهب",
+        "أنا أكون",
+        "أنا أدرس",
+        "أنا أكتب"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"أنا أكون\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Tu es\" تعني:",
+      "opts": [
+        "هو",
+        "أنت",
+        "نحن",
+        "هم"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"أنت\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Il est\" تعني:",
+      "opts": [
+        "هي",
+        "هو",
+        "أنا",
+        "نحن"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"هو\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Elle est\" تعني:",
+      "opts": [
+        "هو",
+        "هي",
+        "أنا",
+        "أنت"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"هي\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Nous sommes\" تعني:",
+      "opts": [
+        "أنتم",
+        "نحن",
+        "هم",
+        "أنا"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"نحن\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Vous êtes\" تعني:",
+      "opts": [
+        "أنا",
+        "أنتم",
+        "هو",
+        "نحن"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"أنتم\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Ils sont\" تعني:",
+      "opts": [
+        "هم",
+        "نحن",
+        "أنت",
+        "أنا"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: \"هم\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"J'ai\" تعني:",
+      "opts": [
+        "أنا أكون",
+        "لدي",
+        "أذهب",
+        "أدرس"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"لدي\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Tu as\" تعني:",
+      "opts": [
+        "لديه",
+        "لديك",
+        "لدي",
+        "لديهم"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"لديك\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Il a\" تعني:",
+      "opts": [
+        "لديهم",
+        "لديه",
+        "لديك",
+        "لدينا"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"لديه\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Elle a\" تعني:",
+      "opts": [
+        "لديه",
+        "لديها",
+        "لدي",
+        "لديك"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"لديها\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Nous avons\" تعني:",
+      "opts": [
+        "لديهم",
+        "لدينا",
+        "لديك",
+        "لديه"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"لدينا\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Vous avez\" تعني:",
+      "opts": [
+        "لدي",
+        "لديكم",
+        "لديه",
+        "لديهم"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"لديكم\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Ils ont\" تعني:",
+      "opts": [
+        "لديهم",
+        "لدينا",
+        "لديك",
+        "لدي"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: \"لديهم\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Où\" تعني:",
+      "opts": [
+        "متى",
+        "أين",
+        "لماذا",
+        "كيف"
+      ],
+      "ans": 1,
+      "exp": "أين. (من موضوع: 🔵 الفصل الأول)"
+    },
+    {
+      "type": "mcq",
+      "q": "\"Quand\" تعني:",
+      "opts": [
+        "متى",
+        "أين",
+        "لماذا",
+        "كيف"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: \"متى\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Pourquoi\" تعني:",
+      "opts": [
+        "كيف",
+        "لماذا",
+        "متى",
+        "أين"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"لماذا\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Comment\" تعني:",
+      "opts": [
+        "لماذا",
+        "كيف",
+        "متى",
+        "أين"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"كيف\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Combien\" تعني:",
+      "opts": [
+        "أين",
+        "كم",
+        "لماذا",
+        "كيف"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"كم\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Quoi\" تعني:",
+      "opts": [
+        "ماذا",
+        "من",
+        "أين",
+        "متى"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: \"ماذا\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Qui\" تعني:",
+      "opts": [
+        "ماذا",
+        "من",
+        "متى",
+        "أين"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"من\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Je vais\" تعني:",
+      "opts": [
+        "أنا أذهب",
+        "أنا أكتب",
+        "أنا أقرأ",
+        "أنا أنام"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: \"أنا أذهب\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Tu vas\" تعني:",
+      "opts": [
+        "أنت تذهب",
+        "أنا أذهب",
+        "هو يذهب",
+        "نحن نذهب"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: \"أنت تذهب\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Il va\" تعني:",
+      "opts": [
+        "نحن نذهب",
+        "هو يذهب",
+        "أنت تذهب",
+        "أنا أذهب"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"هو يذهب\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Nous allons\" تعني:",
+      "opts": [
+        "أنتم تذهبون",
+        "نحن نذهب",
+        "هم يذهبون",
+        "أنا أذهب"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"نحن نذهب\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Vous allez\" تعني:",
+      "opts": [
+        "نحن نذهب",
+        "أنتم تذهبون",
+        "هم يذهبون",
+        "أنا أذهب"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"أنتم تذهبون\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Ils vont\" تعني:",
+      "opts": [
+        "نحن نذهب",
+        "هم يذهبون",
+        "أنت تذهب",
+        "أنا أذهب"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"هم يذهبون\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"École\" تعني:",
+      "opts": [
+        "مستشفى",
+        "مدرسة",
+        "بيت",
+        "سوق"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"مدرسة\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Maison\" تعني:",
+      "opts": [
+        "مدرسة",
+        "بيت",
+        "مستشفى",
+        "سوق"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"بيت\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Livre\" تعني:",
+      "opts": [
+        "قلم",
+        "كتاب",
+        "دفتر",
+        "حقيبة"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"كتاب\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Professeur\" تعني:",
+      "opts": [
+        "طالب",
+        "معلم",
+        "طبيب",
+        "مهندس"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"معلم\""
+    }
+  ]
+}

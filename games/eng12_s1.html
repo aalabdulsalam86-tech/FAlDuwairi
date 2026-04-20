@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🌍 English — Grade 12 Scientific — الفصل الأول</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--c:#f87171;--c2:#b91c1c;--bg:#0a0203;--brd:rgba(248,113,113,.18);--accent:#fbbf24;--txt:#f1f5f9;--mut:rgba(241,245,249,.62);--red:#ef4444;--grn:#22c55e}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Tajawal","Arial",sans-serif;background:var(--bg);color:var(--txt);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow-x:hidden;transition:background .6s ease}
+#bgc,#cfc{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none}
+#bgc{z-index:0}#cfc{z-index:6}
+#fb{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(0);font-size:88px;z-index:100;pointer-events:none}
+#fb.sc{animation:fbs .9s ease forwards}#fb.wr{animation:fbw .9s ease forwards}
+@keyframes fbs{0%{transform:translate(-50%,-50%) scale(0);opacity:0}40%{transform:translate(-50%,-50%) scale(1.25);opacity:1}100%{transform:translate(-50%,-65%) scale(.6);opacity:0}}
+@keyframes fbw{0%{transform:translate(-50%,-50%) scale(0);opacity:0}40%{transform:translate(-50%,-50%) scale(1.1);opacity:1}100%{transform:translate(-50%,-65%) scale(.6);opacity:0}}
+.wrap{position:relative;z-index:10;width:100%;max-width:960px;padding:18px 26px;display:flex;flex-direction:column;gap:13px}
+.hdr{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.logo{font-size:13px;font-weight:900;color:var(--c);letter-spacing:1.5px;text-shadow:0 0 14px color-mix(in srgb,var(--c) 50%,transparent)}
+.sb{background:rgba(255,255,255,.04);border:2px solid var(--c);border-radius:50px;padding:7px 20px;display:flex;align-items:center;gap:7px}
+.sl{font-size:13px;color:var(--mut)}
+.sv{font-size:25px;font-weight:900;color:var(--c);transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
+.sv.pop{transform:scale(1.55)}
+.ptrack{width:100%;height:6px;background:rgba(255,255,255,.07);border-radius:99px;overflow:hidden}
+.pfill{height:100%;background:linear-gradient(90deg,var(--c2),var(--c));border-radius:99px;transition:width .5s ease}
+.plbl{text-align:center;font-size:13px;color:var(--mut);margin-top:2px}
+.sbar{display:flex;gap:5px;justify-content:center;flex-wrap:wrap}
+.sd{width:20px;height:7px;border-radius:4px;background:rgba(255,255,255,.08);transition:all .3s}
+.sd.on{background:var(--c);box-shadow:0 0 6px var(--c)}
+.qcard{background:rgba(255,255,255,.03);border:1.5px solid var(--brd);border-radius:20px;padding:28px 32px;backdrop-filter:blur(10px)}
+.qcard.si{animation:si .4s cubic-bezier(.34,1.56,.64,1) forwards}
+@keyframes si{from{transform:translateX(55px);opacity:0}to{transform:translateX(0);opacity:1}}
+.qn{font-size:12px;font-weight:700;color:var(--c);margin-bottom:9px;letter-spacing:2px;opacity:.8}
+.qt{font-size:21px;font-weight:700;line-height:1.7;margin-bottom:18px}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.opts.tf{grid-template-columns:1fr 1fr;max-width:520px;margin:0 auto}
+.opt{background:rgba(255,255,255,.04);border:2px solid rgba(255,255,255,.08);border-radius:13px;padding:14px 16px;font-family:"Tajawal","Arial",sans-serif;font-size:16px;font-weight:700;color:#dde;cursor:pointer;display:flex;align-items:center;gap:10px;transition:all .17s;line-height:1.45}
+.opts.tf .opt{justify-content:center;font-size:19px;padding:20px 16px}
+.opt:hover:not(:disabled){border-color:rgba(255,255,255,.25);transform:translateY(-2px);color:#fff}
+.ltr{font-size:13px;font-weight:900;color:var(--c);background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.12);border-radius:7px;min-width:32px;height:32px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.opt.correct{background:rgba(34,197,94,.12)!important;border-color:var(--grn)!important;color:#fff!important;animation:cp .5s ease}
+.opt.correct .ltr{background:var(--grn);color:#fff;border-color:var(--grn)}
+@keyframes cp{0%{transform:scale(1)}40%{transform:scale(1.03)}100%{transform:scale(1)}}
+.opt.wrong{background:rgba(239,68,68,.1)!important;border-color:var(--red)!important;animation:shk .4s ease}
+.opt.wrong .ltr{background:var(--red);color:#fff;border-color:var(--red)}
+@keyframes shk{0%,100%{transform:translateX(0)}25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+.exp{margin-top:13px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.09);border-right:3px solid var(--c);border-radius:10px;padding:12px 15px;font-size:15px;line-height:1.85;color:var(--mut);display:none}
+.exp.show{display:block;animation:fd .3s ease}
+@keyframes fd{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+.nbtn{margin-top:11px;width:100%;padding:12px;background:linear-gradient(135deg,var(--c2),var(--c));border:none;border-radius:10px;font-family:"Tajawal","Arial",sans-serif;font-size:16px;font-weight:900;color:#fff;cursor:pointer;display:none;transition:all .2s}
+.nbtn.show{display:block;animation:fd .25s ease}
+.nbtn:hover{filter:brightness(1.1);transform:translateY(-1px)}
+.final{display:none;flex-direction:column;align-items:center;text-align:center;padding:46px 24px;max-width:720px;margin:0 auto;position:relative;z-index:10}
+.final.vis{display:flex;animation:fd .4s ease}
+.fstars{font-size:42px;margin-bottom:12px}
+.ftitle{font-size:28px;font-weight:900;margin-bottom:7px}
+.fmsg{font-size:16px;color:var(--mut);margin-bottom:22px;line-height:1.7}
+.fsbox{background:rgba(255,255,255,.04);border:2px solid var(--c);border-radius:16px;padding:22px 48px;margin-bottom:24px}
+.fslbl{font-size:13px;color:var(--mut);margin-bottom:3px}
+.fsnum{font-size:56px;font-weight:900;color:var(--c)}
+.rbtn{background:linear-gradient(135deg,var(--c2),var(--c));color:#fff;border:none;border-radius:12px;padding:13px 40px;font-family:"Tajawal","Arial",sans-serif;font-size:17px;font-weight:900;cursor:pointer;margin-bottom:12px;transition:all .2s}
+.rbtn:hover{filter:brightness(1.1);transform:translateY(-2px)}
+.bhome{color:var(--mut);font-size:14px;cursor:pointer;text-decoration:underline}
+#review{width:100%;margin-top:28px;text-align:right;direction:rtl}
+.rvh{font-size:20px;font-weight:900;color:var(--c);margin-bottom:16px;text-align:center}
+.rv-item{background:rgba(255,255,255,.03);border:1.5px solid rgba(255,255,255,.08);border-radius:14px;padding:14px 18px;margin-bottom:10px;text-align:right}
+.rv-item.ok{border-right:4px solid var(--grn)}
+.rv-item.bad{border-right:4px solid var(--red)}
+.rv-head{display:flex;align-items:flex-start;gap:10px;margin-bottom:8px}
+.rv-num{font-family:monospace;font-weight:900;color:var(--mut);min-width:24px}
+.rv-mark{font-size:18px}
+.rv-q{font-size:15px;font-weight:700;line-height:1.6;flex:1}
+.rv-body{padding-right:34px;font-size:14px;line-height:1.8}
+.rv-line{color:var(--mut);margin-bottom:3px}
+.rv-line.wrong-line{color:#fca5a5}
+.rv-line.right-line{color:#86efac}
+.rv-exp{margin-top:8px;padding:8px 12px;background:rgba(255,255,255,.03);border-radius:8px;font-size:13px;color:var(--mut);line-height:1.7}
+@media(max-width:600px){.wrap{padding:11px 13px}.qt{font-size:18px}.opts{grid-template-columns:1fr}.opt{font-size:15px}.fsbox{padding:18px 28px}.fsnum{font-size:46px}}
+</style></head>
+<body>
+<canvas id="bgc"></canvas><canvas id="cfc"></canvas><div id="fb"></div>
+<div class="wrap" id="qs">
+  <div class="hdr">
+    <div class="logo">🌍 English — G12s — فصل ١</div>
+    <div class="sb"><span class="sl">النقاط</span><span class="sv" id="sv">0</span></div>
+  </div>
+  <div class="ptrack"><div class="pfill" id="pf" style="width:0%"></div></div>
+  <div class="plbl" id="pl">جاري التحميل...</div>
+  <div class="sbar" id="sbar"></div>
+  <div class="qcard" id="qc">
+    <div class="qn" id="qn"></div>
+    <div class="qt" id="qt"></div>
+    <div class="opts" id="og"></div>
+    <div class="exp" id="ex"></div>
+    <button class="nbtn" id="nb" onclick="nxt()">التالي ←</button>
+  </div>
+</div>
+<div class="final" id="fs">
+  <div class="fstars" id="fst"></div>
+  <div class="ftitle" id="ftl"></div>
+  <div class="fmsg" id="fmg"></div>
+  <div class="fsbox"><div class="fslbl">مجموع النقاط</div><div class="fsnum" id="fsn">0</div></div>
+  <button class="rbtn" onclick="rst()">🔄 لعبة جديدة (أسئلة عشوائية)</button>
+  <span class="bhome" onclick="window.location.href='../index.html'">← العودة للموقع</span>
+  <div id="review"></div>
+</div>
+<script>
+// ============ CHAPTER CONFIG — edit these 3 lines per chapter ============
+window.GAME_CONFIG = {
+  jsonFile: "eng12_s1.json",
+  title: "🌍 English — Grade 12 Scientific — الفصل الأول"
+};
+// =========================================================================
+</script>
+<script src="game.js"></script>
+</body></html>
