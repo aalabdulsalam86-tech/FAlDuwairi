@@ -1,0 +1,306 @@
+{
+  "chapter": "🇫🇷 اللغة الفرنسية — الثاني عشر أدبي — الفصل الثاني",
+  "description": "25 سؤالاً — الثاني عشر أدبي",
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "\"Je suis étudiant\" تعني:",
+      "opts": [
+        "أنا معلم",
+        "أنا طالب",
+        "أنا طبيب",
+        "أنا مهندس"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"أنا طالب\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Il habite où ?\" تعني:",
+      "opts": [
+        "ماذا يعمل؟",
+        "أين يسكن؟",
+        "كم عمره؟",
+        "ماذا يأكل؟ (نكمل إلى 25…)"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"أين يسكن\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Je vais à l'école\" تعني:",
+      "opts": [
+        "أذهب إلى المدرسة",
+        "أعود إلى البيت",
+        "أدرس",
+        "أعمل"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: \"أذهب إلى المدرسة\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Il mange\" تعني:",
+      "opts": [
+        "يكتب",
+        "يأكل",
+        "يقرأ",
+        "يذهب"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"يأكل\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Elle lit\" تعني:",
+      "opts": [
+        "تكتب",
+        "تقرأ",
+        "تأكل",
+        "تذهب"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"تقرأ\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Nous jouons\" تعني:",
+      "opts": [
+        "ندرس",
+        "نلعب",
+        "نأكل",
+        "نذهب"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"نلعب\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Vous travaillez\" تعني:",
+      "opts": [
+        "تدرسون",
+        "تعملون",
+        "تلعبون",
+        "تأكلون"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"تعملون\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Ils regardent\" تعني:",
+      "opts": [
+        "يشاهدون",
+        "يذهبون",
+        "يأكلون",
+        "يكتبون"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: \"يشاهدون\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"La maison\" تعني:",
+      "opts": [
+        "المدرسة",
+        "البيت",
+        "السيارة",
+        "الشارع"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"البيت\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"La voiture\" تعني:",
+      "opts": [
+        "البيت",
+        "السيارة",
+        "المدرسة",
+        "الطريق"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"السيارة\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Le matin\" تعني:",
+      "opts": [
+        "المساء",
+        "الصباح",
+        "الليل",
+        "الظهر"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"الصباح\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Le soir\" تعني:",
+      "opts": [
+        "الصباح",
+        "المساء",
+        "الليل",
+        "الظهر"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"المساء\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Aujourd'hui\" تعني:",
+      "opts": [
+        "أمس",
+        "اليوم",
+        "غداً",
+        "الآن"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"اليوم\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Demain\" تعني:",
+      "opts": [
+        "أمس",
+        "اليوم",
+        "غداً",
+        "الآن"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: \"غداً\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Hier\" تعني:",
+      "opts": [
+        "اليوم",
+        "غداً",
+        "أمس",
+        "الآن"
+      ],
+      "ans": 2,
+      "exp": "The correct answer is: \"أمس\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Parce que\" تعني:",
+      "opts": [
+        "لأن",
+        "لكن",
+        "أو",
+        "ثم"
+      ],
+      "ans": 0,
+      "exp": "The correct answer is: \"لأن\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Mais\" تعني:",
+      "opts": [
+        "لأن",
+        "لكن",
+        "أو",
+        "ثم"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"لكن\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Et\" تعني:",
+      "opts": [
+        "أو",
+        "و",
+        "لكن",
+        "لأن"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"و\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Ou\" تعني:",
+      "opts": [
+        "و",
+        "أو",
+        "لكن",
+        "لأن"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"أو\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Très\" تعني:",
+      "opts": [
+        "قليل",
+        "جداً",
+        "كثير",
+        "متوسط"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"جداً\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Petit\" تعني:",
+      "opts": [
+        "كبير",
+        "صغير",
+        "طويل",
+        "قصير"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"صغير\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Grand\" تعني:",
+      "opts": [
+        "صغير",
+        "كبير",
+        "قصير",
+        "سريع"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"كبير\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Rapide\" تعني:",
+      "opts": [
+        "بطيء",
+        "سريع",
+        "صغير",
+        "كبير"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"سريع\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Lent\" تعني:",
+      "opts": [
+        "سريع",
+        "بطيء",
+        "كبير",
+        "صغير"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"بطيء\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"Content\" تعني:",
+      "opts": [
+        "حزين",
+        "سعيد",
+        "غاضب",
+        "متعب"
+      ],
+      "ans": 1,
+      "exp": "The correct answer is: \"سعيد\""
+    }
+  ]
+}
