@@ -1,6 +1,6 @@
 {
   "chapter": "🌍 English — Grade 12 Scientific — الفصل الثاني",
-  "description": "10 سؤالاً — الثاني عشر علمي",
+  "description": "12 سؤالاً — الثاني عشر علمي",
   "questions": [
     {
       "type": "mcq",
@@ -121,6 +121,30 @@
       ],
       "ans": 2,
       "exp": "Meaning: \"correcting mistakes\""
+    },
+    {
+      "type": "mcq",
+      "q": "\"They ___ studying now\"",
+      "opts": [
+        "is",
+        "are",
+        "was",
+        "be"
+      ],
+      "ans": 1,
+      "exp": "الإجابة الصحيحة: are"
+    },
+    {
+      "type": "mcq",
+      "q": "Present Continuous is used for:",
+      "opts": [
+        "Past",
+        "Now",
+        "Future only",
+        "Habit"
+      ],
+      "ans": 1,
+      "exp": "الإجابة الصحيحة: Now"
     }
   ]
 }
