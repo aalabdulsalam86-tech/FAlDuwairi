@@ -68,11 +68,10 @@
       "opts": [
         "is",
         "are",
-        "is",
         "be"
       ],
-      "ans": 2,
-      "exp": "Correct answer: is"
+      "ans": 0,
+      "exp": "الإجابة الصحيحة: is"
     },
     {
       "type": "mcq",
