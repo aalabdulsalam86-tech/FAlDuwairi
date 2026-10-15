@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🔢 الرياضيات — الحادي عشر علمي — الفصل الأول</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--c:#fb923c;--bg:#020617;--card:rgba(15,23,42,.85);--txt:#f1f5f9;--mut:rgba(241,245,249,.62);--brd:rgba(255,255,255,.09);--grn:#22c55e;--red:#ef4444;--gold:#fbbf24}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Tajawal","Arial",sans-serif;background:var(--bg);color:var(--txt);min-height:100vh;overflow-x:hidden;
+  background-image:radial-gradient(ellipse 70% 45% at 50% -10%,color-mix(in srgb,var(--c) 12%,transparent) 0%,transparent 65%),radial-gradient(circle,rgba(255,255,255,.06) 1px,transparent 1px);background-size:100% 100%,34px 34px}
+button{font-family:inherit;cursor:pointer}
+code{font-family:ui-monospace,Menlo,monospace;background:rgba(255,255,255,.07);border-radius:5px;padding:1px 6px;font-size:.9em;direction:ltr;unicode-bidi:embed}
+a{color:var(--c)}
+/* top bar */
+.top{position:sticky;top:0;z-index:50;background:rgba(2,6,23,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--brd);display:flex;align-items:center;gap:14px;padding:0 28px;height:62px}
+.brand{font-weight:900;color:var(--c);font-size:15px;letter-spacing:.3px;text-shadow:0 0 16px color-mix(in srgb,var(--c) 45%,transparent);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.top .sp{flex:1}
+.tb{background:rgba(255,255,255,.05);border:1px solid var(--brd);border-radius:10px;padding:8px 14px;color:var(--mut);font-size:14px;font-weight:700;text-decoration:none;transition:.2s;white-space:nowrap}
+.tb:hover{color:var(--txt);background:rgba(255,255,255,.09)}
+.timer{font-variant-numeric:tabular-nums;font-size:18px;font-weight:900;letter-spacing:1px;color:var(--mut);border-color:var(--brd);min-width:92px;text-align:center;direction:ltr}
+.timer.run{color:var(--c);border-color:color-mix(in srgb,var(--c) 45%,transparent)}
+.timer.warn{color:var(--gold);border-color:rgba(251,191,36,.5)}
+.timer.red{color:var(--red);border-color:rgba(239,68,68,.6);animation:blink 1s step-end infinite}
+@keyframes blink{50%{opacity:.45}}
+.screen{display:none}.screen.on{display:block}
+/* ===== list screen ===== */
+.wrap{max-width:960px;margin:0 auto;padding:34px 28px 80px}
+.hero{background:var(--card);border:1.5px solid color-mix(in srgb,var(--c) 35%,transparent);border-radius:24px;padding:36px 40px;position:relative;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.45)}
+.hero::before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:var(--c)}
+.hero.empty{border-style:dashed;border-color:var(--brd)}.hero.empty::before{opacity:.35}
+.hero-tag{display:inline-block;background:color-mix(in srgb,var(--c) 15%,transparent);color:var(--c);border-radius:8px;padding:5px 14px;font-size:13px;font-weight:900;margin-bottom:14px}
+.hero-meta{color:var(--mut);font-size:14px;margin-bottom:8px}
+.hero-title{font-size:34px;font-weight:900;line-height:1.35;margin-bottom:16px}
+.hero-sub{color:var(--mut);font-size:16px;line-height:1.9;max-width:620px}
+.hero-facts{display:flex;gap:18px;flex-wrap:wrap;color:var(--mut);font-size:15px;margin-bottom:26px}
+.start-btn{display:inline-block;background:var(--c);color:#020617;border:none;border-radius:14px;padding:14px 34px;font-size:18px;font-weight:900;text-decoration:none;transition:.2s;box-shadow:0 8px 28px color-mix(in srgb,var(--c) 35%,transparent)}
+.start-btn:hover{transform:translateY(-2px);filter:brightness(1.1)}
+.list-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:40px 0 16px;flex-wrap:wrap}
+.list-head h2{font-size:22px;font-weight:900}
+#list-links{display:flex;gap:8px;flex-wrap:wrap}
+#list-links a{background:rgba(255,255,255,.04);border:1px solid var(--brd);border-radius:10px;padding:7px 14px;font-size:14px;font-weight:700;text-decoration:none;color:var(--mut);transition:.2s}
+#list-links a:hover{color:var(--c);border-color:color-mix(in srgb,var(--c) 40%,transparent)}
+.row{display:flex;align-items:center;gap:18px;background:var(--card);border:1.5px solid var(--brd);border-radius:16px;padding:16px 22px;margin-bottom:10px;cursor:pointer;transition:.2s}
+.row:hover{border-color:color-mix(in srgb,var(--c) 45%,transparent);transform:translateX(-4px)}
+.row.today{border-color:var(--c);background:color-mix(in srgb,var(--c) 6%,var(--card))}
+.row.past{opacity:.6}
+.row-n{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:17px;background:rgba(255,255,255,.05);border:1px solid var(--brd);color:var(--c);flex-shrink:0}
+.row-body{flex:1;min-width:0}
+.row-unit{font-size:12px;color:var(--mut);margin-bottom:2px}
+.row-title{font-size:17px;font-weight:700}
+.row-meta{font-size:13px;color:var(--mut);margin-top:3px}
+.row-side{display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0}
+.pill{font-size:12px;font-weight:900;border-radius:7px;padding:3px 10px;background:rgba(255,255,255,.05);color:var(--mut);border:1px solid var(--brd)}
+.pill.today{background:color-mix(in srgb,var(--c) 18%,transparent);color:var(--c);border-color:color-mix(in srgb,var(--c) 40%,transparent)}
+.pill.past{color:var(--grn)}
+.pin{background:none;border:none;color:var(--mut);font-size:12px;opacity:0;transition:.2s;padding:2px 4px}
+.row:hover .pin{opacity:1}.pin:hover{color:var(--txt)}
+.empty-list{text-align:center;padding:60px 24px;color:var(--mut);background:rgba(15,23,42,.6);border:1.5px dashed var(--brd);border-radius:20px}
+.empty-list span{font-size:54px;display:block;margin-bottom:14px}
+.empty-list h3{color:var(--txt);font-size:20px;font-weight:900;margin-bottom:8px}
+.empty-list p{line-height:1.9;font-size:15px}
+/* ===== lesson screen ===== */
+.ls{min-height:calc(100vh - 62px);display:flex;flex-direction:column;max-width:1100px;margin:0 auto;padding:22px 28px 26px}
+.ls-hdr{margin-bottom:16px}
+.ls-unit{font-size:13px;color:var(--mut);margin-bottom:3px}
+.ls-title{font-size:24px;font-weight:900}
+.stage{flex:1;background:var(--card);border:1.5px solid var(--brd);border-radius:24px;padding:38px 46px;box-shadow:0 20px 60px rgba(0,0,0,.4);min-height:420px}
+.stage.in{animation:si .35s cubic-bezier(.34,1.56,.64,1)}
+@keyframes si{from{opacity:0;transform:translateX(26px)}to{opacity:1;transform:none}}
+.st-head{color:var(--c);font-size:16px;font-weight:900;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--brd)}
+.st-sub{color:var(--c);font-size:15px;font-weight:900;margin:30px 0 12px}
+.objs{padding-right:28px;font-size:22px;line-height:1.9}
+.objs li{margin-bottom:8px}
+.objs li::marker{color:var(--c);font-weight:900}
+.vocab{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.v{background:rgba(255,255,255,.04);border:1px solid var(--brd);border-radius:12px;padding:12px 16px;font-size:16px;line-height:1.7}
+.v b{color:var(--c);display:block;margin-bottom:2px}
+.warm{display:flex;flex-direction:column;gap:14px}
+.wq{display:none;align-items:flex-start;gap:14px;font-size:24px;line-height:1.7;background:rgba(255,255,255,.04);border:1px solid var(--brd);border-right:4px solid var(--c);border-radius:14px;padding:18px 22px}
+.wq.show{display:flex;animation:fd .3s ease}
+.wn{font-weight:900;color:var(--c);flex-shrink:0}
+@keyframes fd{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.ghost{margin-top:18px;background:rgba(255,255,255,.05);border:1px solid var(--brd);color:var(--txt);border-radius:12px;padding:11px 22px;font-size:15px;font-weight:700;transition:.2s}
+.ghost:hover{border-color:var(--c);color:var(--c)}
+.sec-t{font-size:28px;font-weight:900;margin-bottom:16px;line-height:1.4}
+.sec-img{max-width:100%;max-height:360px;border-radius:14px;border:1px solid var(--brd);margin-bottom:18px;display:block}
+.sec-p{font-size:21px;line-height:1.95;color:rgba(241,245,249,.9);margin-bottom:16px;max-width:60ch}
+.sec-pts{padding-right:26px;font-size:21px;line-height:1.9;margin-bottom:16px}
+.sec-pts li{margin-bottom:6px}.sec-pts li::marker{color:var(--c)}
+.sec-code{background:#0b1220;border:1px solid var(--brd);border-radius:12px;padding:16px 20px;font-family:ui-monospace,Menlo,monospace;font-size:16px;line-height:1.7;overflow-x:auto;text-align:left;margin-bottom:16px;color:#c7f0ff}
+.sec-ex{background:rgba(255,255,255,.04);border:1px solid var(--brd);border-right:4px solid var(--c);border-radius:12px;padding:14px 18px;font-size:18px;line-height:1.85;margin-bottom:14px}
+.sec-ex b{display:block;color:var(--c);font-size:13px;margin-bottom:4px}
+.sec-note{background:rgba(251,191,36,.07);border:1px solid rgba(251,191,36,.25);border-radius:12px;padding:12px 16px;font-size:17px;line-height:1.8;color:#fde68a}
+.qt{font-size:25px;font-weight:700;line-height:1.7;margin-bottom:22px}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.opts.tf{max-width:520px}
+.opt{background:rgba(255,255,255,.04);border:2px solid var(--brd);border-radius:14px;padding:16px 18px;font-size:19px;font-weight:700;color:#dde;display:flex;align-items:center;gap:12px;text-align:right;transition:.17s;line-height:1.5}
+.opt:hover:not(:disabled){border-color:rgba(255,255,255,.25);transform:translateY(-2px);color:#fff}
+.ltr{font-size:14px;font-weight:900;color:var(--c);background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.12);border-radius:8px;min-width:34px;height:34px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.opt.correct{background:rgba(34,197,94,.12)!important;border-color:var(--grn)!important;color:#fff!important}
+.opt.correct .ltr{background:var(--grn);color:#fff;border-color:var(--grn)}
+.opt.wrong{background:rgba(239,68,68,.1)!important;border-color:var(--red)!important;animation:shk .4s ease}
+.opt.wrong .ltr{background:var(--red);color:#fff;border-color:var(--red)}
+@keyframes shk{0%,100%{transform:translateX(0)}25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+.exp{display:none;margin-top:16px;background:rgba(255,255,255,.03);border:1px solid var(--brd);border-right:3px solid var(--c);border-radius:10px;padding:14px 18px;font-size:17px;line-height:1.85;color:var(--mut)}
+.exp.show{display:block;animation:fd .3s ease}
+.sum{padding-right:26px;font-size:22px;line-height:1.9}
+.sum li{margin-bottom:10px}.sum li::marker{color:var(--c)}
+.hw{font-size:22px;line-height:1.9;background:rgba(255,255,255,.04);border:1px solid var(--brd);border-radius:14px;padding:22px 26px;margin-bottom:22px}
+.game-link{display:inline-block;background:color-mix(in srgb,var(--c) 15%,transparent);border:1.5px solid color-mix(in srgb,var(--c) 45%,transparent);color:var(--c);text-decoration:none;border-radius:12px;padding:12px 24px;font-weight:900;font-size:16px}
+/* activities */
+.act-i{color:var(--mut);font-size:16px;margin-bottom:18px}
+.match{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.col{display:flex;flex-direction:column;gap:10px}
+.mc,.chipo{background:rgba(255,255,255,.04);border:2px solid var(--brd);border-radius:12px;padding:13px 16px;font-size:17px;font-weight:700;color:var(--txt);text-align:right;transition:.15s;line-height:1.5}
+.mc:hover,.chipo:hover{border-color:rgba(255,255,255,.3)}
+.mc.sel,.chipo.sel{border-color:var(--c);background:color-mix(in srgb,var(--c) 12%,transparent)}
+.mc.ok,.chipo.ok{border-color:var(--grn);background:rgba(34,197,94,.12);cursor:default}
+.mc.bad,.chipo.bad{border-color:var(--red);animation:shk .4s ease}
+.act-done{color:var(--grn);font-weight:900;font-size:20px;margin-top:18px;min-height:24px}
+.slots{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
+.slot{min-height:50px;border:2px dashed var(--brd);border-radius:12px;padding:10px 16px;display:flex;align-items:center;gap:12px;font-size:17px;font-weight:700;color:var(--mut)}
+.slot span{color:var(--c);font-weight:900}
+.slot.filled{border-style:solid;border-color:var(--grn);background:rgba(34,197,94,.08);color:var(--txt)}
+.pool{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+.buckets{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.bucket{border:2px dashed var(--brd);border-radius:14px;padding:14px;min-height:140px;cursor:pointer;transition:.15s}
+.bucket:hover{border-color:var(--c)}
+.b-t{font-weight:900;color:var(--c);margin-bottom:10px;font-size:16px}
+.b-items{display:flex;flex-wrap:wrap;gap:8px}
+.fin{text-align:center;padding:40px 0}
+.fin-ic{font-size:64px;margin-bottom:10px}
+.fin h2{font-size:30px;font-weight:900;margin-bottom:6px}
+.fin p{color:var(--mut);font-size:17px;margin-bottom:26px}
+.fin-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;align-items:center}
+.fin-btns .ghost{margin:0}
+/* bottom bar */
+.bar{display:flex;align-items:center;gap:14px;margin-top:16px}
+.rail{flex:1;display:flex;gap:6px;flex-wrap:wrap}
+.chip{background:rgba(255,255,255,.04);border:1px solid var(--brd);border-radius:10px;padding:7px 12px;font-size:13px;font-weight:700;color:var(--mut);display:flex;align-items:center;gap:8px;transition:.2s}
+.chip.on{background:color-mix(in srgb,var(--c) 16%,transparent);border-color:var(--c);color:var(--c)}
+.chip.done{color:rgba(241,245,249,.45)}
+.chip.done::before{content:"✓";color:var(--grn);font-weight:900}
+.dots{display:flex;gap:3px}
+.dots i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.18);display:block}
+.dots i.d{background:var(--grn)}.dots i.c{background:var(--c);box-shadow:0 0 6px var(--c)}
+.nav{display:flex;align-items:center;gap:8px}
+.counter{font-size:13px;color:var(--mut);min-width:54px;text-align:center;font-variant-numeric:tabular-nums}
+.nb{border:none;border-radius:12px;padding:12px 22px;font-size:16px;font-weight:900;transition:.2s}
+.nb.p{background:rgba(255,255,255,.06);color:var(--txt);border:1px solid var(--brd)}
+.nb.n{background:var(--c);color:#020617;box-shadow:0 6px 20px color-mix(in srgb,var(--c) 30%,transparent)}
+.nb:hover:not(:disabled){transform:translateY(-1px);filter:brightness(1.08)}
+.nb:disabled{opacity:.35;cursor:default}
+@media(max-width:720px){
+  .top{padding:0 14px;gap:8px}.brand{font-size:13px}.tb.hide-m{display:none}
+  .wrap{padding:20px 14px 60px}.hero{padding:26px 22px}.hero-title{font-size:26px}
+  .row{padding:14px 16px;gap:12px}.pin{opacity:1}.row-side{align-items:center}
+  .ls{padding:14px 14px 18px}.stage{padding:24px 20px;min-height:320px}
+  .objs,.sec-pts,.sum{font-size:18px}.sec-p{font-size:18px}.wq{font-size:19px}.qt{font-size:21px}.sec-t{font-size:23px}.hw{font-size:18px}
+  .opts,.match{grid-template-columns:1fr}.opt{font-size:17px}
+  .bar{flex-direction:column;align-items:stretch}.nav{justify-content:space-between}
+}
+</style></head>
+<body>
+<div class="top">
+  <div class="brand" id="brand">🔢 الرياضيات — الحادي عشر علمي — الفصل الأول</div>
+  <div class="sp"></div>
+  <button class="tb timer" id="timer" onclick="toggleTimer()" ondblclick="resetTimer()" title="ضغطة: تشغيل/إيقاف · ضغطتان: إعادة">45:00</button>
+  <button class="tb hide-m" onclick="toggleFS()" title="ملء الشاشة (F)">⛶</button>
+  <button class="tb" onclick="renderList()">📋 الحصص</button>
+  <a class="tb hide-m" href="../index.html">🏠 الموقع</a>
+</div>
+
+<div class="screen on" id="scr-list">
+  <div class="wrap">
+    <div class="hero" id="hero"></div>
+    <div class="list-head"><h2>📚 حصص الفصل الدراسي</h2><div id="list-links"></div></div>
+    <div id="list"></div>
+  </div>
+</div>
+
+<div class="screen" id="scr-lesson">
+  <div class="ls">
+    <div class="ls-hdr"><div class="ls-unit" id="ls-unit"></div><div class="ls-title" id="ls-title"></div></div>
+    <div class="stage" id="stage"></div>
+    <div class="bar">
+      <div class="rail" id="rail"></div>
+      <div class="nav">
+        <button class="nb p" id="prev" onclick="go(-1)">→ السابق</button>
+        <span class="counter" id="counter"></span>
+        <button class="nb n" id="next" onclick="go(1)">التالي ←</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ============ LESSON CONFIG — edit per subject/semester ============
+window.LESSON_CONFIG = {
+  jsonFile: "math11_s1.json",          // lessons for this subject & semester
+  title: "🔢 الرياضيات — الحادي عشر علمي — الفصل الأول",
+  color: "#fb923c",             // subject accent colour
+  gameFile: "math11_s1.html"           // matching review game in ../games/
+};
+// ====================================================================
+</script>
+<script src="lesson.js"></script>
+</body></html>
