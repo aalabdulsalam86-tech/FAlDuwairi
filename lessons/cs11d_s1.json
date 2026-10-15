@@ -1,0 +1,1280 @@
+{
+  "book": "",
+  "plan": "",
+  "today": "",
+  "lessons": [
+    {
+      "id": "W01",
+      "date": "2026-09-13",
+      "unit": "الأسبوع 1 · الوحدة الأولى: قواعد البيانات SQLite في Python",
+      "title": "مدخل إلى قواعد البيانات Introduction to Database",
+      "pages": "19–30",
+      "duration": 45,
+      "objectives": [
+        "يتعرّف على قواعد البيانات وأهميتها وأنواعها واستخداماتها.",
+        "يستعرض تطور نظم قواعد البيانات تاريخياً.",
+        "يحلل مكونات قاعدة البيانات العلائقية وأنواع العلاقات.",
+        "يستخدم برنامج DB Browser for SQLite لفتح قاعدة بيانات ومعاينة محتواها.",
+        "يقدّر الجوانب الأخلاقية عند التعامل مع قواعد البيانات."
+      ],
+      "vocab": [
+        {
+          "term": "قاعدة البيانات العلائقية Relational DB",
+          "def": "تنظم البيانات في جداول مترابطة بالعلاقات — الأكثر استخداماً (SQLite, MySQL, Oracle)."
+        },
+        {
+          "term": "المفتاح الأساسي Primary Key",
+          "def": "عمود بقيم فريدة لا تتكرر ولا تكون فارغة."
+        },
+        {
+          "term": "المفتاح الخارجي Foreign Key",
+          "def": "عمود يشير إلى مفتاح أساسي في جدول آخر لربط الجداول."
+        },
+        {
+          "term": "DBMS",
+          "def": "نظام إدارة قواعد البيانات: إضافة وتعديل وحذف واسترجاع البيانات (CRUD)."
+        }
+      ],
+      "warmup": [
+        "أين تُخزَّن بيانات طلاب المدرسة؟ ماذا لو كانت في ورقة واحدة ضخمة؟",
+        "كم جدولاً تحتاج لتخزين بيانات الكتب والمؤلفين إذا كان للكتاب أكثر من مؤلف؟"
+      ],
+      "content": [
+        {
+          "title": "أهمية قواعد البيانات ومميزاتها",
+          "text": "البيانات محرك رئيسي للتطور واتخاذ القرارات، وقواعد البيانات تنظمها وتخزنها وتتيح الوصول إليها بسرعة ودقة.",
+          "points": [
+            "**الكفاءة**: وصول سريع للبيانات.",
+            "**الأمان**: حماية من الوصول غير المصرّح به.",
+            "**التكامل**: اتساق البيانات وصحتها.",
+            "**التنظيم**: جداول وعلاقات منطقية."
+          ],
+          "example": "استخدامات يومية: إدارة الأعمال · التواصل الاجتماعي · الصحة (سجلات المرضى) · التعليم · الطيران (الحجوزات) · التجارة الإلكترونية · الحكومة."
+        },
+        {
+          "title": "نبذة تاريخية",
+          "points": [
+            "**1960s**: الهرمية والشبكية (HDB / NDB).",
+            "**1970s**: العلائقية RDB.",
+            "**1980s**: انتشار RDBMS.",
+            "**1990s**: الكائنية OODB.",
+            "**2000 – الآن**: البيانات الضخمة BDDB المدعومة بالذكاء الاصطناعي."
+          ]
+        },
+        {
+          "title": "أنواع قواعد البيانات",
+          "points": [
+            "**الهرمية**: شجرة أب/ابن (IMS من IBM).",
+            "**الشبكية**: عُقد مرتبطة بمؤشرات، تمثّل علاقات متعدد إلى متعدد.",
+            "**العلائقية**: جداول وعلاقات — SQLite, MySQL, Oracle (موضوع الكتاب).",
+            "**الكائنية**: تخزن كائنات OOP (Java, C++).",
+            "**NoSQL**: بيانات ضخمة غير منظمة — MongoDB, Firebase.",
+            "**الموزعة**: مخزنة على عدة خوادم وتُدار كقاعدة واحدة."
+          ]
+        },
+        {
+          "title": "مكونات قاعدة البيانات العلائقية والعلاقات",
+          "points": [
+            "**الجداول Tables**: كل جدول يمثل كياناً (طلاب، كتب).",
+            "**الأعمدة Columns**: خاصية Attribute لها اسم ونوع.",
+            "**الصفوف Rows**: نسخة واحدة من الكيان.",
+            "**المفتاح الأساسي PK** و**المفتاح الخارجي FK** و**العلاقات**."
+          ],
+          "example": "واحد إلى واحد: book ↔ details\nواحد إلى متعدد: category → books\nمتعدد إلى متعدد: author ↔ book عبر جدول ربط author_book (Junction Table)."
+        },
+        {
+          "title": "برنامج DB Browser for SQLite",
+          "points": [
+            "مجاني ومفتوح المصدر، يُحمَّل من sqlitebrowser.org.",
+            "**القوائم**: File (فتح/حفظ/إنشاء) · Edit (الجداول والإعدادات) · Tools (أدوات متقدمة).",
+            "**التبويبات**: Database Structure (هيكلة الجداول) · Browse Data (استعراض البيانات) · Edit Pragmas · Execute SQL.",
+            "بعد التعديل اضغط **Write Changes**، وأغلق القاعدة بطريقة صحيحة لتجنب فقد البيانات."
+          ],
+          "note": "الأخلاقيات: احترام الخصوصية · النزاهة · عدم إساءة المشاركة · احترام الملكية · سلامة النظام · الامتثال للقوانين · المسؤولية المهنية."
+        }
+      ],
+      "activity": {
+        "type": "match",
+        "title": "وصّل المصطلح بتعريفه",
+        "pairs": [
+          [
+            "الجدول",
+            "يمثل كياناً مثل الطلاب أو الكتب"
+          ],
+          [
+            "العمود",
+            "خاصية لها اسم ونوع بيانات"
+          ],
+          [
+            "الصف",
+            "نسخة واحدة من الكيان"
+          ],
+          [
+            "المفتاح الأساسي",
+            "قيم فريدة غير فارغة"
+          ],
+          [
+            "المفتاح الخارجي",
+            "يشير إلى مفتاح أساسي في جدول آخر"
+          ],
+          [
+            "جدول الربط",
+            "يمثل علاقة متعدد إلى متعدد"
+          ]
+        ]
+      },
+      "check": [
+        {
+          "type": "mcq",
+          "q": "العلاقة بين الكتاب والمؤلف (كتاب له عدة مؤلفين ومؤلف له عدة كتب) هي:",
+          "opts": [
+            "واحد إلى واحد",
+            "واحد إلى متعدد",
+            "متعدد إلى متعدد",
+            "لا علاقة"
+          ],
+          "ans": 2,
+          "exp": "تُمثَّل بجدول ربط author_book."
+        },
+        {
+          "type": "tf",
+          "q": "المفتاح الأساسي يمكن أن يحتوي قيماً مكررة ما دامت غير فارغة.",
+          "ans": false,
+          "exp": "PK فريد ولا يتكرر ولا يكون فارغاً."
+        },
+        {
+          "type": "mcq",
+          "q": "التبويب الذي يعرض بيانات الجدول في DB Browser for SQLite:",
+          "opts": [
+            "Database Structure",
+            "Browse Data",
+            "Edit Pragmas",
+            "Execute SQL"
+          ],
+          "ans": 1,
+          "exp": "Browse Data لاستعراض البيانات وتعديلها."
+        }
+      ],
+      "summary": [
+        "قواعد البيانات تنظم البيانات وتؤمّنها وتضمن تكاملها.",
+        "العلائقية = جداول + أعمدة + صفوف + مفاتيح + علاقات.",
+        "DB Browser for SQLite أداة رسومية لمعاينة قواعد SQLite."
+      ],
+      "homework": "ورقة عمل (1): افتح Kuwait_landmarks.db في DB Browser، عاين هيكلية جدول landmarks وبياناته وأجب عن الأسئلة (ص 30)."
+    },
+    {
+      "id": "W02",
+      "date": "2026-09-20",
+      "unit": "الأسبوع 2 · الوحدة الأولى: قواعد البيانات SQLite في Python",
+      "title": "إنشاء قواعد البيانات Creating a Database",
+      "pages": "33–39",
+      "duration": 45,
+      "objectives": [
+        "يعرّف SQLite ويبيّن مزاياها ضمن بيئة Python.",
+        "يشرح خطوات إنشاء قاعدة بيانات والاتصال بها عبر connect.",
+        "ينشئ قاعدة بيانات في PyCharm باستخدام وحدة sqlite3.",
+        "يكتب كوداً يعالج الاستثناءات بـ try/except/finally.",
+        "يدرك أهمية إغلاق الاتصال لحماية البيانات."
+      ],
+      "vocab": [
+        {
+          "term": "sqlite3",
+          "def": "الوحدة القياسية في Python للتعامل مع قواعد SQLite دون خادم خارجي."
+        },
+        {
+          "term": "connect()",
+          "def": "دالة تنشئ قاعدة البيانات (إن لم توجد) أو تفتح اتصالاً بها."
+        },
+        {
+          "term": "connection",
+          "def": "كائن الاتصال النشط بقاعدة البيانات الذي تُنفَّذ عبره العمليات."
+        },
+        {
+          "term": "None",
+          "def": "قيمة تعني 'لا شيء/غير محدد' تُعطى للمتغير قبل الاتصال."
+        }
+      ],
+      "warmup": [
+        "لماذا نحتاج إلى إغلاق الملف بعد الكتابة فيه؟ هل ينطبق ذلك على قاعدة البيانات؟",
+        "ما الذي يميّز SQLite عن قواعد بيانات تحتاج خادماً؟"
+      ],
+      "content": [
+        {
+          "title": "صيغة الاتصال",
+          "code": "connection = sqlite3.connect('database_name.db')",
+          "points": [
+            "`sqlite3` وحدة قواعد البيانات · `connect` دالة الاتصال · `connection` كائن الاتصال · `.db` الامتداد الافتراضي.",
+            "إذا كانت القاعدة غير موجودة تُنشأ تلقائياً."
+          ]
+        },
+        {
+          "title": "إنشاء قاعدة بيانات — الخطوات الثلاث",
+          "code": "import sqlite3\nconnection = sqlite3.connect('grade11_books.db')\nconnection.close()",
+          "points": [
+            "1. استيراد وحدة sqlite3.",
+            "2. إنشاء/فتح الاتصال.",
+            "3. إغلاق الاتصال.",
+            "يظهر ملف grade11_books.db في Project Panel داخل PyCharm."
+          ],
+          "note": "لماذا نغلق الاتصال؟ تحرير موارد الجهاز (الذاكرة) · ضمان سلامة البيانات · تجنب أخطاء عند فتح القاعدة لاحقاً."
+        },
+        {
+          "title": "مع معالجة الاستثناءات",
+          "code": "import sqlite3\nconnection = None\ntry:\n    connection = sqlite3.connect('grade11_books.db')\n    print('Connected to the database successfully.')\nexcept Exception as e:\n    print(f'An unexpected error occurred: {e}')\nfinally:\n    if connection is not None:\n        connection.close()\n        print('Database connection is closed.')\n    else:\n        print('Failed to connect to the database.')",
+          "points": [
+            "`connection = None` يضمن تعريف المتغير في جميع الحالات.",
+            "`finally` تُنفَّذ دائماً فتضمن إغلاق الاتصال إن وُجد."
+          ]
+        }
+      ],
+      "activity": {
+        "type": "order",
+        "title": "رتّب أسطر إنشاء قاعدة البيانات مع الاستثناءات",
+        "items": [
+          "import sqlite3",
+          "connection = None",
+          "try:",
+          "    connection = sqlite3.connect('school.db')",
+          "except Exception as e:",
+          "    print('Error:', e)",
+          "finally:",
+          "    if connection is not None: connection.close()"
+        ]
+      },
+      "check": [
+        {
+          "type": "mcq",
+          "q": "ماذا يحدث عند connect('x.db') وملف x.db غير موجود؟",
+          "opts": [
+            "خطأ FileNotFoundError",
+            "يُنشأ الملف تلقائياً",
+            "يُفتح ملف فارغ مؤقت",
+            "لا شيء"
+          ],
+          "ans": 1,
+          "exp": "SQLite تنشئ القاعدة تلقائياً إذا لم تكن موجودة."
+        },
+        {
+          "type": "tf",
+          "q": "كتلة finally تُنفَّذ حتى لو فشل الاتصال.",
+          "ans": true,
+          "exp": "finally تُنفَّذ في جميع الحالات، لذلك نفحص connection is not None قبل الإغلاق."
+        },
+        {
+          "type": "mcq",
+          "q": "الامتداد الافتراضي لملف قاعدة بيانات SQLite:",
+          "opts": [
+            ".sql",
+            ".db",
+            ".py",
+            ".txt"
+          ],
+          "ans": 1,
+          "exp": ".db هو الامتداد الافتراضي."
+        }
+      ],
+      "summary": [
+        "import sqlite3 → connect() → close() ثلاث خطوات لإنشاء القاعدة.",
+        "try/except/finally تضمن إغلاق الاتصال حتى عند حدوث خطأ.",
+        "الإغلاق الصحيح يحمي البيانات ويحرر الموارد."
+      ],
+      "homework": "ورقة عمل (2): أنشئ مشروع landmark_database وملف data_database.py، أنشئ قاعدة Kuwait_landmarks.db ثم طوّر البرنامج ليشمل معالجة الاستثناءات (ص 39)."
+    },
+    {
+      "id": "W03",
+      "date": "2026-09-27",
+      "unit": "الأسبوع 3 · الوحدة الأولى: قواعد البيانات SQLite في Python",
+      "title": "إنشاء الجداول Creating Tables",
+      "pages": "43–51",
+      "duration": 45,
+      "objectives": [
+        "يشرح مكونات الجدول وأنواع البيانات في SQLite.",
+        "يطبّق القيود المناسبة عند إنشاء الجداول.",
+        "ينشئ جدولاً بـ CREATE TABLE عبر cursor.execute.",
+        "يعاين هيكلية الجدول في DB Browser for SQLite."
+      ],
+      "vocab": [
+        {
+          "term": "cursor المؤشر",
+          "def": "كائن يُستخدم لتنفيذ أوامر SQL داخل قاعدة البيانات."
+        },
+        {
+          "term": "Constraints القيود",
+          "def": "قواعد تضمن صحة البيانات: NOT NULL, UNIQUE, PRIMARY KEY, CHECK, DEFAULT."
+        },
+        {
+          "term": "commit()",
+          "def": "حفظ التغييرات التي أُجريت على قاعدة البيانات."
+        },
+        {
+          "term": "IF NOT EXISTS",
+          "def": "ينشئ الجدول فقط إذا لم يكن موجوداً لتجنب الأخطاء."
+        }
+      ],
+      "warmup": [
+        "لو صممت جدول الطلاب: ما الأعمدة؟ وما نوع كل عمود؟ أي عمود لا يجوز أن يكون فارغاً؟"
+      ],
+      "content": [
+        {
+          "title": "أنواع البيانات في SQLite",
+          "points": [
+            "**INTEGER**: أعداد صحيحة (سنة النشر 2025، العمر 17).",
+            "**REAL**: أعداد عشرية (سعر الكتاب 3.15).",
+            "**TEXT**: نصوص (اسم المؤلف، عنوان الكتاب).",
+            "**BLOB**: كائنات ثنائية كبيرة (صور، PDF، MP3).",
+            "**NULL**: غياب القيمة — ليست نوعاً للعمود."
+          ]
+        },
+        {
+          "title": "القيود Constraints",
+          "code": "name TEXT NOT NULL                 -- لا يُترك فارغاً\nemail TEXT UNIQUE                  -- لا يتكرر\nid INTEGER PRIMARY KEY             -- فريد + غير فارغ + يزيد تلقائياً\nage INTEGER CHECK (age <= 20)      -- شرط منطقي\nnationality TEXT DEFAULT 'Kuwait'  -- قيمة افتراضية",
+          "points": [
+            "يمكن الجمع بين أكثر من قيد في العمود نفسه.",
+            "PRIMARY KEY من نوع INTEGER يزيد تلقائياً بمقدار واحد؛ AUTOINCREMENT يمنع إعادة استخدام القيم المحذوفة."
+          ]
+        },
+        {
+          "title": "قواعد تسمية الجداول والأعمدة",
+          "points": [
+            "أحرف A-Z وأرقام 0-9 وشرطة سفلية _ فقط؛ لا يبدأ برقم ولا يحتوي مسافات.",
+            "أسماء فريدة وواضحة ومعبرة، يُنصح بصيغة الجمع للجداول وأسلوب snake_case.",
+            "تجنب الكلمات المحجوزة. الأسماء غير حساسة لحالة الأحرف."
+          ]
+        },
+        {
+          "title": "إنشاء جدول books",
+          "code": "import sqlite3\nconnection = sqlite3.connect('grade11_books.db')\ncursor = connection.cursor()\ncursor.execute('''\nCREATE TABLE IF NOT EXISTS books(\n    id       INTEGER PRIMARY KEY,\n    title    TEXT NOT NULL,\n    author   TEXT,\n    category TEXT,\n    year     INTEGER,\n    price    REAL\n)\n''')\nconnection.commit()\nconnection.close()",
+          "points": [
+            "الخطوات: استيراد → اتصال → إنشاء cursor → تنفيذ CREATE TABLE → commit → close.",
+            "المعاينة: DB Browser → Open Database → Database Structure → اختيار الجدول."
+          ]
+        }
+      ],
+      "activity": {
+        "type": "match",
+        "title": "اختر نوع البيانات المناسب",
+        "pairs": [
+          [
+            "عدد الطلاب في الصف",
+            "INTEGER"
+          ],
+          [
+            "سعر الكتاب 1.500",
+            "REAL"
+          ],
+          [
+            "اسم المؤلف",
+            "TEXT"
+          ],
+          [
+            "صورة غلاف الكتاب",
+            "BLOB"
+          ],
+          [
+            "عنوان غير مُدخل",
+            "NULL"
+          ]
+        ]
+      },
+      "check": [
+        {
+          "type": "mcq",
+          "q": "القيد الذي يمنع تكرار القيم لكنه يسمح بالفراغ:",
+          "opts": [
+            "NOT NULL",
+            "UNIQUE",
+            "PRIMARY KEY",
+            "CHECK"
+          ],
+          "ans": 1,
+          "exp": "UNIQUE يمنع التكرار فقط؛ PRIMARY KEY يجمع UNIQUE و NOT NULL."
+        },
+        {
+          "type": "tf",
+          "q": "بدون commit() لن تُحفظ التغييرات في قاعدة البيانات.",
+          "ans": true,
+          "exp": "commit() يحفظ التغييرات."
+        },
+        {
+          "type": "mcq",
+          "q": "أي اسم جدول صحيح؟",
+          "opts": [
+            "2books",
+            "my books",
+            "student_books",
+            "books-list"
+          ],
+          "ans": 2,
+          "exp": "لا يبدأ برقم، بلا مسافات أو رموز، بشرطة سفلية."
+        }
+      ],
+      "summary": [
+        "خمسة أنواع: INTEGER, REAL, TEXT, BLOB (وNULL للغياب).",
+        "القيود تضمن صحة البيانات.",
+        "CREATE TABLE عبر cursor.execute ثم commit ثم close."
+      ],
+      "homework": "ورقة عمل (3): أكمل data_table.py لإنشاء جدول landmarks (id PK، name NOT NULL، location، category، year، price) ونفّذه وعاين الهيكلية (ص 51–52)."
+    },
+    {
+      "id": "W04",
+      "date": "2026-10-04",
+      "unit": "الأسبوع 4 · الوحدة الأولى: قواعد البيانات SQLite في Python",
+      "title": "إضافة البيانات Inserting Data — صف واحد",
+      "pages": "55–59",
+      "duration": 45,
+      "objectives": [
+        "يتعرّف على عمليات CRUD.",
+        "يدرج صفاً واحداً في الجدول باستخدام execute() و placeholders.",
+        "يشرح أهمية العناصر المؤقتة ? في الحماية من SQL Injection.",
+        "يعاين المحتوى في DB Browser for SQLite."
+      ],
+      "vocab": [
+        {
+          "term": "CRUD",
+          "def": "Create (INSERT) · Read (SELECT) · Update (UPDATE) · Delete (DELETE)."
+        },
+        {
+          "term": "placeholder ?",
+          "def": "عنصر مؤقت يُستبدل بالقيمة بطريقة آمنة."
+        },
+        {
+          "term": "SQL Injection",
+          "def": "هجوم يستغل مدخلات المستخدم غير الآمنة لإدخال أوامر SQL ضارة."
+        },
+        {
+          "term": "Tuple",
+          "def": "نوع بيانات تُمرَّر فيه قيم الأعمدة؛ القيمة الواحدة تحتاج فاصلة بعدها ('AI',)."
+        }
+      ],
+      "warmup": [
+        "ما العمليات الأربع التي تجريها على جهات الاتصال في هاتفك؟",
+        "لماذا لا نكتب قيمة أدخلها المستخدم مباشرة داخل أمر SQL؟"
+      ],
+      "content": [
+        {
+          "title": "عمليات CRUD",
+          "points": [
+            "**C** – INSERT: إضافة بيانات.",
+            "**R** – SELECT: قراءة واسترجاع.",
+            "**U** – UPDATE: تعديل.",
+            "**D** – DELETE: حذف."
+          ]
+        },
+        {
+          "title": "صيغة الإدخال",
+          "code": "cursor.execute('INSERT INTO table_name (column1, column2, ...) VALUES (?, ?, ...)', (value1, value2, ...))",
+          "points": [
+            "اسم الجدول → أسماء الأعمدة → عناصر مؤقتة ? → القيم في Tuple."
+          ]
+        },
+        {
+          "title": "مثال: إضافة كتاب",
+          "code": "import sqlite3\nconnection = sqlite3.connect('grade11_books.db')\ncursor = connection.cursor()\ncursor.execute('''\nINSERT INTO books(title, author, category, year, price)\nVALUES(?, ?, ?, ?, ?)''',\n('Arabic', 'Arabic SD', 'Art/Science', 2001, None)\n)\nconnection.commit()\nconnection.close()",
+          "points": [
+            "`None` في Python تتحول إلى **NULL** في SQLite.",
+            "المفتاح الأساسي INTEGER يأخذ قيمة تصاعدية تلقائياً إذا لم ندخله.",
+            "الأعمدة غير المدخلة تأخذ DEFAULT أو NULL (ما لم يكن القيد NOT NULL)."
+          ],
+          "note": "لا يُنصح بإدخال القيم مباشرة داخل الأمر بدل ?، لأن ذلك يعرّض القاعدة لهجمات SQL Injection."
+        }
+      ],
+      "activity": {
+        "type": "order",
+        "title": "رتّب خطوات إدخال صف",
+        "items": [
+          "import sqlite3",
+          "connection = sqlite3.connect('grade11_books.db')",
+          "cursor = connection.cursor()",
+          "cursor.execute('INSERT INTO books(...) VALUES(?,?,?,?,?)', (...))",
+          "connection.commit()",
+          "connection.close()"
+        ]
+      },
+      "check": [
+        {
+          "type": "mcq",
+          "q": "الحرف R في CRUD يمثل الأمر:",
+          "opts": [
+            "REMOVE",
+            "READ (SELECT)",
+            "RETURN",
+            "RESET"
+          ],
+          "ans": 1,
+          "exp": "Read = قراءة البيانات بـ SELECT."
+        },
+        {
+          "type": "tf",
+          "q": "('ICT',) هي الطريقة الصحيحة لتمرير قيمة واحدة في Tuple.",
+          "ans": true,
+          "exp": "الفاصلة ضرورية لتمييزها عن قوس عادي."
+        },
+        {
+          "type": "mcq",
+          "q": "الفائدة الأمنية الأساسية لاستخدام ? بدل القيم المباشرة:",
+          "opts": [
+            "سرعة التنفيذ",
+            "تقليل حجم الملف",
+            "منع SQL Injection",
+            "تلوين الكود"
+          ],
+          "ans": 2,
+          "exp": "placeholders تحمي من حقن أوامر SQL ضارة."
+        }
+      ],
+      "summary": [
+        "CRUD = INSERT / SELECT / UPDATE / DELETE.",
+        "INSERT INTO ... VALUES (?, ?) مع Tuple من القيم.",
+        "استخدم ? دائماً؛ None → NULL."
+      ],
+      "homework": "ورقة عمل (4): أكمل data_insert1.py لإضافة صف Abdullah Al Salem Centre إلى جدول landmarks ونفّذه وعاين النتيجة (ص 62–63)."
+    },
+    {
+      "id": "W05",
+      "date": "2026-10-11",
+      "unit": "الأسبوع 5 · الوحدة الأولى: قواعد البيانات SQLite في Python",
+      "title": "تابع إضافة البيانات — عدة صفوف دفعة واحدة executemany()",
+      "pages": "60–62",
+      "duration": 45,
+      "objectives": [
+        "يدرج عدة صفوف دفعة واحدة باستخدام executemany().",
+        "يمرّر قائمة من Tuples كبيانات للإدخال.",
+        "يدمج معالجة الاستثناءات مع عمليات الإدخال."
+      ],
+      "vocab": [
+        {
+          "term": "executemany()",
+          "def": "تنفّذ أمر الإدخال نفسه لكل عنصر في كائن قابل للتكرار (قائمة من Tuples)."
+        },
+        {
+          "term": "List of Tuples",
+          "def": "قائمة كل عنصر فيها Tuple يمثل صفاً واحداً."
+        }
+      ],
+      "warmup": [
+        "لو أردت إضافة 100 كتاب — هل تكتب execute مئة مرة؟"
+      ],
+      "content": [
+        {
+          "title": "الصيغة",
+          "code": "cursor.executemany('INSERT INTO table_name (column1, column2, ...) VALUES (?, ?, ...)',\n    [(value1_1, value1_2, ...), (value2_1, value2_2, ...), ...]\n)",
+          "points": [
+            "عدد عناصر القائمة = عدد الصفوف المضافة.",
+            "كل Tuple يمثل صفاً واحداً بقيم الأعمدة بالترتيب."
+          ]
+        },
+        {
+          "title": "مثال: ثلاثة كتب",
+          "code": "import sqlite3\nconnection = sqlite3.connect('grade11_books.db')\ncursor = connection.cursor()\ncursor.executemany('''\nINSERT INTO books(title, author, category, year, price)\nVALUES(?, ?, ?, ?, ?)''',\n[\n    ('ICT', 'ICT SD', 'Art/Science', 2001, None),\n    ('Physics', 'Science SD', 'Science', 2007, 1.500),\n    ('English', 'English SD', 'Art/Science', 2009, None)\n]\n)\nconnection.commit()\nconnection.close()"
+        },
+        {
+          "title": "صيغة أوضح بفصل الأمر عن البيانات",
+          "code": "insert_sql = 'INSERT INTO books(title, author, category, year, price) VALUES (?,?,?,?,?)'\nbooks_list = [\n    ('ICT', 'ICT SD', 'Art/Science', 2001, None),\n    ('Physics', 'Science SD', 'Science', 2007, 1.500),\n    ('English', 'English SD', 'Art/Science', 2009, None)\n]\ncursor.executemany(insert_sql, books_list)",
+          "note": "مع الاستثناءات: ضع الاتصال والإدخال و commit داخل try، واطبع الخطأ في except، وأغلق الاتصال في finally."
+        }
+      ],
+      "activity": {
+        "type": "sort",
+        "title": "execute أم executemany؟",
+        "groups": [
+          {
+            "name": "execute()",
+            "items": [
+              "إضافة كتاب واحد",
+              "Tuple واحدة من القيم"
+            ]
+          },
+          {
+            "name": "executemany()",
+            "items": [
+              "إضافة 3 معالم دفعة واحدة",
+              "قائمة من Tuples",
+              "عدد العناصر = عدد الصفوف"
+            ]
+          }
+        ]
+      },
+      "check": [
+        {
+          "type": "mcq",
+          "q": "البيانات التي تُمرَّر لـ executemany يجب أن تكون:",
+          "opts": [
+            "نصاً واحداً",
+            "قائمة من Tuples",
+            "عدداً صحيحاً",
+            "Tuple واحدة"
+          ],
+          "ans": 1,
+          "exp": "كائن قابل للتكرار كل عنصر فيه Tuple يمثل صفاً."
+        },
+        {
+          "type": "tf",
+          "q": "يمكن استخدام executemany بدون placeholders ?",
+          "ans": false,
+          "exp": "يجب استخدام ? مع executemany لإدخال الصفوف."
+        },
+        {
+          "type": "mcq",
+          "q": "إذا كانت القائمة تحتوي 5 Tuples، كم صفاً يُضاف؟",
+          "opts": [
+            "1",
+            "5",
+            "10",
+            "يعتمد على الأعمدة"
+          ],
+          "ans": 1,
+          "exp": "كل Tuple = صف."
+        }
+      ],
+      "summary": [
+        "executemany تُدخل عدة صفوف بأمر واحد.",
+        "البيانات قائمة من Tuples.",
+        "فصل الأمر عن البيانات يجعل الكود أوضح."
+      ],
+      "homework": "ورقة عمل (5): أكمل data_insert2.py لإدخال Failaka Island و Souq Al-Mubarakiya و Museum of Modern Art دفعة واحدة مع الاستثناءات (ص 64–65)."
+    },
+    {
+      "id": "W06",
+      "date": "2026-10-18",
+      "unit": "الأسبوع 6 · الوحدة الأولى: قواعد البيانات SQLite في Python",
+      "title": "الاستعلام عن البيانات Querying Data — SELECT والشروط ودوال fetch",
+      "pages": "69–75",
+      "duration": 45,
+      "objectives": [
+        "يعرّف الاستعلام ويميّز الشروط البسيطة والمركبة.",
+        "يتعرّف على العوامل الشرطية في SQLite.",
+        "يكتب استعلام SELECT في Python ويسترجع النتائج بدوال fetch.",
+        "يعرض النتائج باستخدام الحلقات التكرارية."
+      ],
+      "vocab": [
+        {
+          "term": "الاستعلام Query",
+          "def": "تصفية واسترجاع البيانات وفق شروط ومعايير محددة."
+        },
+        {
+          "term": "الشرط البسيط",
+          "def": "مقارنة واحدة بين قيمتين مثل price > 30."
+        },
+        {
+          "term": "الشرط المركب",
+          "def": "شرطان أو أكثر مرتبطان بـ AND أو OR."
+        },
+        {
+          "term": "fetchall / fetchmany / fetchone",
+          "def": "استرجاع كل الصفوف / عدداً محدداً / صفاً واحداً."
+        }
+      ],
+      "warmup": [
+        "كيف تطلب من قاعدة البيانات 'الكتب التي طُبعت بعد 2013 فقط'؟",
+        "ما الفرق بين السعر 0 والسعر الفارغ NULL؟"
+      ],
+      "content": [
+        {
+          "title": "العوامل الشرطية في SQLite",
+          "points": [
+            "`=` يساوي · `!=` أو `<>` لا يساوي · `<` `>` `<=` `>=`",
+            "`BETWEEN 10 AND 20` داخل النطاق · `NOT BETWEEN` خارجه",
+            "`IN (10, 20, 25)` ضمن قائمة · `NOT IN` خارجها",
+            "`IS NULL` غياب القيمة · `IS NOT NULL` وجودها",
+            "`LIKE 'com%'` يبدأ بـ com (% أحرف مجهولة، _ حرف واحد) · `NOT LIKE`"
+          ],
+          "note": "NULL ليست صفراً ولا نصاً فارغاً — تعني أن الحقل بلا قيمة."
+        },
+        {
+          "title": "صيغة الاستعلام",
+          "code": "cursor.execute('SELECT column1, column2 FROM table_name WHERE condition_column = ?', (condition_value,))",
+          "points": [
+            "`*` يسترجع جميع الأعمدة.",
+            "بدون WHERE تُسترجع جميع الصفوف."
+          ]
+        },
+        {
+          "title": "مثال: جميع بيانات الجدول",
+          "code": "import sqlite3\nconnection = sqlite3.connect('grade11_books.db')\ncursor = connection.cursor()\ncursor.execute('SELECT * FROM books')\nrows = cursor.fetchall()     # قائمة من Tuples\nfor row in rows:\n    print(row)\nconnection.close()",
+          "example": "(1, 'Arabic', 'Arabic SD', 'Art/Science', 2001, 1.5)\n(2, 'French', 'French SD', 'Art', 2007, 1.5) ..."
+        },
+        {
+          "title": "دوال fetch",
+          "points": [
+            "**fetchall()**: كل الصفوف دفعة واحدة — قد تستهلك ذاكرة كبيرة.",
+            "**fetchmany(size)**: عدد محدد من الصفوف.",
+            "**fetchone()**: صف واحد فقط (يُعيد Tuple).",
+            "fetchall و fetchmany تُعيدان List من Tuples."
+          ]
+        }
+      ],
+      "activity": {
+        "type": "match",
+        "title": "وصّل الشرط بمعناه",
+        "pairs": [
+          [
+            "price BETWEEN 10 AND 20",
+            "السعر بين 10 و 20"
+          ],
+          [
+            "title LIKE 'com%'",
+            "العنوان يبدأ بـ com"
+          ],
+          [
+            "year IS NULL",
+            "سنة النشر غير مُدخلة"
+          ],
+          [
+            "price IN (10,20,25)",
+            "السعر أحد هذه القيم"
+          ],
+          [
+            "price <> 20",
+            "السعر لا يساوي 20"
+          ]
+        ]
+      },
+      "check": [
+        {
+          "type": "mcq",
+          "q": "الدالة التي تُعيد صفاً واحداً فقط:",
+          "opts": [
+            "fetchall()",
+            "fetchmany()",
+            "fetchone()",
+            "execute()"
+          ],
+          "ans": 2,
+          "exp": "fetchone تُعيد Tuple لصف واحد."
+        },
+        {
+          "type": "tf",
+          "q": "SELECT * FROM books بدون WHERE تسترجع جميع الصفوف.",
+          "ans": true,
+          "exp": "غياب WHERE = لا تصفية."
+        },
+        {
+          "type": "mcq",
+          "q": "الشرط الذي يسترجع الكتب التي ليس لها سعر مُدخل:",
+          "opts": [
+            "price = 0",
+            "price = ''",
+            "price IS NULL",
+            "price NOT IN (0)"
+          ],
+          "ans": 2,
+          "exp": "NULL تعني غياب القيمة."
+        }
+      ],
+      "summary": [
+        "SELECT أعمدة FROM جدول WHERE شرط.",
+        "العوامل: مقارنة، BETWEEN، IN، IS NULL، LIKE.",
+        "fetchall للكل، fetchone لصف واحد، ثم for لطباعة النتائج."
+      ],
+      "homework": "ورقة عمل (6): أكمل data_select1.py للاستعلام عن جميع صفوف landmarks وطباعتها، وسجّل عدد الصفوف (ص 79–80)."
+    },
+    {
+      "id": "W07",
+      "date": "2026-10-25",
+      "unit": "الأسبوع 7 · الوحدة الأولى: قواعد البيانات SQLite في Python",
+      "title": "تابع الاستعلام — أعمدة محددة والاستعلام بشرط",
+      "pages": "76–79",
+      "duration": 45,
+      "objectives": [
+        "يستعلم عن عمود أو أكثر لجميع الصفوف.",
+        "يستعلم عن بيانات بناءً على شرط باستخدام WHERE و placeholder.",
+        "يفسّر نتائج الاستعلام ويعرضها بشكل منظم."
+      ],
+      "warmup": [
+        "ماذا لو أردنا عنوان الكتاب وسعره فقط دون باقي الأعمدة؟"
+      ],
+      "content": [
+        {
+          "title": "أعمدة محددة لجميع الصفوف",
+          "code": "cursor.execute('SELECT title, price FROM books')\nrows = cursor.fetchall()\nfor row in rows:\n    print(row)",
+          "example": "('Arabic', 1.5)\n('French', 1.5)\n('Physics', 0.0) ..."
+        },
+        {
+          "title": "الاستعلام بشرط",
+          "code": "cursor.execute('SELECT * FROM books WHERE year > ?', (2013,))\nrows = cursor.fetchall()\nfor row in rows:\n    print(row)",
+          "points": [
+            "? استُبدلت بالقيمة 2013.",
+            "تُسترجع فقط الكتب المطبوعة بعد 2013."
+          ],
+          "example": "(6, 'Principles of Geography and Economics', 'Social SD', 'Art', 2016, 1.5)\n(7, 'Psychology and sociology', 'Social SD', 'Art', 2016, 1.5)\n(13, 'ICT', 'ICT SD', 'Art/Science', 2025, 1.5)"
+        },
+        {
+          "title": "شروط مركبة",
+          "code": "cursor.execute('SELECT name, year FROM landmarks WHERE category = ?', ('Cultural',))\ncursor.execute('SELECT * FROM books WHERE price > ? AND year < ?', (1, 2013))\ncursor.execute(\"SELECT * FROM books WHERE category = ? OR category = ?\", ('Art', 'Science'))",
+          "note": "لاحظ الفاصلة في (2013,) — Tuple بقيمة واحدة."
+        }
+      ],
+      "activity": {
+        "type": "order",
+        "title": "رتّب خطوات تنفيذ استعلام بشرط",
+        "items": [
+          "تحديد الأعمدة المطلوبة",
+          "تحديد شرط التصفية",
+          "cursor.execute('SELECT ... WHERE ... = ?', (value,))",
+          "rows = cursor.fetchall()",
+          "for row in rows: print(row)",
+          "connection.close()"
+        ]
+      },
+      "check": [
+        {
+          "type": "mcq",
+          "q": "الاستعلام الصحيح لاسترجاع العنوان والسعر فقط:",
+          "opts": [
+            "SELECT * FROM books",
+            "SELECT title, price FROM books",
+            "SELECT title price FROM books",
+            "SELECT (title, price) books"
+          ],
+          "ans": 1,
+          "exp": "أسماء الأعمدة مفصولة بفاصلة بعد SELECT."
+        },
+        {
+          "type": "tf",
+          "q": "(2013) و (2013,) متطابقتان في Python.",
+          "ans": false,
+          "exp": "الأولى عدد داخل قوس، الثانية Tuple بعنصر واحد — وهي المطلوبة."
+        },
+        {
+          "type": "mcq",
+          "q": "كم صفاً يُسترجع من SELECT * FROM books WHERE year > 2013 إذا كانت السنوات 2016, 2016, 2025, 2013, 2007؟",
+          "opts": [
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "ans": 1,
+          "exp": "2016, 2016, 2025 — ثلاثة صفوف؛ 2013 ليست أكبر من 2013."
+        }
+      ],
+      "summary": [
+        "حدد الأعمدة بعد SELECT، والشرط بعد WHERE.",
+        "القيم تُمرَّر في Tuple حتى لو كانت واحدة.",
+        "AND/OR لبناء شروط مركبة."
+      ],
+      "homework": "ورقة عمل (7): أكمل data_select2.py لاستعلام name و year للمعالم الثقافية Cultural فقط وطباعتها (ص 81–82)."
+    },
+    {
+      "id": "W08",
+      "date": "2026-11-01",
+      "unit": "الأسبوع 8 · الوحدة الأولى: قواعد البيانات SQLite في Python + الوحدة الثانية: المنتجات الرقمية",
+      "title": "تحديث البيانات Updating Data + المنتجات الرقمية: ضوابط المشروع وفريق العمل",
+      "pages": "85–91 · 127–131",
+      "duration": 45,
+      "objectives": [
+        "يعدّل بيانات عمود أو أكثر في صف أو أكثر باستخدام UPDATE.",
+        "يطبّق شروطاً بسيطة ومركبة للتحديث.",
+        "يستخدم connection.total_changes لمعرفة عدد الصفوف المعدّلة.",
+        "يتعرّف على وحدة المشروعات وضوابط التنفيذ ومهام فريق العمل."
+      ],
+      "vocab": [
+        {
+          "term": "UPDATE ... SET ... WHERE",
+          "def": "أمر تعديل القيم المخزنة في صفوف محددة."
+        },
+        {
+          "term": "total_changes",
+          "def": "خاصية تُعيد عدد الصفوف المتأثرة بالإضافة والتعديل والحذف منذ بدء الاتصال."
+        }
+      ],
+      "warmup": [
+        "ماذا يحدث لو نفّذنا UPDATE بدون WHERE؟",
+        "لماذا نطبع عدد الصفوف المعدّلة بعد التحديث؟"
+      ],
+      "content": [
+        {
+          "title": "صيغة التحديث",
+          "code": "cursor.execute('UPDATE table_name SET column_name = ? WHERE condition_column = ?', (value, condition_value))",
+          "note": "بدون WHERE تُحدَّث **جميع** الصفوف."
+        },
+        {
+          "title": "تحديث عمود واحد بشرط بسيط",
+          "code": "import sqlite3\nconnection = sqlite3.connect('grade11_books.db')\ncursor = connection.cursor()\ncursor.execute('''\nUPDATE books\nSET price = ?\nWHERE id = ?''', (2, 5))\nprint('Number of rows updated = ', connection.total_changes)   # 1\nconnection.commit()\nconnection.close()"
+        },
+        {
+          "title": "أكثر من عمود وشروط مركبة",
+          "code": "# عمودان بشرط بسيط\ncursor.execute('UPDATE books SET price = ?, year = ? WHERE category = ?', (2.5, 2024, 'Art'))\n# الصفوف التي سنة نشرها غير مُدخلة\ncursor.execute('UPDATE books SET price = ?, year = ? WHERE year IS NULL', (2.5, 2024))\n# شرط مركب\ncursor.execute('UPDATE books SET price = ? WHERE price < ? AND category = ?', (3, 2.5, 'Art'))\ncursor.execute('UPDATE books SET category = ?, price = ? WHERE category = ? AND price < ?', ('Science', 3, 'Art', 2.5))",
+          "points": [
+            "ترتيب القيم في Tuple = ترتيب علامات ? في الأمر."
+          ]
+        },
+        {
+          "title": "المنتجات الرقمية: وحدة المشروعات",
+          "points": [
+            "الهدف: تطبيق المهارات + العمل الجماعي + تجميع الوسائط وفق أسس تحليل النظم.",
+            "**الخطوات**: تحديد المشكلة → الخوارزمية → خريطة التدفق → الكود → الاختبار → العرض → التحسين → البناء.",
+            "**فريق العمل (4–5)**: قائد الفريق · مُعد قاعدة البيانات · المبرمج · مُعد العرض التقديمي.",
+            "**الجدول الزمني**: التخطيط والتحليل → خطة المشروع والتوزيع → التصميم والتوثيق الأولي → البرمجة → الاختبار والتحسين → التوثيق النهائي والعرض."
+          ]
+        }
+      ],
+      "activity": {
+        "type": "match",
+        "title": "وصّل الأمر بنتيجته",
+        "pairs": [
+          [
+            "UPDATE books SET price=2 WHERE id=5",
+            "يعدّل صفاً واحداً"
+          ],
+          [
+            "UPDATE books SET price=2",
+            "يعدّل جميع الصفوف"
+          ],
+          [
+            "WHERE year IS NULL",
+            "الصفوف بلا سنة نشر"
+          ],
+          [
+            "WHERE price < 2.5 AND category='Art'",
+            "شرط مركب بـ AND"
+          ],
+          [
+            "connection.total_changes",
+            "عدد الصفوف المتأثرة"
+          ]
+        ]
+      },
+      "check": [
+        {
+          "type": "mcq",
+          "q": "UPDATE books SET price = ?, year = ? WHERE category = ? — ترتيب Tuple الصحيح:",
+          "opts": [
+            "('Art', 2.5, 2024)",
+            "(2.5, 2024, 'Art')",
+            "(2024, 2.5, 'Art')",
+            "(2.5, 'Art', 2024)"
+          ],
+          "ans": 1,
+          "exp": "بترتيب علامات ?: price ثم year ثم category."
+        },
+        {
+          "type": "tf",
+          "q": "UPDATE بدون WHERE يُحدّث الصف الأول فقط.",
+          "ans": false,
+          "exp": "يُحدّث جميع الصفوف."
+        },
+        {
+          "type": "mcq",
+          "q": "عضو الفريق المسؤول عن إعداد قاعدة البيانات في مشروع الصف الحادي عشر:",
+          "opts": [
+            "قائد الفريق",
+            "مُعد قاعدة البيانات",
+            "المبرمج",
+            "مُعد العرض"
+          ],
+          "ans": 1,
+          "exp": "مُعد قاعدة البيانات مسؤول عن تصميمها وإعدادها."
+        }
+      ],
+      "summary": [
+        "UPDATE جدول SET عمود = ? WHERE شرط — دائماً مع WHERE.",
+        "total_changes يوضح عدد الصفوف المتأثرة.",
+        "بدأنا وحدة المشروع: الخطوات والفريق والجدول الزمني."
+      ],
+      "homework": "ورقة عمل (8): حدّث سعر المعلم id=1 ليصبح 2 دينار (ص 91–92). ورقة عمل (9): حدّث سعر المعالم Cultural أو Historical ليصبح 0 (ص 93–94). شكّلوا فريق المشروع."
+    },
+    {
+      "id": "W09",
+      "date": "2026-11-08",
+      "unit": "الأسبوع 9 · الوحدة الأولى: قواعد البيانات SQLite في Python + الوحدة الثانية: المنتجات الرقمية",
+      "title": "حذف البيانات Deleting Data + المنتجات الرقمية: فكرة المشروع وأهدافه ومهاراته",
+      "pages": "97–102 · 132–135",
+      "duration": 45,
+      "objectives": [
+        "يحذف صفاً أو صفوفاً محددة بـ DELETE مع شرط.",
+        "يفرّق بين الحذف بشرط بسيط وشرط مركب والحذف الكامل.",
+        "يستخدم placeholders لتفادي أخطاء الحذف و SQL Injection.",
+        "يعتمد فكرة المشروع ويحدد أهدافه ومهاراته وتوظيفه الواقعي."
+      ],
+      "vocab": [
+        {
+          "term": "DELETE FROM ... WHERE",
+          "def": "إزالة صف أو صفوف من الجدول بشكل دائم."
+        }
+      ],
+      "warmup": [
+        "الحذف دائم ولا يُسترجع — ما الذي يجب التأكد منه قبل تنفيذ DELETE؟"
+      ],
+      "content": [
+        {
+          "title": "صيغة الحذف",
+          "code": "cursor.execute('DELETE FROM table_name WHERE column_name = ?', (value,))",
+          "note": "بدون WHERE تُحذف **جميع** صفوف الجدول."
+        },
+        {
+          "title": "حذف بشرط بسيط",
+          "code": "import sqlite3\nconnection = sqlite3.connect('grade11_books.db')\ncursor = connection.cursor()\ncursor.execute('''\nDELETE FROM books\nWHERE title = ?''', ('Mathematics',))\nprint('Number of rows deleted =', connection.total_changes)   # 2\nconnection.commit()\nconnection.close()"
+        },
+        {
+          "title": "حذف بشرط مركب وحالات خاصة",
+          "code": "cursor.execute('DELETE FROM books WHERE price > ? AND year < ?', (1, 2013))   # 4 صفوف\ncursor.execute('DELETE FROM books WHERE year IS NULL')                         # بلا سنة نشر\n# IS NOT NULL لحذف الصفوف غير الفارغة"
+        },
+        {
+          "title": "المنتجات الرقمية: فكرة المشروع وأهدافه",
+          "points": [
+            "**شروط الفكرة**: واضحة وقابلة للتطبيق · فئة مستفيدة · نموذج برمجي · مصادر خارجية · **تعتمد على تقنيات الذكاء الاصطناعي**.",
+            "**الأهداف**: إكساب مهارات تقنية وإبداعية عبر تنفيذ فكرة تعليمية منظمة وتعاونية.",
+            "**التوظيف الواقعي**: ربط البرمجة والذكاء الاصطناعي وقواعد البيانات بحل مشكلات حقيقية.",
+            "**المهارات**: رقمية وتقنية (Python, SQLite, قراءة الوجوه) · تفكير ناقد · توثيق وبحث · عمل جماعي · عرض وتواصل."
+          ]
+        }
+      ],
+      "activity": {
+        "type": "sort",
+        "title": "ما الأمر المناسب؟",
+        "groups": [
+          {
+            "name": "DELETE",
+            "items": [
+              "إزالة كتاب مكرر",
+              "حذف المعالم الثقافية"
+            ]
+          },
+          {
+            "name": "UPDATE",
+            "items": [
+              "تغيير سعر كتاب",
+              "تصحيح سنة النشر"
+            ]
+          },
+          {
+            "name": "SELECT",
+            "items": [
+              "عرض الكتب بعد 2013",
+              "طباعة العناوين والأسعار"
+            ]
+          }
+        ]
+      },
+      "check": [
+        {
+          "type": "mcq",
+          "q": "DELETE FROM books بدون WHERE:",
+          "opts": [
+            "يحذف الصف الأول",
+            "يحذف جميع الصفوف",
+            "يحذف الجدول نفسه",
+            "خطأ في الصيغة"
+          ],
+          "ans": 1,
+          "exp": "غياب الشرط = حذف كل الصفوف (الجدول يبقى)."
+        },
+        {
+          "type": "tf",
+          "q": "بعد DELETE يمكن استرجاع الصفوف المحذوفة بـ fetchall().",
+          "ans": false,
+          "exp": "الحذف دائم."
+        },
+        {
+          "type": "mcq",
+          "q": "من شروط فكرة مشروع الصف الحادي عشر:",
+          "opts": [
+            "أن تُكتب بلغة C++",
+            "أن تعتمد على الذكاء الاصطناعي",
+            "أن تكون بلا قاعدة بيانات",
+            "أن ينفذها طالب واحد"
+          ],
+          "ans": 1,
+          "exp": "الكتاب يشترط اعتماد الفكرة على تقنيات الذكاء الاصطناعي."
+        }
+      ],
+      "summary": [
+        "DELETE FROM جدول WHERE شرط — تحقق من الشرط قبل التنفيذ.",
+        "total_changes يخبرك بعدد الصفوف المحذوفة.",
+        "فكرة المشروع يجب أن تُعتمد من المعلم وتوظّف الذكاء الاصطناعي."
+      ],
+      "homework": "ورقة عمل (10): احذف جميع المعالم Cultural (ص 102–103). ورقة عمل (11): احذف المعالم التي year < 2000 و price > 1 (ص 104–105). سجّلوا فكرة المشروع وأهدافه في الكتاب."
+    },
+    {
+      "id": "W10",
+      "date": "2026-11-15",
+      "unit": "الأسبوع 10 · الوحدة الثانية: المنتجات الرقمية",
+      "title": "الذكاء الاصطناعي وتكامله مع قواعد البيانات AI and Database Integration + خطوات تنفيذ المشروع والتوثيق",
+      "pages": "111–123 · 136–137",
+      "duration": 45,
+      "objectives": [
+        "يشرح مفاهيم رؤية الحاسوب وكشف الوجوه والتعرف عليها.",
+        "يربط خوارزميات التعرف على الوجوه بقاعدة بيانات SQLite.",
+        "يفهم بنية مشروع face_detections.db ووحداته.",
+        "يتعرّف على خطوات تنفيذ المشروع والتوثيق العلمي."
+      ],
+      "vocab": [
+        {
+          "term": "Face Detection كشف الوجه",
+          "def": "تحديد موقع الوجه في الصورة (x, y, w, h)."
+        },
+        {
+          "term": "Face Recognition التعرف على الوجه",
+          "def": "مقارنة الوجه المكتشف بوجوه معروفة لتحديد الهوية."
+        },
+        {
+          "term": "OpenCV (cv2)",
+          "def": "حزمة مفتوحة المصدر لمعالجة الصور ورؤية الحاسوب — pip install opencv-python."
+        },
+        {
+          "term": "matchTemplate",
+          "def": "دالة تقارن صورة صغيرة بصورة كبيرة وتُعيد درجة تشابه بين 0 و 1."
+        }
+      ],
+      "warmup": [
+        "كيف يفتح هاتفك بوجهك؟ ما الذي يقارنه؟",
+        "لماذا نخزن نتائج التعرف في قاعدة بيانات بدل ملف نصي؟"
+      ],
+      "content": [
+        {
+          "title": "الوحدات المستخدمة في المشروع",
+          "points": [
+            "**OpenCV (cv2)**: كشف الوجوه ومعالجة الصور.",
+            "**os**: إدارة الملفات ومسارات الصور.",
+            "**sqlite3**: تخزين البيانات محلياً.",
+            "**datetime**: تسجيل الوقت والتاريخ."
+          ]
+        },
+        {
+          "title": "مراحل المشروع",
+          "points": [
+            "1. **إعداد البيئة**: تثبيت cv2، مجلد known_faces بصور الأشخاص المعروفين.",
+            "2. **التعرف على الوجه**: تحويل الصورة إلى رمادي، ثم cv2.matchTemplate للمقارنة.",
+            "3. **استخراج المعلومات**: تطابق > 0.3 (أو 0.7) = وجه معروف؛ الاسم من اسم الملف (Ali.png → 'Ali').",
+            "4. **الاتصال بقاعدة البيانات** وإنشاء الجدول إن لم يوجد.",
+            "5. **تخزين البيانات** بـ INSERT INTO."
+          ],
+          "code": "CREATE TABLE IF NOT EXISTS face_logs (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    image_name TEXT,\n    person_name TEXT,\n    x INTEGER, y INTEGER, w INTEGER, h INTEGER,\n    detected_at TEXT\n)"
+        },
+        {
+          "title": "الأجزاء الرئيسية من الكود",
+          "code": "gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nface_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')\nfaces = face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5)\nfor (x, y, w, h) in faces:\n    face_crop = gray[y:y+h, x:x+w]\n    name = recognize_face_by_template(face_crop)\n    cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0), 2)\n    cv2.putText(image, name, (x, y + h + 25), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 255, 0), 2)\n    timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')\n    cursor.execute('INSERT INTO face_logs (image_name, person_name, x, y, w, h, detected_at) VALUES (?,?,?,?,?,?,?)',\n                   (os.path.basename(image_path), name, x, y, w, h, timestamp))\nconnection.commit()\nconnection.close()\ncv2.imshow('Identified Faces', image)",
+          "points": [
+            "**لماذا الرمادي؟** أسرع وأكفأ (قناة واحدة بدل ثلاث)، والكواشف تعتمد على تباين الإضاءة لا الألوان.",
+            "**لماذا قاعدة بيانات؟** تنظيم، بحث سريع بالاستعلامات، منع التكرار بالقيود، اعتمادية وأمان."
+          ]
+        },
+        {
+          "title": "خطوات تنفيذ المشروع والتوثيق",
+          "points": [
+            "**بيئة العمل**: PyCharm · PowerPoint · مسجل الشاشة · Draw.io · DB Browser for SQLite · Edge.",
+            "**هيكل المشروع**: Python · متغيرات متعددة · شروط · try/except · مهارات قواعد البيانات.",
+            "كتابة الكود → الاختبار → التطوير (تبسيط وتعليقات) → **التوثيق**: عرض يشمل بيانات الفريق، الفكرة، خريطة التدفق، النموذج البرمجي، **كيف وُظّف الذكاء الاصطناعي واسم النموذج**، المصادر بنظام APA، الأسئلة، الختام.",
+            "مشاركة المشروع على Teams والاستمرار في التعلم."
+          ]
+        }
+      ],
+      "activity": {
+        "type": "order",
+        "title": "رتّب مراحل برنامج التعرف على الوجوه",
+        "items": [
+          "إدخال مسار الصورة وتحميلها",
+          "تحويل الصورة إلى تدرج رمادي",
+          "كشف الوجوه بـ Haar Cascade",
+          "مقارنة كل وجه بالصور المعروفة matchTemplate",
+          "رسم مستطيل وكتابة الاسم",
+          "تسجيل البيانات في SQLite",
+          "عرض الصورة النهائية"
+        ]
+      },
+      "check": [
+        {
+          "type": "mcq",
+          "q": "الفرق بين Face Detection و Face Recognition:",
+          "opts": [
+            "لا فرق",
+            "الأول يحدد موقع الوجه والثاني يحدد هويته",
+            "الأول يحدد الهوية والثاني الموقع",
+            "الأول للصور والثاني للفيديو"
+          ],
+          "ans": 1,
+          "exp": "الكشف = الإحداثيات؛ التعرف = مطابقة مع وجوه معروفة."
+        },
+        {
+          "type": "tf",
+          "q": "matchTemplate تُعيد قيمة بين 0 و 1 والأقرب إلى 1 تعني تطابقاً أعلى.",
+          "ans": true,
+          "exp": "درجة التشابه تتراوح بين 0 و 1."
+        },
+        {
+          "type": "mcq",
+          "q": "نظام التوثيق المرجعي المقترح في الكتاب:",
+          "opts": [
+            "MLA",
+            "APA",
+            "IEEE",
+            "Chicago"
+          ],
+          "ans": 1,
+          "exp": "APA — American Psychological Association."
+        }
+      ],
+      "summary": [
+        "المشروع يدمج OpenCV + sqlite3 + os + datetime.",
+        "كشف الوجه (موقع) ثم التعرف (هوية) ثم التخزين في face_logs.",
+        "التوثيق يشمل عرض كيفية توظيف الذكاء الاصطناعي والمراجع بنظام APA."
+      ],
+      "homework": "جهّزوا بيئة المشروع (pip install opencv-python ومجلد known_faces)، واكتبوا التقرير النهائي والعرض التقديمي للحصة القادمة."
+    },
+    {
+      "id": "W11",
+      "date": "2026-11-22",
+      "unit": "الأسبوع 11 · الوحدة الثانية: المنتجات الرقمية",
+      "title": "مناقشة المشاريع ورصد الدرجات وتوثيق المشاريع",
+      "pages": "137–138",
+      "duration": 45,
+      "objectives": [
+        "يعرض الفريق مشروعه ويناقشه مع المعلم والزملاء.",
+        "يتفاعل مع التغذية الراجعة ويوثّق المشروع ويشاركه على Teams."
+      ],
+      "warmup": [
+        "ما السؤال الذي تتوقعه عن مشروعكم؟ وما إجابتكم؟"
+      ],
+      "content": [
+        {
+          "title": "معايير التقييم",
+          "points": [
+            "وضوح الفكرة والمشكلة والفئة المستفيدة.",
+            "تصميم قاعدة البيانات وصحة عمليات CRUD.",
+            "توظيف الذكاء الاصطناعي وذكر النموذج المستخدم.",
+            "خلو البرنامج من الأخطاء ومعالجة الاستثناءات.",
+            "جودة العرض والتوثيق والمراجع (APA) والعمل الجماعي."
+          ]
+        },
+        {
+          "title": "ما بعد العرض",
+          "points": [
+            "تسليم المجلد المجمّع لجميع ملفات المشروع.",
+            "مشاركة المشروع على منصة Teams.",
+            "الاستمرار في التعلم: مستجدات الذكاء الاصطناعي والدورات والمنتديات."
+          ]
+        }
+      ],
+      "summary": [
+        "العرض والمناقشة جزء من التقييم.",
+        "التوثيق والمشاركة على Teams يختمان المشروع."
+      ],
+      "homework": "راجع أوراق العمل 1–11 (الاتصال، الجداول، INSERT، SELECT، UPDATE، DELETE) استعداداً للاختبار العملي."
+    },
+    {
+      "id": "W12",
+      "date": "2026-11-29",
+      "unit": "الأسبوع 12 · الاختبار",
+      "title": "الاختبار العملي لنهاية الفصل الدراسي الأول",
+      "pages": "—",
+      "duration": 45,
+      "objectives": [
+        "يطبّق عمليات CRUD على قاعدة بيانات SQLite من Python مع معالجة الاستثناءات."
+      ],
+      "content": [
+        {
+          "title": "نطاق الاختبار",
+          "points": [
+            "الأسبوعان 12 و13 (2026/11/29 – 2026/12/10) — حصتان.",
+            "تذكير: connect/close · cursor · CREATE TABLE مع القيود · INSERT (execute/executemany) · SELECT مع WHERE و fetch · UPDATE · DELETE · total_changes · try/except/finally."
+          ]
+        }
+      ],
+      "summary": [
+        "استخدم ? دائماً، و commit بعد كل تعديل، و close في النهاية."
+      ],
+      "homework": "بالتوفيق!"
+    }
+  ]
+}
