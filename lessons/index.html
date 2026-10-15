@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أ. عبدالله العبدالسلام | منصة تعليمية تفاعلية</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{--cyan:#00f5ff;--gold:#fbbf24;--purple:#c026d3;--dark:#020617;--dark2:#0f172a;--text:#f1f5f9;--muted:rgba(241,245,249,0.6);--border:rgba(0,245,255,0.15)}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:"Tajawal",sans-serif;background:var(--dark);color:var(--text);min-height:100vh;overflow-x:hidden}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--dark2)}::-webkit-scrollbar-thumb{background:rgba(0,245,255,0.3);border-radius:3px}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(2,6,23,0.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 48px;height:64px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:"Orbitron",sans-serif;font-size:14px;color:var(--cyan);letter-spacing:3px;text-shadow:0 0 20px rgba(0,245,255,0.5)}
+.nav-links{display:flex;gap:6px;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:14px;padding:7px 16px;border-radius:8px;transition:all 0.2s}
+.nav-links a:hover{color:var(--text);background:rgba(255,255,255,0.06)}
+.page{display:none}.page.active{display:block;animation:fadeUp 0.4s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.hero{min-height:100vh;padding:110px 48px 72px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 70% 50% at 50% -5%,rgba(0,245,255,0.07) 0%,transparent 65%),radial-gradient(ellipse 50% 40% at 85% 85%,rgba(192,38,211,0.06) 0%,transparent 55%)}
+.hero-grid{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(circle,rgba(0,245,255,0.1) 1px,transparent 1px);background-size:36px 36px;mask-image:radial-gradient(ellipse 70% 70% at 50% 50%,black 20%,transparent 100%)}
+.hero-avatar{width:150px;height:150px;border-radius:50%;border:3px solid var(--cyan);box-shadow:0 0 0 8px rgba(0,245,255,0.07),0 0 60px rgba(0,245,255,0.25);overflow:hidden;margin-bottom:28px;position:relative;z-index:1;animation:glowPulse 3.5s ease-in-out infinite}
+.hero-avatar img{width:100%;height:100%;object-fit:cover;object-position:center top}
+@keyframes glowPulse{0%,100%{box-shadow:0 0 0 8px rgba(0,245,255,0.07),0 0 60px rgba(0,245,255,0.25)}50%{box-shadow:0 0 0 14px rgba(0,245,255,0.04),0 0 90px rgba(0,245,255,0.35)}}
+.hero-name{font-size:42px;font-weight:900;line-height:1.2;margin-bottom:10px;position:relative;z-index:1;background:linear-gradient(135deg,#ffffff 0%,#b2f5ff 60%,var(--cyan) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-title{font-size:19px;color:var(--cyan);font-weight:600;margin-bottom:5px;position:relative;z-index:1}
+.hero-school{font-size:15px;color:var(--muted);margin-bottom:36px;position:relative;z-index:1}
+.degrees{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:36px;position:relative;z-index:1}
+.deg{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:14px 22px;display:flex;flex-direction:column;align-items:center;gap:5px;min-width:220px;max-width:280px;transition:transform 0.2s}
+.deg:hover{transform:translateY(-3px)}
+.deg .di{font-size:26px}.deg .dl{font-size:11px;color:var(--muted);letter-spacing:1px}.deg .dt{font-size:14px;font-weight:700;text-align:center}
+.deg.cur{border-color:rgba(0,245,255,0.25);background:rgba(0,245,255,0.04)}.deg.cur .dt{color:var(--cyan)}
+.deg.stu{border-color:rgba(251,191,36,0.3);background:rgba(251,191,36,0.05)}.deg.stu .dt{color:var(--gold)}
+.in-prog{font-size:10px;background:rgba(251,191,36,0.15);color:var(--gold);border-radius:6px;padding:2px 8px;font-weight:700;letter-spacing:1px}
+.bio-wrap{max-width:660px;margin:0 auto 36px;position:relative;z-index:1}
+.bio-card{background:rgba(255,255,255,0.03);border:1px solid var(--border);border-right:3px solid var(--cyan);border-radius:16px;padding:24px 28px;font-size:16.5px;line-height:2.0;color:rgba(241,245,249,0.75)}
+.email-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:52px;position:relative;z-index:1}
+.email-btn{display:inline-flex;align-items:center;gap:9px;padding:12px 26px;border-radius:12px;font-family:"Tajawal",sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:all 0.25s;text-decoration:none;border:none}
+.email-btn.personal{background:rgba(0,245,255,0.08);border:1.5px solid rgba(0,245,255,0.3);color:var(--cyan)}
+.email-btn.school{background:rgba(251,191,36,0.08);border:1.5px solid rgba(251,191,36,0.3);color:var(--gold)}
+.email-btn:hover{transform:translateY(-3px);filter:brightness(1.15)}
+.cta-hint{font-family:"Orbitron",sans-serif;font-size:11px;color:rgba(241,245,249,0.35);letter-spacing:4px;margin-bottom:14px;position:relative;z-index:1}
+.scroll-arrow{font-size:22px;color:var(--cyan);animation:arrowBounce 2s infinite;cursor:pointer;position:relative;z-index:1;display:inline-block}
+@keyframes arrowBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+.grades-section{padding:80px 48px 100px;max-width:1140px;margin:0 auto}
+.sec-title{text-align:center;margin-bottom:52px}
+.sec-title h2{font-size:34px;font-weight:900;margin-bottom:8px}
+.sec-title p{color:var(--muted);font-size:16px}
+.sec-title .tline{width:56px;height:3px;background:linear-gradient(90deg,var(--cyan),var(--purple));border-radius:2px;margin:14px auto 0}
+.grades-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.grades-row2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:calc(66.66% + 11px);margin:22px auto 0}
+.grade-card{background:rgba(15,23,42,0.85);border:1.5px solid rgba(255,255,255,0.08);border-radius:22px;padding:28px 26px;cursor:pointer;transition:all 0.3s cubic-bezier(0.4,0,0.2,1);position:relative;overflow:hidden;backdrop-filter:blur(12px)}
+.grade-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--cc);opacity:0.5;transition:opacity 0.3s}
+.grade-card:hover{border-color:var(--cc);transform:translateY(-7px);box-shadow:0 24px 60px rgba(0,0,0,0.5),0 0 0 1px var(--cc)}
+.grade-card:hover::before{opacity:1}
+.gc-emoji{font-size:44px;margin-bottom:14px;display:block}
+.gc-ar{font-size:22px;font-weight:900;margin-bottom:4px}
+.gc-en{font-family:"Orbitron",sans-serif;font-size:9px;color:var(--muted);letter-spacing:2px;margin-bottom:14px}
+.gc-subjects{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:6px}
+.gc-pill{font-size:11px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.09);border-radius:6px;padding:3px 8px;color:var(--muted)}
+.gc-pill.hi{background:rgba(0,245,255,0.1);border-color:rgba(0,245,255,0.25);color:var(--cyan);font-weight:700}
+.gc-arrow{position:absolute;bottom:20px;left:20px;font-size:16px;opacity:0;transform:translateX(-8px);transition:all 0.3s;color:var(--cc)}
+.grade-card:hover .gc-arrow{opacity:1;transform:translateX(0)}
+.inner-page{min-height:100vh;padding:96px 48px 72px;max-width:980px;margin:0 auto}
+.back-btn{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:9px 20px;font-family:"Tajawal",sans-serif;font-size:15px;color:var(--muted);cursor:pointer;transition:all 0.2s;margin-bottom:32px}
+.back-btn:hover{background:rgba(255,255,255,0.08);color:var(--text)}
+.grade-bar{background:rgba(15,23,42,0.9);border:1.5px solid var(--border);border-radius:20px;padding:22px 28px;margin-bottom:28px;display:flex;align-items:center;gap:14px}
+.gb-emoji{font-size:42px}.gb-info h2{font-size:24px;font-weight:900}.gb-info p{color:var(--muted);font-size:13px;margin-top:4px}
+.subj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.sc{background:rgba(15,23,42,0.85);border:1.5px solid rgba(255,255,255,0.08);border-radius:18px;padding:22px 18px;transition:all 0.25s;position:relative;overflow:hidden}
+.sc::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--scc,#444);opacity:0.4;transition:opacity 0.3s}
+.sc.av{cursor:pointer}.sc.av:hover{border-color:var(--scc);transform:translateY(-5px);box-shadow:0 16px 50px rgba(0,0,0,0.4)}.sc.av:hover::before{opacity:1}
+.sc.lk{opacity:0.5;cursor:default}
+.sc-em{font-size:30px;margin-bottom:10px;display:block}
+.sc-nm{font-size:16px;font-weight:900;margin-bottom:8px}
+.sc-tg{display:inline-flex;align-items:center;gap:4px;font-size:11px;border-radius:6px;padding:3px 9px;font-weight:700}
+.sc-tg.a{background:rgba(0,245,255,0.1);color:var(--cyan);border:1px solid rgba(0,245,255,0.2)}
+.sc-tg.s{background:rgba(255,255,255,0.04);color:var(--muted);border:1px solid rgba(255,255,255,0.08)}
+.subj-hdr{background:rgba(15,23,42,0.9);border:1.5px solid var(--border);border-radius:20px;padding:26px 30px;margin-bottom:26px;display:flex;align-items:center;gap:18px}
+.sh-icon{font-size:50px}.sh-info h2{font-size:24px;font-weight:900}.sh-info p{color:var(--muted);font-size:14px;margin-top:4px}
+.mode-switch{display:grid;grid-template-columns:1fr 1fr;gap:6px;background:rgba(15,23,42,0.9);border:1.5px solid var(--border);border-radius:16px;padding:6px;margin-bottom:22px}
+.ms-btn{background:transparent;border:1.5px solid transparent;border-radius:11px;padding:14px 16px;font-family:"Tajawal",sans-serif;font-size:17px;font-weight:900;color:var(--muted);cursor:pointer;transition:all 0.25s;display:flex;flex-direction:column;align-items:center;gap:3px}
+.ms-btn small{font-size:12px;font-weight:400;color:var(--muted)}
+.ms-btn:hover{color:var(--text);background:rgba(255,255,255,0.04)}
+.ms-btn.active{background:rgba(0,245,255,0.1);border-color:rgba(0,245,255,0.35);color:var(--cyan)}
+.ms-btn.active.lessons{background:rgba(251,191,36,0.1);border-color:rgba(251,191,36,0.4);color:var(--gold)}
+.sem-grid.lessons .sem:hover{border-color:var(--gold);box-shadow:0 20px 50px rgba(251,191,36,0.08)}
+.sem-grid.lessons .sem-p{background:rgba(251,191,36,0.1);color:var(--gold)}
+.sem-grid.lessons .sem-bg{color:rgba(251,191,36,0.06)}
+.sem-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.sem{background:rgba(15,23,42,0.85);border:1.5px solid rgba(255,255,255,0.08);border-radius:20px;padding:28px 24px;cursor:pointer;transition:all 0.3s;position:relative;overflow:hidden}
+.sem:hover{border-color:var(--cyan);transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,245,255,0.08)}
+.sem-bg{font-family:"Orbitron",sans-serif;font-size:72px;font-weight:900;color:rgba(0,245,255,0.06);position:absolute;top:6px;left:14px;line-height:1;pointer-events:none}
+.sem-t{font-size:22px;font-weight:900;margin-bottom:5px}
+.sem-e{font-family:"Orbitron",sans-serif;font-size:10px;color:var(--muted);letter-spacing:2px;margin-bottom:14px}
+.sem-p{display:inline-flex;align-items:center;gap:6px;background:rgba(0,245,255,0.08);border-radius:8px;padding:4px 13px;font-size:13px;color:var(--cyan)}
+.pg-hdr{margin-bottom:30px}.pg-hdr h1{font-size:28px;font-weight:900}.pg-hdr p{color:var(--muted);margin-top:6px;font-size:14px}
+.ch-list{display:flex;flex-direction:column;gap:12px}
+.ch{background:rgba(15,23,42,0.85);border:1.5px solid rgba(255,255,255,0.08);border-radius:16px;padding:20px 26px;cursor:pointer;transition:all 0.25s;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.ch:hover{border-color:var(--cyan);background:rgba(0,245,255,0.04);transform:translateX(-5px)}
+.ch-l{display:flex;align-items:center;gap:18px}
+.ch-n{font-family:"Orbitron",sans-serif;font-size:12px;font-weight:900;color:var(--cyan);background:rgba(0,245,255,0.1);border:1px solid rgba(0,245,255,0.2);border-radius:10px;width:46px;height:46px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ch-nm{font-size:17px;font-weight:700}.ch-sb{font-size:13px;color:var(--muted);margin-top:3px}
+.ch-play{background:var(--cyan);color:var(--dark);border-radius:10px;padding:9px 18px;font-family:"Tajawal",sans-serif;font-size:13px;font-weight:900;display:flex;align-items:center;gap:7px;transition:all 0.2s;flex-shrink:0;white-space:nowrap}
+.ch:hover .ch-play{transform:scale(1.05)}
+.cs{text-align:center;padding:64px 24px;color:var(--muted);background:rgba(15,23,42,0.6);border:1.5px dashed rgba(0,245,255,0.15);border-radius:20px}
+.cs-ic{font-size:60px;margin-bottom:16px;display:block}
+.cs h3{font-size:21px;font-weight:900;color:var(--text);margin-bottom:10px}
+.cs p{font-size:15px;line-height:1.9}
+footer{border-top:1px solid rgba(0,245,255,0.1);padding:28px 48px;text-align:center;color:var(--muted);font-size:14px}
+#bg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.cw{position:relative;z-index:1}
+@keyframes si{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.stg>*{opacity:0;animation:si 0.4s ease forwards}
+.stg>*:nth-child(1){animation-delay:.04s}.stg>*:nth-child(2){animation-delay:.10s}.stg>*:nth-child(3){animation-delay:.16s}.stg>*:nth-child(4){animation-delay:.22s}.stg>*:nth-child(5){animation-delay:.28s}.stg>*:nth-child(6){animation-delay:.34s}.stg>*:nth-child(7){animation-delay:.40s}.stg>*:nth-child(8){animation-delay:.46s}.stg>*:nth-child(9){animation-delay:.52s}.stg>*:nth-child(10){animation-delay:.58s}
+@media(max-width:900px){.grades-grid{grid-template-columns:1fr 1fr}.grades-row2{max-width:100%}.subj-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.ms-btn{font-size:15px;padding:12px 8px}nav{padding:0 20px}.nav-links{display:none}.hero{padding:90px 20px 48px}.hero-name{font-size:28px}.degrees{flex-direction:column;align-items:center}.email-row{flex-direction:column;align-items:center}.grades-section{padding:60px 20px 80px}.grades-grid{grid-template-columns:1fr}.grades-row2{grid-template-columns:1fr;max-width:100%}.inner-page{padding:90px 20px 48px}.subj-grid{grid-template-columns:1fr 1fr}.sem-grid{grid-template-columns:1fr}}
+
+.platform-badge{display:inline-block;background:rgba(0,245,255,0.08);border:1.5px solid rgba(0,245,255,0.3);color:#00f5ff;padding:8px 22px;border-radius:50px;font-family:'Orbitron',sans-serif;font-size:12px;letter-spacing:3px;margin-bottom:24px;position:relative;z-index:2;animation:badgePulse 3s ease-in-out infinite}
+@keyframes badgePulse{0%,100%{box-shadow:0 0 0 0 rgba(0,245,255,0.2)}50%{box-shadow:0 0 0 8px rgba(0,245,255,0)}}
+.platform-stats{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin:36px 0 28px;position:relative;z-index:2}
+.pst-card{background:rgba(15,23,42,0.6);border:1.5px solid rgba(0,245,255,0.2);border-radius:14px;padding:18px 24px;min-width:140px;backdrop-filter:blur(8px);transition:all 0.25s}
+.pst-card:hover{transform:translateY(-3px);border-color:rgba(0,245,255,0.5);box-shadow:0 8px 24px rgba(0,245,255,0.15)}
+.pst-num{display:block;font-family:'Orbitron',sans-serif;font-size:30px;font-weight:900;color:#00f5ff;margin-bottom:4px;text-shadow:0 0 20px rgba(0,245,255,0.4)}
+.pst-lbl{display:block;font-size:13px;color:rgba(241,245,249,0.7);letter-spacing:1px}
+.platform-features{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin:12px 0 36px;position:relative;z-index:2;max-width:900px;margin-left:auto;margin-right:auto}
+.pf-card{background:rgba(15,23,42,0.5);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:22px 26px;flex:1;min-width:220px;max-width:280px;transition:all 0.25s;text-align:center}
+.pf-card:hover{border-color:rgba(251,191,36,0.3);background:rgba(251,191,36,0.03);transform:translateY(-2px)}
+.pf-icon{display:block;font-size:34px;margin-bottom:10px}
+.pf-title{display:block;font-size:17px;font-weight:900;color:#fbbf24;margin-bottom:5px}
+.pf-desc{display:block;font-size:13px;color:rgba(241,245,249,0.65);line-height:1.5}
+.cta-btn{background:linear-gradient(135deg,#00f5ff 0%,#c026d3 100%);color:#020617;border:none;padding:18px 44px;font-family:'Tajawal',sans-serif;font-size:18px;font-weight:900;border-radius:50px;cursor:pointer;box-shadow:0 8px 30px rgba(0,245,255,0.35);transition:all 0.3s;position:relative;z-index:2;margin-top:10px}
+.cta-btn:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 14px 40px rgba(0,245,255,0.5)}
+@media(max-width:768px){.platform-stats{gap:10px}.pst-card{min-width:115px;padding:14px 16px}.pst-num{font-size:24px}.platform-features{flex-direction:column;align-items:center}.pf-card{max-width:100%;width:100%}.cta-btn{font-size:16px;padding:14px 30px}}
+
+
+.dev-section{padding:0 20px;margin:40px auto 20px;max-width:780px;position:relative;z-index:1}
+.dev-card{display:flex;align-items:center;gap:22px;background:linear-gradient(135deg,rgba(15,23,42,0.7) 0%,rgba(30,41,59,0.5) 100%);border:1.5px solid rgba(0,245,255,0.2);border-radius:18px;padding:22px 28px;text-decoration:none;transition:all 0.3s;backdrop-filter:blur(10px)}
+.dev-card:hover{border-color:rgba(0,245,255,0.5);transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,245,255,0.15);background:linear-gradient(135deg,rgba(15,23,42,0.8) 0%,rgba(30,41,59,0.6) 100%)}
+.dev-photo{width:90px;height:90px;border-radius:50%;border:2.5px solid rgba(0,245,255,0.4);overflow:hidden;flex-shrink:0;box-shadow:0 0 20px rgba(0,245,255,0.2)}
+.dev-photo img{width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block}
+.dev-info{flex:1;text-align:right}
+.dev-label{font-size:12px;color:rgba(0,245,255,0.85);letter-spacing:2px;margin-bottom:6px;font-family:'Orbitron',sans-serif}
+.dev-name{font-size:19px;font-weight:900;color:#f1f5f9;margin-bottom:3px;line-height:1.3}
+.dev-role{font-size:13px;color:rgba(241,245,249,0.7);margin-bottom:10px;line-height:1.4}
+.dev-cta{display:inline-block;font-size:13px;color:#fbbf24;font-weight:700;padding:5px 0}
+.dev-card:hover .dev-cta{color:#ffcf4d;transform:translateX(-4px);transition:all 0.25s}
+@media(max-width:620px){.dev-card{flex-direction:column;text-align:center;padding:24px 20px;gap:16px}.dev-info{text-align:center}.dev-photo{width:80px;height:80px}.dev-name{font-size:17px}.dev-role{font-size:12px}}
+
+</style>
+</head>
+<body>
+<canvas id="bg"></canvas>
+<nav>
+  <div class="nav-logo">A · A · J</div>
+  <ul class="nav-links">
+    <li><a href="#" onclick="showPage('home');return false">الرئيسية</a></li>
+    <li><a href="#" onclick="showPage('home');setTimeout(()=>document.getElementById('gs').scrollIntoView({behavior:'smooth'}),100);return false">الصفوف</a></li>
+    <li><a href="about.html">👤 عن المعلم</a></li>
+    <li><a href="mailto:Aij86@icloud.com">📧 تواصل</a></li>
+  </ul>
+</nav>
+<div class="cw">
+
+<!-- HOME -->
+<div id="page-home" class="page active">
+<section class="hero">
+  <div class="hero-bg"></div><div class="hero-grid"></div>
+  <div class="platform-badge">📚 منصة مراجعة تفاعلية</div>
+  <h1 class="hero-name">منصة المراجعة التفاعلية</h1>
+  <p class="hero-title">المرحلة الثانوية الكويتية — الصفوف ١٠ إلى ١٢</p>
+  <p class="hero-school">SECONDARY SCHOOL INTERACTIVE REVIEW · KUWAIT</p>
+  <div class="platform-stats">
+    <div class="pst-card"><span class="pst-num">٣٠٠٠+</span><span class="pst-lbl">سؤال تفاعلي</span></div>
+    <div class="pst-card"><span class="pst-num">٨٨</span><span class="pst-lbl">لعبة مراجعة</span></div>
+    <div class="pst-card"><span class="pst-num">٢٦</span><span class="pst-lbl">مادة دراسية</span></div>
+    <div class="pst-card"><span class="pst-num">٥</span><span class="pst-lbl">صفوف دراسية</span></div>
+  </div>
+  <div class="platform-features">
+    <div class="pf-card"><span class="pf-icon">🎲</span><span class="pf-title">أسئلة عشوائية</span><span class="pf-desc">كل جلسة مراجعة مختلفة</span></div>
+    <div class="pf-card"><span class="pf-icon">💡</span><span class="pf-title">شروحات فورية</span><span class="pf-desc">شرح الإجابة بعد كل سؤال</span></div>
+    <div class="pf-card"><span class="pf-icon">🎓</span><span class="pf-title">حصص تفاعلية</span><span class="pf-desc">حصة اليوم لكل مادة وفصل</span></div>
+  </div>
+  <button class="cta-btn" onclick="document.getElementById('gs').scrollIntoView({behavior:'smooth'})">🎓 ابدأ المراجعة — اختر صفّك</button>
+  <span class="scroll-arrow" onclick="document.getElementById('gs').scrollIntoView({behavior:'smooth'})">⬇</span>
+</section>
+
+<!-- DEVELOPER CARD -->
+<section class="dev-section">
+  <a href="about.html" class="dev-card">
+    <div class="dev-photo">
+      <img src="profile.jpg" alt="أ. عبدالله العبدالسلام">
+    </div>
+    <div class="dev-info">
+      <div class="dev-label">👨‍🏫 من هو مطوّر المنصة؟</div>
+      <div class="dev-name">أ. عبدالله إبراهيم العبدالسلام</div>
+      <div class="dev-role">معلم حاسوب — ثانوية فهد الدويري بنين</div>
+      <div class="dev-cta">📖 تعرّف على المعلم ←</div>
+    </div>
+  </a>
+</section>
+
+<section class="grades-section" id="gs">
+  <div class="sec-title">
+    <h2>🎓 الصفوف الدراسية</h2>
+    <p>اختر صفّك للوصول إلى ألعاب المراجعة والحصص التفاعلية</p>
+    <div class="tline"></div>
+  </div>
+  <div class="grades-grid" id="grades-grid"></div>
+  <div class="grades-row2" id="grades-row2"></div>
+</section>
+<footer>
+  <p>© ٢٠٢٦ · منصة المراجعة التفاعلية — المرحلة الثانوية الكويتية</p>
+  <p style="margin-top:7px;font-size:12px">طُوّرت بواسطة <a href="about.html" style="color:#00f5ff;text-decoration:none;font-weight:700">أ. عبدالله العبدالسلام</a> · معلم حاسوب — ثانوية فهد الدويري بنين</p>
+</footer>
+</div>
+
+<!-- GRADE PAGE -->
+<div id="page-grade" class="page">
+<div class="inner-page">
+  <button class="back-btn" onclick="showPage('home');setTimeout(()=>document.getElementById('gs').scrollIntoView({behavior:'smooth'}),100)">→ رجوع للرئيسية</button>
+  <div class="grade-bar">
+    <span class="gb-emoji" id="gb-em">🔟</span>
+    <div class="gb-info"><h2 id="gb-title">الصف العاشر</h2><p id="gb-sub">اختر المادة</p></div>
+  </div>
+  <div class="subj-grid stg" id="subj-grid"></div>
+</div>
+</div>
+
+<!-- SUBJECT PAGE -->
+<div id="page-subject" class="page">
+<div class="inner-page">
+  <button class="back-btn" id="subj-back">→ رجوع للصف</button>
+  <div class="subj-hdr">
+    <span class="sh-icon" id="sh-icon">💻</span>
+    <div class="sh-info"><h2 id="sh-title">حاسوب</h2><p id="sh-sub">اختر الفصل الدراسي</p></div>
+  </div>
+  <div class="mode-switch">
+    <button class="ms-btn active" id="ms-games" onclick="setMode('games')">🎮 ألعاب المراجعة<small>١٠ أسئلة عشوائية مع الشرح</small></button>
+    <button class="ms-btn" id="ms-lessons" onclick="setMode('lessons')">🎓 حصص تفاعلية<small>حصة اليوم وشرح الدروس</small></button>
+  </div>
+  <div class="sem-grid" id="sem-grid">
+    <div class="sem" onclick="showSemester(curG,1)">
+      <div class="sem-bg">١</div>
+      <div class="sem-t">الفصل الدراسي الأول</div>
+      <div class="sem-e">SEMESTER 1</div>
+      <span class="sem-p" id="s1p">📖 الفصول</span>
+    </div>
+    <div class="sem" onclick="showSemester(curG,2)">
+      <div class="sem-bg">٢</div>
+      <div class="sem-t">الفصل الدراسي الثاني</div>
+      <div class="sem-e">SEMESTER 2</div>
+      <span class="sem-p" id="s2p">📖 الفصول</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- CHAPTERS PAGE -->
+<div id="page-chapters" class="page">
+<div class="inner-page">
+  <button class="back-btn" id="ch-back">→ رجوع للمادة</button>
+  <div class="pg-hdr"><h1 id="ch-title"></h1><p id="ch-sub"></p></div>
+  <div class="ch-list" id="ch-list"></div>
+</div>
+</div>
+
+</div>
+<script>
+const GR={
+  g10:{ar:"الصف العاشر",en:"Grade 10",emoji:"🔟",color:"#00f5ff"},
+  g11s:{ar:"الحادي عشر علمي",en:"Grade 11 Scientific",emoji:"🔬",color:"#22c55e"},
+  g11d:{ar:"الحادي عشر أدبي",en:"Grade 11 Literary",emoji:"📚",color:"#a78bfa"},
+  g12s:{ar:"الثاني عشر علمي",en:"Grade 12 Scientific",emoji:"⭐",color:"#fbbf24"},
+  g12d:{ar:"الثاني عشر أدبي",en:"Grade 12 Literary",emoji:"🎓",color:"#f472b6"}
+};
+const GS={
+  g10:[
+    {e:"⚡",n:"فيزياء",c:"#38bdf8",av:true},{e:"🔤",n:"انجليزي",c:"#60a5fa",av:true},
+    {e:"📐",n:"رياضيات",c:"#fb923c",av:true},{e:"⚗️",n:"كيمياء",c:"#a78bfa",av:true},
+    {e:"🧬",n:"احياء",c:"#4ade80",av:true},{e:"🌍",n:"تاريخ",c:"#34d399",av:true},
+    {e:"☪️",n:"اسلامية",c:"#fde68a",av:true},{e:"📖",n:"عربي",c:"#f87171",av:true},
+    {e:"💻",n:"حاسوب",c:"#00f5ff",av:true}
+  ],
+  g11s:[
+    {e:"⚗️",n:"كيمياء",c:"#a78bfa",av:true},{e:"💻",n:"حاسوب",c:"#22c55e",av:true},
+    {e:"⚡",n:"فيزياء",c:"#38bdf8",av:true},{e:"🔤",n:"انجليزي",c:"#60a5fa",av:true},
+    {e:"☪️",n:"اسلامية",c:"#fde68a",av:true},{e:"🪨",n:"جيولوجيا",c:"#d97706",av:true},{e:"🧬",n:"احياء",c:"#4ade80",av:true},
+    {e:"📖",n:"عربي",c:"#f87171",av:true},{e:"📐",n:"رياضيات",c:"#fb923c",av:true}
+  ],
+  g11d:[
+    {e:"📜",n:"تاريخ",c:"#f59e0b",av:true},{e:"🔤",n:"انجليزي",c:"#60a5fa",av:true},
+    {e:"🗺️",n:"جغرافيا",c:"#34d399",av:true},{e:"📖",n:"عربي",c:"#f87171",av:true},
+    {e:"🇫🇷",n:"فرنسي",c:"#60a5fa",av:true},{e:"🧠",n:"علم نفس",c:"#c084fc",av:true},
+    {e:"💻",n:"حاسوب",c:"#a78bfa",av:true},{e:"☪️",n:"اسلامية",c:"#fde68a",av:true}
+  ],
+  g12s:[
+    {e:"📖",n:"عربي",c:"#f87171",av:true},{e:"☪️",n:"اسلامية",c:"#fde68a",av:true},
+    {e:"🔤",n:"انجليزي",c:"#60a5fa",av:true},{e:"📐",n:"رياضيات",c:"#fb923c",av:true},
+    {e:"⚡",n:"فيزياء",c:"#38bdf8",av:true},{e:"⚗️",n:"كيمياء",c:"#a78bfa",av:true},
+    {e:"🧬",n:"احياء",c:"#4ade80",av:true},{e:"💻",n:"حاسوب",c:"#fbbf24",av:true},
+    {e:"⚖️",n:"دستور",c:"#94a3b8",av:true}
+  ],
+  g12d:[
+    {e:"🇫🇷",n:"فرنسي",c:"#60a5fa",av:true},{e:"💻",n:"حاسوب",c:"#f472b6",av:true},
+    {e:"🤔",n:"فلسفة",c:"#c084fc",av:true},{e:"📖",n:"عربي",c:"#f87171",av:true},
+    {e:"📜",n:"تاريخ",c:"#f59e0b",av:true},{e:"🔤",n:"انجليزي",c:"#60a5fa",av:true},
+    {e:"📊",n:"احصاء",c:"#38bdf8",av:true},
+    {e:"☪️",n:"اسلامية",c:"#fde68a",av:true},{e:"⚖️",n:"دستور",c:"#94a3b8",av:true}
+  ]
+};
+const SUBJECT_CHAPTERS = {
+  g10: {
+    "احياء": {
+      1:[
+        {name:"الفصل الأول: دراسة الخليّة الحية",sub:"Cell Biology",gameFile:"bio_s1_ch1.html"},
+        {name:"الفصل الثاني: انقسام الخلايا",sub:"Cell Division — Mitosis & Meiosis",gameFile:"bio_s1_ch2.html"},
+        {name:"الفصل الثالث: العمليات الخلوية",sub:"Cellular Processes — ATP & Enzymes",gameFile:"bio_s1_ch3.html"}
+      ],
+      2:[
+        {name:"الفصل الأول: الإسفنجيات واللاسعات",sub:"Sponges & Cnidarians",gameFile:"bio_s2_ch1.html"},
+        {name:"الفصل الثاني: الديدان والرخويات",sub:"Worms & Mollusks",gameFile:"bio_s2_ch2.html"},
+        {name:"الفصل الثالث: مفصليات الأرجل وشوكيات الجلد",sub:"Arthropods & Echinoderms",gameFile:"bio_s2_ch3.html"},
+        {name:"الفصل الأول (وحدة 3): الحبليات والأسماك والبرمائيات",sub:"Chordates, Fish & Amphibians",gameFile:"bio_s2_ch4.html"},
+        {name:"الفصل الثاني (وحدة 3): الزواحف والطيور",sub:"Reptiles & Birds",gameFile:"bio_s2_ch5.html"},
+        {name:"الفصل الثالث (وحدة 3): الثدييات",sub:"Mammals",gameFile:"bio_s2_ch6.html"}
+      ]
+    },
+    "عربي": {
+      1:[
+        {name:"النصوص والمفردات والأدب",sub:"التشبيه والاستعارة والكناية — الأجناس الأدبية",gameFile:"ara_s1_ch1.html"},
+        {name:"النحو والصرف والقواعد",sub:"النعت والبدل والحال والمفعول المطلق",gameFile:"ara_s1_ch2.html"}
+      ],
+      2:[
+        {name:"النصوص والأدب والبلاغة",sub:"الكناية والمجاز والأساليب الإنشائية",gameFile:"ara_s2_ch1.html"},
+        {name:"قواعد اللغة والإملاء",sub:"التمييز والاستثناء والهمزات والإعراب",gameFile:"ara_s2_ch2.html"}
+      ]
+    },
+    "كيمياء": {
+      1:[
+        {name:"الوحدة الأولى: الذرة والجدول الدوري",sub:"Atomic Models — Aufbau — Pauli — الخواص الدورية",gameFile:"chem_s1_ch1.html"},
+        {name:"الوحدة الثانية: الروابط الكيميائية",sub:"Ionic Bond — Covalent Bond — Coordinate Bond",gameFile:"chem_s1_ch2.html"},
+        {name:"الوحدة الثالثة: كيمياء العناصر",sub:"s-block — p-block — Noble Gases — Hydrogen",gameFile:"chem_s1_ch3.html"}
+      ],
+      2:[
+        {name:"الوحدة الرابعة: التفاعلات الكيميائية",sub:"تفاعلات الترسيب — أنصاف التفاعلات — المول والكتلة المولية",gameFile:"chem_s2_ch1.html"},
+        {name:"الوحدتان الرابعة والخامسة",sub:"النسبة المئوية — المادة المحددة — CO₂ — الكربون العضوي",gameFile:"chem_s2_ch2.html"}
+      ]
+    },
+    "فيزياء": {
+      1:[
+        {name:"الوحدة الأولى: الحركة في خط مستقيم والقوة",sub:"SI units — قوانين نيوتن — السقوط الحر",gameFile:"phy_s1_ch1.html"},
+        {name:"الوحدة الثانية: المادة وخواصها الميكانيكية",sub:"الكثافة — الضغط — باسكال — أرخميدس — هوك",gameFile:"phy_s1_ch2.html"}
+      ],
+      2:[
+        {name:"الوحدة الثالثة: الاهتزاز والموجات والصوت",sub:"SHM — Frequency — Waves — Resonance",gameFile:"phy_s2_ch1.html"},
+        {name:"الوحدة الرابعة: الكهرباء الساكنة والتيار",sub:"Coulomb — Ohm's Law — Power — Circuits",gameFile:"phy_s2_ch2.html"}
+      ]
+    },
+    "حاسوب": {
+      1:[
+        {name:"الوحدة الأولى: الأمن السيبراني",sub:"Cyber Security — CIA — Threats — Firewall",gameFile:"cs_s1_ch1.html"},
+        {name:"الوحدة الثانية: Python الأساسيات",sub:"Variables — Strings — Conditions — Loops",gameFile:"cs_s1_ch2.html"},
+        {name:"الوحدة الثانية والثالثة: Python المتقدم",sub:"Debugging — Exceptions — Digital Products",gameFile:"cs_s1_ch3.html"}
+      ],
+      2:[
+        {name:"الوحدة الأولى: Python — Lists & Tuples & Dictionaries",sub:"القوائم والصفوف والقواميس",gameFile:"cs_s2_ch1.html"},
+        {name:"الوحدة الثانية: الدوال والذكاء الاصطناعي",sub:"Functions — AI — Modules — Packages",gameFile:"cs_s2_ch2.html"}
+      ]
+    },
+    "رياضيات": {
+      1:[
+        {name:"الوحدة الأولى: نظام الأعداد الحقيقية",sub:"R — خواص العمليات — الفترات — الجذر التربيعي",gameFile:"math_s1_ch1.html"},
+        {name:"الوحدة الأولى: المعادلات والقيمة المطلقة",sub:"القيمة المطلقة — المتباينات — معادلات الدرجة الثانية",gameFile:"math_s1_ch2.html"}
+      ],
+      2:[
+        {name:"الوحدة السادسة: هندسة الدائرة",sub:"الدائرة — المماس — الأوتار — الزوايا المحيطية",gameFile:"math_s2_ch1.html"},
+        {name:"الوحدة السابعة: المصفوفات",sub:"Matrices — الجمع والطرح والضرب والمعكوس",gameFile:"math_s2_ch2.html"}
+      ]
+    },
+    "انجليزي": {
+      1:[
+        {name:"Module 1 & 2: Culture & Free Time",sub:"We Eat, Cultures, Architecture, Games, Sports",gameFile:"eng_s1_ch1.html"},
+        {name:"Module 3 & 4: Power & Fact/Fiction",sub:"Energy, Technology, Stories, Flying",gameFile:"eng_s1_ch2.html"}
+      ],
+      2:[
+        {name:"Module 1: Culture",sub:"Food, Cultures, Architecture, Traditional Kuwait",gameFile:"eng_s2_ch1.html"},
+        {name:"Module 2: Free Time + Literature",sub:"Games, Sports, Nature + Three Men in a Boat",gameFile:"eng_s2_ch2.html"}
+      ]
+    },
+    "تاريخ": {
+      1:[
+        {name:"الجغرافيا والأنشطة الاقتصادية",sub:"موقع الكويت، المناخ، اللؤلؤ، التجارة البحرية",gameFile:"his_s1_ch1.html"},
+        {name:"نشأة الكويت والحكام الأوائل",sub:"هجرة العتوب، آل الصباح، الشيخ مبارك 1899",gameFile:"his_s1_ch2.html"}
+      ],
+      2:[
+        {name:"الكويت في القرن العشرين",sub:"اكتشاف النفط، الاستقلال، الدستور، أبو الدستور",gameFile:"his_s2_ch1.html"},
+        {name:"التنافس الاستعماري ومبارك الصباح",sub:"الأوروبيون، بريطانيا، اتفاقية الحماية 1899",gameFile:"his_s2_ch2.html"}
+      ]
+    },
+    "اسلامية": {
+      1:[
+        {name:"المجال الأول: العقيدة",sub:"التوحيد وأثر الإيمان على الفرد",gameFile:"is_s1_ch1.html"},
+        {name:"المجالان الثاني والثالث: علوم القرآن والحديث",sub:"الإعجاز القرآني وتدوين السنة",gameFile:"is_s1_ch2.html"},
+        {name:"المجالان الرابع والخامس: السيرة والفقه",sub:"قصص الأنبياء ومصادر التشريع",gameFile:"is_s1_ch3.html"},
+        {name:"المجالان السادس والسابع: التهذيب والثقافة",sub:"التوكل والأدب والثقافة الإسلامية",gameFile:"is_s1_ch4.html"}
+      ],
+      2:[
+        {name:"المجال الأول: العقيدة",sub:"أثر الإيمان على المجتمع ونواقض التوحيد",gameFile:"is_s2_ch1.html"},
+        {name:"المجالان الثاني والثالث: علوم القرآن والحديث",sub:"نزول القرآن وقراءاته ومكانة الصحابة",gameFile:"is_s2_ch2.html"},
+        {name:"المجالان الرابع والخامس: السيرة والفقه",sub:"سيرة الأنبياء والأحكام التكليفية",gameFile:"is_s2_ch3.html"},
+        {name:"المجالان السادس والسابع: التهذيب والثقافة",sub:"حسن الخلق وصلة الوالدين وحقوق الإنسان",gameFile:"is_s2_ch4.html"}
+      ]
+    }
+  },
+  g11s: {
+    "اسلامية":{
+      1:[
+        {name:"العقيدة وعلوم القرآن",sub:"التمائم — الكهانة — السحر — الظن بالله — التفسير — الصحيحان",gameFile:"is11_s1_ch1.html"},
+        {name:"الحديث والسيرة النبوية",sub:"كبائر الذنوب — النبي معلماً — بدر — الحديبية — فتح مكة — الهجرة",gameFile:"is11_s1_ch2.html"}
+      ],
+      2:[
+        {name:"العقيدة وعلوم القرآن والحديث",sub:"الاستهزاء — الولاء والبراء — التوسل — أصول التفسير — إمامة الصلاة",gameFile:"is11_s2_ch1.html"},
+        {name:"السيرة والفقه والثقافة",sub:"عائشة — الطلاق — أحكام المولود — الإخلاص — الصداقة — الدعاء",gameFile:"is11_s2_ch2.html"}
+      ]
+    },
+    "احياء":{
+      1:[
+        {name:"علم النباتات: التغذية والنقل والنمو",sub:"Structure — Photosynthesis — Xylem — Transpiration — Phloem — Auxin",gameFile:"bio11_s1_ch1.html"},
+        {name:"التكاثر الجنسي واللاجنسي في النباتات",sub:"Pollination — Fertilization — Germination — Cuttings — Grafting",gameFile:"bio11_s1_ch2.html"}
+      ],
+      2:[
+        {name:"علم الوراثة Genetics",sub:"Mendel — Incomplete Dominance — Sex-Linked — Mutations — DNA — Pedigree",gameFile:"bio11_s2_ch1.html"},
+        {name:"أجهزة جسم الإنسان",sub:"Skeletal — Muscular — Digestive — Respiratory — Circulatory — Nervous",gameFile:"bio11_s2_ch2.html"}
+      ]
+    },
+    "انجليزي":{
+      1:[
+        {name:"Module 1: Getting Together",sub:"Modal Verbs — Past Perfect — Third Conditional — Festivals — Family",gameFile:"eng11_s1_ch1.html"},
+        {name:"Module 2: Communication",sub:"Conjunctions — Present Perfect — Question Tags — Mobile Phones",gameFile:"eng11_s1_ch2.html"}
+      ],
+      2:[
+        {name:"Module 3: The Media",sub:"Relative Clauses — Broadcasting — TV Habits — Cameras — Kuwait Times",gameFile:"eng11_s2_ch1.html"},
+        {name:"Module 4: Health, Safety & Environment",sub:"Accidents — Airbags — Pollution — David Copperfield — Nature",gameFile:"eng11_s2_ch2.html"}
+      ]
+    },
+    "حاسوب":{
+      1:[
+        {name:"الوحدة الأولى: قواعد البيانات SQLite في Python",sub:"CREATE TABLE — INSERT — SELECT — UPDATE — DELETE — SQL Injection",gameFile:"cs11_s1_ch1.html"},
+        {name:"الوحدة الثانية: المنتجات الرقمية",sub:"Face Detection — OpenCV (cv2) — os — datetime — AI + Database",gameFile:"cs11_s1_ch2.html"}
+      ],
+      2:[
+        {name:"الوحدة الأولى: العلاقات في قواعد البيانات",sub:"Relationships — FOREIGN KEY — CRUD — JOIN — GROUP BY",gameFile:"cs11_s2_ch1.html"},
+        {name:"الوحدة الثانية: الذكاء الاصطناعي وقواعد البيانات",sub:"AI + Relational DB — Template Matching — commit — PRAGMA",gameFile:"cs11_s2_ch2.html"}
+      ]
+    },
+    "رياضيات":{
+      1:[
+        {name:"الوحدات 1-3: الأعداد الحقيقية والدوال التربيعية وكثيرات الحدود",sub:"الجذور — الأسس النسبية — Quadratic — Inverse — Polynomial — Remainder Theorem",gameFile:"math11_s1_ch1.html"},
+        {name:"الوحدات 4-6: الأسية واللوغاريتمية والمتجهات والإحصاء",sub:"Exponential — Logarithms — Vectors — Dot Product — Standard Deviation — Empirical Rule",gameFile:"math11_s1_ch2.html"}
+      ],
+      2:[
+        {name:"الوحدة السابعة: الأعداد المركبة",sub:"i = √(-1) — Polar Form — De Moivre — Operations — Conjugate",gameFile:"math11_s2_ch1.html"},
+        {name:"الوحدة الثامنة: حساب المثلثات",sub:"Sin/Cos/Tan — Graphs — Law of Sines — Law of Cosines — Area — Equations",gameFile:"math11_s2_ch2.html"}
+      ]
+    },
+    "عربي":{
+      1:[
+        {name:"المجال الأول: القرآن الكريم والحديث الشريف",sub:"سورة الحجرات — سورة النور — حديث الغار — الأمانة",gameFile:"ara11_s1_ch1.html"},
+        {name:"النصوص الأدبية والقراءة والقواعد",sub:"التشبيه — الاستعارة — الكناية — المفعول المطلق — الحال — الخبر",gameFile:"ara11_s1_ch2.html"}
+      ],
+      2:[
+        {name:"سورة آل عمران ومنبع السحر والقواعد",sub:"أولو الألباب — منبع السحر — المبني للمجهول — التوكيد — العطف",gameFile:"ara11_s2_ch1.html"},
+        {name:"الأدب: زهير بن أبي سلمى وبانت سعاد",sub:"المعلقات — بانت سعاد — الشعر الجاهلي والإسلامي — الرثاء",gameFile:"ara11_s2_ch2.html"}
+      ]
+    },
+    "جيولوجيا":{
+      1:[
+        {name:"الوحدة الأولى: الكون والأرض",sub:"علم الجيولوجيا — Big Bang — المجرات — دورة حياة النجم — المجموعة الشمسية",gameFile:"geo11_s1_ch1.html"},
+        {name:"الوحدة الثانية: المعادن",sub:"تعريف المعادن — الخواص الفيزيائية والكيميائية — Mohs — الأحجار الكريمة",gameFile:"geo11_s1_ch2.html"}
+      ],
+      2:[
+        {name:"الوحدة الثالثة: الصخور",sub:"Igneous — Sedimentary — Metamorphic — Rock Cycle",gameFile:"geo11_s2_ch1.html"},
+        {name:"الوحدة الرابعة: العمليات الجيولوجية",sub:"التجوية — التعرية — Plate Tectonics — الزلازل — البراكين",gameFile:"geo11_s2_ch2.html"}
+      ]
+    },
+    "فيزياء":{
+      1:[
+        {name:"الفصل الأول: حركة المقذوفات",sub:"Vectors — Scalars — تحليل المتجهات — Projectile Motion",gameFile:"phy11_s1_ch1.html"},
+        {name:"الفصل الثاني: الحركة الدائرية",sub:"UCM — Centripetal Acceleration — Centripetal Force — Satellites",gameFile:"phy11_s1_ch2.html"}
+      ],
+      2:[
+        {name:"الوحدة الثانية والثالثة: الحركة والجاذبية الكونية",sub:"Kepler — Newton's Gravitation — Circular Motion — Satellites",gameFile:"phy11_s2_ch1.html"},
+        {name:"الوحدة الثانية والرابعة: الحرارة والكهرباء والضوء",sub:"Energy — Thermal Expansion — Ohm's Law — Reflection — Refraction",gameFile:"phy11_s2_ch2.html"}
+      ]
+    },
+    "كيمياء":{
+      1:[
+        {name:"الوحدتان الأولى والثانية: الأفلاك الجزيئية والمحاليل",sub:"Molecular Orbitals — التهجين — البنزين — المحاليل — المولارية — الغرويات",gameFile:"chem11_s1_ch1.html"},
+        {name:"الوحدة الثالثة: الكيمياء الحرارية",sub:"Exothermic — Endothermic — قانون هس — ΔH — Entropy — Gibbs Free Energy",gameFile:"chem11_s1_ch2.html"}
+      ],
+      2:[
+        {name:"الوحدة الرابعة: الكيمياء الكهربائية",sub:"Redox — الخلية الجلفانية — التحليل الكهربائي — قوانين فاراداي — الصدأ",gameFile:"chem11_s2_ch1.html"},
+        {name:"الوحدة الخامسة: المركبات الهيدروكربونية",sub:"Alkanes — Alkenes — Alkynes — IUPAC — البلمرة — التكسير — المجموعات الوظيفية",gameFile:"chem11_s2_ch2.html"}
+      ]
+    }
+  },
+  g11d: {
+    "تاريخ":{
+      1:[
+        {name:"الفصل الأول: عصر الرسالة والخلفاء الراشدون",sub:"البعثة — الدعوة — الهجرة — الغزوات — أبو بكر — عمر — عثمان — علي",gameFile:"his11d_s1_ch1.html"}
+      ],
+      2:[
+        {name:"الدولة الأموية والعباسية والفاطمية",sub:"معاوية — فتح الأندلس — بغداد — بيت الحكمة — جوهر الصقلي — القاهرة",gameFile:"his11d_s2_ch1.html"}
+      ]
+    },
+    "جغرافيا":{
+      1:[
+        {name:"مبادئ الجغرافيا وكوكب الأرض والغلاف الصخري",sub:"فروع الجغرافيا — الخريطة — الكون — الزلازل — البراكين — التعرية",gameFile:"geo11d_s1_ch1.html"}
+      ],
+      2:[
+        {name:"الغلاف المائي والجوي والحيوي",sub:"المحيطات — التيارات — طبقات الجو — المناخ — الأوزون — الأقاليم الحيوية",gameFile:"geo11d_s2_ch1.html"}
+      ]
+    }
+    ,
+    "علم نفس":{
+      1:[{name:"تعريف علم النفس ووظائف الأعضاء والدوافع والانفعالات",sub:"فروع علم النفس — الغدد الصماء — هرم ماسلو — الإحساس والإدراك",gameFile:"psy11d_s1_ch1.html"}],
+      2:[{name:"العمليات العقلية والنمو النفسي والتوافق",sub:"التعلم — الذاكرة — النسيان — النمو — مرحلة المراهقة — التوافق النفسي",gameFile:"psy11d_s2_ch1.html"}]
+    },
+    "فرنسي":{
+      1:[{name:"Dossiers 0-4: Premier contact, Une rencontre, Une invitation, Réservation, Départ",sub:"الضمائر — التعريف — أفعال être/avoir/aller — الجنسيات — المهن — الساعة",gameFile:"fr11d_s1_ch1.html"}],
+      2:[{name:"Dossiers 5-8: L’arrivée, Une visite, Restaurant — Grammaire avancée",sub:"Le comparatif — C.O.D — Passé composé — La négation — Pouvoir/Vouloir — L’interrogation",gameFile:"fr11d_s2_ch1.html"}]
+    },
+    "اسلامية":{
+      1:[
+        {name:"العقيدة وعلوم القرآن",sub:"التمائم — الكهانة — السحر — الظن بالله — التفسير — الصحيحان",gameFile:"is11d_s1_ch1.html"},
+        {name:"الحديث والسيرة النبوية",sub:"كبائر الذنوب — النبي معلماً — بدر — الحديبية — فتح مكة — الهجرة",gameFile:"is11d_s1_ch2.html"}
+      ],
+      2:[
+        {name:"العقيدة وعلوم القرآن والحديث",sub:"الاستهزاء — الولاء والبراء — التوسل — أصول التفسير — إمامة الصلاة",gameFile:"is11d_s2_ch1.html"},
+        {name:"السيرة والفقه والثقافة",sub:"عائشة — الطلاق — أحكام المولود — الإخلاص — الصداقة — الدعاء",gameFile:"is11d_s2_ch2.html"}
+      ]
+    },
+    "انجليزي":{
+      1:[
+        {name:"Module 1: Getting Together",sub:"Modal Verbs — Past Perfect — Third Conditional — Festivals — Family",gameFile:"eng11d_s1_ch1.html"},
+        {name:"Module 2: Communication",sub:"Conjunctions — Present Perfect — Question Tags — Mobile Phones",gameFile:"eng11d_s1_ch2.html"}
+      ],
+      2:[
+        {name:"Module 3: The Media",sub:"Relative Clauses — Broadcasting — TV Habits — Cameras — Kuwait Times",gameFile:"eng11d_s2_ch1.html"},
+        {name:"Module 4: Health, Safety & Environment",sub:"Accidents — Airbags — Pollution — David Copperfield — Nature",gameFile:"eng11d_s2_ch2.html"}
+      ]
+    },
+    "حاسوب":{
+      1:[
+        {name:"الوحدة الأولى: قواعد البيانات SQLite في Python",sub:"CREATE TABLE — INSERT — SELECT — UPDATE — DELETE — SQL Injection",gameFile:"cs11d_s1_ch1.html"},
+        {name:"الوحدة الثانية: المنتجات الرقمية",sub:"Face Detection — OpenCV (cv2) — os — datetime — AI + Database",gameFile:"cs11d_s1_ch2.html"}
+      ],
+      2:[
+        {name:"الوحدة الأولى: العلاقات في قواعد البيانات",sub:"Relationships — FOREIGN KEY — CRUD — JOIN — GROUP BY",gameFile:"cs11d_s2_ch1.html"},
+        {name:"الوحدة الثانية: الذكاء الاصطناعي وقواعد البيانات",sub:"AI + Relational DB — Template Matching — commit — PRAGMA",gameFile:"cs11d_s2_ch2.html"}
+      ]
+    },
+    "عربي":{
+      1:[
+        {name:"المجال الأول: القرآن الكريم والحديث الشريف",sub:"سورة الحجرات — سورة النور — حديث الغار — الأمانة",gameFile:"ara11d_s1_ch1.html"},
+        {name:"النصوص الأدبية والقراءة والقواعد",sub:"التشبيه — الاستعارة — الكناية — المفعول المطلق — الحال — الخبر",gameFile:"ara11d_s1_ch2.html"}
+      ],
+      2:[
+        {name:"سورة آل عمران ومنبع السحر والقواعد",sub:"أولو الألباب — منبع السحر — المبني للمجهول — التوكيد — العطف",gameFile:"ara11d_s2_ch1.html"},
+        {name:"الأدب: زهير بن أبي سلمى وبانت سعاد",sub:"المعلقات — بانت سعاد — الشعر الجاهلي والإسلامي — الرثاء",gameFile:"ara11d_s2_ch2.html"}
+      ]
+    }
+  },
+  g12s:{
+    "احياء":{
+      1:[{name:"الوحدة الأولى: أجهزة جسم الإنسان",sub:"Nervous System — Endocrine System — Reproductive System — Spermatogenesis — Ovulation — Fertilization",gameFile:"bio12_s1_ch1.html"}],
+      2:[{name:"الوحدة الثانية: الوراثة والخلية والعمليات الخلوية",sub:"DNA — Hershey-Chase — Transcription — Translation — PCR — Meiosis — Photosynthesis — Cellular Respiration",gameFile:"bio12_s2_ch1.html"}]
+    },
+    "عربي":{
+      1:[{name:"النصوص والنحو والبلاغة — القسم الأول",sub:"المفعول المطلق — الحال — التمييز — الاستثناء — التشبيه — الاستعارة — الكناية — الأدب الأندلسي — المعلقات",gameFile:"ara12_s1_ch1.html"}],
+      2:[{name:"النصوص والنحو والبلاغة — القسم الثاني",sub:"المبني للمجهول — نائب الفاعل — التوكيد — العطف — الطباق — الجناس — زهير بن أبي سلمى — البُردة — الخنساء",gameFile:"ara12_s2_ch1.html"}]
+    },
+    "اسلامية":{
+      1:[{name:"العقيدة والقضاء والقدر وعلوم الحديث والاقتصاد والأخلاق",sub:"أركان القدر — الحديث الصحيح والضعيف — السند والمتن — الاقتصاد الإسلامي — سوء الخلق",gameFile:"is12_s1_ch1.html"}],
+      2:[{name:"حقوق المخلوقين والسيرة: الحسن والحسين",sub:"حق الوالدين — الزوجين — الجيران — الضعفاء — الحسن بن علي — الحسين بن علي — كربلاء",gameFile:"is12_s2_ch1.html"}]
+    },
+    "رياضيات":{
+      1:[{name:"الوحدات 1-4: النهايات والاشتقاق وتطبيقاته والإحصاء",sub:"Limits — Continuity — Derivatives — Chain Rule — Extrema — Hypothesis Testing — Correlation",gameFile:"math12_s1_ch1.html"}],
+      2:[{name:"الوحدات 5-7: التكامل والقطوع المخروطية والتوزيع الاحتمالي",sub:"Integration — Area — Parabola — Ellipse — Hyperbola — Probability Distribution — Uniform Distribution",gameFile:"math12_s2_ch1.html"}]
+    },
+    "انجليزي":{
+      1:[{name:"Module 1 & 2: World Issues & Natural World",sub:"The Law — Migration — Human Values — The Earth at Risk — Precious Resources — Under Threat",gameFile:"eng12_s1_ch1.html"}],
+      2:[{name:"Module 3 & 4: Lifestyles & Achievements",sub:"Long Lives — Town and Country — New Ways and Old — Pushing the Limits — The Final Frontier — Geniuses",gameFile:"eng12_s2_ch1.html"}]
+    },
+    "فيزياء":{
+      1:[{name:"الوحدة الأولى: الحركة — الشغل والطاقة والزخم والدوران",sub:"Work — Kinetic & Potential Energy — Power — Momentum — Impulse — Rotational Motion — Torque — Angular Momentum",gameFile:"phy12_s1_ch1.html"}],
+      2:[{name:"الوحدات 2-4: الكهرومغناطيسية والإلكترونيات والفيزياء النووية",sub:"Faraday — Lenz — Transformer — AC — Diode — Transistor — Photoelectric — Bohr — E=mc² — Radioactivity",gameFile:"phy12_s2_ch1.html"}]
+    },
+    "كيمياء":{
+      1:[{name:"الوحدات 1-3: الغازات وسرعة التفاعل والاتزان والأحماض والقواعد",sub:"Boyle — Charles — Ideal Gas Law — Reaction Rate — Catalyst — Equilibrium — Le Chatelier — Arrhenius — Brønsted-Lowry — pH",gameFile:"chem12_s1_ch1.html"}],
+      2:[{name:"الوحدات 4-6: الأملاح والمعايرة والمشتقات الهيدروكربونية والكيمياء الحيوية",sub:"Salt Hydrolysis — Titration — Buffer — Alkanes — Alkenes — Alkynes — Functional Groups — Carbohydrates — Proteins — DNA",gameFile:"chem12_s2_ch1.html"}]
+    },
+    "حاسوب":{
+      1:[{name:"الباب الأول والثاني: مدخل إلى البيسك المرئي ومراحل بناء برنامج",sub:"Visual Basic 2008 — IDE — Properties — Events — Dim — Integer — If...Then — CInt — MsgBox",gameFile:"cs12_s1_ch1.html"}],
+      2:[{name:"الأبواب 1-3: التكرار وأدوات التحكم والتعامل مع قواعد البيانات",sub:"For Loop — Do While — ListBox — RadioButton — CheckBox — DataGridView — SQL — SELECT — INSERT INTO",gameFile:"cs12_s2_ch1.html"}]
+    },
+    "دستور":{
+      1:[{name:"الباب الأول: الدستور — الشورى والديمقراطية والسلطة التشريعية",sub:"الشورى — الديمقراطية — أبو الدستور — دستور 1962 — مجلس الأمة — السؤال — الاستجواب — طرح الثقة",gameFile:"dus12_s1_ch1.html"}],
+      2:[{name:"حقوق الإنسان والقانون الدولي الإنساني",sub:"Magna Carta — الإعلان العالمي 1948 — اتفاقيات جنيف 1949 — الصليب الأحمر — IHL — مبدأ التمييز",gameFile:"dus12_s2_ch1.html"}]
+    }
+  },
+  g12d:{
+    "فرنسي":{
+      1:[{name:"Dossiers 1-3: Des souvenirs — Des études — Une soirée",sub:"Nationalités — Passé composé — Articles — Pronoms personnels — Futur proche — Négation — Adjectifs qualificatifs — L'île de Failaka",gameFile:"fr12d_s1_ch1.html"}],
+      2:[{name:"Dossiers 4-6 + DELF A1: Une fête — Une maladie — Un logement",sub:"Penser/Croire — Quantificateurs — Imparfait — Avoir mal — Impératif — Verbes pronominaux — Conditionnel présent — Adjectifs qualificatifs — Vers le DELF Junior A1",gameFile:"fr12d_s2_ch1.html"}]
+    },
+    "فلسفة":{
+      1:[{name:"الوحدات 1-2: ما الفلسفة؟ وما التفكير؟",sub:"مباحث الفلسفة — الوجود — المعرفة — القيم — ديكارت — جون لوك — هيوم — الاتجاه العقلي والتجريبي — البرجماتي — أنواع التفكير — المغالطات المنطقية",gameFile:"phi12_s1_ch1.html"}],
+      2:[{name:"الوحدات 3-5: الأخلاق والأخلاق التطبيقية والجمال",sub:"النزعة النسبية والمطلقة — أرسطو — مسكويه — كانط (الأوامر الشرطية والقطعية) — بنتام والمنفعة — الهندسة الوراثية — الضمير الإيكولوجي — شوبنهاور — النظرية الموضوعية والانفعالية",gameFile:"phi12_s2_ch1.html"}]
+    },
+    "تاريخ":{
+      1:[{name:"الثورة الصناعية والاستعمار الأوروبي",sub:"مفهوم الثورة الصناعية — بريطانيا — نظام المصانع — الهجرة إلى المدن — الاستعمار — المواد الخام والأسواق — مؤتمر فيينا 1815 — نابليون — توازن القوى",gameFile:"his12_s1_ch1.html"}],
+      2:[{name:"الحربان العالميتان والنظام الدولي الجديد",sub:"الحرب العالمية الأولى 1914 — التحالفات العسكرية — سباق التسلح — عصبة الأمم 1920 — الحرب العالمية الثانية 1939-1945 — الأمم المتحدة — الحرب الباردة — المعسكران",gameFile:"his12_s2_ch1.html"}]
+    },
+    "عربي":{
+      1:[{name:"النصوص والنحو والبلاغة — القسم الأول",sub:"المفعول المطلق — الحال — التمييز — الاستثناء — التشبيه — الاستعارة — الكناية — الأدب الأندلسي — المعلقات",gameFile:"ara12_s1_ch1.html"}],
+      2:[{name:"النصوص والنحو والبلاغة — القسم الثاني",sub:"المبني للمجهول — نائب الفاعل — التوكيد — العطف — الطباق — الجناس — زهير بن أبي سلمى — البُردة — الخنساء",gameFile:"ara12_s2_ch1.html"}]
+    },
+    "اسلامية":{
+      1:[{name:"العقيدة والقضاء والقدر وعلوم الحديث والاقتصاد والأخلاق",sub:"أركان القدر — الحديث الصحيح والضعيف — السند والمتن — الاقتصاد الإسلامي — سوء الخلق",gameFile:"is12_s1_ch1.html"}],
+      2:[{name:"حقوق المخلوقين والسيرة: الحسن والحسين",sub:"حق الوالدين — الزوجين — الجيران — الضعفاء — الحسن بن علي — الحسين بن علي — كربلاء",gameFile:"is12_s2_ch1.html"}]
+    },
+    "انجليزي":{
+      1:[{name:"Module 1 & 2: World Issues & Natural World",sub:"The Law — Migration — Human Values — The Earth at Risk — Precious Resources — Under Threat",gameFile:"eng12_s1_ch1.html"}],
+      2:[{name:"Module 3 & 4: Lifestyles & Achievements",sub:"Long Lives — Town and Country — New Ways and Old — Pushing the Limits — The Final Frontier — Geniuses",gameFile:"eng12_s2_ch1.html"}]
+    },
+    "حاسوب":{
+      1:[{name:"الباب الأول والثاني: مدخل إلى البيسك المرئي ومراحل بناء برنامج",sub:"Visual Basic 2008 — IDE — Properties — Events — Dim — Integer — If...Then — CInt — MsgBox",gameFile:"cs12_s1_ch1.html"}],
+      2:[{name:"الأبواب 1-3: التكرار وأدوات التحكم والتعامل مع قواعد البيانات",sub:"For Loop — Do While — ListBox — RadioButton — CheckBox — DataGridView — SQL — SELECT — INSERT INTO",gameFile:"cs12_s2_ch1.html"}]
+    },
+    "دستور":{
+      1:[{name:"الباب الأول: الدستور — الشورى والديمقراطية والسلطة التشريعية",sub:"الشورى — الديمقراطية — أبو الدستور — دستور 1962 — مجلس الأمة — السؤال — الاستجواب — طرح الثقة",gameFile:"dus12_s1_ch1.html"}],
+      2:[{name:"حقوق الإنسان والقانون الدولي الإنساني",sub:"Magna Carta — الإعلان العالمي 1948 — اتفاقيات جنيف 1949 — الصليب الأحمر — IHL — مبدأ التمييز",gameFile:"dus12_s2_ch1.html"}]
+    }
+  }
+};
+const GRADE_LAYOUT={grid:["g10","g11s","g11d"],row2:["g12s","g12d"]};
+function buildGradeCards(){
+  ["grid","row2"].forEach(section=>{
+    const container=document.getElementById("grades-"+section);
+    if(!container)return;
+    GRADE_LAYOUT[section].forEach(gid=>{
+      const gr=GR[gid];if(!gr||!gr.ar)return;
+      const subjects=GS[gid]||[];
+      const pills=subjects.map(s=>"<span class=\"gc-pill hi\">"+s.e+s.n+"</span>").join("");
+      const card=document.createElement("div");
+      card.className="grade-card";
+      card.style.cssText="--cc:"+gr.color;
+      card.onclick=()=>showGrade(gid);
+      card.innerHTML="<span class=\"gc-emoji\">"+gr.emoji+"</span><div class=\"gc-ar\">"+gr.ar+"</div><div class=\"gc-en\">"+gr.en+"</div><div class=\"gc-subjects\">"+pills+"</div><span class=\"gc-arrow\">←</span>";
+      container.appendChild(card);
+    });
+  });
+}
+buildGradeCards();
+let curG="g10",curS=1;
+function showPage(id){document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));document.getElementById("page-"+id).classList.add("active");window.scrollTo({top:0,behavior:"smooth"})}
+function showGrade(g){
+  curG=g;const d=GR[g];
+  document.getElementById("gb-em").textContent=d.emoji;
+  document.getElementById("gb-title").textContent=d.ar;
+  document.getElementById("gb-sub").textContent=d.en+" · اختر المادة للوصول إلى الألعاب والحصص التفاعلية";
+  const grid=document.getElementById("subj-grid");
+  grid.innerHTML="";grid.classList.remove("stg");void grid.offsetWidth;grid.classList.add("stg");
+  GS[g].forEach(s=>{
+    const c=document.createElement("div");
+    c.className="sc "+(s.av?"av":"lk");
+    c.style.setProperty("--scc",s.c);
+    c.innerHTML=`<span class="sc-em">${s.e}</span><div class="sc-nm">${s.n}</div><span class="sc-tg ${s.av?"a":"s"}">${s.av?"✅ متاح الآن":"⏳ قريباً"}</span>`;
+    if(s.av) c.onclick=()=>showSubject(g,s);
+    grid.appendChild(c);
+  });
+  showPage("grade");
+}
+let curSubjName="";
+// Direct-game maps for grades that use one-game-per-semester flow
+// Structure: GRADE => { subject_arabic_name => game_file_prefix }
+const DIRECT_GAMES={
+  g10:{"احياء":"bio","اسلامية":"is","فيزياء":"phy","كيمياء":"chem","عربي":"ara","تاريخ":"his","حاسوب":"cs","رياضيات":"math","انجليزي":"eng"},
+  g11s:{"اسلامية":"is11","احياء":"bio11","انجليزي":"eng11","حاسوب":"cs11","رياضيات":"math11","عربي":"ara11","جيولوجيا":"geo11","فيزياء":"phy11","كيمياء":"chem11"},
+  g11d:{"تاريخ":"his11d","انجليزي":"eng11d","جغرافيا":"geo11d","عربي":"ara11d","فرنسي":"fr11d","علم نفس":"psy11d","حاسوب":"cs11d","اسلامية":"is11d"},
+  g12s:{"عربي":"ara12","اسلامية":"is12","انجليزي":"eng12","رياضيات":"math12","فيزياء":"phy12","كيمياء":"chem12","احياء":"bio12","حاسوب":"cs12","دستور":"const12"},
+  g12d:{"فرنسي":"fr12d","حاسوب":"cs12d","فلسفة":"phil12d","عربي":"ara12d","تاريخ":"his12d","انجليزي":"eng12d","احصاء":"stat12d","اسلامية":"is12d","دستور":"const12d"}
+};
+function hasDirectGame(g,subjName){return DIRECT_GAMES[g] && DIRECT_GAMES[g][subjName];}
+function showSubject(g,s){
+  curSubjName=s.n;
+  document.getElementById("sh-icon").textContent=s.e;
+  document.getElementById("sh-title").textContent=s.n+" — "+GR[g].ar;
+  document.getElementById("sh-sub").textContent=GR[g].en+" · اختر نوع المحتوى ثم الفصل الدراسي";
+  document.getElementById("subj-back").onclick=()=>showGrade(g);
+  const sc=SUBJECT_CHAPTERS[g]&&SUBJECT_CHAPTERS[g][s.n];
+  const c1=sc?sc[1]:[];const c2=sc?sc[2]:[];
+  // For grades with direct-to-game mode, show "start game" label instead of chapter count
+  if(hasDirectGame(g,s.n)){
+    applyModeUI();
+  }else{
+    document.getElementById("s1p").textContent=c1.length?"📖 "+c1.length+" فصول":"📖 قريباً";
+    document.getElementById("s2p").textContent=c2.length?"📖 "+c2.length+" فصول":"📖 قريباً";
+  }
+  showPage("subject");
+}
+// ---- content mode: "games" (ألعاب المراجعة) or "lessons" (حصص تفاعلية) ----
+// Lessons live in lessons/<prefix>_s<sem>.html — same prefix as DIRECT_GAMES
+let curMode=sessionStorage.getItem("contentMode")||"games";
+function setMode(m){
+  curMode=m;sessionStorage.setItem("contentMode",m);
+  applyModeUI();
+}
+function applyModeUI(){
+  const lessons=curMode==="lessons";
+  document.getElementById("ms-games").classList.toggle("active",!lessons);
+  const lb=document.getElementById("ms-lessons");lb.classList.toggle("active",lessons);lb.classList.toggle("lessons",lessons);
+  document.getElementById("sem-grid").classList.toggle("lessons",lessons);
+  const label=lessons?"🎓 حصة اليوم":"▶ ابدأ اللعبة";
+  document.getElementById("s1p").textContent=label;
+  document.getElementById("s2p").textContent=label;
+}
+function showSemester(g,sem){
+  // For grades with direct-to-game mode, skip chapter selection
+  if(hasDirectGame(g,curSubjName)){
+    const folder=curMode==="lessons"?"lessons/":"games/";
+    window.location.href=folder+DIRECT_GAMES[g][curSubjName]+"_s"+sem+".html";
+    return;
+  }
+  curS=sem;const d=GR[g];
+  const sAr=sem===1?"الفصل الدراسي الأول":"الفصل الدراسي الثاني",sEn=sem===1?"Semester 1":"Semester 2";
+  document.getElementById("ch-title").textContent=sAr+" · "+d.ar;
+  document.getElementById("ch-sub").textContent=sEn+" · "+d.en+" · "+curSubjName;
+  document.getElementById("ch-back").onclick=()=>showPage("subject");
+  const sc=SUBJECT_CHAPTERS[g]&&SUBJECT_CHAPTERS[g][curSubjName];
+  const chs=(sc?sc[sem]:null)||CH[g][sem],list=document.getElementById("ch-list");
+  list.innerHTML="";
+  if(!chs.length){
+    list.innerHTML=`<div class="cs"><span class="cs-ic">📂</span><h3>الفصول قادمة قريباً</h3><p>سيتم إضافة فصول <strong>${d.ar}</strong> — ${sAr}<br>بمجرد رفع الكتاب المدرسي</p></div>`;
+  }else{
+    chs.forEach((ch,i)=>{
+      const card=document.createElement("div");card.className="ch";
+      card.innerHTML=`<div class="ch-l"><div class="ch-n">CH${String(i+1).padStart(2,"0")}</div><div><div class="ch-nm">${ch.name}</div><div class="ch-sb">${ch.sub||"انقر لبدء لعبة المراجعة"}</div></div></div><div class="ch-play">▶ ابدأ اللعبة</div>`;
+      card.onclick=()=>ch.gameFile?window.location.href=ch.gameFile:alert("🎮 قيد الإعداد!");
+      list.appendChild(card);
+    });
+  }
+  showPage("chapters");
+}
+const cv=document.getElementById("bg"),cx=cv.getContext("2d");let ns=[];
+function rsz(){cv.width=innerWidth;cv.height=innerHeight}
+function ini(){ns=Array.from({length:50},()=>{return{x:Math.random()*cv.width,y:Math.random()*cv.height,vx:(Math.random()-.5)*.45,vy:(Math.random()-.5)*.45,r:Math.random()*2.5+1.2}})}
+function draw(){
+  cx.clearRect(0,0,cv.width,cv.height);
+  ns.forEach(n=>{n.x+=n.vx;n.y+=n.vy;if(n.x<0||n.x>cv.width)n.vx*=-1;if(n.y<0||n.y>cv.height)n.vy*=-1});
+  for(let i=0;i<ns.length;i++)for(let j=i+1;j<ns.length;j++){const dx=ns[i].x-ns[j].x,dy=ns[i].y-ns[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<160){cx.beginPath();cx.moveTo(ns[i].x,ns[i].y);cx.lineTo(ns[j].x,ns[j].y);cx.strokeStyle=`rgba(0,245,255,${(1-d/160)*.1})`;cx.lineWidth=.7;cx.stroke()}}
+  ns.forEach(n=>{cx.beginPath();cx.arc(n.x,n.y,n.r,0,Math.PI*2);cx.fillStyle="rgba(0,245,255,0.22)";cx.fill()});
+  requestAnimationFrame(draw);
+}
+rsz();ini();draw();window.addEventListener("resize",()=>{rsz();ini()});
+</script>
+</body>
+</html>

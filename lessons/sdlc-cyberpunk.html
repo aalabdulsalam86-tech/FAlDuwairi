@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مراحل تصميم وتطوير البرنامج — SDLC</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --neon-pink: #ff2e97;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #b537f2;
+    --neon-yellow: #f5ff3d;
+    --neon-green: #39ff88;
+    --neon-orange: #ff6b2b;
+    --bg-deep: #05050f;
+    --bg-dark: #0a0a1f;
+    --bg-card: rgba(15, 15, 40, 0.7);
+    --border-glow: rgba(0, 240, 255, 0.3);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { overflow-x: hidden; }
+  body {
+    font-family: 'Cairo', sans-serif;
+    background: var(--bg-deep);
+    color: #e0e0ff;
+    min-height: 100vh;
+    position: relative;
+  }
+
+  /* ============ BACKGROUND GRID & SCAN ============ */
+  .bg-grid {
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0, 240, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 240, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: 0;
+    pointer-events: none;
+    animation: gridMove 20s linear infinite;
+  }
+  @keyframes gridMove { to { background-position: 50px 50px; } }
+  .bg-gradient {
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 10%, rgba(181, 55, 242, 0.25), transparent 50%),
+      radial-gradient(ellipse at 80% 90%, rgba(255, 46, 151, 0.2), transparent 50%),
+      radial-gradient(ellipse at 50% 50%, rgba(0, 240, 255, 0.1), transparent 60%);
+    z-index: 0;
+    pointer-events: none;
+  }
+  .scanline {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+    opacity: 0.6;
+    z-index: 1000;
+    pointer-events: none;
+    animation: scan 8s linear infinite;
+    box-shadow: 0 0 20px var(--neon-cyan);
+  }
+  @keyframes scan { 0% { top: 0; } 100% { top: 100%; } }
+
+  /* Particles */
+  .particle {
+    position: fixed;
+    width: 2px; height: 2px;
+    background: var(--neon-cyan);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--neon-cyan);
+    pointer-events: none;
+    z-index: 1;
+    animation: floatUp linear infinite;
+  }
+  @keyframes floatUp {
+    from { transform: translateY(100vh); opacity: 0; }
+    10%, 90% { opacity: 1; }
+    to { transform: translateY(-10vh); opacity: 0; }
+  }
+
+  /* ============ MAIN LAYOUT ============ */
+  .app { position: relative; z-index: 2; min-height: 100vh; }
+
+  /* ============ HEADER ============ */
+  header {
+    padding: 2rem 1.5rem 1rem;
+    text-align: center;
+    position: relative;
+  }
+  .logo-badge {
+    display: inline-block;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    color: var(--neon-cyan);
+    padding: 4px 16px;
+    border: 1px solid var(--neon-cyan);
+    border-radius: 2px;
+    margin-bottom: 1rem;
+    letter-spacing: 3px;
+    background: rgba(0, 240, 255, 0.05);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.3), inset 0 0 15px rgba(0, 240, 255, 0.05);
+  }
+  h1 {
+    font-family: 'Cairo', sans-serif;
+    font-weight: 900;
+    font-size: clamp(1.6rem, 4vw, 2.8rem);
+    line-height: 1.2;
+    background: linear-gradient(90deg, var(--neon-cyan), var(--neon-pink), var(--neon-purple));
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 4s ease infinite;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 40px rgba(255, 46, 151, 0.3);
+  }
+  @keyframes gradientShift { 0%,100%{background-position:0% 50%}50%{background-position:100% 50%} }
+  .subtitle {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.9rem;
+    color: var(--neon-cyan);
+    opacity: 0.8;
+    letter-spacing: 2px;
+  }
+  .subtitle .ar { font-family: 'Cairo'; font-size: 1rem; }
+
+  /* ============ NAV TABS ============ */
+  .tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1.5rem 1rem;
+    flex-wrap: wrap;
+  }
+  .tab {
+    background: var(--bg-card);
+    border: 1px solid var(--border-glow);
+    color: #a0a0c0;
+    padding: 10px 22px;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    position: relative;
+  }
+  .tab:hover { color: var(--neon-cyan); border-color: var(--neon-cyan); box-shadow: 0 0 20px rgba(0, 240, 255, 0.4); }
+  .tab.active {
+    background: linear-gradient(135deg, rgba(255, 46, 151, 0.2), rgba(0, 240, 255, 0.2));
+    color: #fff;
+    border-color: var(--neon-pink);
+    box-shadow: 0 0 25px rgba(255, 46, 151, 0.5);
+  }
+
+  /* ============ PANELS ============ */
+  .panel { display: none; padding: 1rem 1.5rem 4rem; max-width: 1400px; margin: 0 auto; }
+  .panel.active { display: block; animation: panelIn 0.6s ease; }
+  @keyframes panelIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* ============ JOURNEY / STAGES ============ */
+  .journey-intro { text-align: center; margin-bottom: 2rem; }
+  .journey-intro p { color: #a0a0c0; font-size: 1rem; }
+  .journey-intro .code-hint { font-family: 'Share Tech Mono', monospace; color: var(--neon-green); font-size: 0.85rem; margin-top: 0.5rem; }
+
+  .progress-path {
+    position: relative;
+    margin: 2rem auto 3rem;
+    padding: 1rem 0;
+    max-width: 1200px;
+  }
+  .progress-line {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    right: 5%;
+    height: 2px;
+    background: rgba(0, 240, 255, 0.15);
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+  .progress-fill {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    height: 3px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--neon-cyan), var(--neon-pink));
+    transform: translateY(-50%);
+    transition: width 0.8s ease;
+    box-shadow: 0 0 20px var(--neon-cyan);
+    z-index: 2;
+  }
+  .stage-dots {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 3;
+    padding: 0 2%;
+  }
+  .stage-dot {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--bg-dark);
+    border: 2px solid rgba(0, 240, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+    font-size: 14px;
+    color: #a0a0c0;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    position: relative;
+  }
+  .stage-dot:hover { transform: scale(1.1); border-color: var(--neon-cyan); }
+  .stage-dot.active {
+    background: radial-gradient(circle, var(--neon-pink), var(--neon-purple));
+    border-color: var(--neon-pink);
+    color: #fff;
+    box-shadow: 0 0 20px var(--neon-pink), 0 0 40px rgba(255, 46, 151, 0.4);
+    transform: scale(1.15);
+  }
+  .stage-dot.completed { background: rgba(57, 255, 136, 0.2); border-color: var(--neon-green); color: var(--neon-green); }
+
+  /* STAGE VIEWER */
+  .stage-viewer {
+    background: var(--bg-card);
+    border: 1px solid var(--border-glow);
+    border-radius: 4px;
+    padding: 2rem;
+    min-height: 460px;
+    position: relative;
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+  }
+  .stage-viewer::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent 40%, rgba(255, 46, 151, 0.05) 60%, transparent 80%);
+    pointer-events: none;
+  }
+  .stage-content { position: relative; z-index: 2; animation: contentIn 0.6s ease; }
+  @keyframes contentIn {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  .stage-header-row {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .stage-big-num {
+    font-family: 'Orbitron', monospace;
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1;
+    background: linear-gradient(135deg, var(--neon-cyan), var(--neon-pink));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .stage-meta { flex: 1; min-width: 200px; }
+  .stage-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    color: var(--neon-cyan);
+    letter-spacing: 3px;
+    margin-bottom: 4px;
+  }
+  .stage-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+  .stage-brief { color: var(--neon-pink); font-size: 1rem; }
+
+  .stage-body {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  @media (max-width: 768px) { .stage-body { grid-template-columns: 1fr; } }
+
+  .info-block {
+    background: rgba(0, 0, 20, 0.4);
+    border: 1px solid rgba(0, 240, 255, 0.15);
+    padding: 1.25rem;
+    border-radius: 2px;
+    position: relative;
+  }
+  .info-block::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 30px; height: 3px;
+    background: var(--neon-cyan);
+  }
+  .info-block h3 {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 12px;
+    color: var(--neon-cyan);
+    letter-spacing: 2px;
+    margin-bottom: 0.75rem;
+  }
+  .info-block p { line-height: 1.8; color: #c0c0e0; font-size: 0.95rem; }
+  .info-block strong { color: var(--neon-yellow); font-weight: 600; }
+  .info-block .accent-pink { color: var(--neon-pink); font-weight: 600; }
+  .info-block .accent-green { color: var(--neon-green); font-weight: 600; }
+
+  .real-world {
+    background: linear-gradient(135deg, rgba(181, 55, 242, 0.1), rgba(255, 46, 151, 0.1));
+    border: 1px solid rgba(255, 46, 151, 0.3);
+  }
+  .real-world::before { background: var(--neon-pink); }
+  .real-world h3 { color: var(--neon-pink); }
+
+  .tools-row { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 0.75rem; }
+  .tool-chip {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    padding: 4px 12px;
+    background: rgba(0, 240, 255, 0.1);
+    border: 1px solid rgba(0, 240, 255, 0.3);
+    color: var(--neon-cyan);
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .tool-chip:hover { background: rgba(0, 240, 255, 0.2); box-shadow: 0 0 10px rgba(0, 240, 255, 0.4); }
+
+  .nav-controls {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 240, 255, 0.15);
+  }
+  .nav-btn {
+    background: transparent;
+    border: 1px solid var(--neon-cyan);
+    color: var(--neon-cyan);
+    padding: 10px 24px;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+    clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+  }
+  .nav-btn:hover:not(:disabled) { background: var(--neon-cyan); color: var(--bg-deep); box-shadow: 0 0 20px var(--neon-cyan); }
+  .nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+  .nav-btn.primary { border-color: var(--neon-pink); color: var(--neon-pink); }
+  .nav-btn.primary:hover:not(:disabled) { background: var(--neon-pink); color: #fff; box-shadow: 0 0 25px var(--neon-pink); }
+
+  /* ============ TIMELINE PANEL ============ */
+  .timeline-wrapper { max-width: 900px; margin: 0 auto; }
+  .timeline-node {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    position: relative;
+    border-bottom: 1px solid rgba(0, 240, 255, 0.1);
+    align-items: start;
+  }
+  .timeline-year {
+    font-family: 'Orbitron', monospace;
+    font-weight: 900;
+    font-size: 1.4rem;
+    color: var(--neon-cyan);
+    text-align: left;
+    direction: ltr;
+  }
+  .timeline-year.era-new { color: var(--neon-pink); }
+  .timeline-year.era-future { color: var(--neon-yellow); }
+  .timeline-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-glow);
+    padding: 1.25rem 1.5rem;
+    border-radius: 2px;
+    transition: all 0.3s;
+    position: relative;
+  }
+  .timeline-card:hover {
+    transform: translateX(-8px);
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 25px rgba(0, 240, 255, 0.2);
+  }
+  .timeline-card h4 { color: #fff; margin-bottom: 0.5rem; font-size: 1.1rem; }
+  .timeline-card p { color: #a0a0c0; line-height: 1.75; font-size: 0.95rem; }
+  .era-divider {
+    grid-column: 1 / -1;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--neon-green);
+    padding: 1.5rem 0 0.5rem;
+    border-bottom: 0;
+    border-top: 1px dashed rgba(57, 255, 136, 0.3);
+    text-align: right;
+  }
+
+  /* ============ RESEARCH GRID ============ */
+  .research-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+  .research-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-glow);
+    padding: 1.5rem;
+    border-radius: 2px;
+    position: relative;
+    transition: all 0.3s;
+    overflow: hidden;
+    clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px));
+  }
+  .research-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent, rgba(181, 55, 242, 0.08));
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .research-card:hover::before { opacity: 1; }
+  .research-card:hover { transform: translateY(-5px); border-color: var(--neon-purple); box-shadow: 0 10px 40px rgba(181, 55, 242, 0.25); }
+  .research-icon { font-size: 2.5rem; margin-bottom: 1rem; position: relative; z-index: 2; }
+  .research-card h4 { color: var(--neon-cyan); font-size: 1.1rem; margin-bottom: 0.75rem; position: relative; z-index: 2; }
+  .research-card p { color: #b0b0d0; line-height: 1.8; font-size: 0.9rem; position: relative; z-index: 2; }
+  .research-tag {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    color: var(--neon-green);
+    letter-spacing: 1px;
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(57, 255, 136, 0.2);
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ============ QUIZ PANEL ============ */
+  .quiz-wrap { max-width: 800px; margin: 0 auto; }
+  .progress-orb-container {
+    background: var(--bg-card);
+    border: 1px solid var(--border-glow);
+    padding: 1rem 1.5rem;
+    border-radius: 2px;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .progress-orb-label { font-family: 'Share Tech Mono', monospace; font-size: 12px; color: var(--neon-cyan); }
+  .progress-orb-bar {
+    flex: 1;
+    height: 8px;
+    background: rgba(0, 240, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+  }
+  .progress-orb-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--neon-cyan), var(--neon-green), var(--neon-pink));
+    transition: width 0.5s ease;
+    box-shadow: 0 0 15px var(--neon-cyan);
+  }
+  .progress-orb-score { font-family: 'Orbitron', monospace; font-weight: 700; color: #fff; }
+
+  .quiz-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-glow);
+    padding: 1.5rem;
+    border-radius: 2px;
+    margin-bottom: 1.25rem;
+    transition: all 0.3s;
+  }
+  .quiz-card:hover { border-color: var(--neon-cyan); }
+  .quiz-q-num {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    color: var(--neon-pink);
+    letter-spacing: 2px;
+    margin-bottom: 0.75rem;
+  }
+  .quiz-question { font-size: 1.05rem; color: #fff; margin-bottom: 1rem; font-weight: 600; line-height: 1.6; }
+  .quiz-options { display: flex; flex-direction: column; gap: 0.5rem; }
+  .quiz-option {
+    background: rgba(0, 0, 20, 0.5);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    color: #c0c0e0;
+    padding: 12px 18px;
+    text-align: right;
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.95rem;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all 0.2s;
+    position: relative;
+  }
+  .quiz-option:hover:not(:disabled) { background: rgba(0, 240, 255, 0.1); border-color: var(--neon-cyan); transform: translateX(-4px); }
+  .quiz-option.correct {
+    background: rgba(57, 255, 136, 0.15);
+    border-color: var(--neon-green);
+    color: var(--neon-green);
+    box-shadow: 0 0 20px rgba(57, 255, 136, 0.3);
+  }
+  .quiz-option.wrong {
+    background: rgba(255, 46, 151, 0.15);
+    border-color: var(--neon-pink);
+    color: var(--neon-pink);
+  }
+  .quiz-feedback {
+    margin-top: 1rem;
+    padding: 12px 16px;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    animation: fbIn 0.4s ease;
+  }
+  @keyframes fbIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+  .quiz-feedback.ok { background: rgba(57, 255, 136, 0.1); border-right: 3px solid var(--neon-green); color: #d0ffe0; }
+  .quiz-feedback.no { background: rgba(255, 46, 151, 0.1); border-right: 3px solid var(--neon-pink); color: #ffd0e5; }
+
+  /* Glitch effect on title hover */
+  .glitch { position: relative; }
+  .glitch:hover::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 2px; top: 0;
+    color: var(--neon-pink);
+    background: var(--bg-deep);
+    overflow: hidden;
+    animation: glitch 0.4s ease infinite;
+  }
+  @keyframes glitch {
+    0%, 100% { clip-path: inset(0 0 100% 0); }
+    50% { clip-path: inset(40% 0 40% 0); transform: translate(-2px, 1px); }
+  }
+
+  /* Floating code snippets (decoration) */
+  .code-snippet {
+    position: absolute;
+    font-family: 'Share Tech Mono', monospace;
+    color: rgba(0, 240, 255, 0.15);
+    font-size: 12px;
+    pointer-events: none;
+    user-select: none;
+    animation: codeFloat 15s linear infinite;
+  }
+  @keyframes codeFloat {
+    from { transform: translateY(0); opacity: 0; }
+    10%, 90% { opacity: 1; }
+    to { transform: translateY(-100px); opacity: 0; }
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-track { background: var(--bg-deep); }
+  ::-webkit-scrollbar-thumb { background: linear-gradient(var(--neon-pink), var(--neon-cyan)); border-radius: 5px; }
+
+  footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: rgba(160, 160, 192, 0.5);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    border-top: 1px solid rgba(0, 240, 255, 0.1);
+    margin-top: 2rem;
+  }
+  footer .blink { color: var(--neon-green); animation: blink 1s infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  /* Stage transition overlay */
+  .transition-overlay {
+    position: fixed;
+    inset: 0;
+    background: var(--bg-deep);
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .transition-overlay.active { opacity: 1; animation: transFlash 0.5s ease; }
+  @keyframes transFlash {
+    0% { opacity: 0; }
+    30% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  .transition-text {
+    font-family: 'Orbitron', monospace;
+    font-size: 3rem;
+    color: var(--neon-pink);
+    text-shadow: 0 0 30px var(--neon-pink);
+  }
+</style>
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="bg-gradient"></div>
+  <div class="scanline"></div>
+
+  <div class="app">
+    <header>
+      <div class="logo-badge">// SYSTEM_BOOT :: SDLC.exe</div>
+      <h1 class="glitch" data-text="مراحل تصميم وتطوير البرنامج">مراحل تصميم وتطوير البرنامج</h1>
+      <p class="subtitle">&gt; <span class="ar">Software Development Life Cycle</span> — <span style="color:var(--neon-pink)">تقنية المعلومات</span> <span class="blink" style="color:var(--neon-green)">_</span></p>
+    </header>
+
+    <nav class="tabs">
+      <button class="tab active" data-tab="stages">المراحل الثمان</button>
+      <button class="tab" data-tab="timeline">قديماً وحديثاً</button>
+      <button class="tab" data-tab="research">أبحاث مثيرة</button>
+      <a href="cs11_projects.html" class="tab" style="text-decoration:none;">اختبار سريع</a>
+    </nav>
+
+    <!-- PANEL: STAGES -->
+    <section class="panel active" id="panel-stages">
+      <div class="journey-intro">
+        <p>استخدم الأسهم أو اضغط على أي مرحلة للتنقل بين المراحل الثمان</p>
+        <p class="code-hint">&gt; navigate --stage [1..8] // use arrows or dots to explore</p>
+      </div>
+
+      <div class="progress-path">
+        <div class="progress-line"></div>
+        <div class="progress-fill" id="progressFill"></div>
+        <div class="stage-dots" id="stageDots"></div>
+      </div>
+
+      <div class="stage-viewer" id="stageViewer"></div>
+    </section>
+
+    <!-- PANEL: TIMELINE -->
+    <section class="panel" id="panel-timeline">
+      <div class="timeline-wrapper" id="timelineWrap"></div>
+    </section>
+
+    <!-- PANEL: RESEARCH -->
+    <section class="panel" id="panel-research">
+      <div class="research-grid" id="researchGrid"></div>
+    </section>
+
+    <!-- PANEL: QUIZ -->
+    <section class="panel" id="panel-quiz">
+      <div class="quiz-wrap">
+        <div class="progress-orb-container">
+          <span class="progress-orb-label">// PROGRESS</span>
+          <div class="progress-orb-bar"><div class="progress-orb-fill" id="quizFill"></div></div>
+          <span class="progress-orb-score" id="quizScore">0 / 5</span>
+        </div>
+        <div id="quizList"></div>
+      </div>
+    </section>
+
+    <footer>
+      &lt;/&gt; CRAFTED FOR HIGH SCHOOL COMPUTER SCIENCE <span class="blink">●</span>
+    </footer>
+  </div>
+
+  <div class="transition-overlay" id="transOverlay">
+    <div class="transition-text" id="transText"></div>
+  </div>
+
+<script>
+// ============ DATA ============
+const stages = [
+  {
+    num: "01", icon: "🔍", color: "#00f0ff",
+    title: "تحديد مشكلة المشروع",
+    en: "Identify Problem",
+    brief: "ما المشكلة التي نحلّها؟",
+    detail: "أول خطوة في أي مشروع ناجح هي أن يسأل الفريق: <strong>ما المشكلة التي نحلّها ولمن؟</strong> تحديد المشكلة بدقة هو نصف الحل. معظم المشاريع البرمجية الفاشلة تبدأ بمشكلة غامضة أو غير محددة. يناقش أعضاء الفريق موضوعاً يُثير اهتمامهم ويحددون <span class='accent-pink'>الفئة المستهدفة</span> والهدف.",
+    tools: ["Brainstorming", "User interviews", "Mind maps"],
+    realWorld: "خرائط Google Maps بدأت لأن المهندسين لم يستطيعوا إيجاد طريقهم في المدينة — حددوا مشكلة إنسانية عالمية قبل كتابة سطر كود واحد. اليوم يستخدمها أكثر من مليار إنسان يومياً."
+  },
+  {
+    num: "02", icon: "📋", color: "#39ff88",
+    title: "إعداد الخوارزمية",
+    en: "Prepare Algorithm",
+    brief: "الخطوات المنطقية الدقيقة",
+    detail: "الخوارزمية هي <strong>سلسلة دقيقة من الخطوات</strong> تحوّل المدخلات إلى مخرجات. قبل البرمجة، يكتب <span class='accent-green'>مُعِد الخوارزمية</span> المنطق بلغة بسيطة أو بـ pseudocode. حتى أكبر الشركات التقنية لا تكتب سطر كود قبل أن تكون الخوارزمية واضحة تماماً على الورق.",
+    tools: ["Pseudocode", "Flowchart logic", "Decision tables"],
+    realWorld: "خوارزمية التوصيات في Netflix صُمِّمت على السبورة البيضاء لأشهر قبل كتابة أي كود Python. 75% من ساعات المشاهدة تأتي من التوصيات — مرحلة تصميم الخوارزمية وحدها تُنتج مليارات الدولارات."
+  },
+  {
+    num: "03", icon: "🗺️", color: "#f5ff3d",
+    title: "تصميم خريطة التدفق",
+    en: "Design Flowchart",
+    brief: "تصوير المنطق بصرياً",
+    detail: "خريطة التدفق تترجم الخوارزمية إلى <strong>خريطة بصرية</strong> يفهمها كل عضو في الفريق — مبرمجاً كان أم لا. <span class='accent-pink'>مصمم خريطة التدفق</span> مسؤول عن ترجمة الخوارزمية إلى خريطة تدفق. الرموز: المعين = قرار، المستطيل = إجراء، السهم = تدفق، الدائرة = بداية/نهاية.",
+    tools: ["Draw.io", "Lucidchart", "Microsoft Visio"],
+    realWorld: "ناسا NASA ترسم خرائط تدفق لكل برنامج حرج — نظام الملاحة الذاتية لمركبة Mars Rover Perseverance رُسم كخريطة تدفق بـ 400 عقدة قبل البرمجة. خطأ واحد في الخريطة قد يُفقد مليار دولار."
+  },
+  {
+    num: "04", icon: "💻", color: "#b537f2",
+    title: "كتابة التعليمات البرمجية",
+    en: "Write Code",
+    brief: "ترجمة المنطق إلى Python",
+    detail: "<span class='accent-pink'>المبرمج</span> يترجم خريطة التدفق إلى كود فعلي — باستخدام <strong>Python وSQLite وعمليات CRUD ومعالجة الأخطاء try/except</strong>. الخريطة هي المخطط، والكود هو البناء. الكود النظيف ليس مجرد كود يعمل، بل كود يستطيع المبرمج الآخر قراءته وفهمه.",
+    tools: ["PyCharm", "Python", "SQLite", "Git/GitHub"],
+    realWorld: "إصدار Instagram الأول كتبه مبرمج واحد — Kevin Systrom — بـ Python في 8 أسابيع فقط. الكود كان نظيفاً لدرجة أن Facebook دفعت مليار دولار لشرائه عام 2012. اليوم التطبيق يخدم أكثر من ملياري مستخدم."
+  },
+  {
+    num: "05", icon: "🧪", color: "#ff2e97",
+    title: "اختبار البرنامج وتصحيحه",
+    en: "Test & Debug",
+    brief: "اكتشاف الأخطاء مبكراً",
+    detail: "الاختبار يكشف <strong>أخطاء التركيب (Syntax) والمنطق (Logic) والتشغيل (Runtime)</strong>. التصحيح (Debugging) هو عمل المحقق — البحث عن الأخطاء وإصلاحها. الفرق المحترفة تُخصّص <span class='accent-pink'>40-60%</span> من وقتها للاختبار. الاختبار ليس رفاهية — بل ضرورة.",
+    tools: ["Unit tests", "Print debugging", "Edge cases"],
+    realWorld: "خطأ برمجي واحد غير مُختبر في صاروخ Ariane 5 عام 1996 تسبّب في انفجاره بعد 37 ثانية من الإطلاق — خسارة 370 مليون دولار. السبب؟ تحويل رقم 64-bit إلى 16-bit لم يُختبر أبداً. الاختبار ينقذ الأموال والأرواح."
+  },
+  {
+    num: "06", icon: "🎤", color: "#00f0ff",
+    title: "عرض المشروع على الزملاء",
+    en: "Present Project",
+    brief: "اعرض عملك للعالم",
+    detail: "<span class='accent-green'>مُعِد العرض التقديمي</span> مسؤول عن إعداد وتصميم العرض. يعرض الفريق على <strong>الزملاء والمعلمين وأصحاب المصلحة</strong>. التغذية الراجعة في هذه المرحلة ذهب خالص — التعديل الآن أرخص بكثير من التعديل بعد البناء النهائي. أفضل المهندسين هم أيضاً أفضل المتواصلين.",
+    tools: ["PowerPoint", "Video demo", "Q&A session"],
+    realWorld: "كل منتج تقني كبير — من iPhone إلى ChatGPT — مرّ بعروض داخلية ومراجعات زملاء قبل الإطلاق. Steve Jobs كان يتدرب على keynotes لأسابيع. Sam Altman عرض GPT-4 على فريقه أكثر من 50 مرة قبل الإطلاق العالمي."
+  },
+  {
+    num: "07", icon: "⚡", color: "#39ff88",
+    title: "تحسين البرنامج وفق التغذية الراجعة",
+    en: "Improve & Iterate",
+    brief: "التكرار والتحسين",
+    detail: "البرنامج الحقيقي <strong>لا ينتهي من أول مرة</strong>. هنا يُبسَّط الكود وتُضاف التعليقات ويُصقَل الواجهة وتُضاف البيانات الإرشادية. أفضل المبرمجين يحبون هذه المرحلة أكثر من غيرها لأنها تُظهر <span class='accent-green'>الفرق بين كود يعمل وكود احترافي</span>.",
+    tools: ["Refactoring", "Comments", "UI polish"],
+    realWorld: "WhatsApp مرّ بـ 47 إصداراً قبل أن يشتريه Mark Zuckerberg بـ 19 مليار دولار. ميزة التغريد (Tweet) في Twitter كانت تُعتبر خطأً في نماذج أولية مبكرة! التكرار هو ما يُحوّل الفشل إلى نجاح."
+  },
+  {
+    num: "08", icon: "🚀", color: "#ff6b2b",
+    title: "بناء البرنامج النهائي",
+    en: "Build & Ship",
+    brief: "أطلق مشروعك!",
+    detail: "المنتج النهائي <strong>المصقول والمُختبر والموثّق</strong> يُجمع في ملف واحد — <span class='accent-pink'>مجلد المشروع، شرائح العرض، توثيق الفيديو، والكود المصدري</span>. هذا ما يُسلَّم للمعلم أو العميل أو يُنشر للعالم. التوثيق بنظام APA، والنشر على منصة Teams.",
+    tools: ["Final folder", "Video", "Slides", "APA refs"],
+    realWorld: "GitHub نفسه — المنصة التي يعيش عليها معظم الكود الاحترافي في العالم — بناه 4 مهندسين في عطلة نهاية أسبوع واحدة عام 2008 قبل أن تشتريه Microsoft بـ 7.5 مليار دولار عام 2018."
+  }
+];
+
+const timeline = [
+  { year: "1960s", title: "عصر البطاقات المثقبة", body: "البرامج تُكتب على بطاقات ورقية مثقبة وتُسلَّم للمشغّل. المبرمج ينتظر ساعات أو أياماً للحصول على النتيجة. لا أدوات تصحيح — الخطأ يعني إعادة طباعة كل البطاقات من البداية.", era: null, eraClass: '' },
+  { year: "1970s", title: "البرمجة المنظّمة", body: "ورقة Edsger Dijkstra الشهيرة 'Go To Statement Considered Harmful' غيّرت كل شيء. وُلد مفهوم دورة حياة تطوير البرمجيات (SDLC) رسمياً — نموذج Waterfall لـ Winston Royce أصبح المعيار الصناعي.", era: null, eraClass: '' },
+  { year: "1980s", title: "الحاسوب الشخصي يصل", body: "Apple II وIBM PC. المبرمجون باتوا يُشغّلون الكود على أجهزتهم الخاصة. ظهرت بيئات التطوير المتكاملة (IDE) مثل Turbo Pascal لأول مرة — تغذية راجعة فورية بدلاً من أيام انتظار.", era: "🌱 THE_TRANSITION // الأمور تبدأ بالتحسن", eraClass: 'era-new' },
+  { year: "1991", title: "ولادة Python", body: "Guido van Rossum يُطلق Python. هدفه: كود يُقرأ كالإنجليزية تقريباً. اللغة التي تتعلمها الآن كانت ثورية لأنها جعلت البرمجة قابلة للقراءة البشرية، لا للآلة فقط.", era: null, eraClass: 'era-new' },
+  { year: "1999", title: "البيان الرشيق — Agile Manifesto", body: "17 مطوراً اجتمعوا في Snowbird, Utah وكتبوا 4 مبادئ أحلّت محل نموذج Waterfall الصارم: التكرار، والتعاون، والبرنامج العامل فوق التوثيق، والاستجابة للتغيير. 94% من الشركات الحديثة تعمل بـ Agile اليوم.", era: null, eraClass: 'era-new' },
+  { year: "2005", title: "اختراع Git", body: "Linus Torvalds (مؤسس Linux) بنى Git في 10 أيام فقط لأنه كان محبطاً من الأدوات الموجودة. اليوم 94% من المطورين المحترفين يستخدمونه. branches وcommits وpull requests أصبحت لغة عالمية.", era: null, eraClass: 'era-new' },
+  { year: "2010s", title: "السحابة والنشر المستمر", body: "Amazon، Google، Netflix ينشرون تحديثات كودية مئات المرات يومياً بشكل تلقائي عبر CI/CD pipelines. المراحل التي تتعلمها أصبحت حلقات آلية متكررة بدلاً من دورة طويلة واحدة.", era: "🚀 THE_CLOUD_ERA", eraClass: 'era-new' },
+  { year: "2020", title: "البرمجة بمساعدة AI", body: "GitHub Copilot يُطلق رسمياً ويبدأ بكتابة الكود مع الإنسان. مرحلة 'كتابة الكود' باتت شبه آلية — لكن تصميم الخوارزمية وتحديد المشكلة واختبار المنطق لا تزال مهارات بشرية بحتة.", era: "🤖 AI_AUGMENTED // أين نحن الآن", eraClass: 'era-future' },
+  { year: "2026", title: "أنظمة الذكاء الاصطناعي الوكيلة", body: "الذكاء الاصطناعي لا يقترح الكود فحسب — بل يبني ويختبر ويُصحّح ميزات كاملة بشكل مستقل. لكن مراحل دورة حياة البرمجيات التي تتعلمها أصبحت <b>أهم</b> من أي وقت مضى: التصميم والتحقق أصبحا المهارات الأثمن.", era: null, eraClass: 'era-future' }
+];
+
+const research = [
+  { icon: "🧠", title: "الهيبرجراف في الصحة النفسية", body: "باحثو Harvard Medical School (2023) استخدموا Hypergraph Neural Networks لرسم خريطة العلاقات بين أعراض الصحة النفسية لـ 50,000 مريض. الكود كُتب بـ Python — نفس اللغة التي تتعلمها — واكتشف خطر الاكتئاب قبل 3 سنوات من التشخيص السريري.", tag: "PUBLISHED // Nature Mental Health, 2023" },
+  { icon: "🤖", title: "الجراحة الروبوتية da Vinci", body: "روبوت الجراحة da Vinci يعمل بكود طُوِّر باتباع دورة حياة تطوير صارمة — مرحلة الاختبار وحدها استغرقت 7 سنوات قبل موافقة FDA. مرحلة تصميم الخوارزمية حددت كل حركة بدقة أقل من ملمتر واحد.", tag: "APPROVED // Intuitive Surgical" },
+  { icon: "🌍", title: "GraphCast للتنبؤ بالطقس", body: "DeepMind (2023) يتنبأ بطقس 10 أيام في أقل من دقيقة واحدة باستخدام Graph Neural Network — مُدرَّب بـ Python ومرسوم عبر 19 مرحلة تطوير. النماذج القديمة تحتاج 10,000 معالج — GraphCast يحتاج معالجاً واحداً.", tag: "OPEN_SOURCE // DeepMind + ECMWF" },
+  { icon: "🎮", title: "No Man's Sky — عوالم لامتناهية", body: "اللعبة تولّد 18 كوينتيليون (18×10¹⁸) كوكب فريد باستخدام خوارزميات Procedural Generation — نفس المفهوم الذي تتعلمه في المرحلة الثانية. كل كوكب بتضاريسه ومخلوقاته وغلافه الجوي يأتي من 600 كيلوبايت فقط من الكود الإجرائي.", tag: "LIVE // Hello Games, 2016-2026" },
+  { icon: "🦠", title: "AlphaFold — اكتشاف الأدوية", body: "AlphaFold2 من DeepMind حلّ مشكلة بيولوجية عمرها 50 عاماً عام 2020 — التنبؤ ببنية البروتينات — ونشر 200 مليون بنية بروتينية مجاناً للعالم. علماء كانوا يقضون مسيرتهم المهنية في بروتين واحد يفحصون الآن الآلاف يومياً.", tag: "NOBEL_PRIZE // Chemistry 2024" },
+  { icon: "📡", title: "Starlink — أسراب الأقمار", body: "SpaceX تُشغّل أكثر من 5000 قمر صناعي باستخدام قاعدة كود مشتركة واحدة تُحدَّث أسبوعياً. البرنامج الذي يتحكم في ميكانيكا المدارات وتجنب الاصطدامات بُني باستخدام Agile SDLC بدورات 3 أيام.", tag: "ACTIVE // SpaceX Engineering" },
+  { icon: "🔒", title: "Post-Quantum Cryptography", body: "NIST اعتمد عام 2024 معايير تشفير جديدة مقاومة للحواسيب الكمية — CRYSTALS-Kyber وDilithium. هذه الخوارزميات صُمِّمت على الورق لسنوات قبل البرمجة، ويستخدمها الآن Google وApple لحماية اتصالاتك.", tag: "STANDARDIZED // NIST, Aug 2024" },
+  { icon: "🛸", title: "UAV Swarm Intelligence", body: "الجيوش الحديثة تستخدم أسراب طائرات مسيّرة تتواصل دون اتصال مركزي — خوارزميات Swarm Intelligence مستوحاة من النمل والنحل. كل طائرة تحمل منطقاً خفيفاً بُرمج بعناية عبر مراحل SDLC الكاملة.", tag: "RESEARCH // DARPA OFFSET Program" }
+];
+
+const quiz = [
+  { q: "أمضى فريق 3 أشهر في التصميم وأسبوعاً في الكود. أي مرحلة كانت الأكثر إهمالاً؟", opts: ["الاختبار والتصحيح", "كتابة الكود", "تحديد المشكلة", "بناء البرنامج النهائي"], ans: 0, fb: "الاختبار دائماً الأقل حظاً من الوقت. الفرق المحترفة تُخصّص 40-60% من وقتها للاختبار — وهذا ما يفصل الهواة عن المحترفين." },
+  { q: "كتب Instagram الأول كم مبرمجاً؟", opts: ["مبرمج واحد", "5 مبرمجين", "فريق من 50", "ذكاء اصطناعي"], ans: 0, fb: "Kevin Systrom كتب نسخة Instagram الأولى وحده في 8 أسابيع بـ Python. تصميم الخوارزمية النظيف هو ما جعل ذلك ممكناً — وبِيع لاحقاً بمليار دولار!" },
+  { q: "انفجر صاروخ Ariane 5 عام 1996 بسبب خطأ في أي مرحلة؟", opts: ["تحديد المشكلة", "تصميم الخوارزمية", "الاختبار والتصحيح", "العرض على الزملاء"], ans: 2, fb: "خطأ تحويل بيانات (64-bit → 16-bit) لم يُكتشف في الاختبار. درس بـ 370 مليون دولار في أهمية الاختبار الشامل." },
+  { q: "في أي عام صدر البيان الرشيق Agile Manifesto بديلاً عن Waterfall؟", opts: ["1970", "1985", "1999", "2010"], ans: 2, fb: "1999! 17 مطوراً في Snowbird غيّروا صناعة البرمجيات. بدلاً من شلال طويل، الفرق تعمل الآن في دورات قصيرة متكررة — هكذا ستعمل في الصناعة." },
+  { q: "ما المهمة التي لا يؤديها 'مُعِد الخوارزمية' في الفريق؟", opts: ["كتابة pseudocode", "رسم خطوات الخريطة الأساسية", "بناء البرنامج النهائي", "تحديد تسلسل الخطوات"], ans: 2, fb: "بناء البرنامج النهائي مهمة المبرمج. مُعِد الخوارزمية يركّز على الخطوات المنطقية — قبل كتابة أي كود." }
+];
+
+// ============ STATE ============
+let currentStage = 0;
+let quizAnswers = new Array(quiz.length).fill(null);
+
+// ============ STAGE RENDERING ============
+function renderStageDots() {
+  const container = document.getElementById('stageDots');
+  container.innerHTML = '';
+  stages.forEach((s, i) => {
+    const dot = document.createElement('div');
+    dot.className = 'stage-dot';
+    dot.textContent = s.num;
+    dot.onclick = () => goToStage(i);
+    container.appendChild(dot);
+  });
+  updateDots();
+}
+
+function updateDots() {
+  const dots = document.querySelectorAll('.stage-dot');
+  dots.forEach((d, i) => {
+    d.classList.remove('active', 'completed');
+    if (i < currentStage) d.classList.add('completed');
+    else if (i === currentStage) d.classList.add('active');
+  });
+  // Progress line (RTL: fills from right to left, so we use width)
+  const pct = (currentStage / (stages.length - 1)) * 100;
+  document.getElementById('progressFill').style.width = pct + '%';
+}
+
+function renderStage() {
+  const s = stages[currentStage];
+  const viewer = document.getElementById('stageViewer');
+  viewer.innerHTML = `
+    <div class="stage-content">
+      <div class="stage-header-row">
+        <div class="stage-big-num">${s.num}</div>
+        <div class="stage-meta">
+          <div class="stage-label">// STAGE_${s.num} :: ${s.en.toUpperCase()}</div>
+          <div class="stage-title">${s.title}</div>
+          <div class="stage-brief">${s.brief}</div>
+        </div>
+        <div style="font-size: 3rem; filter: drop-shadow(0 0 15px ${s.color});">${s.icon}</div>
+      </div>
+      <div class="stage-body">
+        <div class="info-block">
+          <h3>&gt; DESCRIPTION // الوصف</h3>
+          <p>${s.detail}</p>
+          <div class="tools-row">
+            ${s.tools.map(t => `<span class="tool-chip">${t}</span>`).join('')}
+          </div>
+        </div>
+        <div class="info-block real-world">
+          <h3>&gt; REAL_WORLD // من الواقع</h3>
+          <p>${s.realWorld}</p>
+        </div>
+      </div>
+      <div class="nav-controls">
+        <button class="nav-btn" onclick="prevStage()" ${currentStage === 0 ? 'disabled' : ''}>
+          ← السابق
+        </button>
+        <button class="nav-btn primary" onclick="nextStage()" ${currentStage === stages.length - 1 ? 'disabled' : ''}>
+          ${currentStage === stages.length - 1 ? 'اكتمل ✓' : 'التالي →'}
+        </button>
+      </div>
+    </div>
+  `;
+}
+
+function goToStage(i) {
+  if (i === currentStage) return;
+  showTransition(stages[i].num);
+  setTimeout(() => {
+    currentStage = i;
+    renderStage();
+    updateDots();
+  }, 250);
+}
+
+function nextStage() { if (currentStage < stages.length - 1) goToStage(currentStage + 1); }
+function prevStage() { if (currentStage > 0) goToStage(currentStage - 1); }
+
+function showTransition(num) {
+  const overlay = document.getElementById('transOverlay');
+  const txt = document.getElementById('transText');
+  txt.textContent = `STAGE ${num}`;
+  overlay.classList.add('active');
+  setTimeout(() => overlay.classList.remove('active'), 500);
+}
+
+// ============ TIMELINE ============
+function renderTimeline() {
+  const wrap = document.getElementById('timelineWrap');
+  wrap.innerHTML = '';
+  timeline.forEach(item => {
+    if (item.era) {
+      const era = document.createElement('div');
+      era.className = 'era-divider';
+      era.textContent = item.era;
+      wrap.appendChild(era);
+    }
+    const node = document.createElement('div');
+    node.className = 'timeline-node';
+    node.innerHTML = `
+      <div class="timeline-year ${item.eraClass}">${item.year}</div>
+      <div class="timeline-card">
+        <h4>${item.title}</h4>
+        <p>${item.body}</p>
+      </div>
+    `;
+    wrap.appendChild(node);
+  });
+}
+
+// ============ RESEARCH ============
+function renderResearch() {
+  const grid = document.getElementById('researchGrid');
+  grid.innerHTML = '';
+  research.forEach(r => {
+    const card = document.createElement('div');
+    card.className = 'research-card';
+    card.innerHTML = `
+      <div class="research-icon">${r.icon}</div>
+      <h4>${r.title}</h4>
+      <p>${r.body}</p>
+      <div class="research-tag">// ${r.tag}</div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+// ============ QUIZ ============
+function renderQuiz() {
+  const list = document.getElementById('quizList');
+  list.innerHTML = '';
+  quiz.forEach((q, qi) => {
+    const card = document.createElement('div');
+    card.className = 'quiz-card';
+    card.innerHTML = `
+      <div class="quiz-q-num">// QUESTION_${String(qi + 1).padStart(2, '0')}</div>
+      <div class="quiz-question">${q.q}</div>
+      <div class="quiz-options">
+        ${q.opts.map((o, oi) => `<button class="quiz-option" data-qi="${qi}" data-oi="${oi}">${o}</button>`).join('')}
+      </div>
+      <div class="quiz-feedback" id="fb-${qi}" style="display:none;"></div>
+    `;
+    list.appendChild(card);
+  });
+  list.querySelectorAll('.quiz-option').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const qi = parseInt(btn.dataset.qi);
+      const oi = parseInt(btn.dataset.oi);
+      answerQuiz(qi, oi, btn);
+    });
+  });
+}
+
+function answerQuiz(qi, oi, btn) {
+  if (quizAnswers[qi] !== null) return;
+  const q = quiz[qi];
+  const correct = oi === q.ans;
+  quizAnswers[qi] = correct ? 1 : 0;
+  btn.classList.add(correct ? 'correct' : 'wrong');
+  if (!correct) {
+    const card = btn.closest('.quiz-card');
+    const options = card.querySelectorAll('.quiz-option');
+    options[q.ans].classList.add('correct');
+  }
+  const card = btn.closest('.quiz-card');
+  card.querySelectorAll('.quiz-option').forEach(b => b.disabled = true);
+  const fb = document.getElementById(`fb-${qi}`);
+  fb.style.display = 'block';
+  fb.className = 'quiz-feedback ' + (correct ? 'ok' : 'no');
+  fb.innerHTML = (correct ? '✓ <strong>إجابة صحيحة!</strong> ' : '✗ <strong>ليست الإجابة الصحيحة.</strong> ') + q.fb;
+  updateQuizScore();
+}
+
+function updateQuizScore() {
+  const answered = quizAnswers.filter(a => a !== null).length;
+  const correct = quizAnswers.filter(a => a === 1).length;
+  const pct = quiz.length > 0 ? (correct / quiz.length) * 100 : 0;
+  document.getElementById('quizFill').style.width = pct + '%';
+  document.getElementById('quizScore').textContent = `${correct} / ${quiz.length}`;
+}
+
+// ============ TABS ============
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    const target = tab.dataset.tab;
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('panel-' + target).classList.add('active');
+  });
+});
+
+// ============ PARTICLES ============
+function spawnParticles() {
+  for (let i = 0; i < 25; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    p.style.left = Math.random() * 100 + 'vw';
+    p.style.animationDuration = (10 + Math.random() * 20) + 's';
+    p.style.animationDelay = (Math.random() * 20) + 's';
+    const colors = ['#00f0ff', '#ff2e97', '#b537f2', '#39ff88'];
+    p.style.background = colors[Math.floor(Math.random() * colors.length)];
+    p.style.boxShadow = `0 0 8px ${p.style.background}`;
+    document.body.appendChild(p);
+  }
+}
+
+// ============ KEYBOARD NAV ============
+document.addEventListener('keydown', e => {
+  if (!document.getElementById('panel-stages').classList.contains('active')) return;
+  if (e.key === 'ArrowLeft') nextStage();  // RTL: left = next
+  if (e.key === 'ArrowRight') prevStage(); // RTL: right = prev
+});
+
+// ============ INIT ============
+renderStageDots();
+renderStage();
+renderTimeline();
+renderResearch();
+renderQuiz();
+spawnParticles();
+</script>
+</body>
+</html>
