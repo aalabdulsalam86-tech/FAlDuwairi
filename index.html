@@ -79,6 +79,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(2,6,23,0.9);
 .sc-tg.s{background:rgba(255,255,255,0.04);color:var(--muted);border:1px solid rgba(255,255,255,0.08)}
 .subj-hdr{background:rgba(15,23,42,0.9);border:1.5px solid var(--border);border-radius:20px;padding:26px 30px;margin-bottom:26px;display:flex;align-items:center;gap:18px}
 .sh-icon{font-size:50px}.sh-info h2{font-size:24px;font-weight:900}.sh-info p{color:var(--muted);font-size:14px;margin-top:4px}
+.mode-switch{display:grid;grid-template-columns:1fr 1fr;gap:6px;background:rgba(15,23,42,0.9);border:1.5px solid var(--border);border-radius:16px;padding:6px;margin-bottom:22px}
+.ms-btn{background:transparent;border:1.5px solid transparent;border-radius:11px;padding:14px 16px;font-family:"Tajawal",sans-serif;font-size:17px;font-weight:900;color:var(--muted);cursor:pointer;transition:all 0.25s;display:flex;flex-direction:column;align-items:center;gap:3px}
+.ms-btn small{font-size:12px;font-weight:400;color:var(--muted)}
+.ms-btn:hover{color:var(--text);background:rgba(255,255,255,0.04)}
+.ms-btn.active{background:rgba(0,245,255,0.1);border-color:rgba(0,245,255,0.35);color:var(--cyan)}
+.ms-btn.active.lessons{background:rgba(251,191,36,0.1);border-color:rgba(251,191,36,0.4);color:var(--gold)}
+.sem-grid.lessons .sem:hover{border-color:var(--gold);box-shadow:0 20px 50px rgba(251,191,36,0.08)}
+.sem-grid.lessons .sem-p{background:rgba(251,191,36,0.1);color:var(--gold)}
+.sem-grid.lessons .sem-bg{color:rgba(251,191,36,0.06)}
 .sem-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .sem{background:rgba(15,23,42,0.85);border:1.5px solid rgba(255,255,255,0.08);border-radius:20px;padding:28px 24px;cursor:pointer;transition:all 0.3s;position:relative;overflow:hidden}
 .sem:hover{border-color:var(--cyan);transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,245,255,0.08)}
@@ -106,7 +115,7 @@ footer{border-top:1px solid rgba(0,245,255,0.1);padding:28px 48px;text-align:cen
 .stg>*{opacity:0;animation:si 0.4s ease forwards}
 .stg>*:nth-child(1){animation-delay:.04s}.stg>*:nth-child(2){animation-delay:.10s}.stg>*:nth-child(3){animation-delay:.16s}.stg>*:nth-child(4){animation-delay:.22s}.stg>*:nth-child(5){animation-delay:.28s}.stg>*:nth-child(6){animation-delay:.34s}.stg>*:nth-child(7){animation-delay:.40s}.stg>*:nth-child(8){animation-delay:.46s}.stg>*:nth-child(9){animation-delay:.52s}.stg>*:nth-child(10){animation-delay:.58s}
 @media(max-width:900px){.grades-grid{grid-template-columns:1fr 1fr}.grades-row2{max-width:100%}.subj-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:640px){nav{padding:0 20px}.nav-links{display:none}.hero{padding:90px 20px 48px}.hero-name{font-size:28px}.degrees{flex-direction:column;align-items:center}.email-row{flex-direction:column;align-items:center}.grades-section{padding:60px 20px 80px}.grades-grid{grid-template-columns:1fr}.grades-row2{grid-template-columns:1fr;max-width:100%}.inner-page{padding:90px 20px 48px}.subj-grid{grid-template-columns:1fr 1fr}.sem-grid{grid-template-columns:1fr}}
+@media(max-width:640px){.ms-btn{font-size:15px;padding:12px 8px}nav{padding:0 20px}.nav-links{display:none}.hero{padding:90px 20px 48px}.hero-name{font-size:28px}.degrees{flex-direction:column;align-items:center}.email-row{flex-direction:column;align-items:center}.grades-section{padding:60px 20px 80px}.grades-grid{grid-template-columns:1fr}.grades-row2{grid-template-columns:1fr;max-width:100%}.inner-page{padding:90px 20px 48px}.subj-grid{grid-template-columns:1fr 1fr}.sem-grid{grid-template-columns:1fr}}
 
 .platform-badge{display:inline-block;background:rgba(0,245,255,0.08);border:1.5px solid rgba(0,245,255,0.3);color:#00f5ff;padding:8px 22px;border-radius:50px;font-family:'Orbitron',sans-serif;font-size:12px;letter-spacing:3px;margin-bottom:24px;position:relative;z-index:2;animation:badgePulse 3s ease-in-out infinite}
 @keyframes badgePulse{0%,100%{box-shadow:0 0 0 0 rgba(0,245,255,0.2)}50%{box-shadow:0 0 0 8px rgba(0,245,255,0)}}
@@ -171,7 +180,7 @@ footer{border-top:1px solid rgba(0,245,255,0.1);padding:28px 48px;text-align:cen
   <div class="platform-features">
     <div class="pf-card"><span class="pf-icon">🎲</span><span class="pf-title">أسئلة عشوائية</span><span class="pf-desc">كل جلسة مراجعة مختلفة</span></div>
     <div class="pf-card"><span class="pf-icon">💡</span><span class="pf-title">شروحات فورية</span><span class="pf-desc">شرح الإجابة بعد كل سؤال</span></div>
-    <div class="pf-card"><span class="pf-icon">📊</span><span class="pf-title">تغطية شاملة</span><span class="pf-desc">جميع المواد والفصول</span></div>
+    <div class="pf-card"><span class="pf-icon">🎓</span><span class="pf-title">حصص تفاعلية</span><span class="pf-desc">حصة اليوم لكل مادة وفصل</span></div>
   </div>
   <button class="cta-btn" onclick="document.getElementById('gs').scrollIntoView({behavior:'smooth'})">🎓 ابدأ المراجعة — اختر صفّك</button>
   <span class="scroll-arrow" onclick="document.getElementById('gs').scrollIntoView({behavior:'smooth'})">⬇</span>
@@ -195,7 +204,7 @@ footer{border-top:1px solid rgba(0,245,255,0.1);padding:28px 48px;text-align:cen
 <section class="grades-section" id="gs">
   <div class="sec-title">
     <h2>🎓 الصفوف الدراسية</h2>
-    <p>اختر صفّك للاطلاع على المواد وألعاب المراجعة التفاعلية</p>
+    <p>اختر صفّك للوصول إلى ألعاب المراجعة والحصص التفاعلية</p>
     <div class="tline"></div>
   </div>
   <div class="grades-grid" id="grades-grid"></div>
@@ -227,7 +236,11 @@ footer{border-top:1px solid rgba(0,245,255,0.1);padding:28px 48px;text-align:cen
     <span class="sh-icon" id="sh-icon">💻</span>
     <div class="sh-info"><h2 id="sh-title">حاسوب</h2><p id="sh-sub">اختر الفصل الدراسي</p></div>
   </div>
-  <div class="sem-grid">
+  <div class="mode-switch">
+    <button class="ms-btn active" id="ms-games" onclick="setMode('games')">🎮 ألعاب المراجعة<small>١٠ أسئلة عشوائية مع الشرح</small></button>
+    <button class="ms-btn" id="ms-lessons" onclick="setMode('lessons')">🎓 حصص تفاعلية<small>حصة اليوم وشرح الدروس</small></button>
+  </div>
+  <div class="sem-grid" id="sem-grid">
     <div class="sem" onclick="showSemester(curG,1)">
       <div class="sem-bg">١</div>
       <div class="sem-t">الفصل الدراسي الأول</div>
@@ -658,7 +671,7 @@ function showGrade(g){
   curG=g;const d=GR[g];
   document.getElementById("gb-em").textContent=d.emoji;
   document.getElementById("gb-title").textContent=d.ar;
-  document.getElementById("gb-sub").textContent=d.en+" · اختر المادة للوصول إلى ألعاب المراجعة";
+  document.getElementById("gb-sub").textContent=d.en+" · اختر المادة للوصول إلى الألعاب والحصص التفاعلية";
   const grid=document.getElementById("subj-grid");
   grid.innerHTML="";grid.classList.remove("stg");void grid.offsetWidth;grid.classList.add("stg");
   GS[g].forEach(s=>{
@@ -686,24 +699,40 @@ function showSubject(g,s){
   curSubjName=s.n;
   document.getElementById("sh-icon").textContent=s.e;
   document.getElementById("sh-title").textContent=s.n+" — "+GR[g].ar;
-  document.getElementById("sh-sub").textContent=GR[g].en+" · اختر الفصل الدراسي";
+  document.getElementById("sh-sub").textContent=GR[g].en+" · اختر نوع المحتوى ثم الفصل الدراسي";
   document.getElementById("subj-back").onclick=()=>showGrade(g);
   const sc=SUBJECT_CHAPTERS[g]&&SUBJECT_CHAPTERS[g][s.n];
   const c1=sc?sc[1]:[];const c2=sc?sc[2]:[];
   // For grades with direct-to-game mode, show "start game" label instead of chapter count
   if(hasDirectGame(g,s.n)){
-    document.getElementById("s1p").textContent="▶ ابدأ اللعبة";
-    document.getElementById("s2p").textContent="▶ ابدأ اللعبة";
+    applyModeUI();
   }else{
     document.getElementById("s1p").textContent=c1.length?"📖 "+c1.length+" فصول":"📖 قريباً";
     document.getElementById("s2p").textContent=c2.length?"📖 "+c2.length+" فصول":"📖 قريباً";
   }
   showPage("subject");
 }
+// ---- content mode: "games" (ألعاب المراجعة) or "lessons" (حصص تفاعلية) ----
+// Lessons live in lessons/<prefix>_s<sem>.html — same prefix as DIRECT_GAMES
+let curMode=sessionStorage.getItem("contentMode")||"games";
+function setMode(m){
+  curMode=m;sessionStorage.setItem("contentMode",m);
+  applyModeUI();
+}
+function applyModeUI(){
+  const lessons=curMode==="lessons";
+  document.getElementById("ms-games").classList.toggle("active",!lessons);
+  const lb=document.getElementById("ms-lessons");lb.classList.toggle("active",lessons);lb.classList.toggle("lessons",lessons);
+  document.getElementById("sem-grid").classList.toggle("lessons",lessons);
+  const label=lessons?"🎓 حصة اليوم":"▶ ابدأ اللعبة";
+  document.getElementById("s1p").textContent=label;
+  document.getElementById("s2p").textContent=label;
+}
 function showSemester(g,sem){
   // For grades with direct-to-game mode, skip chapter selection
   if(hasDirectGame(g,curSubjName)){
-    window.location.href="games/"+DIRECT_GAMES[g][curSubjName]+"_s"+sem+".html";
+    const folder=curMode==="lessons"?"lessons/":"games/";
+    window.location.href=folder+DIRECT_GAMES[g][curSubjName]+"_s"+sem+".html";
     return;
   }
   curS=sem;const d=GR[g];
