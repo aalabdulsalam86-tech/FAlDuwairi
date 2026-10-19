@@ -155,14 +155,14 @@ export default {
     const allowed = (env.ALLOWED_ORIGINS || "").split(",").map(s => s.trim()).filter(Boolean);
     const originOk = allowed.length === 0 || allowed.includes(origin);
     const cors = {
-      "Access-Control-Allow-Origin": originOk ? (origin || "*") : "null",
+      "Access-Control-Allow-Origin": origin || "*",   // echoed so the browser can read our error JSON; access is enforced below
       "Access-Control-Allow-Methods": "POST, OPTIONS",
       "Access-Control-Allow-Headers": "Content-Type",
       "Content-Type": "application/json; charset=utf-8"
     };
     if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: cors });
     if (request.method !== "POST") return json({ error: "POST only" }, 405, cors);
-    if (!originOk) return json({ error: "Origin not allowed" }, 403, cors);
+    if (!originOk) return json({ error: "Origin not allowed: " + (origin || "(none)") + " — add it to ALLOWED_ORIGINS" }, 403, cors);
     if (!env.GEMINI_API_KEY) return json({ error: "GEMINI_API_KEY is not set" }, 500, cors);
 
     let body;
