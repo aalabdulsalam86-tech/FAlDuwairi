@@ -132,6 +132,9 @@ footer{border-top:1px solid rgba(0,245,255,0.1);padding:28px 48px;text-align:cen
 .pf-desc{display:block;font-size:13px;color:rgba(241,245,249,0.65);line-height:1.5}
 .cta-btn{background:linear-gradient(135deg,#00f5ff 0%,#c026d3 100%);color:#020617;border:none;padding:18px 44px;font-family:'Tajawal',sans-serif;font-size:18px;font-weight:900;border-radius:50px;cursor:pointer;box-shadow:0 8px 30px rgba(0,245,255,0.35);transition:all 0.3s;position:relative;z-index:2;margin-top:10px}
 .cta-btn:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 14px 40px rgba(0,245,255,0.5)}
+.cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative;z-index:2}
+.cta-btn.ghost{background:rgba(15,23,42,0.7);color:var(--text);border:1.5px solid rgba(251,191,36,0.4);box-shadow:none}
+.cta-btn.ghost:hover{border-color:var(--gold);color:var(--gold);box-shadow:0 10px 30px rgba(251,191,36,0.15)}
 @media(max-width:768px){.platform-stats{gap:10px}.pst-card{min-width:115px;padding:14px 16px}.pst-num{font-size:24px}.platform-features{flex-direction:column;align-items:center}.pf-card{max-width:100%;width:100%}.cta-btn{font-size:16px;padding:14px 30px}}
 
 
@@ -157,6 +160,7 @@ footer{border-top:1px solid rgba(0,245,255,0.1);padding:28px 48px;text-align:cen
   <ul class="nav-links">
     <li><a href="#" onclick="showPage('home');return false">الرئيسية</a></li>
     <li><a href="#" onclick="showPage('home');setTimeout(()=>document.getElementById('gs').scrollIntoView({behavior:'smooth'}),100);return false">الصفوف</a></li>
+    <li><a href="assistant.html">🤖 المساعد الذكي</a></li>
     <li><a href="about.html">👤 عن المعلم</a></li>
     <li><a href="mailto:Aij86@icloud.com">📧 تواصل</a></li>
   </ul>
@@ -182,7 +186,10 @@ footer{border-top:1px solid rgba(0,245,255,0.1);padding:28px 48px;text-align:cen
     <div class="pf-card"><span class="pf-icon">💡</span><span class="pf-title">شروحات فورية</span><span class="pf-desc">شرح الإجابة بعد كل سؤال</span></div>
     <div class="pf-card"><span class="pf-icon">🎓</span><span class="pf-title">حصص تفاعلية</span><span class="pf-desc">حصة اليوم لكل مادة وفصل</span></div>
   </div>
-  <button class="cta-btn" onclick="document.getElementById('gs').scrollIntoView({behavior:'smooth'})">🎓 ابدأ المراجعة — اختر صفّك</button>
+  <div class="cta-row">
+    <button class="cta-btn" onclick="document.getElementById('gs').scrollIntoView({behavior:'smooth'})">🎓 ابدأ المراجعة — اختر صفّك</button>
+    <a class="cta-btn ghost" href="assistant.html">🤖 اسأل المساعد الذكي</a>
+  </div>
   <span class="scroll-arrow" onclick="document.getElementById('gs').scrollIntoView({behavior:'smooth'})">⬇</span>
 </section>
 
