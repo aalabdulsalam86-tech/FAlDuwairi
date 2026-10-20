@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>👩‍🏫 بوابة المعلمين — نظام متابعة الطلاب</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root{--bg:#020617;--card:rgba(15,23,42,.85);--txt:#f1f5f9;--mut:rgba(241,245,249,.62);--brd:rgba(255,255,255,.09);--cyan:#00f5ff;--gold:#fbbf24;--purple:#c026d3;--grn:#22c55e;--red:#ef4444;--yel:#facc15}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Tajawal","Arial",sans-serif;background:var(--bg);color:var(--txt);min-height:100vh;
+  background-image:radial-gradient(ellipse 70% 40% at 50% -10%,rgba(0,245,255,.10) 0%,transparent 65%),radial-gradient(circle,rgba(255,255,255,.05) 1px,transparent 1px);background-size:100% 100%,34px 34px}
+button,input,select,textarea{font-family:inherit;font-size:14px}
+button{cursor:pointer}
+a{color:var(--cyan)}
+.hidden{display:none!important}
+/* top bar */
+.top{position:sticky;top:0;z-index:40;background:rgba(2,6,23,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--brd);display:flex;align-items:center;gap:12px;padding:0 20px;height:60px}
+.brand{display:flex;align-items:center;gap:10px}
+.brand .ic{width:36px;height:36px;border-radius:11px;background:linear-gradient(135deg,var(--gold),var(--purple));display:flex;align-items:center;justify-content:center;font-size:18px}
+.brand b{font-size:15px;font-weight:900}.brand small{display:block;font-family:Orbitron,sans-serif;font-size:9px;letter-spacing:2px;color:var(--mut)}
+.sp{flex:1}
+.tb{background:rgba(255,255,255,.05);border:1px solid var(--brd);border-radius:10px;padding:8px 13px;color:var(--mut);font-size:13px;font-weight:700;text-decoration:none;transition:.2s}
+.tb:hover{color:var(--txt);background:rgba(255,255,255,.09)}
+.who{font-size:13px;color:var(--mut)}.who b{color:var(--txt)}
+/* auth */
+.auth{max-width:520px;margin:40px auto;padding:0 16px}
+.card{background:var(--card);border:1px solid var(--brd);border-radius:18px;padding:22px 24px}
+.tabs{display:flex;gap:6px;background:rgba(15,23,42,.9);border:1px solid var(--brd);border-radius:14px;padding:5px;margin-bottom:18px}
+.tab{flex:1;background:none;border:1px solid transparent;border-radius:10px;padding:10px;font-weight:900;color:var(--mut);transition:.2s}
+.tab.on{background:rgba(251,191,36,.1);border-color:rgba(251,191,36,.4);color:var(--gold)}
+.f{display:flex;flex-direction:column;gap:5px;margin-bottom:12px}
+.f label{font-size:13px;color:var(--mut);font-weight:700}
+.f input,.f select,.f textarea{background:rgba(255,255,255,.04);border:1.5px solid var(--brd);border-radius:10px;padding:10px 12px;color:var(--txt);outline:none;transition:.2s;font-size:15px}
+.f input:focus,.f select:focus{border-color:rgba(0,245,255,.5)}
+.f input[dir=ltr]{text-align:left}
+.btn{background:var(--cyan);color:#020617;border:none;border-radius:11px;padding:11px 20px;font-weight:900;font-size:15px;transition:.2s}
+.btn:hover{filter:brightness(1.1)}.btn:disabled{opacity:.4;cursor:default}
+.btn.gold{background:var(--gold)}.btn.ghost{background:rgba(255,255,255,.05);color:var(--txt);border:1px solid var(--brd)}.btn.danger{background:rgba(239,68,68,.15);color:#fca5a5;border:1px solid rgba(239,68,68,.4)}
+.btn.sm{padding:6px 12px;font-size:13px;border-radius:9px}
+.err{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.4);color:#fca5a5;border-radius:10px;padding:9px 12px;font-size:13px;margin-bottom:10px}
+.ok{background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.4);color:#86efac;border-radius:10px;padding:9px 12px;font-size:13px;margin-bottom:10px}
+.cls-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:6px}
+.cls-grid label{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.03);border:1px solid var(--brd);border-radius:9px;padding:7px 9px;font-size:13px;cursor:pointer}
+.cls-grid label:has(input:checked){border-color:var(--gold);background:rgba(251,191,36,.08)}
+.grp{grid-column:1/-1;font-size:12px;color:var(--gold);font-weight:900;margin-top:6px}
+/* app layout */
+.app{display:grid;grid-template-columns:250px 1fr;min-height:calc(100vh - 60px)}
+.side{border-left:1px solid var(--brd);padding:16px 12px;background:rgba(2,6,23,.5)}
+.side h4{font-size:12px;color:var(--mut);font-weight:900;margin:10px 6px 6px;letter-spacing:.5px}
+.nav{display:flex;flex-direction:column;gap:4px}
+.ni{background:none;border:1px solid transparent;border-radius:10px;padding:9px 12px;text-align:right;color:var(--mut);font-weight:700;font-size:14px;transition:.2s;display:flex;justify-content:space-between;align-items:center}
+.ni:hover{background:rgba(255,255,255,.05);color:var(--txt)}
+.ni.on{background:rgba(0,245,255,.08);border-color:rgba(0,245,255,.3);color:var(--cyan)}
+.ni .n{font-size:11px;background:rgba(255,255,255,.08);border-radius:6px;padding:1px 7px}
+.main{padding:18px 22px;min-width:0}
+.hdr{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.hdr h2{font-size:22px;font-weight:900}
+.hdr .sub{color:var(--mut);font-size:13px}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{background:rgba(255,255,255,.04);border:1px solid var(--brd);border-radius:9px;padding:7px 12px;font-size:13px;font-weight:700;color:var(--mut);transition:.2s}
+.chip.on{background:rgba(0,245,255,.1);border-color:var(--cyan);color:var(--cyan)}
+.chip.gold.on{background:rgba(251,191,36,.1);border-color:var(--gold);color:var(--gold)}
+.week-sel{display:flex;gap:4px;flex-wrap:wrap}
+.week-sel .chip{padding:6px 10px;min-width:38px;text-align:center}
+.week-sel .chip.has{border-color:rgba(34,197,94,.5)}
+/* table */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--brd);border-radius:14px;background:var(--card)}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th{background:rgba(255,255,255,.04);color:var(--mut);font-weight:900;padding:10px 8px;text-align:right;white-space:nowrap;border-bottom:1px solid var(--brd);position:sticky;top:0}
+td{padding:6px 8px;border-bottom:1px solid rgba(255,255,255,.05);vertical-align:middle}
+tr:hover td{background:rgba(255,255,255,.02)}
+td.n{color:var(--mut);width:34px}
+td.name{font-weight:700;min-width:180px}
+.inp{width:66px;background:rgba(255,255,255,.04);border:1px solid var(--brd);border-radius:8px;padding:6px;color:var(--txt);text-align:center;outline:none}
+.inp:focus{border-color:var(--cyan)}.inp:disabled{opacity:.3}
+select.inp{width:110px;text-align:right}
+.score{font-weight:900;font-family:Orbitron,sans-serif;font-size:13px}
+.s-hi{color:var(--grn)}.s-mid{color:var(--yel)}.s-lo{color:var(--red)}.s-na{color:var(--mut)}
+.note{width:150px;background:rgba(255,255,255,.04);border:1px solid var(--brd);border-radius:8px;padding:6px;color:var(--txt);outline:none}
+.bar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:12px 0}
+.saved{font-size:13px;color:var(--mut)}
+/* kpis & charts */
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:14px}
+.kpi{background:var(--card);border:1px solid var(--brd);border-radius:14px;padding:12px 14px}
+.kpi b{display:block;font-size:26px;font-weight:900;color:var(--cyan)}.kpi span{font-size:12px;color:var(--mut)}
+.kpi.red b{color:var(--red)}.kpi.gold b{color:var(--gold)}.kpi.grn b{color:var(--grn)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.panel{background:var(--card);border:1px solid var(--brd);border-radius:14px;padding:14px 16px;min-width:0}
+.panel h3{font-size:15px;font-weight:900;color:var(--cyan);margin-bottom:10px}
+.panel h3.gold{color:var(--gold)}
+canvas{max-height:260px}
+.flag{display:inline-block;border-radius:7px;padding:2px 8px;font-size:12px;font-weight:700;white-space:nowrap;margin:1px}
+.f-red{background:rgba(239,68,68,.15);color:#fca5a5}.f-grn{background:rgba(34,197,94,.15);color:#86efac}.f-yel{background:rgba(250,204,21,.15);color:#fde68a}.f-gray{background:rgba(255,255,255,.08);color:var(--mut)}
+.heat td{text-align:center;padding:4px}
+.cell{display:inline-block;width:30px;height:24px;line-height:24px;border-radius:6px;font-size:11px;font-weight:700}
+.c0{background:rgba(255,255,255,.04);color:var(--mut)}.c1{background:rgba(239,68,68,.35)}.c2{background:rgba(250,204,21,.35)}.c3{background:rgba(34,197,94,.35)}.cx{background:rgba(192,38,211,.25);color:#e9d5ff}
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;z-index:100;padding:16px}
+.modal{background:#0b1220;border:1px solid var(--brd);border-radius:18px;padding:20px;max-width:560px;width:100%;max-height:90vh;overflow:auto}
+.modal h3{margin-bottom:12px;font-size:17px}
+.mt{margin-top:10px}
+.small{font-size:12px;color:var(--mut)}
+@media(max-width:860px){.app{grid-template-columns:1fr}.side{border:none;border-bottom:1px solid var(--brd)}.nav{flex-direction:row;flex-wrap:wrap}.two{grid-template-columns:1fr}.main{padding:14px}.hide-m{display:none}}
+</style></head>
+<body>
+<div class="top">
+  <div class="brand"><div class="ic">👩‍🏫</div><div><b>بوابة المعلمين</b><small>STUDENT PROGRESS SYSTEM</small></div></div>
+  <div class="sp"></div>
+  <span class="who hide-m" id="who"></span>
+  <button class="tb hidden" id="logout" onclick="logout()">🚪 خروج</button>
+  <a class="tb" href="index.html">🏠 الموقع</a>
+</div>
+
+<!-- ============ AUTH ============ -->
+<div class="auth" id="scr-auth">
+  <div class="card">
+    <div class="tabs"><button class="tab on" id="t-login" onclick="authTab('login')">🔐 تسجيل الدخول</button><button class="tab" id="t-reg" onclick="authTab('reg')">📝 تسجيل معلم جديد</button></div>
+    <div id="auth-msg"></div>
+    <form id="f-login" onsubmit="login(event)">
+      <div class="f"><label>البريد الرسمي أو اسم المستخدم</label><input id="l-user" dir="ltr" placeholder="t286020801426@moe.edu.kw" required autocomplete="username"></div>
+      <div class="f"><label>كلمة المرور</label><input id="l-pass" type="password" required autocomplete="current-password"></div>
+      <button class="btn" style="width:100%">دخول</button>
+    </form>
+    <form id="f-reg" class="hidden" onsubmit="register(event)">
+      <div class="f"><label>اسم المعلم</label><input id="r-name" required placeholder="الاسم الثلاثي"></div>
+      <div class="f"><label>القسم</label><input id="r-dept" required placeholder="مثال: قسم الحاسوب"></div>
+      <div class="f"><label>بريد وزارة التربية الرسمي</label><input id="r-email" dir="ltr" required placeholder="t286020801426@moe.edu.kw" autocomplete="username"></div>
+      <div class="f"><label>كلمة المرور (6 أحرف فأكثر)</label><input id="r-pass" type="password" required minlength="6" autocomplete="new-password"></div>
+      <div class="f"><label>الشعب التي تدرّسها</label><div class="cls-grid" id="r-classes"></div></div>
+      <button class="btn gold" style="width:100%">إنشاء الحساب</button>
+      <p class="small mt">بالتسجيل ستتمكن من رؤية أسماء طلاب الشعب التي اخترتها وإدخال متابعتهم الأسبوعية.</p>
+    </form>
+  </div>
+</div>
+
+<!-- ============ APP ============ -->
+<div class="app hidden" id="scr-app">
+  <aside class="side">
+    <h4>الشعب</h4>
+    <div class="nav" id="nav-classes"></div>
+    <div id="admin-nav" class="hidden">
+      <h4>الإدارة</h4>
+      <div class="nav">
+        <button class="ni" onclick="go('teachers')">👩‍🏫 المعلمون</button>
+        <button class="ni" onclick="go('summary')">🏫 ملخص المدرسة</button>
+      </div>
+    </div>
+    <h4>حسابي</h4>
+    <div class="nav"><button class="ni" onclick="editMyClasses()">⚙️ تعديل شعبي</button></div>
+  </aside>
+  <main class="main" id="main"></main>
+</div>
+
+<div id="modal-root"></div>
+
+<script>
+// ===================== CONFIG =====================
+const API_URL = "https://falduwairi-school.a-alabdulsalam86.workers.dev";
+// ==================================================
+const STATUS = { present: "حاضر", absent: "غائب", excused: "غياب بعذر", sick: "مريض", field_trip: "رحلة/نشاط" };
+const WEEKS = [1,2,3,4,5,6,7,8,9,10,11,12];
+let TOKEN = localStorage.getItem("school_token") || "", USER = null, ALLCLASSES = [], CLASSES = [];
+let cur = { cls: null, week: 1, students: [], progress: {}, teacherFilter: null, view: "entry" };
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const r2 = v => Math.round(v * 100) / 100;
+
+async function api(path, opt = {}) {
+  if (API_URL.includes("YOUR-SCHOOL")) throw new Error("لم يُضبط عنوان الخادم بعد (API_URL في school.html)");
+  const r = await fetch(API_URL + path, { method: opt.method || "GET", headers: { "Content-Type": "application/json", ...(TOKEN ? { Authorization: "Bearer " + TOKEN } : {}) }, body: opt.body ? JSON.stringify(opt.body) : undefined });
+  const d = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(d.error || ("HTTP " + r.status));
+  return d;
+}
+const clsLabel = c => `${c.grade_label} — شعبة ${c.section}`;
+const clsByCode = code => ALLCLASSES.find(c => c.code === code) || { grade_label: code, section: "" };
+
+// ===================== AUTH =====================
+function authTab(t) { $("t-login").classList.toggle("on", t === "login"); $("t-reg").classList.toggle("on", t === "reg"); $("f-login").classList.toggle("hidden", t !== "login"); $("f-reg").classList.toggle("hidden", t !== "reg"); $("auth-msg").innerHTML = ""; }
+function classCheckboxes(container, selected = []) {
+  const groups = {}; ALLCLASSES.forEach(c => (groups[c.grade_label] = groups[c.grade_label] || []).push(c));
+  container.innerHTML = Object.entries(groups).map(([g, arr]) => `<div class="grp">${esc(g)}</div>` + arr.map(c => `<label><input type="checkbox" value="${c.code}" ${selected.includes(c.code) ? "checked" : ""}> شعبة ${c.section}</label>`).join("")).join("");
+}
+async function login(e) {
+  e.preventDefault(); $("auth-msg").innerHTML = "";
+  try { const d = await api("/auth/login", { method: "POST", body: { email: $("l-user").value.trim(), password: $("l-pass").value } }); TOKEN = d.token; localStorage.setItem("school_token", TOKEN); USER = d.user; await enter(); }
+  catch (err) { $("auth-msg").innerHTML = `<div class="err">${esc(err.message)}</div>`; }
+}
+async function register(e) {
+  e.preventDefault(); $("auth-msg").innerHTML = "";
+  const classes = [...$("r-classes").querySelectorAll("input:checked")].map(i => i.value);
+  try { const d = await api("/auth/register", { method: "POST", body: { name: $("r-name").value, department: $("r-dept").value, email: $("r-email").value.trim(), password: $("r-pass").value, classes } }); TOKEN = d.token; localStorage.setItem("school_token", TOKEN); USER = d.user; await enter(); }
+  catch (err) { $("auth-msg").innerHTML = `<div class="err">${esc(err.message)}</div>`; }
+}
+function logout() { TOKEN = ""; localStorage.removeItem("school_token"); location.reload(); }
+
+async function boot() {
+  try { ALLCLASSES = (await api("/classes/all")).classes; classCheckboxes($("r-classes")); } catch (e) { $("auth-msg").innerHTML = `<div class="err">${esc(e.message)}</div>`; }
+  if (TOKEN) { try { USER = (await api("/me")).user; await enter(); } catch { TOKEN = ""; localStorage.removeItem("school_token"); } }
+}
+async function enter() {
+  $("scr-auth").classList.add("hidden"); $("scr-app").classList.remove("hidden"); $("logout").classList.remove("hidden");
+  $("who").innerHTML = `<b>${esc(USER.name)}</b> · ${esc(USER.department)}${USER.role === "admin" ? " · <span style='color:var(--gold)'>مدير</span>" : ""}`;
+  if (USER.role === "admin") $("admin-nav").classList.remove("hidden");
+  CLASSES = (await api("/classes")).classes;
+  $("nav-classes").innerHTML = CLASSES.map(c => `<button class="ni" id="nav-${c.code}" onclick="openClass('${c.code}')"><span>${esc(clsLabel(c))}</span><span class="n">${c.n}</span></button>`).join("") || `<p class="small" style="padding:8px">لا شعب — اضغط «تعديل شعبي»</p>`;
+  if (CLASSES.length) openClass(CLASSES[0].code); else if (USER.role === "admin") go("teachers"); else $("main").innerHTML = `<div class="card">لم تختر أي شعبة بعد. استخدم «⚙️ تعديل شعبي» لاختيار الشعب التي تدرّسها.</div>`;
+}
+function setNav(id) { document.querySelectorAll(".ni").forEach(b => b.classList.remove("on")); const b = $(id); if (b) b.classList.add("on"); }
+
+// ===================== CLASS VIEW =====================
+async function openClass(code, view) {
+  cur.cls = code; cur.view = view || cur.view || "entry"; setNav("nav-" + code);
+  $("main").innerHTML = `<p class="small">جاري التحميل…</p>`;
+  try {
+    const [s, p] = await Promise.all([api("/students?class=" + code), api("/progress?class=" + code + (USER.role === "admin" ? "&teacher=" + (cur.teacherFilter ?? "all") : ""))]);
+    cur.students = s.students; cur.progress = {};
+    p.progress.forEach(r => { cur.progress[r.student_id + "_" + r.week] = r; });
+    renderClass();
+  } catch (e) { $("main").innerHTML = `<div class="err">${esc(e.message)}</div>`; }
+}
+function renderClass() {
+  const c = clsByCode(cur.cls);
+  const weeksWithData = new Set(Object.values(cur.progress).map(r => r.week));
+  $("main").innerHTML = `
+  <div class="hdr"><h2>${esc(clsLabel(c))}</h2><span class="sub">${cur.students.length} طالباً</span><div class="sp"></div>
+    <div class="chips">
+      <button class="chip ${cur.view === "entry" ? "on" : ""}" onclick="cur.view='entry';renderClass()">📝 إدخال الأسبوع</button>
+      <button class="chip ${cur.view === "grid" ? "on" : ""}" onclick="cur.view='grid';renderClass()">📋 سجل الفصل</button>
+      <button class="chip gold ${cur.view === "analysis" ? "on" : ""}" onclick="cur.view='analysis';renderClass()">📊 التحليل</button>
+      ${USER.role === "admin" ? `<button class="chip ${cur.view === "manage" ? "on" : ""}" onclick="cur.view='manage';renderClass()">🎓 إدارة الطلاب</button>` : ""}
+    </div></div>
+  <div id="view"></div>`;
+  if (cur.view === "entry") renderEntry(weeksWithData);
+  else if (cur.view === "grid") renderGrid();
+  else if (cur.view === "analysis") renderAnalysis();
+  else if (cur.view === "manage") renderManage();
+}
+const scoreOf = r => r && r.status === "present" ? r2((+r.behavior || 0) + (+r.activities || 0) + (+r.practical || 0)) : null;
+const scoreCls = v => v == null ? "s-na" : v >= 4.5 ? "s-hi" : v >= 3 ? "s-mid" : "s-lo";
+
+// ---------- weekly entry ----------
+function renderEntry(weeksWithData) {
+  const w = cur.week, is12 = w === 12;
+  $("view").innerHTML = `
+  <div class="bar"><span class="small">الأسبوع:</span><div class="week-sel">${WEEKS.map(x => `<button class="chip ${x === w ? "on" : ""} ${weeksWithData.has(x) ? "has" : ""}" onclick="cur.week=${x};renderClass()">${x}</button>`).join("")}</div></div>
+  <div class="small" style="margin-bottom:8px">السلوك من 1 · الأنشطة من 2 · العملي من 3 → درجة الأسبوع من 6 ${is12 ? "· الأسبوع 12: المشروع من 4 والاختبار من 10 → النتيجة النهائية من 20 (تُحسب تلقائياً = متوسط الأسابيع + المشروع + الاختبار)" : ""}</div>
+  <div class="tbl-wrap"><table id="entry"><thead><tr><th>م</th><th>الطالب</th><th>الحالة</th><th>السلوك</th><th>الأنشطة</th><th>العملي</th><th>الأسبوع /6</th>${is12 ? "<th>المشروع /4</th><th>الاختبار /10</th><th>النهائي /20</th>" : ""}<th>ملاحظة</th></tr></thead><tbody>
+  ${cur.students.map(s => { const r = cur.progress[s.id + "_" + w] || {}; const st = r.status || "present"; const dis = st !== "present" ? "disabled" : "";
+    return `<tr data-id="${s.id}"><td class="n">${s.seq}</td><td class="name">${esc(s.name)}</td>
+    <td><select class="inp st" onchange="rowChanged(this)">${Object.entries(STATUS).map(([k, v]) => `<option value="${k}" ${st === k ? "selected" : ""}>${v}</option>`).join("")}</select></td>
+    <td><input class="inp b" type="number" min="0" max="1" step="0.25" value="${r.behavior ?? ""}" ${dis} oninput="rowChanged(this)"></td>
+    <td><input class="inp a" type="number" min="0" max="2" step="0.25" value="${r.activities ?? ""}" ${dis} oninput="rowChanged(this)"></td>
+    <td><input class="inp p" type="number" min="0" max="3" step="0.25" value="${r.practical ?? ""}" ${dis} oninput="rowChanged(this)"></td>
+    <td class="score ws ${scoreCls(scoreOf(r))}">${scoreOf(r) ?? "—"}</td>
+    ${is12 ? `<td><input class="inp pj" type="number" min="0" max="4" step="0.25" value="${r.project ?? ""}" oninput="rowChanged(this)"></td><td><input class="inp ex" type="number" min="0" max="10" step="0.25" value="${r.exam ?? ""}" oninput="rowChanged(this)"></td><td><input class="inp fn" type="number" min="0" max="20" step="0.05" value="${r.final_result ?? ""}" oninput="this.dataset.manual=1"></td>` : ""}
+    <td><input class="note" value="${esc(r.note || "")}" placeholder="…"></td></tr>`; }).join("")}
+  </tbody></table></div>
+  <div class="bar"><button class="btn" onclick="saveWeek()">💾 حفظ الأسبوع ${w}</button><button class="btn ghost" onclick="fillAll('present')">✅ الكل حاضر</button><button class="btn ghost" onclick="fillFull()">⭐ درجة كاملة للحاضرين</button><span class="saved" id="save-msg"></span></div>`;
+}
+function rowChanged(el) {
+  const tr = el.closest("tr"); const st = tr.querySelector(".st").value; const present = st === "present";
+  ["b", "a", "p"].forEach(k => { const i = tr.querySelector("." + k); i.disabled = !present; if (!present) i.value = ""; });
+  const v = present ? r2((+tr.querySelector(".b").value || 0) + (+tr.querySelector(".a").value || 0) + (+tr.querySelector(".p").value || 0)) : null;
+  const ws = tr.querySelector(".ws"); ws.textContent = v ?? "—"; ws.className = "score ws " + scoreCls(v);
+  const fn = tr.querySelector(".fn");
+  if (fn && !fn.dataset.manual) { const id = +tr.dataset.id; const avg = avgWeekly(id, v); const pj = +(tr.querySelector(".pj").value || 0), ex = +(tr.querySelector(".ex").value || 0); fn.value = r2(avg + pj + ex); }
+}
+function avgWeekly(id, overrideW12) {  // mean of present weeks (1..11 + optional w12 value)
+  const vals = []; for (let w = 1; w <= 11; w++) { const v = scoreOf(cur.progress[id + "_" + w]); if (v != null) vals.push(v); }
+  if (overrideW12 != null) vals.push(overrideW12);
+  return vals.length ? r2(vals.reduce((a, b) => a + b, 0) / vals.length) : 0;
+}
+function fillAll(st) { document.querySelectorAll("#entry tbody tr").forEach(tr => { tr.querySelector(".st").value = st; rowChanged(tr.querySelector(".st")); }); }
+function fillFull() { document.querySelectorAll("#entry tbody tr").forEach(tr => { if (tr.querySelector(".st").value !== "present") return; tr.querySelector(".b").value = 1; tr.querySelector(".a").value = 2; tr.querySelector(".p").value = 3; rowChanged(tr.querySelector(".b")); }); }
+async function saveWeek() {
+  const rows = [...document.querySelectorAll("#entry tbody tr")].map(tr => ({ student_id: +tr.dataset.id, week: cur.week, status: tr.querySelector(".st").value,
+    behavior: tr.querySelector(".b").value, activities: tr.querySelector(".a").value, practical: tr.querySelector(".p").value,
+    project: tr.querySelector(".pj")?.value, exam: tr.querySelector(".ex")?.value, final_result: tr.querySelector(".fn")?.value, note: tr.querySelector(".note").value }));
+  $("save-msg").textContent = "جاري الحفظ…";
+  try { const d = await api("/progress", { method: "PUT", body: { rows, teacher_id: cur.teacherFilter } }); $("save-msg").textContent = `✓ تم حفظ ${d.saved} سجلاً`; await openClass(cur.cls, "entry"); $("save-msg") && ($("save-msg").textContent = `✓ تم حفظ ${d.saved} سجلاً`); }
+  catch (e) { $("save-msg").textContent = "✗ " + e.message; }
+}
+
+// ---------- grid (heat map) ----------
+function renderGrid() {
+  const cellOf = r => { if (!r) return `<span class="cell c0">·</span>`; if (r.status !== "present") return `<span class="cell cx" title="${STATUS[r.status]}">${{ absent: "غ", excused: "ع", sick: "م", field_trip: "ر" }[r.status]}</span>`; const v = scoreOf(r); return `<span class="cell ${v >= 4.5 ? "c3" : v >= 3 ? "c2" : "c1"}" title="${v}/6">${v}</span>`; };
+  $("view").innerHTML = `<div class="small" style="margin-bottom:8px">🟩 4.5 فأكثر · 🟨 3–4.5 · 🟥 أقل من 3 · 🟪 غ غائب / ع بعذر / م مريض / ر رحلة</div>
+  <div class="tbl-wrap"><table class="heat"><thead><tr><th>م</th><th style="text-align:right">الطالب</th>${WEEKS.map(w => `<th>${w}</th>`).join("")}<th>المتوسط</th><th>النهائي</th></tr></thead><tbody>
+  ${cur.students.map(s => { const avg = avgWeekly(s.id, scoreOf(cur.progress[s.id + "_12"])); const w12 = cur.progress[s.id + "_12"]; return `<tr><td class="n">${s.seq}</td><td class="name" style="text-align:right">${esc(s.name)}</td>${WEEKS.map(w => `<td>${cellOf(cur.progress[s.id + "_" + w])}</td>`).join("")}<td class="score ${scoreCls(avg || null)}">${avg || "—"}</td><td class="score">${w12?.final_result ?? "—"}</td></tr>`; }).join("")}
+  </tbody></table></div>
+  <div class="bar"><button class="btn ghost" onclick="exportCSV()">⬇ تصدير CSV (بصيغة نظام التحليل)</button></div>`;
+}
+function exportCSV() {
+  const lines = ["student_id,name,class,week,status,behavior,activities,practical,project,exam,weekly_score,final_result"];
+  cur.students.forEach(s => WEEKS.forEach(w => { const r = cur.progress[s.id + "_" + w]; if (!r) return; lines.push([s.id, `"${s.name.replace(/"/g, '""')}"`, cur.cls, w, r.status, r.behavior, r.activities, r.practical, r.project ?? 0, r.exam ?? 0, scoreOf(r) ?? 0, r.final_result ?? ""].join(",")); }));
+  const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob(["\ufeff" + lines.join("\n")], { type: "text/csv;charset=utf-8" })); a.download = `student_progress_${cur.cls}.csv`; a.click();
+}
+
+// ===================== ANALYSIS =====================
+function studentSeries(id) { return WEEKS.map(w => ({ week: w, r: cur.progress[id + "_" + w], v: scoreOf(cur.progress[id + "_" + w]) })); }
+function weeklyFlag(id, week) {               // notebook: classify_weekly_row
+  const ser = studentSeries(id).filter(x => x.v != null && x.week <= week);
+  const curr = ser.find(x => x.week === week); if (!curr) return null;
+  const idx = ser.indexOf(curr); const prev = idx > 0 ? ser[idx - 1].v : null; const d = prev == null ? null : r2(curr.v - prev);
+  let label, cls;
+  if (prev == null) { label = "ℹ أول بيانات"; cls = "f-gray"; }
+  else if (d >= 1) { label = "🟢 تحسّن"; cls = "f-grn"; } else if (d <= -1) { label = "🔴 تراجع"; cls = "f-red"; } else if (Math.abs(d) < 0.5) { label = "⚪ مستقر"; cls = "f-gray"; } else { label = "🟡 يحتاج انتباه"; cls = "f-yel"; }
+  if (curr.v < 3) { if (prev != null && d <= -1) { label = "🔴 تراجع وضعيف (<50%)"; cls = "f-red"; } else { label = "🟡 يحتاج تحسين (<50%)"; cls = "f-yel"; } }
+  return { score: curr.v, prev, delta: d, label, cls };
+}
+function trendFlag(id, week) {                // notebook: 3-week trend
+  const ser = studentSeries(id).filter(x => x.v != null && x.week <= week);
+  if (ser.length < 3) return null;
+  const [a, b, c] = ser.slice(-3).map(x => x.v); const avg2 = (a + b) / 2, d = r2(c - avg2);
+  if (d >= 1 && c >= 4.5) return { label: "🥇 تحسّن قوي", cls: "f-grn", d };
+  if (d <= -1 && c < 3) return { label: "⛔ تراجع مستمر", cls: "f-red", d };
+  if (Math.abs(d) < 0.5) return { label: "⚪ ثابت", cls: "f-gray", d };
+  return { label: "🟡 تحت المراقبة", cls: "f-yel", d };
+}
+function finalStatus(avg, fin) {             // notebook: final_status
+  const t = []; if (avg < 3) t.push({ l: "⚠ التزام ضعيف", c: "f-yel" });
+  if (fin == null) t.push({ l: "— لا نتيجة", c: "f-gray" }); else if (fin < 10) t.push({ l: "🔴 خطر رسوب (<50%)", c: "f-red" }); else if (fin < 14) t.push({ l: "🟡 يحتاج تقوية", c: "f-yel" }); else t.push({ l: "🟢 أداء جيد / مستقر", c: "f-grn" });
+  return t;
+}
+function linreg(xs, ys) { const n = xs.length; if (n < 2) return null; const mx = xs.reduce((a, b) => a + b, 0) / n, my = ys.reduce((a, b) => a + b, 0) / n; let num = 0, den = 0; for (let i = 0; i < n; i++) { num += (xs[i] - mx) * (ys[i] - my); den += (xs[i] - mx) ** 2; } if (!den) return null; const b = num / den; return { slope: b, intercept: my - b * mx }; }
+
+let charts = [];
+const hasChart = () => typeof Chart !== "undefined";
+function mkChart(el, cfg) { if (!hasChart()) { el.replaceWith(Object.assign(document.createElement("p"), { className: "small", textContent: "تعذّر تحميل مكتبة الرسوم (Chart.js) — تحقق من الاتصال بالإنترنت." })); return null; } const c = new Chart(el, cfg); charts.push(c); return c; }
+function renderAnalysis() {
+  charts.forEach(c => c.destroy()); charts = [];
+  const weeksWithData = [...new Set(Object.values(cur.progress).map(r => r.week))].sort((a, b) => a - b);
+  if (!weeksWithData.length) { $("view").innerHTML = `<div class="card">لا توجد بيانات بعد لهذه الشعبة — أدخل متابعة الأسبوع الأول من تبويب «إدخال الأسبوع».</div>`; return; }
+  const lastW = Math.max(...weeksWithData);
+  const all = Object.values(cur.progress); const presentRows = all.filter(r => r.status === "present");
+  const attendance = all.length ? r2(presentRows.length / all.length * 100) : 0;
+  const meanScore = presentRows.length ? r2(presentRows.reduce((a, r) => a + scoreOf(r), 0) / presentRows.length) : 0;
+  const flags = cur.students.map(s => ({ s, f: weeklyFlag(s.id, lastW), t: trendFlag(s.id, lastW) }));
+  const weak = flags.filter(x => x.f && x.f.score < 3).length, declined = flags.filter(x => x.f && x.f.delta != null && x.f.delta <= -1).length, improved = flags.filter(x => x.f && x.f.delta != null && x.f.delta >= 1).length;
+  const finals = cur.students.map(s => ({ s, avg: avgWeekly(s.id, scoreOf(cur.progress[s.id + "_12"])), w12: cur.progress[s.id + "_12"] })).filter(x => x.w12 && x.w12.final_result != null);
+  const atRisk = finals.filter(x => x.w12.final_result < 10).length;
+  const classAvg = WEEKS.map(w => { const v = cur.students.map(s => scoreOf(cur.progress[s.id + "_" + w])).filter(x => x != null); return v.length ? r2(v.reduce((a, b) => a + b, 0) / v.length) : null; });
+  const bins = [0, 0, 0, 0, 0, 0]; presentRows.forEach(r => bins[Math.min(5, Math.floor(scoreOf(r)))]++);
+  $("view").innerHTML = `
+  <div class="kpis">
+    <div class="kpi"><b>${attendance}%</b><span>نسبة الحضور الفعلي</span></div>
+    <div class="kpi"><b>${meanScore}</b><span>متوسط درجة الأسبوع /6</span></div>
+    <div class="kpi red"><b>${weak}</b><span>طلاب أقل من 50% (الأسبوع ${lastW})</span></div>
+    <div class="kpi gold"><b>${declined}</b><span>تراجع ≥ 1 نقطة</span></div>
+    <div class="kpi grn"><b>${improved}</b><span>تحسّن ≥ 1 نقطة</span></div>
+    ${finals.length ? `<div class="kpi red"><b>${atRisk}</b><span>خطر رسوب (نهائي أقل من 10)</span></div>` : ""}
+  </div>
+  <div class="two">
+    <div class="panel"><h3>📈 متوسط الشعبة عبر الأسابيع</h3><canvas id="ch-trend"></canvas></div>
+    <div class="panel"><h3>📊 توزيع درجات الأسبوع (الحاضرون)</h3><canvas id="ch-dist"></canvas></div>
+  </div>
+  <div class="panel" style="margin-bottom:12px"><h3>🚨 التنبيه الأسبوعي — الأسبوع ${lastW}</h3>
+    <div class="tbl-wrap"><table><thead><tr><th>م</th><th>الطالب</th><th>هذا الأسبوع</th><th>السابق</th><th>الفرق</th><th>الحالة</th><th>اتجاه 3 أسابيع</th></tr></thead><tbody>
+    ${flags.map(({ s, f, t }) => `<tr><td class="n">${s.seq}</td><td class="name">${esc(s.name)}</td>${f ? `<td class="score ${scoreCls(f.score)}">${f.score}</td><td>${f.prev ?? "—"}</td><td>${f.delta == null ? "—" : (f.delta > 0 ? "+" : "") + f.delta}</td><td><span class="flag ${f.cls}">${f.label}</span></td>` : `<td colspan="4"><span class="flag f-gray">⏸ غير حاضر هذا الأسبوع</span></td>`}<td>${t ? `<span class="flag ${t.cls}">${t.label}</span>` : "<span class='small'>بيانات غير كافية</span>"}</td></tr>`).join("")}
+    </tbody></table></div></div>
+  ${finals.length ? `<div class="panel" style="margin-bottom:12px"><h3 class="gold">🏁 تقرير نهاية الفصل</h3>
+    <div class="tbl-wrap"><table><thead><tr><th>م</th><th>الطالب</th><th>متوسط الأسابيع /6</th><th>المشروع /4</th><th>الاختبار /10</th><th>النهائي /20</th><th>الحالة</th></tr></thead><tbody>
+    ${finals.map(({ s, avg, w12 }) => `<tr><td class="n">${s.seq}</td><td class="name">${esc(s.name)}</td><td class="score ${scoreCls(avg)}">${avg}</td><td>${w12.project ?? "—"}</td><td>${w12.exam ?? "—"}</td><td class="score ${w12.final_result < 10 ? "s-lo" : w12.final_result < 14 ? "s-mid" : "s-hi"}">${w12.final_result}</td><td>${finalStatus(avg, w12.final_result).map(t => `<span class="flag ${t.c}">${t.l}</span>`).join("")}</td></tr>`).join("")}
+    </tbody></table></div></div>` : ""}
+  <div class="panel"><h3>👤 تفاصيل طالب</h3>
+    <div class="bar"><select class="inp" style="width:260px" id="stu-sel" onchange="renderStudent()">${cur.students.map(s => `<option value="${s.id}">${s.seq} — ${esc(s.name)}</option>`).join("")}</select></div>
+    <div class="two"><div><canvas id="ch-stu"></canvas></div><div id="stu-info"></div></div>
+  </div>`;
+  const opts = { responsive: true, plugins: { legend: { labels: { color: "#cbd5e1" } } }, scales: { x: { ticks: { color: "#94a3b8" }, grid: { color: "rgba(255,255,255,.06)" } }, y: { ticks: { color: "#94a3b8" }, grid: { color: "rgba(255,255,255,.06)" } } } };
+  mkChart($("ch-trend"), { type: "line", data: { labels: WEEKS.map(w => "أ" + w), datasets: [{ label: "متوسط /6", data: classAvg, borderColor: "#00f5ff", backgroundColor: "rgba(0,245,255,.15)", tension: .3, spanGaps: true, fill: true }] }, options: { ...opts, scales: { ...opts.scales, y: { ...opts.scales.y, min: 0, max: 6 } } } });
+  mkChart($("ch-dist"), { type: "bar", data: { labels: ["0–1", "1–2", "2–3", "3–4", "4–5", "5–6"], datasets: [{ label: "عدد السجلات", data: bins, backgroundColor: ["#ef4444", "#ef4444", "#f59e0b", "#facc15", "#22c55e", "#22c55e"] }] }, options: { ...opts, plugins: { legend: { display: false } } } });
+  renderStudent();
+}
+function renderStudent() {
+  const id = +$("stu-sel").value; const s = cur.students.find(x => x.id === id); const ser = studentSeries(id);
+  const old = charts.find(c => c.canvas && c.canvas.id === "ch-stu"); if (old) { old.destroy(); charts = charts.filter(c => c !== old); }
+  const opts = { responsive: true, plugins: { legend: { labels: { color: "#cbd5e1" } } }, scales: { x: { ticks: { color: "#94a3b8" }, grid: { color: "rgba(255,255,255,.06)" } }, y: { min: 0, max: 6, ticks: { color: "#94a3b8" }, grid: { color: "rgba(255,255,255,.06)" } } } };
+  mkChart($("ch-stu"), { type: "line", data: { labels: WEEKS.map(w => "أ" + w), datasets: [{ label: esc(s.name), data: ser.map(x => x.v), borderColor: "#fbbf24", backgroundColor: "rgba(251,191,36,.15)", tension: .3, spanGaps: true }] }, options: opts });
+  const present = ser.filter(x => x.v != null); const avg = present.length ? r2(present.reduce((a, x) => a + x.v, 0) / present.length) : null;
+  const absences = ser.filter(x => x.r && x.r.status !== "present").length;
+  const w12 = cur.progress[id + "_12"];
+  // projection (notebook: linear regression avg_weekly → final_total) using classmates with final results
+  const pts = cur.students.map(c => ({ x: avgWeekly(c.id, scoreOf(cur.progress[c.id + "_12"])), y: cur.progress[c.id + "_12"]?.final_result })).filter(p => p.y != null && p.x > 0);
+  const reg = linreg(pts.map(p => p.x), pts.map(p => p.y));
+  const proj = reg && avg != null ? r2(Math.min(20, Math.max(0, reg.intercept + reg.slope * avg))) : (avg != null ? r2(avg + 2.6 + 6.5) : null);
+  $("stu-info").innerHTML = `<table><tr><th>متوسط الأسابيع</th><td class="score ${scoreCls(avg)}">${avg ?? "—"} / 6</td></tr><tr><th>أسابيع الغياب</th><td>${absences}</td></tr>
+    <tr><th>آخر حالة</th><td>${(() => { const f = weeklyFlag(id, Math.max(...present.map(x => x.week), 0)); return f ? `<span class="flag ${f.cls}">${f.label}</span>` : "—"; })()}</td></tr>
+    <tr><th>الاتجاه</th><td>${(() => { const t = trendFlag(id, 12); return t ? `<span class="flag ${t.cls}">${t.label}</span>` : "<span class='small'>بيانات غير كافية</span>"; })()}</td></tr>
+    <tr><th>${w12?.final_result != null ? "النتيجة النهائية" : "النتيجة المتوقعة /20"}</th><td class="score">${w12?.final_result ?? (proj ?? "—")} ${w12?.final_result == null && proj != null ? `<span class="small">(${reg ? "انحدار خطي من نتائج الشعبة" : "تقدير أولي: المتوسط + متوسط مشروع واختبار"})</span>` : ""}</td></tr></table>
+    <div class="tbl-wrap mt"><table><thead><tr><th>أ</th><th>الحالة</th><th>سلوك</th><th>أنشطة</th><th>عملي</th><th>/6</th><th>ملاحظة</th></tr></thead><tbody>${ser.filter(x => x.r).map(x => `<tr><td>${x.week}</td><td>${STATUS[x.r.status]}</td><td>${x.r.behavior}</td><td>${x.r.activities}</td><td>${x.r.practical}</td><td class="score ${scoreCls(x.v)}">${x.v ?? "—"}</td><td class="small">${esc(x.r.note || "")}</td></tr>`).join("")}</tbody></table></div>`;
+}
+
+// ===================== MY CLASSES =====================
+function modal(html) { $("modal-root").innerHTML = `<div class="modal-bg" onclick="if(event.target===this)closeModal()"><div class="modal">${html}</div></div>`; }
+function closeModal() { $("modal-root").innerHTML = ""; }
+function editMyClasses() {
+  if (USER.role === "admin") { alert("المدير يرى جميع الشعب تلقائياً."); return; }
+  modal(`<h3>⚙️ الشعب التي أدرّسها</h3><div class="cls-grid" id="my-classes"></div><div class="bar"><button class="btn" onclick="saveMyClasses()">حفظ</button><button class="btn ghost" onclick="closeModal()">إلغاء</button></div>`);
+  classCheckboxes($("my-classes"), USER.classes);
+}
+async function saveMyClasses() { const classes = [...$("my-classes").querySelectorAll("input:checked")].map(i => i.value); await api("/me/classes", { method: "PATCH", body: { classes } }); USER.classes = classes; closeModal(); await enter(); }
+
+// ===================== ADMIN =====================
+function go(page) { setNav(null); if (page === "teachers") renderTeachers(); if (page === "summary") renderSummary(); }
+async function renderTeachers() {
+  $("main").innerHTML = `<div class="hdr"><h2>👩‍🏫 المعلمون المسجّلون</h2></div><p class="small">جاري التحميل…</p>`;
+  const { teachers } = await api("/admin/teachers");
+  $("main").innerHTML = `<div class="hdr"><h2>👩‍🏫 المعلمون المسجّلون</h2><span class="sub">${teachers.length} معلماً</span></div>
+  <div class="tbl-wrap"><table><thead><tr><th>الاسم</th><th>القسم</th><th>البريد</th><th>الشعب</th><th>سجلات</th><th>الحالة</th><th></th></tr></thead><tbody>
+  ${teachers.map(t => `<tr><td class="name">${esc(t.name)}</td><td>${esc(t.department)}</td><td dir="ltr" style="text-align:left" class="small">${esc(t.email)}</td><td>${t.classes.map(c => `<span class="flag f-gray">${esc(clsLabel(clsByCode(c)))}</span>`).join("") || "—"}</td><td>${t.records}</td><td>${t.active ? "<span class='flag f-grn'>نشط</span>" : "<span class='flag f-red'>موقوف</span>"}</td>
+    <td style="white-space:nowrap"><button class="btn ghost sm" onclick='editTeacher(${JSON.stringify(t).replace(/'/g, "&#39;")})'>✏️</button> <button class="btn ghost sm" onclick="viewTeacherData(${t.id})">📊</button> <button class="btn ghost sm" onclick="toggleTeacher(${t.id},${t.active ? 0 : 1})">${t.active ? "⏸" : "▶"}</button> <button class="btn danger sm" onclick="delTeacher(${t.id})">🗑</button></td></tr>`).join("") || "<tr><td colspan='7' class='small'>لا يوجد معلمون مسجّلون بعد</td></tr>"}
+  </tbody></table></div>
+  <div class="bar"><button class="btn ghost" onclick="cur.teacherFilter=null;alert('سيُعرض الآن مجموع بيانات كل المعلمين في الشعب');">👁 عرض بيانات الجميع</button><button class="btn ghost" onclick="exportAll()">⬇ تصدير كل البيانات CSV</button></div>`;
+}
+function editTeacher(t) {
+  modal(`<h3>✏️ ${esc(t.name)}</h3><div class="f"><label>الاسم</label><input id="et-name" value="${esc(t.name)}"></div><div class="f"><label>القسم</label><input id="et-dept" value="${esc(t.department)}"></div><div class="f"><label>كلمة مرور جديدة (اختياري)</label><input id="et-pass" type="password" placeholder="اتركه فارغاً لعدم التغيير"></div><div class="f"><label>الشعب</label><div class="cls-grid" id="et-classes"></div></div><div class="bar"><button class="btn" onclick="saveTeacher(${t.id})">حفظ</button><button class="btn ghost" onclick="closeModal()">إلغاء</button></div>`);
+  classCheckboxes($("et-classes"), t.classes);
+}
+async function saveTeacher(id) { const classes = [...$("et-classes").querySelectorAll("input:checked")].map(i => i.value); const b = { name: $("et-name").value, department: $("et-dept").value, classes }; if ($("et-pass").value) b.password = $("et-pass").value; await api("/admin/teachers/" + id, { method: "PATCH", body: b }); closeModal(); renderTeachers(); }
+async function toggleTeacher(id, active) { await api("/admin/teachers/" + id, { method: "PATCH", body: { active } }); renderTeachers(); }
+async function delTeacher(id) { if (!confirm("حذف المعلم وجميع سجلاته؟")) return; await api("/admin/teachers/" + id, { method: "DELETE" }); renderTeachers(); }
+function viewTeacherData(id) { cur.teacherFilter = id; alert("سيتم عرض وتعديل بيانات هذا المعلم عند فتح أي شعبة. للعودة لعرض الجميع اضغط «عرض بيانات الجميع»."); if (CLASSES.length) openClass(CLASSES[0].code, "grid"); }
+async function exportAll() {
+  const { progress } = await api("/admin/progress/all");
+  const lines = ["student_id,name,class,week,status,behavior,activities,practical,project,exam,weekly_score,final_result,teacher"];
+  progress.forEach(r => lines.push([r.student_id, `"${r.name.replace(/"/g, '""')}"`, r.class_code, r.week, r.status, r.behavior, r.activities, r.practical, r.project ?? 0, r.exam ?? 0, scoreOf(r) ?? 0, r.final_result ?? "", `"${r.teacher_name || "admin"}"`].join(",")));
+  const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob(["\ufeff" + lines.join("\n")], { type: "text/csv;charset=utf-8" })); a.download = "student_progress_all.csv"; a.click();
+}
+async function renderSummary() {   // notebook: ADMIN SUMMARY across all classes
+  $("main").innerHTML = `<div class="hdr"><h2>🏫 ملخص المدرسة</h2></div><p class="small">جاري التحميل…</p>`;
+  const { progress } = await api("/admin/progress/all");
+  if (!progress.length) { $("main").innerHTML = `<div class="hdr"><h2>🏫 ملخص المدرسة</h2></div><div class="card">لا توجد بيانات بعد.</div>`; return; }
+  const byClass = {}; progress.forEach(r => (byClass[r.class_code] = byClass[r.class_code] || []).push(r));
+  const rows = Object.entries(byClass).map(([code, rs]) => { const pr = rs.filter(r => r.status === "present"); const avg = pr.length ? r2(pr.reduce((a, r) => a + scoreOf(r), 0) / pr.length) : null; const fin = rs.filter(r => r.week === 12 && r.final_result != null); const favg = fin.length ? r2(fin.reduce((a, r) => a + r.final_result, 0) / fin.length) : null; return { code, n: new Set(rs.map(r => r.student_id)).size, att: r2(pr.length / rs.length * 100), avg, favg, risk: fin.filter(r => r.final_result < 10).length }; }).sort((a, b) => (b.avg || 0) - (a.avg || 0));
+  const att = r2(progress.filter(r => r.status === "present").length / progress.length * 100);
+  const fin = progress.filter(r => r.week === 12 && r.final_result != null).sort((a, b) => b.final_result - a.final_result);
+  $("main").innerHTML = `<div class="hdr"><h2>🏫 ملخص المدرسة</h2></div>
+  <div class="kpis"><div class="kpi"><b>${rows.length}</b><span>شعب بها بيانات</span></div><div class="kpi"><b>${att}%</b><span>الحضور الفعلي</span></div><div class="kpi grn"><b>${rows[0]?.code || "—"}</b><span>أفضل شعبة التزاماً (${rows[0]?.avg ?? "—"}/6)</span></div><div class="kpi red"><b>${rows[rows.length - 1]?.code || "—"}</b><span>أقل شعبة (${rows[rows.length - 1]?.avg ?? "—"}/6)</span></div>${fin.length ? `<div class="kpi gold"><b>${esc(fin[0].name)}</b><span>الطالب الأول (${fin[0].final_result}/20)</span></div><div class="kpi red"><b>${fin.filter(r => r.final_result < 10).length}</b><span>طلاب في خطر (<10/20)</span></div>` : ""}</div>
+  <div class="tbl-wrap"><table><thead><tr><th>الشعبة</th><th>طلاب</th><th>حضور</th><th>متوسط الأسبوع /6</th><th>متوسط النهائي /20</th><th>خطر</th></tr></thead><tbody>${rows.map(r => `<tr><td class="name">${esc(clsLabel(clsByCode(r.code)))}</td><td>${r.n}</td><td>${r.att}%</td><td class="score ${scoreCls(r.avg)}">${r.avg ?? "—"}</td><td class="score">${r.favg ?? "—"}</td><td>${r.risk}</td></tr>`).join("")}</tbody></table></div>
+  ${fin.filter(r => r.final_result < 10).length ? `<div class="panel mt"><h3>⚠ الطلاب في خطر الرسوب</h3><div class="tbl-wrap"><table><thead><tr><th>الطالب</th><th>الشعبة</th><th>النهائي</th><th>المعلم</th></tr></thead><tbody>${fin.filter(r => r.final_result < 10).map(r => `<tr><td class="name">${esc(r.name)}</td><td>${r.class_code}</td><td class="score s-lo">${r.final_result}</td><td class="small">${esc(r.teacher_name || "admin")}</td></tr>`).join("")}</tbody></table></div></div>` : ""}`;
+}
+function renderManage() {
+  $("view").innerHTML = `<div class="bar"><input class="inp" style="width:280px;text-align:right" id="new-name" placeholder="اسم طالب جديد"><button class="btn sm" onclick="addStudent()">➕ إضافة</button></div>
+  <div class="tbl-wrap"><table><thead><tr><th>م</th><th>الاسم</th><th></th></tr></thead><tbody>${cur.students.map(s => `<tr><td class="n">${s.seq}</td><td><input class="note" style="width:320px" value="${esc(s.name)}" onchange="renameStudent(${s.id},this.value)"></td><td><button class="btn danger sm" onclick="removeStudent(${s.id})">🗑 حذف</button></td></tr>`).join("")}</tbody></table></div>`;
+}
+async function addStudent() { const name = $("new-name").value.trim(); if (!name) return; await api("/admin/students", { method: "POST", body: { class_code: cur.cls, name } }); openClass(cur.cls, "manage"); }
+async function renameStudent(id, name) { await api("/admin/students/" + id, { method: "PATCH", body: { name } }); }
+async function removeStudent(id) { if (!confirm("إزالة الطالب من الشعبة؟ (تبقى سجلاته محفوظة)")) return; await api("/admin/students/" + id, { method: "DELETE" }); openClass(cur.cls, "manage"); }
+
+boot();
+</script>
+</body></html>
