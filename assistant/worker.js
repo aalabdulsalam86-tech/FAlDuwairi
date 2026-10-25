@@ -4,6 +4,7 @@
    Secrets / variables (set in the Worker dashboard):
      GEMINI_API_KEY   (secret)   your key from aistudio.google.com
      MODEL            (variable) e.g. gemini-flash-latest   [default]
+     FALLBACK_MODEL   (variable, optional) tried when MODEL is busy — default gemini-flash-lite-latest
      ALLOWED_ORIGINS  (variable) comma-separated site origins, e.g.
                                  https://USERNAME.github.io,https://falduwairi.com
    The page sends   POST { messages: [{role:"user"|"model", text:"..."}] }
@@ -174,8 +175,7 @@ export default {
     if (!contents.length || contents[contents.length - 1].role !== "user")
       return json({ error: "Last message must be from the user" }, 400, cors);
 
-    const model = env.MODEL || "gemini-flash-latest";
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
+    const models = [env.MODEL || "gemini-flash-latest", env.FALLBACK_MODEL || "gemini-flash-lite-latest"].filter((m, i, a) => a.indexOf(m) === i);
     const payload = {
       system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
       contents,
@@ -188,18 +188,30 @@ export default {
       ]
     };
 
-    let r;
-    try {
-      r = await fetch(url, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", "x-goog-api-key": env.GEMINI_API_KEY },
-        body: JSON.stringify(payload)
-      });
-    } catch (e) {
-      return json({ error: "Upstream request failed: " + e.message }, 502, cors);
+    // Try the main model (twice, with a short pause), then the fallback model. Busy/overloaded = 429 or 503.
+    let data = null, lastErr = "";
+    outer: for (const model of models) {
+      for (let attempt = 0; attempt < 2; attempt++) {
+        let r;
+        try {
+          r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "x-goog-api-key": env.GEMINI_API_KEY },
+            body: JSON.stringify(payload)
+          });
+        } catch (e) { lastErr = "Upstream request failed: " + e.message; continue; }
+        const d = await r.json().catch(() => ({}));
+        if (r.ok) { data = d; break outer; }
+        lastErr = (d.error && d.error.message) || ("Gemini error " + r.status);
+        const busy = r.status === 429 || r.status === 503 || /high demand|overloaded|RESOURCE_EXHAUSTED/i.test(lastErr);
+        if (!busy) { if (r.status === 404) break; return json({ error: lastErr }, r.status, cors); }  // real error: stop
+        if (attempt === 0) await new Promise(res => setTimeout(res, 1200));
+      }
     }
-    const data = await r.json().catch(() => ({}));
-    if (!r.ok) return json({ error: (data.error && data.error.message) || ("Gemini error " + r.status) }, r.status, cors);
+    if (!data) {
+      const busy = /high demand|overloaded|RESOURCE_EXHAUSTED|429|503/i.test(lastErr);
+      return json({ error: busy ? "المساعد مشغول حالياً بسبب ضغط كبير على الخدمة — حاول مرة أخرى بعد قليل." : lastErr }, busy ? 503 : 502, cors);
+    }
 
     const cand = data.candidates && data.candidates[0];
     const text = cand && cand.content && cand.content.parts ? cand.content.parts.map(p => p.text || "").join("") : "";
