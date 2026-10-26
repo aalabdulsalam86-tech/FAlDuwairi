@@ -85,7 +85,7 @@ textarea::placeholder{color:var(--mut)}
 <script>
 // ============ CONFIG ============
 // Paste your Cloudflare Worker URL here after deploying assistant/worker.js
-const API_URL = "https://falduwairi-assistant.a-alabdulsalam86.workers.dev";
+const API_URL = "https://YOUR-WORKER.YOUR-SUBDOMAIN.workers.dev";
 // =================================
 
 const STARTERS = [
@@ -151,10 +151,15 @@ async function send(){
   const t=document.createElement("div");t.className="msg bot";t.innerHTML=`<div class="av">🤖</div><div class="bub"><div class="typing"><i></i><i></i><i></i></div></div>`;chat.appendChild(t);chat.scrollTop=chat.scrollHeight;
   try{
     const r=await fetch(API_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({messages:history})});
-    const d=await r.json().catch(()=>({}));
-    t.remove();
-    if(!r.ok||d.error){add("bot","حدث خطأ: "+(d.error||r.status),"err");history.pop();}
-    else{add("bot",d.text);history.push({role:"model",text:d.text});}
+    const ct=r.headers.get("Content-Type")||"";
+    if(!r.ok||ct.includes("application/json")){const d=await r.json().catch(()=>({}));t.remove();add("bot","حدث خطأ: "+(d.error||r.status),"err");history.pop();}
+    else{
+      // streamed answer: render progressively
+      const bub=t.querySelector(".bub"); bub.innerHTML=""; let full="";
+      const reader=r.body.getReader(), dec=new TextDecoder();
+      while(true){const {value,done}=await reader.read(); if(done)break; full+=dec.decode(value,{stream:true}); bub.innerHTML=md(full); chat.scrollTop=chat.scrollHeight;}
+      bub.innerHTML=md(full); history.push({role:"model",text:full});
+    }
   }catch(e){t.remove();add("bot","تعذّر الاتصال بالمساعد. تحقق من الإنترنت ثم حاول مجدداً.","err");history.pop();}
   busy=false;sendBtn.disabled=false;inp.focus();
 }
