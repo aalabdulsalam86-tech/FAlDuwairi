@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Camera Lab — live object detection</title>
+<style>
+  :root{
+    --void:#080D1A; --panel:#111A30; --edge:#1F2C4D;
+    --trace:#58E6D9; --warm:#F2B263; --alert:#E86A92;
+    --text:#DCE4F7; --dim:#7C8AAE;
+    --mono:ui-monospace,"SF Mono","Cascadia Code","JetBrains Mono",Consolas,monospace;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--void);color:var(--text);font-family:var(--sans);
+    -webkit-text-size-adjust:100%}
+  body{padding:env(safe-area-inset-top) 0 calc(env(safe-area-inset-bottom) + 28px)}
+  .wrap{max-width:820px;margin:0 auto;padding:0 16px}
+
+  header{padding:22px 0 14px;border-bottom:1px solid var(--edge);margin-bottom:18px}
+  h1{font-family:var(--mono);font-size:1.3rem;margin:0 0 6px;font-weight:600}
+  header p{margin:0;color:var(--dim);font-size:.9rem;line-height:1.5}
+  a{color:var(--trace)}
+
+  .card{background:var(--panel);border:1px solid var(--edge);border-radius:10px;
+    padding:14px;margin-bottom:16px}
+
+  .stage{position:relative;border-radius:8px;overflow:hidden;background:#05080F;
+    line-height:0;min-height:160px}
+  video{width:100%;height:auto;display:block}
+  canvas#overlay{position:absolute;inset:0;width:100%;height:100%}
+
+  .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:12px}
+  button{font-family:var(--sans);font-size:.88rem;padding:10px 15px;border-radius:6px;
+    border:1px solid var(--edge);background:#17213C;color:var(--text);cursor:pointer}
+  button:hover{background:#1E2A4A;border-color:var(--trace)}
+  button.primary{background:var(--trace);color:#06101A;border-color:var(--trace);
+    font-weight:600}
+  button:disabled{opacity:.45;cursor:default}
+
+  label.ctl{font-family:var(--mono);font-size:.76rem;color:var(--dim);
+    display:flex;align-items:center;gap:8px}
+  input[type=range]{accent-color:var(--trace);width:120px}
+  input[type=checkbox]{accent-color:var(--trace);width:16px;height:16px}
+
+  #status{font-family:var(--mono);font-size:.78rem;color:var(--dim);margin-top:10px;
+    line-height:1.5}
+  #status.bad{color:var(--alert)}
+
+  #list{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;min-height:28px}
+  .tag{font-family:var(--mono);font-size:.74rem;padding:4px 9px;border-radius:999px;
+    background:#17213C;border:1px solid var(--edge)}
+  .tag.hit{border-color:var(--trace);color:var(--trace)}
+
+  .note{font-size:.85rem;line-height:1.6;color:var(--dim)}
+  .note b{color:var(--text)}
+  .warn{border-left:3px solid var(--warm);padding-left:12px}
+  code{font-family:var(--mono);color:var(--trace);font-size:.92em}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Camera Lab</h1>
+    <p>Point your camera at an object and it draws a box around it with its name.
+       <a href="./">← back to Script Lab</a></p>
+  </header>
+
+  <div class="card">
+    <div class="stage">
+      <video id="cam" playsinline muted autoplay></video>
+      <canvas id="overlay"></canvas>
+    </div>
+    <div class="row">
+      <button class="primary" id="start">Start camera</button>
+      <button id="flip" disabled>Flip camera</button>
+      <label class="ctl">confidence
+        <input type="range" id="thresh" min="20" max="90" value="55">
+        <span id="threshv">55%</span>
+      </label>
+      <label class="ctl">
+        <input type="checkbox" id="only"> only our objects
+      </label>
+    </div>
+    <div id="status">ready — tap Start camera</div>
+    <div id="list"></div>
+  </div>
+
+  <div class="card">
+    <p class="note warn"><b>Be honest about this page in your presentation.</b>
+      The Script Lab model is one you trained yourself with scikit-learn on a
+      dataset you generated. This page is different: it runs
+      <b>COCO-SSD</b>, a convolutional neural network trained by Google on the
+      COCO dataset — 330,000 photographs labelled by hand. You did not train it
+      and it does not use your four libraries. Using a model somebody else
+      trained is completely normal engineering, but presenting it as your own
+      would not be.</p>
+  </div>
+
+  <div class="card">
+    <p class="note"><b>What it can recognise.</b> The model knows 80 everyday
+      object types. From your list: <code>person</code>, <code>laptop</code>,
+      <code>keyboard</code>, <code>mouse</code>, <code>cup</code> (a mug),
+      <code>tv</code> (a monitor) and <code>dining table</code> all work.
+      <b>A pen does not</b> — it is not one of the 80, so the model has no
+      label for it and will either ignore it or guess something close, usually
+      <code>scissors</code> or <code>toothbrush</code>. That is a good thing to
+      show on purpose: a model can only ever answer with a class it was taught.
+      Other useful ones nearby: <code>cell phone</code>, <code>book</code>,
+      <code>bottle</code>, <code>chair</code>, <code>clock</code>,
+      <code>backpack</code>, <code>scissors</code>.</p>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd@2.2.3/dist/coco-ssd.min.js"></script>
+<script>
+(function(){
+  "use strict";
+  const video   = document.getElementById("cam");
+  const overlay = document.getElementById("overlay");
+  const ctx     = overlay.getContext("2d");
+  const status  = document.getElementById("status");
+  const list    = document.getElementById("list");
+  const startBtn= document.getElementById("start");
+  const flipBtn = document.getElementById("flip");
+  const thresh  = document.getElementById("thresh");
+  const threshv = document.getElementById("threshv");
+  const onlyBox = document.getElementById("only");
+
+  // the objects you asked for, mapped onto the names the model actually uses
+  const WANTED = new Set(["person","laptop","keyboard","mouse","cup","tv",
+                          "dining table","cell phone","book","bottle","chair"]);
+
+  let model = null, stream = null, running = false;
+  let facing = "environment", frames = 0, fpsAt = 0, fps = 0;
+
+  function say(text, bad){
+    status.textContent = text;
+    status.classList.toggle("bad", !!bad);
+  }
+
+  thresh.oninput = () => { threshv.textContent = thresh.value + "%"; };
+
+  async function loadModel(){
+    if(model) return model;
+    if(typeof cocoSsd === "undefined"){
+      say("the model library did not load — check your internet connection", true);
+      return null;
+    }
+    say("loading the model (a few megabytes, first time only)…");
+    // lite_mobilenet_v2 is the smallest and fastest of the three
+    model = await cocoSsd.load({base:"lite_mobilenet_v2"});
+    return model;
+  }
+
+  async function openCamera(){
+    if(!window.isSecureContext){
+      say("the camera only works over https — open the GitHub Pages address, " +
+          "not a plain http one", true);
+      return false;
+    }
+    if(!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia){
+      say("this browser does not support camera access", true);
+      return false;
+    }
+    if(stream) stream.getTracks().forEach(t => t.stop());
+    try{
+      stream = await navigator.mediaDevices.getUserMedia({
+        video:{ facingMode:{ideal:facing}, width:{ideal:640}, height:{ideal:480} },
+        audio:false
+      });
+    }catch(err){
+      const name = err && err.name;
+      if(name === "NotAllowedError")
+        say("camera permission was refused — allow it in the address bar, " +
+            "then tap Start camera again", true);
+      else if(name === "NotFoundError")
+        say("no camera found on this device", true);
+      else
+        say("could not open the camera: " + (err && err.message), true);
+      return false;
+    }
+    video.srcObject = stream;
+    await video.play();
+    return true;
+  }
+
+  function fit(){
+    if(video.videoWidth){
+      overlay.width  = video.videoWidth;     // draw in camera pixels, CSS scales it
+      overlay.height = video.videoHeight;
+    }
+  }
+
+  function draw(found){
+    ctx.clearRect(0,0,overlay.width,overlay.height);
+    const scale = overlay.width / 640;       // keeps lines readable on any size
+    ctx.lineWidth = Math.max(2, 3*scale);
+    ctx.font = (Math.max(13, 15*scale)|0) + "px ui-monospace, monospace";
+    ctx.textBaseline = "top";
+
+    for(const d of found){
+      const [x,y,w,h] = d.bbox;
+      const hit = WANTED.has(d.class);
+      const colour = hit ? "#58E6D9" : "#F2B263";
+      ctx.strokeStyle = colour;
+      ctx.strokeRect(x,y,w,h);
+
+      const text = d.class + "  " + Math.round(d.score*100) + "%";
+      const pad = 6*scale, tw = ctx.measureText(text).width;
+      const th = (Math.max(13,15*scale)|0) + pad*2;
+      const ty = y - th < 0 ? y : y - th;    // keep the label on screen
+      ctx.fillStyle = colour;
+      ctx.fillRect(x, ty, tw + pad*2, th);
+      ctx.fillStyle = "#06101A";
+      ctx.fillText(text, x + pad, ty + pad);
+    }
+  }
+
+  function tags(found){
+    list.innerHTML = "";
+    const seen = new Set();
+    for(const d of found){
+      if(seen.has(d.class)) continue;
+      seen.add(d.class);
+      const el = document.createElement("span");
+      el.className = "tag" + (WANTED.has(d.class) ? " hit" : "");
+      el.textContent = d.class + " " + Math.round(d.score*100) + "%";
+      list.appendChild(el);
+    }
+  }
+
+  async function loop(){
+    if(!running) return;
+    if(video.readyState >= 2){
+      fit();
+      let found = [];
+      try{
+        found = await model.detect(video, 20, thresh.value/100);
+      }catch(err){
+        say("detection failed: " + err.message, true);
+        running = false;
+        return;
+      }
+      if(onlyBox.checked) found = found.filter(d => WANTED.has(d.class));
+      draw(found);
+      tags(found);
+
+      frames++;
+      const now = performance.now();
+      if(now - fpsAt > 1000){
+        fps = Math.round(frames * 1000 / (now - fpsAt));
+        frames = 0; fpsAt = now;
+      }
+      say("running at about " + fps + " frames per second — " +
+          found.length + " object" + (found.length === 1 ? "" : "s") + " in view");
+    }
+    requestAnimationFrame(loop);
+  }
+
+  startBtn.onclick = async () => {
+    startBtn.disabled = true;
+    const m = await loadModel();
+    if(!m){ startBtn.disabled = false; return; }
+    const ok = await openCamera();
+    if(!ok){ startBtn.disabled = false; return; }
+    flipBtn.disabled = false;
+    startBtn.textContent = "Camera running";
+    running = true; fpsAt = performance.now();
+    loop();
+  };
+
+  flipBtn.onclick = async () => {
+    facing = (facing === "environment") ? "user" : "environment";
+    await openCamera();
+  };
+
+  window.addEventListener("pagehide", () => {
+    running = false;
+    if(stream) stream.getTracks().forEach(t => t.stop());
+  });
+})();
+</script>
+</body>
+</html>
