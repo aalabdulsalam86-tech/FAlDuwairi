@@ -7,10 +7,15 @@
      ADMIN_PASS       Secret  admin password
      SESSION_SECRET   Secret  any long random string (signs login tokens)
      ALLOWED_ORIGINS  Text    https://aalabdulsalam86-tech.github.io
+     RESEND_API_KEY   Secret  API key from resend.com (sends the verification codes)
+     MAIL_FROM        Text    e.g. بوابة المعلمين <noreply@madrisati.com>
    ============================================================ */
 
 const TOKEN_TTL = 60 * 60 * 24 * 7;   // 7 days
 const STATUSES = ["present", "absent", "excused", "sick", "field_trip"];
+const CODE_TTL = 15 * 60;       // verification code valid 15 minutes
+const CODE_MAX_TRIES = 5;       // wrong attempts before a new code is needed
+const RESEND_COOLDOWN = 60;     // seconds between code emails
 
 // ---------- helpers ----------
 const enc = new TextEncoder();
@@ -42,13 +47,37 @@ async function readToken(env, req) {
   const p = JSON.parse(new TextDecoder().decode(ub64u(body)));
   if (p.exp < Math.floor(Date.now() / 1000)) return null;
   if (p.role === "teacher") {
-    const row = await env.DB.prepare("SELECT id,email,name,department,classes,active FROM teachers WHERE id=?").bind(p.id).first();
-    if (!row || !row.active) return null;
+    const row = await env.DB.prepare("SELECT id,email,name,department,classes,active,verified FROM teachers WHERE id=?").bind(p.id).first();
+    if (!row || !row.active || !row.verified) return null;
     return { ...p, name: row.name, department: row.department, classes: JSON.parse(row.classes || "[]") };
   }
   return p;
 }
 const isMoeEmail = (e) => /^[a-z0-9._-]+@moe\.edu\.kw$/i.test(e);
+const nowSec = () => Math.floor(Date.now() / 1000);
+
+// ---------- email verification ----------
+async function sendVerifyCode(env, row) {
+  if (!env.RESEND_API_KEY || !env.MAIL_FROM) throw new Error("خدمة البريد غير مهيأة (RESEND_API_KEY / MAIL_FROM)");
+  const n = crypto.getRandomValues(new Uint32Array(1))[0] % 1000000;
+  const code = String(n).padStart(6, "0");
+  const html = `<div dir="rtl" style="font-family:Tahoma,Arial,sans-serif;font-size:15px;color:#111">
+    <p>مرحباً ${String(row.name).replace(/[<>&]/g, "")}،</p>
+    <p>رمز تفعيل حسابك في <b>بوابة المعلمين — ثانوية فهد الدويري</b>:</p>
+    <p style="font-size:30px;font-weight:bold;letter-spacing:8px;direction:ltr;text-align:center;background:#f1f5f9;border-radius:10px;padding:14px">${code}</p>
+    <p>الرمز صالح لمدة 15 دقيقة. إذا لم تطلب إنشاء حساب فتجاهل هذه الرسالة.</p></div>`;
+  const r = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: { Authorization: "Bearer " + env.RESEND_API_KEY, "Content-Type": "application/json" },
+    body: JSON.stringify({ from: env.MAIL_FROM, to: [row.email], subject: "رمز تفعيل حساب بوابة المعلمين: " + code, html,
+      text: `رمز تفعيل حسابك في بوابة المعلمين: ${code}\nصالح لمدة 15 دقيقة.` })
+  });
+  if (!r.ok) throw new Error("تعذّر إرسال البريد: " + (await r.text()).slice(0, 200));
+  await env.DB.prepare("UPDATE teachers SET verify_hash=?,verify_exp=?,verify_tries=0,verify_sent=? WHERE id=?")
+    .bind(await hmac(env.SESSION_SECRET, row.email + ":" + code), nowSec() + CODE_TTL, nowSec(), row.id).run();
+}
+const canResend = (row) => !row.verify_sent || nowSec() - row.verify_sent >= RESEND_COOLDOWN;
+const userOut = (row) => ({ role: "teacher", id: row.id, email: row.email, name: row.name, department: row.department, classes: JSON.parse(row.classes || "[]") });
 
 // ---------- main ----------
 export default {
@@ -88,14 +117,47 @@ export default {
         const valid = (await env.DB.prepare("SELECT code FROM classes").all()).results.map(r => r.code);
         const bad = classes.filter(c => !valid.includes(c));
         if (bad.length) return json({ error: "شعبة غير معروفة: " + bad.join(", ") }, 400, cors);
-        const exists = await env.DB.prepare("SELECT id FROM teachers WHERE email=?").bind(email).first();
-        if (exists) return json({ error: "هذا البريد مسجّل مسبقاً — سجّل الدخول" }, 409, cors);
+        const exists = await env.DB.prepare("SELECT * FROM teachers WHERE email=?").bind(email).first();
+        if (exists && exists.verified) return json({ error: "هذا البريد مسجّل مسبقاً — سجّل الدخول" }, 409, cors);
+        if (exists && !canResend(exists)) return json({ pending: true, email, error: "أُرسل رمز قبل قليل — انتظر دقيقة ثم أعد المحاولة" }, 429, cors);
         const { hash, salt } = await hashPassword(password);
-        const r = await env.DB.prepare("INSERT INTO teachers(email,name,department,pass_hash,salt,classes) VALUES(?,?,?,?,?,?)")
-          .bind(email, String(name).trim(), String(department).trim(), hash, salt, JSON.stringify(classes)).run();
-        const id = r.meta.last_row_id;
-        const token = await makeToken(env, { role: "teacher", id, email });
-        return json({ token, user: { role: "teacher", id, email, name, department, classes } }, 200, cors);
+        let id;
+        if (exists) {   // registered before but never verified → update details and send a new code
+          await env.DB.prepare("UPDATE teachers SET name=?,department=?,pass_hash=?,salt=?,classes=? WHERE id=?")
+            .bind(String(name).trim(), String(department).trim(), hash, salt, JSON.stringify(classes), exists.id).run();
+          id = exists.id;
+        } else {
+          const r = await env.DB.prepare("INSERT INTO teachers(email,name,department,pass_hash,salt,classes,verified) VALUES(?,?,?,?,?,?,0)")
+            .bind(email, String(name).trim(), String(department).trim(), hash, salt, JSON.stringify(classes)).run();
+          id = r.meta.last_row_id;
+        }
+        await sendVerifyCode(env, { id, email, name });
+        return json({ pending: true, email, message: "أرسلنا رمز تفعيل من 6 أرقام إلى " + email }, 200, cors);
+      }
+      if (path === "/auth/verify" && method === "POST") {
+        const email = String(body.email || "").trim().toLowerCase();
+        const code = String(body.code || "").replace(/\D/g, "");
+        const row = await env.DB.prepare("SELECT * FROM teachers WHERE email=?").bind(email).first();
+        if (!row) return json({ error: "لا يوجد حساب بهذا البريد" }, 404, cors);
+        if (row.verified) return json({ error: "الحساب مفعّل مسبقاً — سجّل الدخول" }, 409, cors);
+        if (!row.verify_hash || row.verify_exp < nowSec()) return json({ error: "انتهت صلاحية الرمز — اضغط «إرسال رمز جديد»" }, 400, cors);
+        if (row.verify_tries >= CODE_MAX_TRIES) return json({ error: "محاولات كثيرة خاطئة — اضغط «إرسال رمز جديد»" }, 429, cors);
+        if (code.length !== 6 || await hmac(env.SESSION_SECRET, email + ":" + code) !== row.verify_hash) {
+          await env.DB.prepare("UPDATE teachers SET verify_tries=verify_tries+1 WHERE id=?").bind(row.id).run();
+          return json({ error: `الرمز غير صحيح (متبقٍ ${CODE_MAX_TRIES - row.verify_tries - 1} محاولات)` }, 400, cors);
+        }
+        await env.DB.prepare("UPDATE teachers SET verified=1,verify_hash=NULL,verify_exp=NULL,verify_tries=0 WHERE id=?").bind(row.id).run();
+        if (!row.active) return json({ error: "تم التفعيل، لكن الحساب موقوف — تواصل مع المدير" }, 403, cors);
+        const token = await makeToken(env, { role: "teacher", id: row.id, email });
+        return json({ token, user: userOut(row) }, 200, cors);
+      }
+      if (path === "/auth/resend" && method === "POST") {
+        const email = String(body.email || "").trim().toLowerCase();
+        const row = await env.DB.prepare("SELECT * FROM teachers WHERE email=?").bind(email).first();
+        if (!row || row.verified) return json({ error: "لا يوجد حساب بانتظار التفعيل بهذا البريد" }, 400, cors);
+        if (!canResend(row)) return json({ error: "انتظر دقيقة قبل طلب رمز جديد" }, 429, cors);
+        await sendVerifyCode(env, row);
+        return json({ ok: true, message: "أُرسل رمز جديد إلى " + email }, 200, cors);
       }
       if (path === "/auth/login" && method === "POST") {
         const user = String(body.email || body.username || "").trim();
@@ -112,8 +174,12 @@ export default {
         if (!row.active) return json({ error: "الحساب موقوف — تواصل مع المدير" }, 403, cors);
         const { hash } = await hashPassword(password, row.salt);
         if (hash !== row.pass_hash) return json({ error: "كلمة المرور غير صحيحة" }, 401, cors);
+        if (!row.verified) {
+          if (canResend(row)) await sendVerifyCode(env, row);
+          return json({ pending: true, email: row.email, error: "لم يُفعَّل الحساب بعد — أدخل الرمز المرسل إلى بريدك" }, 403, cors);
+        }
         const token = await makeToken(env, { role: "teacher", id: row.id, email: row.email });
-        return json({ token, user: { role: "teacher", id: row.id, email: row.email, name: row.name, department: row.department, classes: JSON.parse(row.classes || "[]") } }, 200, cors);
+        return json({ token, user: userOut(row) }, 200, cors);
       }
 
       // ---------- authenticated ----------
@@ -188,7 +254,7 @@ export default {
       if (!isAdmin) return json({ error: "صلاحية المدير مطلوبة" }, 403, cors);
 
       if (path === "/admin/teachers" && method === "GET") {
-        const r = await env.DB.prepare("SELECT id,email,name,department,classes,active,created_at,(SELECT COUNT(*) FROM progress p WHERE p.teacher_id=teachers.id) AS records FROM teachers ORDER BY created_at DESC").all();
+        const r = await env.DB.prepare("SELECT id,email,name,department,classes,active,verified,created_at,(SELECT COUNT(*) FROM progress p WHERE p.teacher_id=teachers.id) AS records FROM teachers ORDER BY created_at DESC").all();
         return json({ teachers: r.results.map(t => ({ ...t, classes: JSON.parse(t.classes || "[]") })) }, 200, cors);
       }
       const mT = path.match(/^\/admin\/teachers\/(\d+)$/);
@@ -198,6 +264,7 @@ export default {
         if (body.department) { sets.push("department=?"); args.push(String(body.department)); }
         if (Array.isArray(body.classes)) { sets.push("classes=?"); args.push(JSON.stringify(body.classes.map(String))); }
         if (body.active !== undefined) { sets.push("active=?"); args.push(body.active ? 1 : 0); }
+        if (body.verified !== undefined) { sets.push("verified=?"); args.push(body.verified ? 1 : 0); }
         if (body.password) { const { hash, salt } = await hashPassword(String(body.password)); sets.push("pass_hash=?", "salt=?"); args.push(hash, salt); }
         if (!sets.length) return json({ error: "لا تغييرات" }, 400, cors);
         await env.DB.prepare(`UPDATE teachers SET ${sets.join(",")} WHERE id=?`).bind(...args, id).run();
