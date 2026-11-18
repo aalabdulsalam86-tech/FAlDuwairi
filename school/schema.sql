@@ -11,6 +11,11 @@ CREATE TABLE IF NOT EXISTS teachers (
   salt TEXT NOT NULL,
   classes TEXT NOT NULL DEFAULT '[]',   -- JSON array of class codes e.g. ["10-1","11S-3"]
   active INTEGER NOT NULL DEFAULT 1,
+  verified INTEGER NOT NULL DEFAULT 0,  -- 1 after the emailed code is entered
+  verify_hash TEXT,
+  verify_exp INTEGER,
+  verify_tries INTEGER NOT NULL DEFAULT 0,
+  verify_sent INTEGER,
   created_at TEXT NOT NULL DEFAULT (datetime('now'))
 );
 CREATE TABLE IF NOT EXISTS classes (
