@@ -33,7 +33,8 @@ school/seed_students.sql ← الشعب الـ22 والطلاب الـ593 (ال�
 | `ALLOWED_ORIGINS` | Text | `https://aalabdulsalam86-tech.github.io` |
 
    ثم **Deploy**.
-5. انسخ رابط الـ Worker (`https://falduwairi-school.<اسمك>.workers.dev`). فتحه في المتصفح يعرض `{"ok":true,...}`.
+5. **تفعيل البريد** (انظر القسم ٤) — أضف أيضاً `RESEND_API_KEY` (Secret) و `MAIL_FROM` (Text).
+6. انسخ رابط الـ Worker (`https://falduwairi-school.<اسمك>.workers.dev`). فتحه في المتصفح يعرض `{"ok":true,...}`.
 
 ## ٣. ربط الصفحة
 في `school.html` عدّل السطر:
@@ -41,6 +42,14 @@ school/seed_students.sql ← الشعب الـ22 والطلاب الـ593 (ال�
 const API_URL = "https://falduwairi-school.<اسمك>.workers.dev";
 ```
 وارفع الملف إلى GitHub.
+
+## ٤. تفعيل حساب المعلم بالبريد (Resend)
+يُقبل فقط بريد `…@moe.edu.kw`، ويُرسل رمز من 6 أرقام إلى البريد؛ لا يدخل المعلم قبل إدخال الرمز (صالح 15 دقيقة، 5 محاولات، إعادة الإرسال كل 60 ثانية).
+1. أنشئ حساباً مجانياً في resend.com → **Domains → Add Domain** → `madrisati.com` → اختر الربط التلقائي مع Cloudflare (أو أضف سجلات DNS يدوياً) وانتظر **Verified**.
+2. **API Keys → Create** (Sending access) → انسخ المفتاح.
+3. في الـ Worker أضف: `RESEND_API_KEY` = المفتاح (**Secret**)، و `MAIL_FROM` = `بوابة المعلمين <noreply@madrisati.com>` (Text) → Deploy.
+4. لقاعدة بيانات موجودة: نفّذ `migrate_email_verify.sql` مرة واحدة في D1 Console.
+5. من **👩‍🏫 المعلمون** يظهر لكل معلم «✓ البريد مؤكد» أو «بانتظار التفعيل» مع زر ✓ للاعتماد اليدوي.
 
 ---
 
