@@ -128,7 +128,14 @@ canvas{max-height:260px}
       <div class="f"><label>كلمة المرور (6 أحرف فأكثر)</label><input id="r-pass" type="password" required minlength="6" autocomplete="new-password"></div>
       <div class="f"><label>الشعب التي تدرّسها</label><div class="cls-grid" id="r-classes"></div></div>
       <button class="btn gold" style="width:100%">إنشاء الحساب</button>
-      <p class="small mt">بالتسجيل ستتمكن من رؤية أسماء طلاب الشعب التي اخترتها وإدخال متابعتهم الأسبوعية.</p>
+      <p class="small mt">سيصلك رمز تفعيل على بريد الوزارة للتأكد من أنك معلم. بعد التفعيل ستتمكن من رؤية أسماء طلاب الشعب التي اخترتها وإدخال متابعتهم الأسبوعية.</p>
+    </form>
+    <form id="f-verify" class="hidden" onsubmit="verifyCode(event)">
+      <h3 style="margin-bottom:6px">📧 تفعيل الحساب</h3>
+      <p class="small" style="margin-bottom:12px">أرسلنا رمزاً من 6 أرقام إلى <b dir="ltr" id="v-email"></b> — تحقق من البريد الوارد ومجلد البريد غير الهام (Junk).</p>
+      <div class="f"><label>رمز التفعيل</label><input id="v-code" dir="ltr" inputmode="numeric" maxlength="6" pattern="[0-9]{6}" required autocomplete="one-time-code" placeholder="••••••" style="text-align:center;font-size:24px;letter-spacing:8px"></div>
+      <button class="btn gold" style="width:100%">تفعيل والدخول</button>
+      <div class="bar" style="justify-content:space-between"><button type="button" class="btn ghost sm" onclick="resendCode()">🔁 إرسال رمز جديد</button><button type="button" class="btn ghost sm" onclick="authTab('login')">رجوع</button></div>
     </form>
   </div>
 </div>
@@ -169,14 +176,25 @@ async function api(path, opt = {}) {
   if (API_URL.includes("YOUR-SCHOOL")) throw new Error("لم يُضبط عنوان الخادم بعد (API_URL في school.html)");
   const r = await fetch(API_URL + path, { method: opt.method || "GET", headers: { "Content-Type": "application/json", ...(TOKEN ? { Authorization: "Bearer " + TOKEN } : {}) }, body: opt.body ? JSON.stringify(opt.body) : undefined });
   const d = await r.json().catch(() => ({}));
-  if (!r.ok) throw new Error(d.error || ("HTTP " + r.status));
+  if (!r.ok) throw Object.assign(new Error(d.error || ("HTTP " + r.status)), { data: d });
   return d;
 }
 const clsLabel = c => `${c.grade_label} — شعبة ${c.section}`;
 const clsByCode = code => ALLCLASSES.find(c => c.code === code) || { grade_label: code, section: "" };
 
 // ===================== AUTH =====================
-function authTab(t) { $("t-login").classList.toggle("on", t === "login"); $("t-reg").classList.toggle("on", t === "reg"); $("f-login").classList.toggle("hidden", t !== "login"); $("f-reg").classList.toggle("hidden", t !== "reg"); $("auth-msg").innerHTML = ""; }
+function authTab(t) { $("t-login").classList.toggle("on", t === "login"); $("t-reg").classList.toggle("on", t === "reg"); $("f-login").classList.toggle("hidden", t !== "login"); $("f-reg").classList.toggle("hidden", t !== "reg"); $("f-verify").classList.toggle("hidden", t !== "verify"); $("auth-msg").innerHTML = ""; }
+let PENDING_EMAIL = "";
+function showVerify(email, msg, isErr) { PENDING_EMAIL = email; authTab("verify"); $("v-email").textContent = email; $("v-code").value = ""; $("v-code").focus(); if (msg) $("auth-msg").innerHTML = `<div class="${isErr ? "err" : "ok"}">${esc(msg)}</div>`; }
+async function verifyCode(e) {
+  e.preventDefault(); $("auth-msg").innerHTML = "";
+  try { const d = await api("/auth/verify", { method: "POST", body: { email: PENDING_EMAIL, code: $("v-code").value.trim() } }); TOKEN = d.token; localStorage.setItem("school_token", TOKEN); USER = d.user; await enter(); }
+  catch (err) { $("auth-msg").innerHTML = `<div class="err">${esc(err.message)}</div>`; }
+}
+async function resendCode() {
+  try { const d = await api("/auth/resend", { method: "POST", body: { email: PENDING_EMAIL } }); $("auth-msg").innerHTML = `<div class="ok">${esc(d.message)}</div>`; }
+  catch (err) { $("auth-msg").innerHTML = `<div class="err">${esc(err.message)}</div>`; }
+}
 function classCheckboxes(container, selected = []) {
   const groups = {}; ALLCLASSES.forEach(c => (groups[c.grade_label] = groups[c.grade_label] || []).push(c));
   container.innerHTML = Object.entries(groups).map(([g, arr]) => `<div class="grp">${esc(g)}</div>` + arr.map(c => `<label><input type="checkbox" value="${c.code}" ${selected.includes(c.code) ? "checked" : ""}> شعبة ${c.section}</label>`).join("")).join("");
@@ -184,13 +202,15 @@ function classCheckboxes(container, selected = []) {
 async function login(e) {
   e.preventDefault(); $("auth-msg").innerHTML = "";
   try { const d = await api("/auth/login", { method: "POST", body: { email: $("l-user").value.trim(), password: $("l-pass").value } }); TOKEN = d.token; localStorage.setItem("school_token", TOKEN); USER = d.user; await enter(); }
-  catch (err) { $("auth-msg").innerHTML = `<div class="err">${esc(err.message)}</div>`; }
+  catch (err) { if (err.data?.pending) showVerify(err.data.email, err.message, true); else $("auth-msg").innerHTML = `<div class="err">${esc(err.message)}</div>`; }
 }
 async function register(e) {
   e.preventDefault(); $("auth-msg").innerHTML = "";
   const classes = [...$("r-classes").querySelectorAll("input:checked")].map(i => i.value);
-  try { const d = await api("/auth/register", { method: "POST", body: { name: $("r-name").value, department: $("r-dept").value, email: $("r-email").value.trim(), password: $("r-pass").value, classes } }); TOKEN = d.token; localStorage.setItem("school_token", TOKEN); USER = d.user; await enter(); }
-  catch (err) { $("auth-msg").innerHTML = `<div class="err">${esc(err.message)}</div>`; }
+  const email = $("r-email").value.trim().toLowerCase();
+  if (!/^[a-z0-9._-]+@moe\.edu\.kw$/.test(email)) { $("auth-msg").innerHTML = `<div class="err">البريد يجب أن يكون بريد وزارة التربية الرسمي (…@moe.edu.kw)</div>`; return; }
+  try { const d = await api("/auth/register", { method: "POST", body: { name: $("r-name").value, department: $("r-dept").value, email, password: $("r-pass").value, classes } }); showVerify(d.email, d.message); }
+  catch (err) { if (err.data?.pending) showVerify(err.data.email, err.message, true); else $("auth-msg").innerHTML = `<div class="err">${esc(err.message)}</div>`; }
 }
 function logout() { TOKEN = ""; localStorage.removeItem("school_token"); location.reload(); }
 
@@ -408,7 +428,7 @@ async function renderTeachers() {
   const { teachers } = await api("/admin/teachers");
   $("main").innerHTML = `<div class="hdr"><h2>👩‍🏫 المعلمون المسجّلون</h2><span class="sub">${teachers.length} معلماً</span></div>
   <div class="tbl-wrap"><table><thead><tr><th>الاسم</th><th>القسم</th><th>البريد</th><th>الشعب</th><th>سجلات</th><th>الحالة</th><th></th></tr></thead><tbody>
-  ${teachers.map(t => `<tr><td class="name">${esc(t.name)}</td><td>${esc(t.department)}</td><td dir="ltr" style="text-align:left" class="small">${esc(t.email)}</td><td>${t.classes.map(c => `<span class="flag f-gray">${esc(clsLabel(clsByCode(c)))}</span>`).join("") || "—"}</td><td>${t.records}</td><td>${t.active ? "<span class='flag f-grn'>نشط</span>" : "<span class='flag f-red'>موقوف</span>"}</td>
+  ${teachers.map(t => `<tr><td class="name">${esc(t.name)}</td><td>${esc(t.department)}</td><td dir="ltr" style="text-align:left" class="small">${esc(t.email)}</td><td>${t.classes.map(c => `<span class="flag f-gray">${esc(clsLabel(clsByCode(c)))}</span>`).join("") || "—"}</td><td>${t.records}</td><td>${t.active ? "<span class='flag f-grn'>نشط</span>" : "<span class='flag f-red'>موقوف</span>"}${t.verified ? "<span class='flag f-grn'>✓ البريد مؤكد</span>" : `<span class='flag f-yel'>بانتظار التفعيل</span> <button class="btn ghost sm" title="اعتماد يدوي" onclick="approveTeacher(${t.id})">✓</button>`}</td>
     <td style="white-space:nowrap"><button class="btn ghost sm" onclick='editTeacher(${JSON.stringify(t).replace(/'/g, "&#39;")})'>✏️</button> <button class="btn ghost sm" onclick="viewTeacherData(${t.id})">📊</button> <button class="btn ghost sm" onclick="toggleTeacher(${t.id},${t.active ? 0 : 1})">${t.active ? "⏸" : "▶"}</button> <button class="btn danger sm" onclick="delTeacher(${t.id})">🗑</button></td></tr>`).join("") || "<tr><td colspan='7' class='small'>لا يوجد معلمون مسجّلون بعد</td></tr>"}
   </tbody></table></div>
   <div class="bar"><button class="btn ghost" onclick="cur.teacherFilter=null;alert('سيُعرض الآن مجموع بيانات كل المعلمين في الشعب');">👁 عرض بيانات الجميع</button><button class="btn ghost" onclick="exportAll()">⬇ تصدير كل البيانات CSV</button></div>`;
@@ -418,6 +438,7 @@ function editTeacher(t) {
   classCheckboxes($("et-classes"), t.classes);
 }
 async function saveTeacher(id) { const classes = [...$("et-classes").querySelectorAll("input:checked")].map(i => i.value); const b = { name: $("et-name").value, department: $("et-dept").value, classes }; if ($("et-pass").value) b.password = $("et-pass").value; await api("/admin/teachers/" + id, { method: "PATCH", body: b }); closeModal(); renderTeachers(); }
+async function approveTeacher(id) { if (!confirm("اعتماد هذا المعلم يدوياً دون رمز البريد؟")) return; await api("/admin/teachers/" + id, { method: "PATCH", body: { verified: 1 } }); renderTeachers(); }
 async function toggleTeacher(id, active) { await api("/admin/teachers/" + id, { method: "PATCH", body: { active } }); renderTeachers(); }
 async function delTeacher(id) { if (!confirm("حذف المعلم وجميع سجلاته؟")) return; await api("/admin/teachers/" + id, { method: "DELETE" }); renderTeachers(); }
 function viewTeacherData(id) { cur.teacherFilter = id; alert("سيتم عرض وتعديل بيانات هذا المعلم عند فتح أي شعبة. للعودة لعرض الجميع اضغط «عرض بيانات الجميع»."); if (CLASSES.length) openClass(CLASSES[0].code, "grid"); }
